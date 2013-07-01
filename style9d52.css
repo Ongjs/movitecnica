@@ -1111,7 +1111,7 @@ p.form-allowed-tags {font-size:11px; color:#999; font-style:italic	}
     width: 63%;
 }
 #mobanner-container {
-    height: 200px;
+    height: 220px;
     width: 640px;
 }
 #mobanner_arrow_left, #mobanner_arrow_right {
@@ -1136,7 +1136,8 @@ p.form-allowed-tags {font-size:11px; color:#999; font-style:italic	}
 }
 #mobanner {
     float: left;
-    height: 100px;
+    height: 200px;
+    max-width: none;
     position: relative;
 }
 

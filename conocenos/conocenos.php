@@ -115,7 +115,7 @@
                         <div id="mobanner-container">
                             <div id="mobanner_arrow_left"></div>
                             <div id="mobanner-content">
-                                <img id="mobanner" src="../images/linea-de-tiempo.png" style="max-width: none; max-height: 200px; min-height: 200px;" />
+                                <img id="mobanner" src="../images/linea-de-tiempo.png" />
                             </div>
                             <div id="mobanner_arrow_right"></div>
                         </div>
@@ -351,64 +351,64 @@
         value_move,
         mo_interval;
         
-    var mo_banner2left = function() {
+        var mo_banner2left = function() {
+            
+            if (mo_banner.position().left < position_left  ) {    
+                mo_banner.stop();
+                value_move = (animate_left + mo_banner.position().left);
+                value_move = value_move < position_left ? animate_left : position_left - mo_banner.position().left;
+                mo_banner.animate({ left: '+=' + value_move + 'px' });
+            } else {
+                mo_banner_stop();
+            }
+        };
         
-        if (mo_banner.position().left < position_left  ) {    
-            mo_banner.stop();
-            value_move = (animate_left + mo_banner.position().left);
-            value_move = value_move < position_left ? animate_left : position_left - mo_banner.position().left;
-            mo_banner.animate({ left: '+=' + value_move + 'px' });
-        } else {
-            mo_banner_stop();
-        }
-    };
-    
-    var mo_banner2right = function() {
-        if (mo_banner.position().left > position_right - mo_banner.width() + 220) {
-            mo_banner.stop();
-            value_move = (position_right - mo_banner.width() - mo_banner.position().left) * -1;
-            value_move = value_move > animate_left ? animate_left : value_move;
-            mo_banner.animate({ left: '-=' + value_move + 'px' });
-        } else {
-            mo_banner_stop();
-        }
-    };
-    
-    var mo_banner_stop = function() {
-        mo_banner.stop();
-        window.clearInterval(mo_interval);
-    }
-    
-    $j('div#mobanner_arrow_left').on({
-        "mouseenter": function() {
-            if (mo_banner.position().left < position_left) {
-                mo_interval = window.setInterval(mo_banner2left, 200);
-            }
-        }, 
-        "mouseleave": function() {
-            mo_banner_stop();
-        }
-    });
-    
-    $j('div#mobanner_arrow_right').on({
-        "mouseenter": function() {
+        var mo_banner2right = function() {
             if (mo_banner.position().left > position_right - mo_banner.width()) {
-                mo_interval = window.setInterval(mo_banner2right, 200);
+                mo_banner.stop();
+                value_move = (position_right - mo_banner.width() - mo_banner.position().left) * -1;
+                value_move = value_move > animate_left ? animate_left : value_move;
+                mo_banner.animate({ left: '-=' + value_move + 'px' });
+            } else {
+                mo_banner_stop();
             }
-        }, 
-        "mouseleave": function() {
-            mo_banner_stop();
+        };
+        
+        var mo_banner_stop = function() {
+            mo_banner.stop();
+            window.clearInterval(mo_interval);
         }
-    });
-    
-    $j('div#mobanner_arrow_left, div#mobanner_arrow_right').on({
-        "mousedown": function() {
-            animate_left = 100;
-        }, 
-        "mouseup": function() {
-            animate_left = 25;
-        }
-    });
+        
+        $j('div#mobanner_arrow_left').on({
+            "mouseenter": function() {
+                if (mo_banner.position().left < position_left) {
+                    mo_interval = window.setInterval(mo_banner2left, 200);
+                }
+            }, 
+            "mouseleave": function() {
+                mo_banner_stop();
+            }
+        });
+        
+        $j('div#mobanner_arrow_right').on({
+            "mouseenter": function() {
+                if (mo_banner.position().left > position_right - mo_banner.width()) {
+                    mo_interval = window.setInterval(mo_banner2right, 200);
+                }
+            }, 
+            "mouseleave": function() {
+                mo_banner_stop();
+            }
+        });
+        
+        $j('div#mobanner_arrow_left, div#mobanner_arrow_right').on({
+            "mousedown": function() {
+                animate_left = 100;
+            }, 
+            "mouseup": function() {
+                animate_left = 25;
+            }
+        });
 //                        menu
         $j("#skin3").trigger("click");
         var menu = true;
