@@ -59,8 +59,8 @@
                                         </li>
                                         <li id="menu-item-1126"  ><a href="../productos/productos.php">Productos</a>
                                             <ul class="sub-menu">
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../productos/productos.php">Marca</a></li>
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../productos/productos.php">Categoría</a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../productos/productos.php">Marca</a></li>
                                             </ul>
                                         </li>
                                         <li id="menu-item-1126"  ><a href="../SIG/sig.php">SIG</a>
@@ -109,39 +109,39 @@
                 <div style=" display: inline-block; margin-top: 5px;" class="uni_response">
                     <span>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsumha sido<br /> el  texto de rellenoestandar de las industrias desde el año 1500, cuando un impresor(N. del T.)</span><br /><br />
                     <div style="width: 98%;">
-                        <div style="border-bottom: 1px solid #F3F3F3;  padding-bottom: 10px; margin-top: 10px;">
-                            <div style="display: inline-block; vertical-align: top; max-width: 27%; width: 27%;margin-bottom: 15px; margin-right: 30px;">
+                        <div class="equipo_borde">
+                            <div class="equipo_image">
                                 <a href="Trabajador.php"><img src="../images/darb.png" style="min-width: 180px; height: 190px; width: 190px;"></a>
                             </div>
-                            <div style="display: inline-block; vertical-align: top; max-width: 65%; margin-bottom: 15px; min-width: 400px;">
+                            <div class="equipo_text">
                                 <a href="Trabajador.php" ><h3>Nombre</h3></a>
-                                <div style="margin-top: -7px; margin-bottom: 10px;"><h6><a href="Trabajador.php">cargo</a></h6></div>
+                                <div style="margin-top: -12px; margin-bottom: 15px;"><h6><a href="Trabajador.php">cargo</a></h6></div>
                                 <span>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsumha sido el texto de rellenoestandar de las industrias desde el año 1500, cuando un impresor(N. del T.)<br /> Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsumha sido el texto de rellenoestandar de las industrias desde el año 1500, cuando un impresor(N. del T.)</span><br />                            
-                                <div style="margin-top: 5px;"><a href="Trabajador.php">Ver más</a></div>
+                                <div style="margin-top: 15px;"><a href="Trabajador.php">Ver más</a></div>
                             </div>
                         </div>
                         <br />
-                        <div style="border-bottom: 1px solid #F3F3F3;  padding-bottom: 10px; margin-top: 10px;">
-                            <div style="display: inline-block; vertical-align: top; max-width: 27%; width: 27%;margin-bottom: 15px; margin-right: 30px;">
+                        <div class="equipo_borde">
+                            <div class="equipo_image">
                                 <a href="Trabajador.php"><img src="../images/darb.png" style="min-width: 180px; height: 190px; width: 190px;"></a>
                             </div>
-                            <div style="display: inline-block; vertical-align: top; max-width: 65%; margin-bottom: 15px; min-width: 400px;">
+                            <div class="equipo_text">
                                 <a href="Trabajador.php" ><h3>Nombre</h3></a>
-                                <div style="margin-top: -7px; margin-bottom: 10px;"><h6><a href="Trabajador.php">cargo</a></h6></div>
+                                <div style="margin-top: -12px; margin-bottom: 15px;"><h6><a href="Trabajador.php">cargo</a></h6></div>
                                 <span>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsumha sido el texto de rellenoestandar de las industrias desde el año 1500, cuando un impresor(N. del T.)<br /> Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsumha sido el texto de rellenoestandar de las industrias desde el año 1500, cuando un impresor(N. del T.)</span><br />                            
-                                <div style="margin-top: 5px;"><a href="Trabajador.php">Ver más</a></div>
+                                <div style="margin-top: 15px;"><a href="Trabajador.php">Ver más</a></div>
                             </div>
                         </div>
                         <br />
-                        <div style="padding-bottom: 10px; margin-top: 10px;">
-                            <div style="display: inline-block; vertical-align: top; max-width: 27%; width: 27%;margin-bottom: 15px; margin-right: 30px;">
+                        <div class="equipo_borde">
+                            <div class="equipo_image">
                                 <a href="Trabajador.php"><img src="../images/darb.png" style="min-width: 180px; height: 190px; width: 190px;"></a>
                             </div>
-                            <div style="display: inline-block; vertical-align: top; max-width: 65%; margin-bottom: 15px; min-width: 400px;">
+                            <div class="equipo_text">
                                 <a href="Trabajador.php" ><h3>Nombre</h3></a>
-                                <div style="margin-top: -7px; margin-bottom: 10px;"><h6><a href="Trabajador.php">cargo</a></h6></div>
+                                <div style="margin-top: -12px; margin-bottom: 15px;"><h6><a href="Trabajador.php">cargo</a></h6></div>
                                 <span>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsumha sido el texto de rellenoestandar de las industrias desde el año 1500, cuando un impresor(N. del T.)<br /> Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsumha sido el texto de rellenoestandar de las industrias desde el año 1500, cuando un impresor(N. del T.)</span><br />                            
-                                <div style="margin-top: 5px;"><a href="Trabajador.php">Ver más</a></div>
+                                <div style="margin-top: 15px;"><a href="Trabajador.php">Ver más</a></div>
                             </div>
                         </div>
                     </div>
@@ -236,8 +236,8 @@
                         <section style='margin-top: 15px;'>
                             <div class="footer-op">
                                 <span><img src="../images/sitemap.png">Sitemap</span>
-                                <span><img src="../images/contactenos.png">Contáctenos</span>
-                                <span><img src="../images/home.png">Home</span>
+                                <span><a href="../contactenos.php"><img src="../images/contactenos.png">Contáctenos</a></span>
+                                <span><a href="../index.html"><img src="../images/home.png">Home</a></span>
                             </div>
                         </section>
                     </div>

@@ -59,8 +59,8 @@
                                         </li>
                                         <li id="menu-item-1126"  ><a href="../productos/productos.php">Productos</a>
                                             <ul class="sub-menu">
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../productos/productos.php">Marca</a></li>
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../productos/productos.php">Categoría</a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../productos/productos.php">Marca</a></li>
                                             </ul>
                                         </li>
                                         <li id="menu-item-1126"  ><a href="../SIG/sig.php">SIG</a>
@@ -115,7 +115,7 @@
                         <div id="mobanner-container">
                             <div id="mobanner_arrow_left"></div>
                             <div id="mobanner-content">
-                                <img id="mobanner" src="../images/linea-de-tiempo.png" />
+                                <img id="mobanner" src="../images/linea-de-tiempo.png"/>
                             </div>
                             <div id="mobanner_arrow_right"></div>
                         </div>
@@ -237,8 +237,8 @@
                         <section style='margin-top: 15px;'>
                             <div class="footer-op">
                                 <span><img src="../images/sitemap.png">Sitemap</span>
-                                <span><img src="../images/contactenos.png">Contáctenos</span>
-                                <span><img src="../images/home.png">Home</span>
+                                <span><a href="../contactenos.php"><img src="../images/contactenos.png">Contáctenos</a></span>
+                                <span><a href="../index.html"><img src="../images/home.png">Home</a></span>
                             </div>
                         </section>
                     </div>
@@ -344,71 +344,71 @@
 //        $j("#div_linea_tiempo").load("../horizontal.html");
 //                        Historia
         var mo_banner = $j('#mobanner'),
-        mo_banner_margin = $j('#mobanner_arrow_left').width() + parseInt($j('#mobanner-content').css("marginRight")),
+        mo_banner_margin = 0,
         position_left = mo_banner_margin,
         position_right = $j('#mobanner-content').width() + mo_banner_margin,
         animate_left = 25,
         value_move,
         mo_interval;
         
-        var mo_banner2left = function() {
-            
-            if (mo_banner.position().left < position_left  ) {    
-                mo_banner.stop();
-                value_move = (animate_left + mo_banner.position().left);
-                value_move = value_move < position_left ? animate_left : position_left - mo_banner.position().left;
-                mo_banner.animate({ left: '+=' + value_move + 'px' });
-            } else {
-                mo_banner_stop();
-            }
-        };
+    var mo_banner2left = function() {
         
-        var mo_banner2right = function() {
-            if (mo_banner.position().left > position_right - mo_banner.width()) {
-                mo_banner.stop();
-                value_move = (position_right - mo_banner.width() - mo_banner.position().left) * -1;
-                value_move = value_move > animate_left ? animate_left : value_move;
-                mo_banner.animate({ left: '-=' + value_move + 'px' });
-            } else {
-                mo_banner_stop();
-            }
-        };
-        
-        var mo_banner_stop = function() {
+        if (mo_banner.position().left < position_left  ) {    
             mo_banner.stop();
-            window.clearInterval(mo_interval);
+            value_move = (animate_left + mo_banner.position().left);
+            value_move = value_move < position_left ? animate_left : position_left - mo_banner.position().left;
+            mo_banner.animate({ left: '+=' + value_move + 'px' });
+        } else {
+            mo_banner_stop();
         }
-        
-        $j('div#mobanner_arrow_left').on({
-            "mouseenter": function() {
-                if (mo_banner.position().left < position_left) {
-                    mo_interval = window.setInterval(mo_banner2left, 200);
-                }
-            }, 
-            "mouseleave": function() {
-                mo_banner_stop();
+    };
+    
+    var mo_banner2right = function() {
+        if (mo_banner.position().left > position_right - mo_banner.width()) {
+            mo_banner.stop();
+            value_move = (position_right - mo_banner.width() - mo_banner.position().left) * -1;
+            value_move = value_move > animate_left ? animate_left : value_move;
+            mo_banner.animate({ left: '-=' + value_move + 'px' });
+        } else {
+            mo_banner_stop();
+        }
+    };
+    
+    var mo_banner_stop = function() {
+        mo_banner.stop();
+        window.clearInterval(mo_interval);
+    }
+    
+    $j('div#mobanner_arrow_left').on({
+        "mouseenter": function() {
+            if (mo_banner.position().left < position_left) {
+                mo_interval = window.setInterval(mo_banner2left, 200);
             }
-        });
-        
-        $j('div#mobanner_arrow_right').on({
-            "mouseenter": function() {
-                if (mo_banner.position().left > position_right - mo_banner.width()) {
-                    mo_interval = window.setInterval(mo_banner2right, 200);
-                }
-            }, 
-            "mouseleave": function() {
-                mo_banner_stop();
+        }, 
+        "mouseleave": function() {
+            mo_banner_stop();
+        }
+    });
+    
+    $j('div#mobanner_arrow_right').on({
+        "mouseenter": function() {
+            if (mo_banner.position().left > position_right - mo_banner.width()) {
+                mo_interval = window.setInterval(mo_banner2right, 200);
             }
-        });
-        
-        $j('div#mobanner_arrow_left, div#mobanner_arrow_right').on({
-            "mousedown": function() {
-                animate_left = 100;
-            }, 
-            "mouseup": function() {
-                animate_left = 25;
-            }
-        });
+        }, 
+        "mouseleave": function() {
+            mo_banner_stop();
+        }
+    });
+    
+    $j('div#mobanner_arrow_left, div#mobanner_arrow_right').on({
+        "mousedown": function() {
+            animate_left = 100;
+        }, 
+        "mouseup": function() {
+            animate_left = 25;
+        }
+    });
 //                        menu
         $j("#skin3").trigger("click");
         var menu = true;

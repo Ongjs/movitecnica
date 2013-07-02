@@ -93,8 +93,8 @@
                                         </li>
                                         <li id="menu-item-1126"  ><a href="../productos/productos.php">Productos</a>
                                             <ul class="sub-menu">
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../productos/productos.php">Marca</a></li>
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../productos/productos.php">Categoría</a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../productos/productos.php">Marca</a></li>
                                             </ul>
                                         </li>
                                         <li id="menu-item-1126"  ><a href="../SIG/sig.php">SIG</a>
@@ -143,11 +143,10 @@
                     <br />
                     <br />
                     <div id="post_p" style="display: inline-block; vertical-align: top; width: 230px; text-align: left;">
-                        <h3>Categorias</h3>
                         <div class="categorias">
                             <ul class="accordion">
                                 <li>
-                                    <div class="accordion_head accordion_title">Seleccionar por Categorias</div>
+                                    <div class="accordion_head accordion_title" style="font-size: 16px; font-weight: bold;">Seleccionar por Categorias</div>
                                     <div class="accordion_content">
                                         <ul>
                                             <li>
@@ -359,7 +358,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="accordion_head accordion_title">Seleccionar por Marcas</div>
+                                    <div class="accordion_head accordion_title" style="font-size: 16px; font-weight: bold;">Seleccionar por Marcas</div>
                                     <div class="accordion_content">
                                         <ul>
                                             <li>
@@ -927,8 +926,8 @@
                             <section style='margin-top: 15px;'>
                                 <div class="footer-op">
                                     <span><img src="../images/sitemap.png">Sitemap</span>
-                                    <span><img src="../images/contactenos.png">Contáctenos</span>
-                                    <span><img src="../images/home.png">Home</span>
+                                    <span><a href="../contactenos.php"><img src="../images/contactenos.png">Contáctenos</a></span>
+                                    <span><a href="../index.html"><img src="../images/home.png">Home</a></span>
                                 </div>
                             </section>
                         </div>

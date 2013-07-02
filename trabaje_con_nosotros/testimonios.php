@@ -59,8 +59,8 @@
                                         </li>
                                         <li id="menu-item-1126"  ><a href="../productos/productos.php">Productos</a>
                                             <ul class="sub-menu">
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../productos/productos.php">Marca</a></li>
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../productos/productos.php">Categoría</a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../productos/productos.php">Marca</a></li>
                                             </ul>
                                         </li>
                                         <li id="menu-item-1126"  ><a href="../SIG/sig.php">SIG</a>
@@ -102,21 +102,38 @@
         <div class="container">	
             <div id="post_grids" class="row" style=" margin-top: -20px; max-width: none;">
                 <div style="margin-left: 20px;">
-                <span> <a href="../index.html">Inicio</a> > <a href="Trabaje_Con_Nosotros.php">Trabaje con Nosotros </a> > Testimonios </span>
+                <div style="margin-left: 15px; margin-bottom: -5px"> <a href="../index.html">Inicio</a> > <a href="Trabaje_Con_Nosotros.php">Trabaje con Nosotros </a> > Testimonios </div>
                 <br />
                 <br />
-                <h1><b>Testimonios</b></h1>
+                <h1 style="margin-left: 8px;"><b>Testimonios</b></h1>
                 <div style="display: inline-block;" class="uni_response">
                     <div style="width: 98%; height: auto;">
-                        <span>Somos una empresa peruana con mas de 30 años en el mercado Que con cuatro lineas de negocio : <br /> unidad de gruas, unidad de fajas tranportadoras, tiendas y servicio tecnico. representamos a marcas de prestigio mundial como YALE INDUSTRAL PRODUCTS para la linea de iaje FENNER DUNLOP para la linea de fajas transportadoras, CONDUCTIX para sistema de electrificacion, ASGCO para accesorios de fajas transportadoras y DUNLOP para fajas en V. Nuestras mayores fortalezas son nuestro personal altamente calificado y el respaldo de nuestros proveedores.</span><br />
+                        <div style="width: 96%; margin: 0 auto;">Somos una empresa peruana con mas de 30 años en el mercado Que con cuatro lineas de negocio : <br /> unidad de gruas, unidad de fajas tranportadoras, tiendas y servicio tecnico. representamos a marcas de prestigio mundial como YALE INDUSTRAL PRODUCTS para la linea de iaje FENNER DUNLOP para la linea de fajas transportadoras, CONDUCTIX para sistema de electrificacion, ASGCO para accesorios de fajas transportadoras y DUNLOP para fajas en V. Nuestras mayores fortalezas son nuestro personal altamente calificado y el respaldo de nuestros proveedores....</div><br />
                         <br />
-                        <div style="display: inline-block; width: 28%; margin: 2%; vertical-align: top;"><a href="Testimonio.php"><img src="../images/uni1.jpg"></a><br /><h4 style="margin-bottom: 0px;"><a href="Testimonio.php">Nombre</a></h4>Cargo</div>
-                        <div style="display: inline-block; width: 28%; margin: 2%; vertical-align: top;"><a href="Testimonio.php"><img src="../images/uni1.jpg"></a><br /><h4 style="margin-bottom: 0px;"><a href="Testimonio.php">Nombre</a></h4>Cargo</div>
-                        <div style="display: inline-block; width: 28%; margin: 2%; vertical-align: top;"><a href="Testimonio.php"><img src="../images/uni1.jpg"></a><br /><h4 style="margin-bottom: 0px;"><a href="Testimonio.php">Nombre</a></h4>Cargo</div><br /><br />
-                        <div style="display: inline-block; width: 28%; margin: 2%; vertical-align: top;"><a href="Testimonio.php"><img src="../images/uni1.jpg"></a><br /><h4 style="margin-bottom: 0px;"><a href="Testimonio.php">Nombre</a></h4>Cargo</div>
-                        <div style="display: inline-block; width: 28%; margin: 2%; vertical-align: top;"><a href="Testimonio.php"><img src="../images/uni1.jpg"></a><br /><h4 style="margin-bottom: 0px;"><a href="Testimonio.php">Nombre</a></h4>Cargo</div>
-                        <div style="display: inline-block; width: 28%; margin: 2%; vertical-align: top;"><a href="Testimonio.php"><img src="../images/uni1.jpg"></a><br /><h4 style="margin-bottom: 0px;"><a href="Testimonio.php">Nombre</a></h4>Cargo</div>
-                        <br /><br />
+                        <div class="testimoneo">
+                            <div class="image_test"><a href="Testimonio.php"><img src="../images/testimonios.jpg"></a><br /><div class="test_nomb"><h4 style="margin-bottom: 0px; margin-top: 10px;"><a href="Testimonio.php">Nombre</a></h4>Cargo</div><div class="logo_test"><img src="../images/test_logo.png"></div></div>
+                            <div class="text_test oculto"><div style="height: 195px">Somos una empresa peruana con mas de 30 años en el mercado Que con cuatro lineas de negocio unidad de gruas, unida.....<br/><h5>Nombre</h5></div><br /><a href="testimonio.php" class="ir_test">Leer el Testimoneo ></a></div>
+                        </div>
+                        <div class="testimoneo">
+                            <div class="image_test"><a href="Testimonio.php"><img src="../images/testimonios.jpg"></a><br /><div class="test_nomb"><h4 style="margin-bottom: 0px; margin-top: 10px;"><a href="Testimonio.php">Nombre</a></h4>Cargo</div><div class="logo_test"><img src="../images/test_logo.png"></div></div>
+                            <div class="text_test oculto"><div style="height: 195px">Somos una empresa peruana con mas de 30 años en el mercado Que con cuatro lineas de negocio unidad de gruas, unida.....<br/><h5>Nombre</h5></div><br /><a href="testimonio.php" class="ir_test">Leer el Testimoneo ></a></div>
+                        </div>
+                        <div class="testimoneo">
+                            <div class="image_test"><a href="Testimonio.php"><img src="../images/testimonios.jpg"></a><br /><div class="test_nomb"><h4 style="margin-bottom: 0px; margin-top: 10px;"><a href="Testimonio.php">Nombre</a></h4>Cargo</div><div class="logo_test"><img src="../images/test_logo.png"></div></div>
+                            <div class="text_test oculto"><div style="height: 195px">Somos una empresa peruana con mas de 30 años en el mercado Que con cuatro lineas de negocio unidad de gruas, unida.....<br/><h5>Nombre</h5>.</div><br /><a href="testimonio.php" class="ir_test">Leer el Testimoneo ></a></div>
+                        </div><br /><br />
+                        <div class="testimoneo">
+                            <div class="image_test"><a href="Testimonio.php"><img src="../images/testimonios.jpg"></a><br /><div class="test_nomb"><h4 style="margin-bottom: 0px; margin-top: 10px;"><a href="Testimonio.php">Nombre</a></h4>Cargo</div><div class="logo_test"><img src="../images/test_logo.png"></div></div>
+                            <div class="text_test oculto"><div style="height: 195px">Somos una empresa peruana con mas de 30 años en el mercado Que con cuatro lineas de negocio unidad de gruas, unida.....<br/><h5>Nombre</h5></div><br /><a href="testimonio.php" class="ir_test">Leer el Testimoneo ></a></div>
+                        </div>
+                        <div class="testimoneo">
+                            <div class="image_test"><a href="Testimonio.php"><img src="../images/testimonios.jpg"></a><br /><div class="test_nomb"><h4 style="margin-bottom: 0px; margin-top: 10px;"><a href="Testimonio.php">Nombre</a></h4>Cargo</div><div class="logo_test"><img src="../images/test_logo.png"></div></div>
+                            <div class="text_test oculto"><div style="height: 195px;">Somos una empresa peruana con mas de 30 años en el mercado Que con cuatro lineas de negocio unidad de gruas, unida.....<br/><h5>Nombre</h5>.</div><br /><a href="testimonio.php" class="ir_test">Leer el Testimoneo ></a></div>
+                        </div>
+                        <div class="testimoneo">
+                            <div class="image_test"><a href="Testimonio.php"><img src="../images/testimonios.jpg"></a><br /><div class="test_nomb"><h4 style="margin-bottom: 0px; margin-top: 10px;"><a href="Testimonio.php">Nombre</a></h4>Cargo</div><div class="logo_test"><img src="../images/test_logo.png"></div></div>
+                            <div class="text_test oculto"><div style="height: 195px">Somos una empresa peruana con mas de 30 años en el mercado Que con cuatro lineas de negocio unidad de gruas, unida.....<br/><h5>Nombre</h5></div><br /><a href="testimonio.php" class="ir_test">Leer el Testimoneo ></a></div>
+                        </div><br /><br />
                     </div>
                 </div>
                 <div id="post_p" style="width: 320px; display: inline-block; margin-left: 20px; margin-top: 10px; vertical-align: top;">
@@ -209,8 +226,8 @@
                         <section style='margin-top: 15px;'>
                             <div class="footer-op">
                                 <span><img src="../images/sitemap.png">Sitemap</span>
-                                <span><img src="../images/contactenos.png">Contáctenos</span>
-                                <span><img src="../images/home.png">Home</span>
+                                <span><a href="../contactenos.php"><img src="../images/contactenos.png">Contáctenos</a></span>
+                                <span><a href="../index.html"><img src="../images/home.png">Home</a></span>
                             </div>
                         </section>
                     </div>
@@ -335,6 +352,16 @@
                 $j(".footer-menu span b").text("Ocultar Menu");
                 $j(".footer-menu img").attr("src", "../images/flecha_abajo.png");
             }
+        });
+        var testi_content;
+        $j(".testimoneo").mouseenter(function(){
+            $j(this).css("background-color","#F3F3F3");
+           $j(".text_test",$j(this)).removeClass("oculto");
+           $j(".image_test",$j(this)).addClass("oculto");
+        }).mouseleave(function(){
+            $j(this).css("background-color","#FFF");
+            $j(".text_test",$j(this)).addClass("oculto");
+           $j(".image_test",$j(this)).removeClass("oculto");
         });
     });
 </script>
