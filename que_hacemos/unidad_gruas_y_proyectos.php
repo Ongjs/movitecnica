@@ -102,7 +102,7 @@
         <div class="container">	
             <div id="post_grids" class="row" style="margin-top: -20px;">
                 <div style="margin-left: 20px;">
-                    <span> <a href="../index.html">Inicio</a> > <a href="Que_Hacemos.php">Que Hacemos</a> > Unidad Grúas y Proyectos</span>
+                    <span> <a href="../index.html">Inicio</a> > <a href="Que_Hacemos.php">Que Hacemos</a> > Unidad de Grúas y Proyectos</span>
                     <br />
                     <br />
                     <div class="image_box2"><img src="../images/gruas_y_proyectos.png" style=""></div>
@@ -110,7 +110,7 @@
                     <br />
                     <div style="display: inline-block;" class="uni_response">
                         <div style="width: 98%; text-align: left;">
-                            <h1><b>Unidad Grúas y Proyectos</b></h1>
+                            <h1><b>Unidad de Grúas y Proyectos</b></h1>
                             <div>
                                 Somos una empresa peruana con mas de 30 años en el mercado Que con cuatro lineas de negocio: unidad de gruas, unidad de fajas tranportadoras, tiendas y servicio tecnico. representamos a marcas de prestigio mundial como YALE INDUSTRAL PRODUCTS para la linea de iaje FENNER DUNLOP para la linea de fajas transportadoras, CONDUCTIX para sistema de electrificacion, ASGCO para accesorios de fajas transportadoras y DUNLOP para fajas en V. Nuestras mayores fortalezas son nuestro personal altamente calificado y el respaldo de nuestros proveedores.
                                 <br /><br />

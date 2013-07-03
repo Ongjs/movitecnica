@@ -225,15 +225,6 @@
                                         <div style="width: 100%; margin-bottom: 10px;"> <h3 style="display: inline-block; vertical-align: top; margin-top: 10px;"> <b><a href="../Contactenos.php">Contáctenos</a></b> </h3><div style="display: inline-block; margin-left: 8px;"><img src="../images/logo_solo.png" style="width: 38px"></div></div>
                                         <span>Póngase en contacto con nuestros expertos, para averiguar cómo podemos ayudarle a usted y a su empresa a tener éxito</span>
                                         </div><br />
-                                        <div style="border-top: 1px solid #D7D7D7">
-                                            <br />
-                                        <h3><b>Noticias Recientes</b></h3>   
-                                        <span><a href="Noticia.php">Allnorth was a Finalist for the North Saska-toon Business Association (NSBA) Safe Employer Award - 04/10/2013</a> <br /><br />
-                                            Allnorth was a Finalist for the North Saska-toon Business Association (NSBA) Safe Employer Award - 04/10/2013</span>
-                                        <br /><br />
-                                        <a class="button normal small" href="Noticia.php">Ver más</a><br /><br />
-                                        <a href="Media.php">Ver Todas ></a>
-                                        </div>
                                     </li>
                                 </ul>
                             </div>

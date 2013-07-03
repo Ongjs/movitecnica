@@ -1032,10 +1032,7 @@
     <script type="text/javascript">
         $j(document).ready(function() {
             var menu = true, $height;
-            console.log($j(".title_share:first-child")[0].firstChild.nextSibling.offsetHeight)
             $height = parseInt($j(".title_share:first-child")[0].firstChild.nextSibling.offsetHeight) + 5;
-            console.log($height)
-            console.log($j(".title_share").css($height + "px"));
             $j(".title_share").css("height", $height + "px");
             //            $j(".selec_img_hover").on("mouseenter",function(){
 //                $j(this).fadeOut(0);
