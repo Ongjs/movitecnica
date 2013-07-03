@@ -105,7 +105,7 @@
                     <span> <a href="../index.html">Inicio</a> > <a href="Que_Hacemos.php">Que Hacemos</a> > Unidad Grúas y Proyectos</span>
                     <br />
                     <br />
-                    <div class="image_box"><img src="../images/gruas_y_proyectos.png" style=""></div>
+                    <div class="image_box2"><img src="../images/gruas_y_proyectos.png" style=""></div>
                     <br />
                     <br />
                     <div style="display: inline-block;" class="uni_response">

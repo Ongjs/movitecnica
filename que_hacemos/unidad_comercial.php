@@ -105,7 +105,7 @@
                     <span> <a href="../index.html">Inicio</a> > <a href="Que_Hacemos.php">Que Hacemos</a> > Unidad Comercial</span>
                     <br />
                     <br />
-                    <div class="image_box"><img src="../images/unidad_comercial.png" style=""></div>
+                    <div class="image_box2"><img src="../images/unidad_comercial.png" style=""></div>
                     <br />
                     <br />
                     <div style="display: inline-block;" class="uni_response">
