@@ -105,7 +105,7 @@
                 <span> <a href="../index.html">Inicio</a> > Que Hacemos</span>
                 <br />
                 <br />
-                    <div class="image_box"><img src="../images/que_hacemos.png" style=""></div>
+                    <div class="image_box2"><img src="../images/que_hacemos.png" style=""></div>
                 <br />
                 <br />
                 <div style="display: inline-block;" class="uni_response">

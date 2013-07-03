@@ -110,7 +110,7 @@
                     <br />
                     <div style="display: inline-block;" class="uni_response">
                         <div style="width: 98%; text-align: left;">
-                            <h3><b>Unidad Comercial</b></h3>
+                            <h1><b>Unidad Comercial</b></h1>
                             <div>
                                 Somos una empresa peruana con mas de 30 años en el mercado Que con cuatro lineas de negocio: unidad de gruas, unidad de fajas tranportadoras, tiendas y servicio tecnico. representamos a marcas de prestigio mundial como YALE INDUSTRAL PRODUCTS para la linea de iaje FENNER DUNLOP para la linea de fajas transportadoras, CONDUCTIX para sistema de electrificacion, ASGCO para accesorios de fajas transportadoras y DUNLOP para fajas en V. Nuestras mayores fortalezas son nuestro personal altamente calificado y el respaldo de nuestros proveedores.
                                 <br /><br />
