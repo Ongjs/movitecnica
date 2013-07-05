@@ -7,7 +7,7 @@
         <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
         <link rel="shortcut icon" href="../images/favicon_movi.ico">
-        
+
         <link href='http://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
         <link rel='stylesheet'  href='../css/mystyles.css' type='text/css' media='all' />
         <link rel='stylesheet' id='reset-css'  href='../css/reset9d52.css?ver=3.5.1' type='text/css' media='all' />
@@ -68,7 +68,7 @@
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../SIG/politica.php">Política</a></li>
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../SIG/garantia.php">Garantía</a></li>
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../SIG/reclamos.php">Reclamos</a></li>
-                                             </ul>
+                                            </ul>
                                         </li>
                                         <li id="menu-item-1126"  ><a href="../trabaje_con_nosotros/trabaje_con_nosotros.php">Trabaje con Nosotros</a>
                                             <ul class="sub-menu">
@@ -102,82 +102,103 @@
         <div class="container">	
             <div id="post_grids" class="row" style=" margin-top: -20px; max-width: none;">
                 <div style="margin-left: 20px;">
-                <span> <a href="../index.html">Inicio</a> > Conocenos</span>
-                <br />
-                <br />
-                <h1><b>Conocenos</b></h1>
-                <div style="display: inline-block;" class="uni_response">
-                    <div style="width: 98%; height: auto;">
-                        <div class="image_box"><img src="../images/Conocenos.png"></div><br />
-                        <span>Somos una empresa peruana con mas de 30 años en el mercado Que con cuatro lineas de negocio : <br /> unidad de gruas, unidad de fajas tranportadoras, tiendas y servicio tecnico. representamos a marcas de prestigio mundial como YALE INDUSTRAL PRODUCTS para la linea de iaje FENNER DUNLOP para la linea de fajas transportadoras, CONDUCTIX para sistema de electrificacion, ASGCO para accesorios de fajas transportadoras y DUNLOP para fajas en V. Nuestras mayores fortalezas son nuestro personal altamente calificado y el respaldo de nuestros proveedores.</span><br />
-                        <br />
-                        <h3><b>Historia</b></h3>
-                        <div id="mobanner-container">
-                            <div id="mobanner_arrow_left"></div>
-                            <div id="mobanner-content">
-                                <img id="mobanner" src="../images/linea-de-tiempo.png"/>
+                    <span> <a href="../index.html">Inicio</a> > Conócenos</span>
+                    <br />
+                    <br />
+                    <h1><b>Conócenos</b></h1>
+                    <div style="display: inline-block;" class="uni_response">
+                        <div style="width: 98%; height: auto;">
+                            <div class="image_box"><img src="../images/Conocenos.png"></div><br />
+                            <div style="border-bottom: 1px solid #D7D7D7; width: 100%;">
+                                Somos una empresa peruana con más de 30 años en el mercado, líderes en el negocio de izaje en el Perú, contamos con profesionales altamente calificados para ofrecer la mejor calidad, atención y apoyo en todos los servicios. Proveemos  la ingeniería, los equipos, el servicio técnico, el montaje y la puesta en marcha del proyecto. Nuestra experiencia y solidez han contribuido a que contemos con una cobertura a nivel nacional, haciendo así que marcas de prestigio a nivel mundial, tales como Yale Hoist, Street, Dunlop, ASGCO, Conductix, Kühnezug,  Vetter y Cimbria,  nos confíen la distribución exclusiva de sus productos.
+                                <br /><br />
+                                <div class="listita">
+                                    <ul style="margin-bottom: 10px;"><div style="margin-bottom: 5px;"><b>Categorías:</b></div>
+                                        <li>Izaje</li>
+                                        <li>Accesorios de izaje.</li>
+                                        <li>Fajas transportadoras.</li>
+                                        <li>Accesorios de fajas.</li>
+                                        <li>Sistemas de electrificación.</li>
+                                        <li>Grúas.</li>
+                                        <li>Puentes Grúa.</li>
+                                        <li>Chutes antipolución.</li>
+                                    </ul>
+                                </div>
+                                <br />
+
+                                Nuestro servicio técnico certificado por nuestros proveedores, garantiza el mejor servicio post venta del mercado.
+                                <br /><br />
+                                <img src="../images/logos_marcas.png">
+                                <br /><br />
                             </div>
-                            <div id="mobanner_arrow_right"></div>
+                            <br />
+                            <!--                        <h3><b>Historia</b></h3>
+                                                    <div id="mobanner-container">
+                                                        <div id="mobanner_arrow_left"></div>
+                                                        <div id="mobanner-content">
+                                                            <img id="mobanner" src="../images/linea-de-tiempo.png"/>
+                                                        </div>
+                                                        <div id="mobanner_arrow_right"></div>
+                                                    </div>
+                                                    <div id="div_linea_tiempo">
+                                                        
+                                                    </div>-->
+                            <br />
+                            <span>
+                                <h3 style="margin-bottom: 6px;">Mensaje del Gerente</h3>
+                                PageMaker, el cual incluye versiones de Lorem Ipsum <br />
+                                <div style="margin-top: 10px;"><a href="mensaje_del_gerente.php">Ver más</a></div>
+                            </span>
+                            <br /><br /><span>
+                                <h3 style="margin-bottom: 6px;">Misión y Visión</h3>
+                                PageMaker, el cual incluye versiones de Lorem Ipsum <br />
+                                <div style="margin-top: 10px;"><a href="mision_y_vision.php">Ver más</a></div>
+                            </span>
+                            <br /><br /><span>
+                                <h3 style="margin-bottom: 6px;">Valores</h3>
+                                PageMaker, el cual incluye versiones de Lorem Ipsum <br />
+                                <div style="margin-top: 10px;"><a href="valores.php">Ver más</a></div>
+                            </span>
+                            <br /><br />
+                            <span>
+                                <h3 style="margin-bottom: 6px;">Equipo de trabajo</h3>
+                                PageMaker, el cual incluye versiones de Lorem Ipsum <br />
+                                <div style="margin-top: 10px;"><a href="equipo_de_trabajo.php">Ver más</a></div>
+                            </span>
+                            <br /><br />
                         </div>
-                        <div id="div_linea_tiempo">
-                            
-                        </div>
-                        <br />
-                        <span>
-                            <h3 style="margin-bottom: 6px;">Mensaje del Gerente</h3>
-                            PageMaker, el cual incluye versiones de Lorem Ipsum <br />
-                            <div style="margin-top: 10px;"><a href="mensaje_del_gerente.php">Ver más</a></div>
-                        </span>
-                        <br /><br /><span>
-                            <h3 style="margin-bottom: 6px;">Misión y Visión</h3>
-                            PageMaker, el cual incluye versiones de Lorem Ipsum <br />
-                            <div style="margin-top: 10px;"><a href="mision_y_vision.php">Ver más</a></div>
-                        </span>
-                        <br /><br /><span>
-                            <h3 style="margin-bottom: 6px;">Valores</h3>
-                            PageMaker, el cual incluye versiones de Lorem Ipsum <br />
-                            <div style="margin-top: 10px;"><a href="valores.php">Ver más</a></div>
-                        </span>
-                        <br /><br />
-                        <span>
-                            <h3 style="margin-bottom: 6px;">Equipo de trabajo</h3>
-                            PageMaker, el cual incluye versiones de Lorem Ipsum <br />
-                            <div style="margin-top: 10px;"><a href="equipo_de_trabajo.php">Ver más</a></div>
-                        </span>
-                        <br /><br />
                     </div>
-                </div>
-                <div id="post_p" style="width: 320px; display: inline-block; margin-left: 20px; margin-top: 10px; vertical-align: top;">
-                    <div class="widget tab_wrapper white_box" id="tab_wrapper_tab_widget-2">
-                        <div class="clear"></div>
-                        <div class="tabs_container">
-                            <div id="post_tab" class="tab_content recent_posts">
-                                <ul>
-                                    <li> 
-                                        <div style="border-top: 1px solid #D7D7D7; padding-top: 10px;">
-                                        <div style="width: 100%; margin-bottom: 10px;"> <h3 style="display: inline-block; vertical-align: top; margin-top: 10px;"> <b><a href="../Contactenos.php">Contáctenos</a></b> </h3><div style="display: inline-block; margin-left: 8px;"><img src="../images/logo_solo.png" style="width: 38px"></div></div>
-                                        <span>Póngase en contacto con nuestros expertos, para averiguar cómo podemos ayudarle a usted y a su empresa a tener éxito</span>
-                                        </div><br />
-                                        <div style="border-top: 1px solid #D7D7D7">
-                                            <br />
-                                        <h3><b>Noticias Recientes</b></h3>   
-                                        <span><a href="../media/noticia.php">Allnorth was a Finalist for the North Saska-toon Business Association (NSBA) Safe Employer Award - 04/10/2013</a> <br /><br />
-                                            Allnorth was a Finalist for the North Saska-toon Business Association (NSBA) Safe Employer Award - 04/10/2013</span>
-                                        <br /><br />
-                                        <a class="button normal small" href="../media/noticia.php">Ver más</a><br /><br />
-                                        <a href="../media/media.php">Ver Todas ></a>
-                                        </div>
-                                    </li>
-                                </ul>
+                    <div id="post_p" style="width: 320px; display: inline-block; margin-left: 20px; margin-top: 10px; vertical-align: top;">
+                        <div class="widget tab_wrapper white_box" id="tab_wrapper_tab_widget-2">
+                            <div class="clear"></div>
+                            <div class="tabs_container">
+                                <div id="post_tab" class="tab_content recent_posts">
+                                    <ul>
+                                        <li> 
+                                            <div style="border-top: 1px solid #D7D7D7; padding-top: 10px;">
+                                                <div style="width: 100%; margin-bottom: 10px;"> <h3 style="display: inline-block; vertical-align: top; margin-top: 10px;"> <b><a href="../Contactenos.php">Contáctenos</a></b> </h3><div style="display: inline-block; margin-left: 8px;"><img src="../images/logo_solo.png" style="width: 38px"></div></div>
+                                                <span>Póngase en contacto con nuestros expertos, para averiguar cómo podemos ayudarle a usted y a su empresa a tener éxito</span>
+                                            </div><br />
+                                            <div style="border-top: 1px solid #D7D7D7">
+                                                <br />
+                                                <h3><b>Noticias Recientes</b></h3>   
+                                                <span><a href="../media/noticia.php">Allnorth was a Finalist for the North Saska-toon Business Association (NSBA) Safe Employer Award - 04/10/2013</a> <br /><br />
+                                                    Allnorth was a Finalist for the North Saska-toon Business Association (NSBA) Safe Employer Award - 04/10/2013</span>
+                                                <br /><br />
+                                                <a class="button normal small" href="../media/noticia.php">Ver más</a><br /><br />
+                                                <a href="../media/media.php">Ver Todas ></a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
+
                         </div>
 
                     </div>
 
                 </div>
-
-            </div>
-            <footer class="footer">
+                <footer class="footer">
                     <br />
                     <section>
                         <span class="footer-menu"> <span style="font-size: 17px"><b>Ocultar Menú</b></span> <img src="../images/flecha_abajo.png" style="margin-bottom: -2px;"></span>
@@ -243,195 +264,195 @@
                         </section>
                     </div>
                 </footer>
-        </div>
-        <br />
-        <div style="display:none">
-            <div id="inline1">
-                <iframe src="http://player.vimeo.com/video/52560308" width="800" height="450" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-            </div>
-        </div>
-        <div class="load_more">	
-            <nav id="page-nav">
-                <a href="#"></a>	</nav>
-        </div>
-        <!-- end infinite scroll -->
-    </div>
-    <div id="footer">
-        <div class="container">
-            <div class="row">
-                <div class="twelve columns wrapper">
-                    <div class="ft_left"><img src="../images/logo_solo.png" width="30"><div style="margin-top: 8px; display: inline-block; vertical-align: top; margin-left: 5px;">Copyright © Movitécnica 2013. Todos los derechos reservados</div></div>
-                    <div class="ft_right"></div>
-                    <div class="clear"></div>
-                </div>
-            </div>
-        </div><!-- .container -->	
-    </div>
-    <!-- #footer -->
-
-    <link rel='stylesheet' id='demo-style'  href='_switcher/style.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='demo-minicolor'  href='_switcher/miniColors/jQuery.miniColors.css' type='text/css' media='all' />
-
-    <script type="text/javascript">
-        var template = '../index.html';
-    </script>
-    <div id="pl_control_panel" style="display: none;">
-        <div id="panel_control" class="control-open"></div>
-        <div class="padd">
-
-            <div class="input" id="predefined_skins">
-                <h4>Color Schemes</h4>
-                <a href="#" id="skin1" data-primary_color="e74c3c" data-color="fafafa" data-pattern="noise_pattern_with_crosslines"></a>
-                <a href="#" id="skin2" data-primary_color="2ecc71" data-color="fafafa" data-pattern="bg0"></a>
-                <a href="#" id="skin3" data-primary_color="3498db" data-color="fafafa" data-pattern="bg1"></a>
-                <a href="#" id="skin4" data-primary_color="9b59b6" data-color="fafafa" data-pattern="bg2"></a>
-                <a href="#" id="skin5" data-primary_color="f39c12" data-color="fafafa" data-pattern="bg3"></a>
-                <a href="#" id="skin6" data-primary_color="d35400" data-color="fafafa" data-pattern="retina_wood"></a>
-                <a href="#" id="skin7" data-primary_color="1abc9c" data-color="fafafa" data-pattern="purty_wood"></a>
-                <div class="clear"></div>
-            </div>
-
-            <div class='input'>
-                <h4>Background</h4>
-                <input type='text' value='#fafafa' name='custom_bg_color' id='custom_bg_color'/>
-
-            </div>
-
-            <div class='input'>
-                <h4>Example Patterns</h4>
-                <div id='custom_bg_image' class="custom_bg_image">
-                    <img src='_switcher/../images/_blank.png' data-img="bg0" alt="demo" />
-                    <img src='_switcher/../images/_blank.png' data-img="bg1" alt="demo" />
-                    <img src='_switcher/../images/_blank.png' data-img="bg2" alt="demo" />
-                    <img src='_switcher/../images/_blank.png' data-img="bg3" alt="demo" />
-                    <img src='_switcher/../images/_blank.png' data-img="retina_wood" alt="demo" />
-                    <img src='_switcher/../images/_blank.png' data-img="bg4" alt="demo" />
-                    <img src='_switcher/../images/_blank.png' data-img="bg5" alt="demo" />
-                    <img src='_switcher/../images/_blank.png' data-img="white_brick_wall" alt="demo" />
-                    <img src='_switcher/../images/_blank.png' data-img="rip_jobs" alt="demo" />
-                    <img src='_switcher/../images/_blank.png' data-img="purty_wood" alt="demo" />
-                    <div class="clear"></div>
-                </div>
             </div>
             <br />
-            <input type="button" id="reset_style" value="Reset" />
+            <div style="display:none">
+                <div id="inline1">
+                    <iframe src="http://player.vimeo.com/video/52560308" width="800" height="450" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                </div>
+            </div>
+            <div class="load_more">	
+                <nav id="page-nav">
+                    <a href="#"></a>	</nav>
+            </div>
+            <!-- end infinite scroll -->
+        </div>
+        <div id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="twelve columns wrapper">
+                        <div class="ft_left"><img src="../images/logo_solo.png" width="30"><div style="margin-top: 8px; display: inline-block; vertical-align: top; margin-left: 5px;">Copyright © Movitécnica 2013. Todos los derechos reservados</div></div>
+                        <div class="ft_right"></div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div><!-- .container -->	
+        </div>
+        <!-- #footer -->
 
-            <!--- end -->
+        <link rel='stylesheet' id='demo-style'  href='_switcher/style.css' type='text/css' media='all' />
+        <link rel='stylesheet' id='demo-minicolor'  href='_switcher/miniColors/jQuery.miniColors.css' type='text/css' media='all' />
+
+        <script type="text/javascript">
+            var template = '../index.html';
+        </script>
+        <div id="pl_control_panel" style="display: none;">
+            <div id="panel_control" class="control-open"></div>
+            <div class="padd">
+
+                <div class="input" id="predefined_skins">
+                    <h4>Color Schemes</h4>
+                    <a href="#" id="skin1" data-primary_color="e74c3c" data-color="fafafa" data-pattern="noise_pattern_with_crosslines"></a>
+                    <a href="#" id="skin2" data-primary_color="2ecc71" data-color="fafafa" data-pattern="bg0"></a>
+                    <a href="#" id="skin3" data-primary_color="3498db" data-color="fafafa" data-pattern="bg1"></a>
+                    <a href="#" id="skin4" data-primary_color="9b59b6" data-color="fafafa" data-pattern="bg2"></a>
+                    <a href="#" id="skin5" data-primary_color="f39c12" data-color="fafafa" data-pattern="bg3"></a>
+                    <a href="#" id="skin6" data-primary_color="d35400" data-color="fafafa" data-pattern="retina_wood"></a>
+                    <a href="#" id="skin7" data-primary_color="1abc9c" data-color="fafafa" data-pattern="purty_wood"></a>
+                    <div class="clear"></div>
+                </div>
+
+                <div class='input'>
+                    <h4>Background</h4>
+                    <input type='text' value='#fafafa' name='custom_bg_color' id='custom_bg_color'/>
+
+                </div>
+
+                <div class='input'>
+                    <h4>Example Patterns</h4>
+                    <div id='custom_bg_image' class="custom_bg_image">
+                        <img src='_switcher/../images/_blank.png' data-img="bg0" alt="demo" />
+                        <img src='_switcher/../images/_blank.png' data-img="bg1" alt="demo" />
+                        <img src='_switcher/../images/_blank.png' data-img="bg2" alt="demo" />
+                        <img src='_switcher/../images/_blank.png' data-img="bg3" alt="demo" />
+                        <img src='_switcher/../images/_blank.png' data-img="retina_wood" alt="demo" />
+                        <img src='_switcher/../images/_blank.png' data-img="bg4" alt="demo" />
+                        <img src='_switcher/../images/_blank.png' data-img="bg5" alt="demo" />
+                        <img src='_switcher/../images/_blank.png' data-img="white_brick_wall" alt="demo" />
+                        <img src='_switcher/../images/_blank.png' data-img="rip_jobs" alt="demo" />
+                        <img src='_switcher/../images/_blank.png' data-img="purty_wood" alt="demo" />
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <br />
+                <input type="button" id="reset_style" value="Reset" />
+
+                <!--- end -->
+            </div>	
         </div>	
-    </div>	
 
-    <script src="_switcher/miniColors/jQuery.miniColors.min.js"></script>
-    <script src="_switcher/script.js"></script>
+        <script src="_switcher/miniColors/jQuery.miniColors.min.js"></script>
+        <script src="_switcher/script.js"></script>
 
-    <div id="toTop"><a href="#">Subir</a></div>
-    <script type='text/javascript' src='../js/jQuery.easing-1.35152.js?ver=1.0'></script>
-    <script type='text/javascript' src='../js/jQuery.masonry.min5152.js?ver=1.0'></script>
-    <script type='text/javascript' src='../js/jQuery.imagesloaded.min5152.js?ver=1.0'></script>
-    <script type='text/javascript' src='../js/jQuery.infinitescroll.min5152.js?ver=1.0'></script>
-    <script type='text/javascript' src='../js/superfish5152.js?ver=1.0'></script>
-    <script type='text/javascript' src='../js/mediaelement/build/mediaelement-and-player.min5152.js?ver=1.0'></script>
-    <script type='text/javascript' src='../js/fancybox/jQuery.fancybox-1.3.4.pack5152.js?ver=1.0'></script>
-    <script type='text/javascript' src='../js/jQuery.mobilemenu5152.js?ver=1.0'></script>
-    <script type='text/javascript' src='../js/jQuery.fitvids5152.js?ver=1.0'></script>
-    <script type='text/javascript' src='../js/jQuery.flexslider-min5152.js?ver=1.0'></script>
-    <script type='text/javascript' src='../js/jQuery.placeholder.min5152.js?ver=1.0'></script>
-    <script type='text/javascript' src='../js/jflickrfeed.min5152.js?ver=1.0'></script>
+        <div id="toTop"><a href="#">Subir</a></div>
+        <script type='text/javascript' src='../js/jQuery.easing-1.35152.js?ver=1.0'></script>
+        <script type='text/javascript' src='../js/jQuery.masonry.min5152.js?ver=1.0'></script>
+        <script type='text/javascript' src='../js/jQuery.imagesloaded.min5152.js?ver=1.0'></script>
+        <script type='text/javascript' src='../js/jQuery.infinitescroll.min5152.js?ver=1.0'></script>
+        <script type='text/javascript' src='../js/superfish5152.js?ver=1.0'></script>
+        <script type='text/javascript' src='../js/mediaelement/build/mediaelement-and-player.min5152.js?ver=1.0'></script>
+        <script type='text/javascript' src='../js/fancybox/jQuery.fancybox-1.3.4.pack5152.js?ver=1.0'></script>
+        <script type='text/javascript' src='../js/jQuery.mobilemenu5152.js?ver=1.0'></script>
+        <script type='text/javascript' src='../js/jQuery.fitvids5152.js?ver=1.0'></script>
+        <script type='text/javascript' src='../js/jQuery.flexslider-min5152.js?ver=1.0'></script>
+        <script type='text/javascript' src='../js/jQuery.placeholder.min5152.js?ver=1.0'></script>
+        <script type='text/javascript' src='../js/jflickrfeed.min5152.js?ver=1.0'></script>
 
-</body>
-<script type="text/javascript">
-    $j(document).ready(function() {
-        
-//        $j("#div_linea_tiempo").load("../horizontal.html");
-//                        Historia
-        var mo_banner = $j('#mobanner'),
-        mo_banner_margin = 0,
-        position_left = mo_banner_margin,
-        position_right = $j('#mobanner-content').width() + mo_banner_margin,
-        animate_left = 25,
-        value_move,
-        mo_interval;
-        
-    var mo_banner2left = function() {
-        
-        if (mo_banner.position().left < position_left  ) {    
-            mo_banner.stop();
-            value_move = (animate_left + mo_banner.position().left);
-            value_move = value_move < position_left ? animate_left : position_left - mo_banner.position().left;
-            mo_banner.animate({ left: '+=' + value_move + 'px' });
-        } else {
-            mo_banner_stop();
-        }
-    };
-    
-    var mo_banner2right = function() {
-        if (mo_banner.position().left > position_right - mo_banner.width()) {
-            mo_banner.stop();
-            value_move = (position_right - mo_banner.width() - mo_banner.position().left) * -1;
-            value_move = value_move > animate_left ? animate_left : value_move;
-            mo_banner.animate({ left: '-=' + value_move + 'px' });
-        } else {
-            mo_banner_stop();
-        }
-    };
-    
-    var mo_banner_stop = function() {
-        mo_banner.stop();
-        window.clearInterval(mo_interval);
-    }
-    
-    $j('div#mobanner_arrow_left').on({
-        "mouseenter": function() {
-            if (mo_banner.position().left < position_left) {
-                mo_interval = window.setInterval(mo_banner2left, 200);
+    </body>
+    <script type="text/javascript">
+        $j(document).ready(function() {
+
+    //        $j("#div_linea_tiempo").load("../horizontal.html");
+    //                        Historia
+            var mo_banner = $j('#mobanner'),
+                    mo_banner_margin = 0,
+                    position_left = mo_banner_margin,
+                    position_right = $j('#mobanner-content').width() + mo_banner_margin,
+                    animate_left = 25,
+                    value_move,
+                    mo_interval;
+
+            var mo_banner2left = function() {
+
+                if (mo_banner.position().left < position_left) {
+                    mo_banner.stop();
+                    value_move = (animate_left + mo_banner.position().left);
+                    value_move = value_move < position_left ? animate_left : position_left - mo_banner.position().left;
+                    mo_banner.animate({left: '+=' + value_move + 'px'});
+                } else {
+                    mo_banner_stop();
+                }
+            };
+
+            var mo_banner2right = function() {
+                if (mo_banner.position().left > position_right - mo_banner.width()) {
+                    mo_banner.stop();
+                    value_move = (position_right - mo_banner.width() - mo_banner.position().left) * -1;
+                    value_move = value_move > animate_left ? animate_left : value_move;
+                    mo_banner.animate({left: '-=' + value_move + 'px'});
+                } else {
+                    mo_banner_stop();
+                }
+            };
+
+            var mo_banner_stop = function() {
+                mo_banner.stop();
+                window.clearInterval(mo_interval);
             }
-        }, 
-        "mouseleave": function() {
-            mo_banner_stop();
-        }
-    });
-    
-    $j('div#mobanner_arrow_right').on({
-        "mouseenter": function() {
-            if (mo_banner.position().left > position_right - mo_banner.width()) {
-                mo_interval = window.setInterval(mo_banner2right, 200);
-            }
-        }, 
-        "mouseleave": function() {
-            mo_banner_stop();
-        }
-    });
-    
-    $j('div#mobanner_arrow_left, div#mobanner_arrow_right').on({
-        "mousedown": function() {
-            animate_left = 100;
-        }, 
-        "mouseup": function() {
-            animate_left = 25;
-        }
-    });
-//                        menu
-        $j("#skin3").trigger("click");
-        var menu = true;
-        $j(".footer-menu").click(function() {
-            $j('.footer-trog').animate({
-                height: 'toggle',
-                opacity: 'toggle'
-            }, 900);
-            if (menu) {
 
-                menu = false;
-                $j(".footer-menu span b").text("Mostrar Menu");
-                $j(".footer-menu img").attr("src", "../images/flecha_arriba.png");
-            } else {
-                $j('html, body').animate({
-                    scrollTop: $j(document).height()
+            $j('div#mobanner_arrow_left').on({
+                "mouseenter": function() {
+                    if (mo_banner.position().left < position_left) {
+                        mo_interval = window.setInterval(mo_banner2left, 200);
+                    }
                 },
-                1500);
-                menu = true;
-                $j(".footer-menu span b").text("Ocultar Menu");
-                $j(".footer-menu img").attr("src", "../images/flecha_abajo.png");
-            }
+                "mouseleave": function() {
+                    mo_banner_stop();
+                }
+            });
+
+            $j('div#mobanner_arrow_right').on({
+                "mouseenter": function() {
+                    if (mo_banner.position().left > position_right - mo_banner.width()) {
+                        mo_interval = window.setInterval(mo_banner2right, 200);
+                    }
+                },
+                "mouseleave": function() {
+                    mo_banner_stop();
+                }
+            });
+
+            $j('div#mobanner_arrow_left, div#mobanner_arrow_right').on({
+                "mousedown": function() {
+                    animate_left = 100;
+                },
+                "mouseup": function() {
+                    animate_left = 25;
+                }
+            });
+    //                        menu
+            $j("#skin3").trigger("click");
+            var menu = true;
+            $j(".footer-menu").click(function() {
+                $j('.footer-trog').animate({
+                    height: 'toggle',
+                    opacity: 'toggle'
+                }, 900);
+                if (menu) {
+
+                    menu = false;
+                    $j(".footer-menu span b").text("Mostrar Menu");
+                    $j(".footer-menu img").attr("src", "../images/flecha_arriba.png");
+                } else {
+                    $j('html, body').animate({
+                        scrollTop: $j(document).height()
+                    },
+                    1500);
+                    menu = true;
+                    $j(".footer-menu span b").text("Ocultar Menu");
+                    $j(".footer-menu img").attr("src", "../images/flecha_abajo.png");
+                }
+            });
         });
-    });
-</script>
+    </script>
 </html>

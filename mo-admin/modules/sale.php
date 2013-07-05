@@ -1,2 +1,2 @@
-<font style="font-size: 14px;">Module not purchased, please contact your nearest distributor.
-<br /><br />Thank you for letting us join your team.</font>
+<font style="font-size: 14px;">Modulo no comprado, Por favor contacte a su distribuidor mas cercano
+<br /><br />Gracias por dejarnos entrar en tu equipo</font>

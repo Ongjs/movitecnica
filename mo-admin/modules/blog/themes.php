@@ -1,13 +1,13 @@
-<a href="#" class="new">New</a>
-<a href="#" class="cancel list">Cancel</a>
+<a href="#" class="new">Nuevo</a>
+<a href="#" class="cancel list">Cancelar</a>
 <h1>Blog</h1>
-<a href="./">Home </a> - <a href="#" class="list">Themes</a><br /><br /><br />
+<a href="./">Inicio </a> - <a href="#" class="list">Temas</a><br /><br /><br />
 <div class="MOForm">
 	<fieldset class="search">
-		<legend>Filter Information</legend>
+		<legend>Filtrar informacion</legend>
 		<table>
 			<tr>
-				<td><label for="search">Enter the search term please</label></td>
+				<td><label for="search">Introdusca el termino a buscar</label></td>
 				<td><input type="text" name="search" id="search" /></td>
 			</tr>
 		</table>
@@ -23,12 +23,12 @@ $(document).ready(function(){
 	Shadowbox.init();
 	$(".new").click(function(){ mo_new(mod); return false; });
 	$("#search").keyup(function(){ mo_search(mod); return false; });
-	$(".list").live("click", function(){ mo_list(mod); return false; });
-	$(".status").live("click", function(){ mo_status(mod, $(this)); return false; });
-	$(".delete").live("click", function(){ mo_delete(mod, $(this)); return false; });
-	$(".update").live("click", function(){ mo_update(mod, $(this)); return false; });
+	$(".list").on("click", function(){ mo_list(mod); return false; });
+	$(".status").on("click", function(){ mo_status(mod, $(this)); return false; });
+	$(".delete").on("click", function(){ mo_delete(mod, $(this)); return false; });
+	$(".update").on("click", function(){ mo_update(mod, $(this)); return false; });
 
-	$("form#save").live("submit", function(){
+	$("form#save").on("submit", function(){
 		tinyMCE.triggerSave();
 		if(!required('#name', 'You must enter a Name')) return false;
 		if(!required('#file_guid', 'Choose a File')) return false;
@@ -38,7 +38,7 @@ $(document).ready(function(){
 		return false;
 	});
 
-	$("form#update").live("submit", function(){
+	$("form#update").on("submit", function(){
 		tinyMCE.triggerSave();
 		if(!required('#name', 'You must enter a Name')) return false;
 		if(!required('#file_guid', 'Choose a File')) return false;

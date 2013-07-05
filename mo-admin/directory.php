@@ -1,7 +1,8 @@
 <?php
 $mod = isset($_REQUEST['mod']) ? $_REQUEST['mod'] : 0;
 $id = isset($_GET['id']) ? $_GET['id'] : "";
-$do = isset($_POST['do']) ? $_POST['do'] : "";
+$do = isset($_REQUEST['do']) ? $_REQUEST['do'] : "";
+$do = isset($_REQUEST['up']) ? 0 : $do;
 $page = isset($_POST['mod']) ? (empty($do) ? "-list" : ($do == 1 ? "-form" : "-action")) : "";
 switch($mod){
 	case 0: include "modules/welcome.php"; break;

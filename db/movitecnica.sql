@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 04-07-2013 a las 21:02:37
+-- Tiempo de generación: 05-07-2013 a las 21:55:19
 -- Versión del servidor: 5.5.24-log
 -- Versión de PHP: 5.3.13
 
@@ -66,6 +66,13 @@ CREATE TABLE IF NOT EXISTS `configuration` (
   `youtube` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `configuration`
+--
+
+INSERT INTO `configuration` (`name`, `username`, `password`, `email`, `logo`, `favicon`, `contact_email`, `address1`, `address2`, `phone1`, `phone2`, `fax`, `title`, `description`, `keywords`, `google`, `facebook`, `twitter`, `linkedin`, `skype`, `youtube`) VALUES
+('andres', 'admin', '123456', 'andresgarciadev@gmail.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
+
 -- --------------------------------------------------------
 
 --
@@ -101,7 +108,7 @@ CREATE TABLE IF NOT EXISTS `content` (
   `description` varchar(255) NOT NULL,
   `content` text NOT NULL,
   `overlap` varchar(255) NOT NULL,
-  `created` date NOT NULL,
+  `created` datetime NOT NULL,
   `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` char(1) NOT NULL,
   PRIMARY KEY (`id`)

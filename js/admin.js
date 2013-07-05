@@ -35,20 +35,19 @@ $(document).ready(function(){
 		if(!required('#username', 'You must enter a username.')) return false;
 		if(!required('#password', 'You must enter a password.')) return false;
 		$.ajax({
-			data: "mod=5&" + $(this).serialize(),
-			success: function(msg){
+			data: "mod=5&" + $(this).serialize()
+                    }).done(function(msg){
 				if(msg != "") mo_error(msg);
 				else document.location = "./";
-			}
-		});
+			});
 		return false;
 	});
 	
 	$("#form_forgot_password").submit(function(){
 		if(!required('#username2', 'You must enter a username.')) return false;
 		$.ajax({
-			data: "mod=6&" + $(this).serialize(),
-			success: function(msg){
+			data: "mod=6&" + $(this).serialize()
+			}).done(function(msg){
 				if(msg != "") mo_error(msg);
 				else{
 					$("#form_forgot_password, div.message").hide();
@@ -56,19 +55,18 @@ $(document).ready(function(){
 					$("#form_login").fadeIn();
 					$("div.message").html("Your password has been sent to your email.").fadeIn();
 				}
-			}
-		});
+			});
 		return false;
 	});
 	
-	$("a.forgot_password").live("click", function(){
+	$("a.forgot_password").on("click", function(){
 		$("#form_login").hide();
 		$("div.error").remove();
 		$("#form_forgot_password, div.message").fadeIn();
 		return false;
 	});
 	
-	$("a.login").live("click", function(){
+	$("a.login").on("click", function(){
 		$("#form_forgot_password, div.message").hide();
 		$("div.error").remove();
 		$("#form_login").fadeIn();
@@ -77,7 +75,10 @@ $(document).ready(function(){
 	
 	$("#header a.logout").click(function(){
 		confirm("Are you sure you want to close the session?", function(){
-			$.ajax({ data: "mod=7", success: function(msg){ document.location = "./"; } });
+			$.ajax({ data: "mod=7" 
+                            }).done(function(msg){ 
+                                document.location = "./"; 
+                        });
 		});
 		return false;
 	});
@@ -91,19 +92,18 @@ function mo_error(text){
 
 function mo_search(mod){
 	$.ajax({
-		data: "mod=" + mod + "&search=" + $("#search").val(),
-		success: function(html){
+		data: "mod=" + mod + "&search=" + $("#search").val()
+		}).done(function(html){
 			$("#list").html(html);
 			Shadowbox.setup();
-		}
-	});
+		});
 }
 
 function mo_list(mod){
 	var add_data = $(".filter").length > 0 ? "&filter=" + $(".filter").val() : "";
 	$.ajax({
-		data: "mod=" + mod + add_data,
-		success: function(html){
+		data: "mod=" + mod + add_data
+		}).done(function(html){
 			$("#form, #list, .search, a.cancel").hide();
 			$("#list").html(html);
 			$(".search, #list, a.new").fadeIn();
@@ -115,62 +115,59 @@ function mo_list(mod){
 				function(){ $(this).addClass("hover"); },
 				function(){ $(this).removeClass("hover"); }
 			);
-		}
-	});
+		});
 }
 
 function mo_new(mod){
 	$.ajax({
-		data: "mod=" + mod + "&do=1",
-		success : function(html){
+		data: "mod=" + mod + "&do=1"
+		}).done(function(html){
 			$("#form, .search, #list, a.new").hide();
 			$("#form").html(html);
 			$("#form, a.cancel").fadeIn();
 			$.getScript("directory.php?mod=2");
 			mo_style();
-		}
-	});
+		});
 }
 
-function mo_update(mod, e){
+function mo_update(mod, e, up){
 	$.ajax({
-		data: "mod=" + mod + "&do=1&id=" + e.attr("id"),
-		success : function(html){
+		data: "mod=" + mod + "&do=1&id=" + e.attr("id") + "up=" + up
+		}).done(function(html){
 			$("#form, .search, a.new").hide();
 			$("#list").empty();
 			$("#form").html(html);
 			$("#form, a.cancel").fadeIn();
 			$.getScript("directory.php?mod=2");
 			mo_style();
-		}
-	});
+		});
 }
 
 function mo_submit(mod, $do){
 	tinyMCE.triggerSave();
 	$.ajax({
-		data: "mod=" + mod + "&do=" + $do + "&" + $("form").serialize(),
-		success: function(){ mo_list(mod); }
-	});
+		data: "mod=" + mod + "&do=" + $do + "&" + $("form").serialize()
+		}).done(function(){ 
+                    mo_list(mod); 
+                });
 }
 
 function mo_status(mod, e){
 	value = e.attr("value");
 	$.ajax({
-		data: "mod=" + mod + "&do=3&id=" + e.attr("id") + "&value=" + value,
-		success: function(){
+		data: "mod=" + mod + "&do=3&id=" + e.attr("id") + "&value=" + value
+		}).done(function(){
 			e.attr("value", (value == 1 ? 0 : 1));
 			e.attr("title", (value == 0 ? "Activate" : "Inactivate"));
 			e.fadeOut(250, function(){ e.toggleClass("status_inactive").fadeIn(250); });
-		}
-	});
+		});
 }
 
 function mo_delete(mod, e){
 	confirm("Are you sure to delete the record?", function(){
 		$.ajax({
-			data: "mod=" + mod + "&do=4&id=" + e.attr("id"),
-			success: function(){
+			data: "mod=" + mod + "&do=4&id=" + e.attr("id")
+			}).done(function(){
 				e.parent().parent().fadeOut(function(){
 					e.parent().parent().remove();
 					$("#list tr").removeClass("odd").filter(":nth-child(odd)").addClass("odd");
@@ -178,8 +175,7 @@ function mo_delete(mod, e){
 						$('#list tbody').append('<tr><td colspan="10" class="row_error center">No Records.</td></tr>');
 					}
 				});
-			}
-		});
+			});
 	});
 }
 
