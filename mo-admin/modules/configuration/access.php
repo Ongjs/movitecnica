@@ -8,8 +8,8 @@
 $(document).ready(function(){
 	var mod = 10;
 	mo_list(mod);
-	$(".list").on("click", function(){ mo_list(mod); return false; });
-	$(".update").on("click", function(){ mo_update(mod, $(this)); return false; });
-	$("form").on("submit", function(){ mo_submit(mod, 5); return false; });
+	$(document).on("click", ".list", function(){ mo_list(mod); return false; });
+	$(document).on("click", ".update", function(){ mo_update(mod, $(this)); return false; });
+	$(document).on("submit", "form", function(){ mo_submit(mod, 5); return false; });
 });
 </script>

@@ -19,9 +19,3 @@ $cn->query("select username, password from configuration");
 		</tr>
 	</table>
 </fieldset>
-<script type="text/javascript">
-$(document).ready(function(){
-	var mod = 10;
-	$(".update").on("click", function(){ mo_update(mod, $(this)); return false; });
-});
-</script>

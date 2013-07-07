@@ -21,13 +21,3 @@ $cn->query("select username, password from configuration");
                 <input type="hidden" name="mod" value="10">
 	</fieldset>
 </form>
-<!--<script type="text/javascript">
-$(document).ready(function(){
-    $("form").on("submit",function(e){
-        e.preventDefault();
-	var mod = 10,up = 1;
-        mo_update(mod, $(this),up); 
-        return false;
-    });
-});
-</script>-->

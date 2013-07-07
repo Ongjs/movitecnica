@@ -58,7 +58,7 @@ $(document).ready(function(){
         });
         return false;
     });
-	
+    
     $("a.forgot_password").on("click", function(){
         $("#form_login").hide();
         $("div.error").remove();
@@ -129,9 +129,9 @@ function mo_new(mod){
     });
 }
 
-function mo_update(mod, e, up){
+function mo_update(mod, e){
     $.ajax({
-        data: "mod=" + mod + "&do=1&id=" + e.attr("id") + "up=" + up
+        data: "mod=" + mod + "&do=1&id=" + e.attr("id")
     }).done(function(html){
         $("#form, .search, a.new").hide();
         $("#list").empty();
@@ -143,7 +143,7 @@ function mo_update(mod, e, up){
 }
 
 function mo_submit(mod, $do){
-    tinyMCE.triggerSave();
+    if ($("textarea[class*=tinymce]").length > 0) tinyMCE.triggerSave();
     $.ajax({
         data: "mod=" + mod + "&do=" + $do + "&" + $("form").serialize()
     }).done(function(){ 
@@ -152,7 +152,7 @@ function mo_submit(mod, $do){
 }
 
 function mo_status(mod, e){
-    value = e.attr("value");
+    var value = e.attr("value");
     $.ajax({
         data: "mod=" + mod + "&do=3&id=" + e.attr("id") + "&value=" + value
     }).done(function(){
