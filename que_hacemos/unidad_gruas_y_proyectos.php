@@ -212,7 +212,7 @@
                                 <span style="font-size: 16px;"><b><a href="../trabaje_con_nosotros/trabaje_con_nosotros.php">Trabaje con Nosotros</a></b></span><br/>
                                 <span>
                                     <a href="../trabaje_con_nosotros/porque_movitecnica.php">Porqué Movitécnica</a><br/>
-                                    <a href="../trabaje_con_nosotros/testimonio.php">Testimonios</a><br/>
+                                    <a href="../trabaje_con_nosotros/testimonios.php">Testimonios</a><br/>
                                     <a href="../trabaje_con_nosotros/oferta_de_trabajo.php">Oferta de Trabajo</a><br/>
                                 </span>
                             </article>

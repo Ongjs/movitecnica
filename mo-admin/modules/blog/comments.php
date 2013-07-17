@@ -7,7 +7,7 @@
 			<tr>
 				<td><label for="blog">Elija un blog</label></td>
 				<td><select class="filter"><option value="">todos los blog</option><?php
-				$cn->query("SELECT id, name FROM blog ORDER BY id DESC");
+				$cn->query("SELECT id, name from content ORDER BY id DESC");
 				while($row = $cn->fetch()) echo "<option value=\"$row[0]\"".($row[0] == $id ? ' selected="selected"' : '').">$row[1]</option>";
 				?></select></td>
 			</tr>

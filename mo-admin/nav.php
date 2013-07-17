@@ -3,11 +3,11 @@ $mod = isset($_REQUEST['mod']) ? $_REQUEST['mod'] : 0;
 $nav = array(
 	"0-Inicio", 
 	"10-Configuracion", "10-Acesso", "11-Apariencia", "12-Compañia", "13-Api", 
-	"20-Pagina web", 
-	"30-Link", "30-Nuevos", "31-YouTube", "32-Links", 
-	"60-PDF", "60-Testimonios", "61-Reportes de Marketing", 
-	"70-Email", 
-	"80-Blog", "80-Temas", "81-Comentarios"
+//	"20-Pagina web", 
+//	"30-Link", "30-Nuevos", "31-YouTube", "32-Links", 
+//	"60-PDF", "60-Testimonios", "61-Reportes de Marketing", 
+//	"70-Email", 
+	"80-contenido", "80-contenido", "81-categoria"
 );
 $last_mod = $status = 0;
 foreach($nav as $k => $v){

@@ -7,7 +7,7 @@ class Connection{
 	private function __construct(){
 		$this->Link = @mysql_pconnect("localhost", "root", "");
 		if(!$this->Link) throw new Exception("Could not connect to server: ".$this->error());
-		if(!mysql_select_db("alex", $this->Link)) throw new Exception("Could not connect to database: ".$this->error());
+		if(!mysql_select_db("movitecnica", $this->Link)) throw new Exception("Could not connect to database: ".$this->error());
 		$this->query("SET NAMES utf8");
 	}
 	

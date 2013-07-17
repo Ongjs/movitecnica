@@ -108,8 +108,11 @@
                 <h1><b>Mensaje del Gerente</b></h1>
                 <div style="display: inline-block;" class="uni_response">
                     <div style="width: 98%;">
-                    <div class="image_box"><img src="../images/CEO.png"></div><br />
-                    <span>Somos una empresa peruana con mas de 30 años en el mercado Que con cuatro lineas de negocio: unidad de gruas, unidad de fajas tranportadoras, tiendas y servicio tecnico. representamos a marcas de prestigio mundial como YALE INDUSTRAL PRODUCTS para la linea de iaje FENNER DUNLOP para la linea de fajas transportadoras, CONDUCTIX para sistema de electrificacion, ASGCO para accesorios de fajas transportadoras y DUNLOP para fajas en V. Nuestras mayores fortalezas son nuestro personal altamente calificado y el respaldo de nuestros proveedores.</span><br />
+                    <div class="image_box">
+                        <img src="../images/CEO.png"></div><br />
+                    <span>
+                        Somos una empresa peruana con mas de 30 años en el mercado Que con cuatro lineas de negocio: unidad de gruas, unidad de fajas tranportadoras, tiendas y servicio tecnico. representamos a marcas de prestigio mundial como YALE INDUSTRAL PRODUCTS para la linea de iaje FENNER DUNLOP para la linea de fajas transportadoras, CONDUCTIX para sistema de electrificacion, ASGCO para accesorios de fajas transportadoras y DUNLOP para fajas en V. Nuestras mayores fortalezas son nuestro personal altamente calificado y el respaldo de nuestros proveedores.
+                    </span><br />
                     <br />
                     </div>
                 </div>
@@ -187,7 +190,7 @@
                                 <span style="font-size: 16px;"><b><a href="../trabaje_con_nosotros/trabaje_con_nosotros.php">Trabaje con Nosotros</a></b></span><br/>
                                 <span>
                                     <a href="../trabaje_con_nosotros/porque_movitecnica.php">Porqué Movitécnica</a><br/>
-                                    <a href="../trabaje_con_nosotros/testimonio.php">Testimonios</a><br/>
+                                    <a href="../trabaje_con_nosotros/testimonios.php">Testimonios</a><br/>
                                     <a href="../trabaje_con_nosotros/oferta_de_trabajo.php">Oferta de Trabajo</a><br/>
                                 </span>
                             </article>

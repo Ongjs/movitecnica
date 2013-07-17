@@ -1,7 +1,6 @@
-<a href="#" class="new">Nuevo</a>
+
 <a href="#" class="cancel list">Cancelar</a>
-<h1>Blog</h1>
-<a href="./">Inicio </a> - <a href="#" class="list">Temas</a><br /><br /><br />
+<h1>Contenido</h1><br /><br />
 <div class="MOForm">
 	<fieldset class="search">
 		<legend>Filtrar informacion</legend>
@@ -26,7 +25,7 @@ $(document).ready(function(){
 	$(".list").on("click", function(){ mo_list(mod); return false; });
 	$(".status").on("click", function(){ mo_status(mod, $(this)); return false; });
 	$(".delete").on("click", function(){ mo_delete(mod, $(this)); return false; });
-	$(".update").on("click", function(){ mo_update(mod, $(this)); return false; });
+	$(document).on("click",".update", function(){ mo_update(mod, $(this)); return false; });
 
 	$("form#save").on("submit", function(){
 		tinyMCE.triggerSave();

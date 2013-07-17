@@ -2,9 +2,10 @@
 require_once "../conf.php";
 $id = isset($_POST['id']) ? $_POST['id'] : "";
 if(!empty($id)){
-	$cn->query("SELECT name, file, thumbnail, detail, content, date FROM blog WHERE id = '$id'");
-	$row = $cn->fetch();
-}else $row = array("name"=>"", "file"=>"", "thumbnail"=>"", "detail"=>"", "content"=>"", "date"=>"");
+	$cn->query("SELECT name, image, content from content WHERE id = '$id'");
+	$row = $cn->fetch();       
+}
+//}else $row = array("name"=>"", "file"=>"", "thumbnail"=>"", "detail"=>"", "content"=>"", "date"=>"");
 ?>
 <form id="<?php echo empty($id) ? "save" : "update"; ?>">
 	<fieldset>
@@ -15,16 +16,8 @@ if(!empty($id)){
 				<td><input type="text" name="name" id="name" value="<?php echo mo_unscape($row['name']); ?>" /></td>
 			</tr>
 			<tr>
-				<td><label for="file">File<br /><span class="recommended_size">(480w x 240h)</span></label></td>
-				<td><input type="file" id="file" /></td>
-			</tr>
-			<tr>
-				<td><label for="thumbnail">Image Thumbnail<br /><span class="recommended_size">(160w x 80h)</span></label></td>
-				<td><input type="file" id="thumbnail" /></td>
-			</tr>
-			<tr>
-				<td><label for="detail">Detail</label></td>
-				<td><textarea name="detail" id="detail" class="tinymce_mini"><?php echo $row['detail']; ?></textarea></td>
+				<td><label for="image">Image Thumbnail<br /><span class="recommended_size">(160w x 80h)</span></label></td>
+				<td><input type="file" id="image" /></td>
 			</tr>
 			<tr>
 				<td><label for="tinymce">Content</label></td>
@@ -42,37 +35,37 @@ if(!empty($id)){
 <script type="text/javascript">
 $(document).ready(function(){
 	mo_tinymce();
-	
-	$("#file").makeAsyncUploader({
-		upload_url: "<?php echo $_SERVER['PHP_SELF']; ?>?mod=1", 
-		flash_url: '../lib/jquery-asyncUpload-0.1/swfupload.swf', 
-		path_url: '../userfiles/', 
-		disableDuringUpload: 'input[type="submit"]', 
-		<?php if(!empty($id)){ ?>
-		existingFilename: '<?php echo substr(strstr($row['file'], "_"), 1); ?>', 
-		existingGuid: '<?php echo $row['file']; ?>', 
-		existingFileSize: <?php echo filesize("../userfiles/".$row['file']); ?>, 
-		<?php } ?>
-		file_types_description: 'Image or Video', 
-		file_types: '*.jpg; *.gif; *.png; *.flv;', 
-		file_size_limit: '<?php echo ini_get("upload_max_filesize"); ?>B', 
-		button_image_url: '../lib/jquery-asyncUpload-0.1/blankButton.png'
-	});
-	
-	$("#thumbnail").makeAsyncUploader({
-		upload_url: "<?php echo $_SERVER['PHP_SELF']; ?>?mod=1", 
-		flash_url: '../lib/jquery-asyncUpload-0.1/swfupload.swf', 
-		path_url: '../userfiles/', 
-		disableDuringUpload: 'input[type="submit"]', 
-		<?php if(!empty($id)){ ?>
-		existingFilename: '<?php echo substr(strstr($row['thumbnail'], "_"), 1); ?>', 
-		existingGuid: '<?php echo $row['thumbnail']; ?>', 
-		existingFileSize: <?php echo filesize("../userfiles/".$row['thumbnail']); ?>, 
-		<?php } ?>
-		file_types_description: 'All Images', 
-		file_types: '*.jpg; *.gif; *.png;', 
-		file_size_limit: '<?php echo ini_get("upload_max_filesize"); ?>B', 
-		button_image_url: '../lib/jquery-asyncUpload-0.1/blankButton.png'
-	});
+//	
+//	$("#file").makeAsyncUploader({
+//		upload_url: "<?php echo $_SERVER['PHP_SELF']; ?>?mod=1", 
+//		flash_url: '../lib/jquery-asyncUpload-0.1/swfupload.swf', 
+//		path_url: '../userfiles/', 
+//		disableDuringUpload: 'input[type="submit"]', 
+//		<?php if(!empty($id)){ ?>
+//		existingFilename: '<?php echo substr(strstr($row['image'], "_"), 1); ?>', 
+//		existingGuid: '<?php echo $row['image']; ?>', 
+//		existingFileSize: <?php echo filesize("../userfiles/".$row['image']); ?>, 
+//		<?php } ?>
+//		file_types_description: 'Image or Video', 
+//		file_types: '*.jpg; *.gif; *.png; *.flv;', 
+//		file_size_limit: '<?php echo ini_get("upload_max_filesize"); ?>B', 
+//		button_image_url: '../lib/jquery-asyncUpload-0.1/blankButton.png'
+//	});
+//	
+//	$("#thumbnail").makeAsyncUploader({
+//		upload_url: "<?php echo $_SERVER['PHP_SELF']; ?>?mod=1", 
+//		flash_url: '../lib/jquery-asyncUpload-0.1/swfupload.swf', 
+//		path_url: '../userfiles/', 
+//		disableDuringUpload: 'input[type="submit"]', 
+//		<?php if(!empty($id)){ ?>
+//		existingFilename: '<?php echo substr(strstr($row['content'], "_"), 1); ?>', 
+//		existingGuid: '<?php echo $row['content']; ?>', 
+//		existingFileSize: <?php echo filesize("../userfiles/".$row['content']); ?>, 
+//		<?php } ?>
+//		file_types_description: 'All Images', 
+//		file_types: '*.jpg; *.gif; *.png;', 
+//		file_size_limit: '<?php echo ini_get("upload_max_filesize"); ?>B', 
+//		button_image_url: '../lib/jquery-asyncUpload-0.1/blankButton.png'
+//	});
 });
 </script>
