@@ -32,8 +32,8 @@ $(document).ready(function(){
     });
 
     $("#form_login").submit(function(){
-        if(!required('#username', 'You must enter a username.')) return false;
-        if(!required('#password', 'You must enter a password.')) return false;
+        if(!required('#username', 'Debe introducir un nombre de usuario.')) return false;
+        if(!required('#password', 'Debe introducir una contraseña.')) return false;
         $.ajax({
             data: "mod=5&" + $(this).serialize()
         }).done(function(msg){
@@ -44,7 +44,7 @@ $(document).ready(function(){
     });
 	
     $("#form_forgot_password").submit(function(){
-        if(!required('#username2', 'You must enter a username.')) return false;
+        if(!required('#username2', 'Debe introducir un nombre de usuario.')) return false;
         $.ajax({
             data: "mod=6&" + $(this).serialize()
         }).done(function(msg){
@@ -53,7 +53,7 @@ $(document).ready(function(){
                 $("#form_forgot_password, div.message").hide();
                 $("div.error").remove();
                 $("#form_login").fadeIn();
-                $("div.message").html("Your password has been sent to your email.").fadeIn();
+                $("div.message").html("Su contraseña ha sido enviada a su correo electrónico.").fadeIn();
             }
         });
         return false;
@@ -74,7 +74,7 @@ $(document).ready(function(){
     });
 	
     $("#header a.logout").click(function(){
-        confirm("Are you sure you want to close the session?", function(){
+        confirm("Está seguro que desea finalizar la sesión?", function(){
             $.ajax({ data: "mod=7" }).done(function(msg){
                 document.location = "./"; 
             });
@@ -171,7 +171,7 @@ function mo_delete(mod, e){
                 e.parent().parent().remove();
                 $("#list tr").removeClass("odd").filter(":nth-child(odd)").addClass("odd");
                 if($("#list tr").length == 1){
-                    $('#list tbody').append('<tr><td colspan="10" class="row_error center">No Records.</td></tr>');
+                    $('#list tbody').append('<tr><td colspan="10" class="row_error center">No se encontraron registros.</td></tr>');
                 }
             });
         });
@@ -265,57 +265,73 @@ function mo_ajaxfilemanager(field_name, url, type, win){
 var key;
 // NOTE: Backspace = 8, Enter = 13, '0' = 48, '9' = 57 , '.' = 46, '-' = 45, ' ' = 32
 function type_number(evt){
-    (document.all)?key=evt.keyCode:key=evt.which;
+    (document.all) ? key = evt.keyCode : key = evt.which;
     return (key <= 13 || key == 46 || key == 45 || key == 32 || evt.ctrlKey || (key >= 48 && key <= 57));
 }
 
 function type_price(evt){
-    (document.all)?key=evt.keyCode:key=evt.which;
+    (document.all) ? key = evt.keyCode : key = evt.which;
     return (key <= 13 || key == 46 || (key >= 48 && key <= 57));
 }
 
 function required(elem, msg, conten){
-    if(conten == null) conten = "";
-    if($.trim($(elem).val()) == conten){ mo_error(msg); $(elem).focus(); return false; }
+    if (conten == null) conten = "";
+    if ($.trim($(elem).val()) == conten) { mo_error(msg); $(elem).focus(); return false; }
     return true;
 }
 
 function maxlength(elem, value, msg){
-    if(msg == null) msg = "You must enter " + value + " characters";
-    if($.trim($(elem).val()).length < value){ mo_error(msg); $(elem).focus(); return false; }
+    if (msg == null) msg = "Debe introducir " + value + " caracteres.";
+    if ($.trim($(elem).val()).length < value) { mo_error(msg); $(elem).focus(); return false; }
     return true;
 }
 
 function validateEmail(elem){
-    if($.trim($(elem).val()) != "" && !emailCheck($.trim($(elem).val()))){ $(elem).focus(); return false; }
+    if ($.trim($(elem).val()) != "" && !emailCheck($.trim($(elem).val()))) { $(elem).focus(); return false; }
     return true;
 }
 
 function emailCheck(email){
-    var msg = "The email address is invalid.<br />";
+    var msg = "El correo electrónico es invalido.<br />";
     var atom = '\[^\\s\\(\\)<>@,;:\\\\\\\"\\.\\[\\]\]+';
     var word = "(" + atom + "|(\"[^\"]*\"))";
     var userPat = new RegExp("^" + word + "(\\." + word + ")*$");
-    var domainPat = new RegExp("^" + atom + "(\\." + atom +")*$");
+    var domainPat = new RegExp("^" + atom + "(\\." + atom + ")*$");
     var matchArray = email.match(/^(.+)@(.+)$/);
-    if(matchArray == null){ mo_error(msg + "(verify [@] and [.])"); return false; }
+    if (matchArray == null) {
+        mo_error(msg + "(Verificar [@] y [.])");
+        return false;
+    }
     var user = matchArray[1];
     var domain = matchArray[2];
-    if(user.match(userPat) == null){ mo_error(msg + "(verify data before [@])"); return false; }
+    if (user.match(userPat) == null) {
+        mo_error(msg + "(Verificar datos antes de [@])");
+        return false;
+    }
     var IPArray = domain.match(/^\[(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})\]$/);
-    if(IPArray != null){
-        for(var i = 1; i <= 4; i++){
-                if(IPArray[i] > 255){ mo_error(msg + "(Incorrect destination IP)"); return false; }
+    if (IPArray != null) {
+        for (var i = 1; i <= 4; i++) {
+            if (IPArray[i] > 255) {
+                mo_error(msg + "(Incorrecta IP de destino)");
+                return false;
+            }
         }
         return true;
     }
-    if(domain.match(domainPat) == null){ mo_error(msg + "(verify data after [@])"); return false; }
+    if (domain.match(domainPat) == null) {
+        mo_error(msg + "(Verificar datos despues de [@])");
+        return false;
+    }
     var atomPat = new RegExp(atom, "g");
     var domArr = domain.match(atomPat);
     var len = domArr.length;
-    if(domArr[len - 1].length < 2 || domArr[len - 1].length > 3){
-       mo_error(msg + "(verify data after [.])"); return false;
+    if (domArr[len - 1].length < 2 || domArr[len - 1].length > 3) {
+        mo_error(msg + "(Verificar datos despues de [.])");
+        return false;
     }
-    if(len < 2){ mo_error(msg + "(verify data after [.])"); return false; }
+    if (len < 2) {
+        mo_error(msg + "(Verificar datos despues de [.])");
+        return false;
+    }
     return true;
 }
