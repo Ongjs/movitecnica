@@ -125,7 +125,7 @@
                                     <li> 
                                         <div style="border-top: 1px solid #D7D7D7; padding-top: 10px;">
                                         <div style="width: 100%; margin-bottom: 10px;"> <h3 style="display: inline-block; vertical-align: top; margin-top: 10px;"> <b><a href="../Contactenos.php">Contáctenos</a></b> </h3><div style="display: inline-block; margin-left: 8px;"><img src="../images/logo_solo.png" style="width: 38px"></div></div>
-                                        <span>Póngase en contacto con nuestros expertos, para averiguar cómo podemos ayudarle a usted y a su empresa a tener éxito</span>
+                                        <span>Póngase en contacto con nuestro expertos, para averiguar cómo podemos ayudarle a usted y a su empresa con su proyecto</span>
                                         </div><br />
                                         <div style="border-top: 1px solid #D7D7D7">
                                             <br />
@@ -163,7 +163,7 @@
                                 </span>
                             </article>
                             <article style="width: 205px">
-                                <span style="font-size: 16px;"><b><a href="../que_hacemos/que_hacemos.php">Que Hacemos</a></b></span><br/>
+                                <span style="font-size: 16px;"><b><a href="../que_hacemos/que_hacemos.php">Qué Hacemos</a></b></span><br/>
                                 <span>
                                     <a href="../que_hacemos/unidad_gruas_y_proyectos.php">Unid. Grúas y Proyectos</a><br/>
                                     <a href="../que_hacemos/unidad_fajas_transportadoras.php">Unid. Fajas Transportadoras</a><br/>
@@ -189,9 +189,9 @@
                             <article style="width: 210px">
                                 <span style="font-size: 16px;"><b><a href="../trabaje_con_nosotros/trabaje_con_nosotros.php">Trabaje con Nosotros</a></b></span><br/>
                                 <span>
-                                    <a href="../trabaje_con_nosotros/porque_movitecnica.php">Porqué Movitécnica</a><br/>
+                                    <a href="../trabaje_con_nosotros/porque_movitecnica.php">Por qué Movitécnica</a><br/>
                                     <a href="../trabaje_con_nosotros/testimonios.php">Testimonios</a><br/>
-                                    <a href="../trabaje_con_nosotros/oferta_de_trabajo.php">Oferta de Trabajo</a><br/>
+                                    <a href="../trabaje_con_nosotros/oferta_de_trabajo.php">Ofertas de Trabajo</a><br/>
                                 </span>
                             </article>
                             <article style="width: 170px">

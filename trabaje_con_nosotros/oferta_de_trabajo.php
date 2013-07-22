@@ -205,7 +205,7 @@
                                 </span>
                             </article>
                             <article style="width: 205px">
-                                <span style="font-size: 16px;"><b><a href="../que_hacemos/que_hacemos.php">Que Hacemos</a></b></span><br/>
+                                <span style="font-size: 16px;"><b><a href="../que_hacemos/que_hacemos.php">Qué Hacemos</a></b></span><br/>
                                 <span>
                                     <a href="../que_hacemos/unidad_gruas_y_proyectos.php">Unid. Grúas y Proyectos</a><br/>
                                     <a href="../que_hacemos/unidad_fajas_transportadoras.php">Unid. Fajas Transportadoras</a><br/>
@@ -231,9 +231,9 @@
                             <article style="width: 210px">
                                 <span style="font-size: 16px;"><b><a href="../trabaje_con_nosotros/trabaje_con_nosotros.php">Trabaje con Nosotros</a></b></span><br/>
                                 <span>
-                                    <a href="../trabaje_con_nosotros/porque_movitecnica.php">Porqué Movitécnica</a><br/>
+                                    <a href="../trabaje_con_nosotros/porque_movitecnica.php">Por qué Movitécnica</a><br/>
                                     <a href="../trabaje_con_nosotros/testimonios.php">Testimonios</a><br/>
-                                    <a href="../trabaje_con_nosotros/oferta_de_trabajo.php">Oferta de Trabajo</a><br/>
+                                    <a href="../trabaje_con_nosotros/oferta_de_trabajo.php">Ofertas de Trabajo</a><br/>
                                 </span>
                             </article>
                             <article style="width: 170px">
