@@ -216,7 +216,7 @@
                                     <a href="../SIG/reclamos.php">Reclamos</a><br/>
                                 </span>
                             </article>
-                            <article style="width: 180px">
+                            <article style="width: 210px">
                                 <span style="font-size: 16px;"><b><a href="../trabaje_con_nosotros/trabaje_con_nosotros.php">Trabaje con Nosotros</a></b></span><br/>
                                 <span>
                                     <a href="../trabaje_con_nosotros/porque_movitecnica.php">Porqué Movitécnica</a><br/>
