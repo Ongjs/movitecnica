@@ -1,10 +1,11 @@
 <?php
 require_once "../conf.php";
 $id = isset($_POST['id']) ? $_POST['id'] : "";
+$sele = isset($_POST['select']) ? $_POST['select'] : "";
 if (!empty($id)) {
-    $cn->query("SELECT name, image, content from content WHERE id = '$id'");
+    $cn->query("SELECT name, content, thumbnail, image, description, extra1 from image WHERE id = '$id'");
     $row = $cn->fetch();
-}
+}else $row = array("name"=>"", "content"=>"", "thumbnail"=>"", "description"=>"", "extra1"=>"", "image"=>"");
 ?>
 <form id="<?php echo empty($id) ? "save" : "update"; ?>">
     <fieldset>
@@ -15,8 +16,20 @@ if (!empty($id)) {
                 <td><input type="text" name="name" id="name" value="<?php echo mo_unscape($row['name']); ?>" /></td>
             </tr>
             <tr>
-                <td><label for="image">Imagen<br /><span class="recommended_size">(160w x 80h)</span></label></td>
+                <td><label for="name">cargo</label></td>
+                <td><input type="text" name="extra1" id="name" value="<?php echo mo_unscape($row['extra1']); ?>" /></td>
+            </tr>
+            <tr>
+                <td><label for="image">Imagen chica<br /><span class="recommended_size">(220px x 250px)</span></label></td>
+                <td><input type="file" id="image" name="thumbnail"/></td>
+            </tr>
+            <tr>
+                <td><label for="image">Imagen grande<br /><span class="recommended_size">(900px x 550px)</span></label></td>
                 <td><input type="file" id="image" name="image"/></td>
+            </tr>
+            <tr>
+                <td><label for="tinymce">Descripcion</label></td>
+                <td><textarea name="desc" id="" class=""><?php echo $row['description']; ?></textarea></td>
             </tr>
             <tr>
                 <td><label for="tinymce">Contenido</label></td>
@@ -28,6 +41,7 @@ if (!empty($id)) {
         </table>
         <input type="hidden" name="img_file" value="aaaa" id="img_file">
         <input type="hidden" name="id" value="<?php echo $id; ?>" />
+        <input type="hidden" name="select" value="<?php echo $sele; ?>" />
     </fieldset>
 </form>
 <script src="../lib/jquery-asyncUpload-0.1/swfupload.js" type="text/javascript"></script>

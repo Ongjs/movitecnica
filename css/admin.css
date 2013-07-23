@@ -433,3 +433,7 @@ div.message {
     position: relative;
     margin-left: 50px
 }
+.cancel, .new
+{
+    font-size: 13px;
+}

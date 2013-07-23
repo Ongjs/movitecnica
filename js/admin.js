@@ -91,7 +91,7 @@ function mo_error(text){
 
 function mo_search(mod){
     $.ajax({
-        data: "mod=" + mod + "&search=" + $("#search").val()
+        data: "mod=" + mod + "&search=" + $("#search").val() + "&select=" + $('#opt_cat :selected').val()
     }).done(function(html){
         $("#list").html(html);
         Shadowbox.setup();
@@ -100,6 +100,7 @@ function mo_search(mod){
 
 function mo_list(mod){
     var add_data = $(".filter").length > 0 ? "&filter=" + $(".filter").val() : "";
+    add_data += "&select=" + $('#opt_cat :selected').val();
     $.ajax({
         data: "mod=" + mod + add_data
     }).done(function(html){
@@ -119,7 +120,7 @@ function mo_list(mod){
 
 function mo_new(mod){
     $.ajax({
-        data: "mod=" + mod + "&do=1"
+        data: "mod=" + mod + "&select=" + $('#opt_cat :selected').val() + "&do=1"
     }).done(function(html){
         $("#form, .search, #list, a.new").hide();
         $("#form").html(html);
@@ -131,7 +132,7 @@ function mo_new(mod){
 
 function mo_update(mod, e){
     $.ajax({
-        data: "mod=" + mod + "&do=1&id=" + e.attr("id")
+        data: "mod=" + mod + "&select=" + $('#opt_cat :selected').val() + "&do=1&id=" + e.attr("id")
     }).done(function(html){
         $("#form, .search, a.new").hide();
         $("#list").empty();

@@ -1,32 +1,32 @@
 @charset "utf-8";
 /* CSS Document */
 
-body {
-	color: #333;
-	font: 11px Verdana, Arial, sans-serif
+table, form {
+	text-align: left;
 }
 
-table, form {
-	text-align: left
+form {
+	margin: 0;
+	padding: 0
+}
+
+img {
+	border: none
 }
 
 p{
-	margin: 10px 0;
-}
-
-small{
-	font-size: 9px
+	padding: 5px 0;
 }
 
 strong{
-	font-weight: 700
+	font-weight: 700;
 }
 
 hr{
 	height: 1px;
 	border: none;
 	margin: 7px 0;
-	background-color: #ccc
+	background-color: #ccc;
 }
 
 a {
@@ -40,11 +40,6 @@ a:hover {
 
 input {
 	vertical-align: middle
-}
-
-.space{
-	height: 20px;
-	display: block;
 }
 
 .left {
