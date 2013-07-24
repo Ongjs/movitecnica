@@ -34,6 +34,7 @@ $(document).ready(function() {
     $("#search").keyup(function(){ mo_search(mod); return false; });
     $(".list").on("click", function(){ mo_list(mod); return false; });
     $(document).on("click",".update", function(){ mo_update(mod, $(this)); return false; });
+    $(document).on("click",".delete", function(){ mo_delete(mod, $(this)); return false; });
     $(".new").on("click", function(){ mo_new(mod, $(this)); return false; });
 
     $(document).on("submit","form#update", function() {

@@ -20,4 +20,7 @@ switch ($do) {
         $content = mo_scape($_POST['content']);
         $cn->query("insert into image(id,category_id,name,thumbnail,image,description,content,extra1) VALUES ('',$select,'$name','$thumbnail','$image','$desc','$content','$extra1')");
         break;
+    case 4:
+        $cn->query("DELETE from image WHERE id = " . $_POST['id']);
+        break;
 }

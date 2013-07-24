@@ -13,6 +13,7 @@ $cn->query("SELECT id, name, content, thumbnail, image, description, status from
             <th width="58">Imagen 1</th>
             <th width="58">Imagen 2</th>
             <th width="40">Editar</th>
+            <th width="40">Eliminar</th>
         </tr>
     </thead>
     <tbody>
@@ -26,6 +27,7 @@ $cn->query("SELECT id, name, content, thumbnail, image, description, status from
                 <td class="center"><a href="../images/<?php echo $row['thumbnail']; ?>" rel="shadowbox;width=220;height=250;" class="button file" title="<?php echo mo_unscape($row['name']); ?>"></a></td>
                 <td class="center"><a href="../images/<?php echo $row['image']; ?>" rel="shadowbox;width=900;height=550;" class="button file" title="<?php echo mo_unscape($row['name']); ?>"></a></td>
                 <td class="center"><a href="#" id="<?php echo $row['id']; ?>" class="button update" title="Editar"></a></td>
+                <td class="center"><a href="#" id="<?php echo $row['id']; ?>" class="button delete" title="Editar"></a></td>
             </tr>
         <?php $cont++; } ?>
         <?php if ($cn->numrows() == 0) echo '<tr><td colspan="10" class="row_error">No se encontraron registros.</td></tr>'; ?>
