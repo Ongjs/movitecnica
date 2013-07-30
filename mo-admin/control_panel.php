@@ -12,6 +12,7 @@
         <link href="../css/text.css" rel="stylesheet" type="text/css" />
         <script src="../js/jquery_1.10.2.js" type="text/javascript"></script>
         <script src="../lib/shadowbox-3.0.3/shadowbox.js" type="text/javascript"></script>
+        <script src="../lib/shadowbox-3.0.3/shadowbox-es.js" type="text/javascript"></script>
         <script src="../lib/confirm/js/jquery.simplemodal.js" type="text/javascript"></script>
         <script src="../lib/confirm/js/confirms.js" type="text/javascript"></script>
         <script src="../js/admin.js" type="text/javascript"></script>

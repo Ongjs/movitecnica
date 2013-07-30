@@ -3,9 +3,8 @@ require_once "../conf.php";
 switch ($do) {
     case 5:
         $name = mo_scape($_POST['name']);
-        $thumbnail = mo_scape($_POST["img_file"]);
+        $image = mo_scape($_POST["image_guid"]);
         $content = mo_scape($_POST['content']);
-        $cn->query("UPDATE content SET name = '$name', image = '$thumbnail', content = '$content' WHERE id = '" . $_POST['id'] . "'");
-        
+        $cn->query("UPDATE content SET name = '$name', image = '$image', content = '$content' WHERE id = '" . $cn->scape($_POST['id']) . "'");
         break;
 }
