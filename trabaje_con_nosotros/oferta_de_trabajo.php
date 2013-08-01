@@ -22,7 +22,7 @@
         <script type='text/javascript' src='../js/jquery.js'></script>
         <script type='text/javascript' src='../js/custom.js'></script>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
-    <body>
+    <body>  <?php  include '../class/Connection.class.php'; include '../class/Fuctions.php'; ?>
         <div class="top_wrapper">
             <div id="header">
                 <div class="container">
@@ -102,61 +102,11 @@
         <div class="container">	
             <div id="post_grids" class="row" style=" margin-top: -20px; max-width: none;">
                 <div style="margin-left: 20px;">
-                    <span> <a href="../index.html">Inicio</a> > <a href="Trabaje_Con_Nosotros.php">Trabaje con Nosotros </a> > Oferta De Trabajo </span>
+                    <span> <a href="../index.html">Inicio</a> > <a href="Trabaje_Con_Nosotros.php">Trabaje con Nosotros </a> > <?php echo mo_get_data(1, 19); ?> </span>
                     <br />
                     <br />
-                    <h1><b>Ofertas De Trabajo</b></h1>
-                    <div style="border-top: 1px solid #D7D7D7; padding-top: 15px;">
-                        <h4>Buscar entre Vacantes Abiertas</h4>
-                    <span>Busque en nuestra posición mediante la selección de una ubicación a continuación. Para ver todas las aberturas ordenados por ubicación, seleccione "Todo". Cada descripción del trabajo incluye un enlace para la aplicación y la presentación de su hoja de vida a nosotros en línea. Esta es la forma más rápida y fiable para ser considerado para alguna de nuestras posiciones.</span><br /><br />
-                    <span>Contamos con un total de <b>0</b> trabajos abiertos</span><br /><br />
-                        <form class="form-horizontal">
-                            <div class="control-group">
-                                <label class="control-label" for="Buscar">Buscar</label>
-                                <div class="controls">
-                                    <input type="text" id="buscar" placeholder="Ingrese Lo Que Desee Buscar">
-                                </div>
-                            </div>
-                            <div class="control-group">
-                                <label class="control-label" for="Localizacion">Localizacion</label>
-                                <div class="controls">
-                                    <select multiple="multiple" size="2">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="control-group">
-                                <label class="control-label" for="posicion">Tipo de Posicion</label>
-                                <div class="controls">
-                                    <select multiple="multiple" size="2">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="control-group">
-                                <label class="control-label" for="departamento">Departamento</label>
-                                <div class="controls">
-                                    <select multiple="multiple" size="2">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select><br /><br />
-                                    <button type="submit" class="btn">Buscar</button>
-                                </div>
-
-                            </div>
-                        </form>
-                    </div>
+                    <h1><b><?php echo mo_get_data(1, 19); ?></b></h1>
+                    <?php echo mo_get_data(3, 19); ?>
                     <div style="border-top: 1px solid #D7D7D7; padding-top: 15px;">
                         <h4>Aplicacion Previa</h4>
                         <span>Si usted ha solicitado previamente a una posición en nuestro sitio web, introduzca su dirección de correo electrónico y contraseña para iniciar sesión.</span><br /><br />

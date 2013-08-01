@@ -22,7 +22,7 @@
         <script type='text/javascript' src='../js/jquery.js'></script>
         <script type='text/javascript' src='../js/custom.js'></script>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
-    <body>
+    <body>  <?php  include '../class/Connection.class.php'; include '../class/Fuctions.php'; ?>
         <div class="top_wrapper">
             <div id="header">
                 <div class="container">
@@ -102,25 +102,11 @@
         <div class="container">	
             <div id="post_grids" class="row" style="margin-top: -20px;">
                 <div style="margin-left: 20px;">
-                <span> <a href="../index.html">Inicio</a> > <a href="../conocenos/conocenos.php">Conocenos</a> > <a href="Que_Hacemos.php">Que Hacemos</a> > <a href="Unidad_Fajas_Transportadoras.php">Unidad Fajas Transportadoras</a> > Servicio de Empalme de Fajas</span>
+                <span> <a href="../index.html">Inicio</a> > <a href="../conocenos/conocenos.php">Conocenos</a> > <a href="Que_Hacemos.php">Que Hacemos</a> > <a href="Unidad_Fajas_Transportadoras.php">Unidad Fajas Transportadoras</a> > <?php echo mo_get_data(1, 10); ?></span>
                 <br />
                 <br />
-                <h1><b>Servicio de Empalme de Fajas</b></h1>
-                <div style="display: inline-block;" class="uni_response">
-                    
-                    <div style="width: 98%;">
-                        <span>
-                            Es el comportamiento leal, honesto y fraterno hacia la competencia, los clientes, nuestros colaboradores, el Estado y la sociedad; siendo respetuosos de las reglas de juego y el correcto manejo de los clientes. <br />
-                            Surge de desarrollar y compartir nuestros conocimientos dentro de la organización. Fomentamos la integración donde los objetivos de la empresa son sentidos como propios por todos los colaboradores. <br />
-                            Es nuestro entusiasmo y la satisfacción por la tarea Que se realiza Que nos impulsa a desarrollar nuestro máximo potencial.<br />
-                            Es nuestro interés genuino por fomentar la formación y el desarrollo de los miembros del equipo Movitécnica a partir del análisis de sus necesidades y de la exposición a situaciones Que faciliten su crecimiento.<br />
-                        </span><br />
-                        <br />
-                        <div class="image_box" style="height: auto;"><img src="../images/Valores.png"></div>
-                        <a href="Unidad_Fajas_Transportadoras.php"> < Regresar a Unidad Fajas Transportadoras</a>
-                        <br/><br/>
-                    </div>
-                </div>
+                <h1><b><?php echo mo_get_data(1, 10); ?></b></h1>
+                <?php echo mo_get_data(3, 10); ?>
                 <div id="post_p" style="width: 320px; display: inline-block; margin-left: 20px; margin-top: 10px; vertical-align: top;">
                     <div class="widget tab_wrapper white_box" id="tab_wrapper_tab_widget-2">
                         <div class="clear"></div>

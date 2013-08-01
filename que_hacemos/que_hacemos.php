@@ -22,7 +22,7 @@
         <script type='text/javascript' src='../js/jquery.js'></script>
         <script type='text/javascript' src='../js/custom.js'></script>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
-    <body>
+    <body>  <?php  include '../class/Connection.class.php'; include '../class/Fuctions.php'; ?>
         <div class="top_wrapper">
             <div id="header">
                 <div class="container">
@@ -102,34 +102,31 @@
         <div class="container">	
             <div id="post_grids" class="row" style="margin-top: -20px;">
                 <div style="margin-left: 20px;">
-                <span> <a href="../index.html">Inicio</a> > Que Hacemos</span>
+                <span> <a href="../index.html">Inicio</a> > <?php echo mo_get_data(1, 7); ?></span>
                 <br />
                 <br />
-                    <div class="image_box2"><img src="../images/que_hacemos.png" style=""></div>
-                <br />
-                <br />
+                    <div class="image_box2"><img src="../images/<?php echo mo_get_data(2, 7); ?>" style=""></div>
+                <?php echo mo_get_data(3, 7); ?>
                 <div style="display: inline-block;" class="uni_response">
                     <div style="width: 98%; text-align: left;">
-                    <div style="width: 43%; display: inline-block; vertical-align: top; margin-right: 13px; margin-left: 13px; margin-bottom: 50px;">
-                        <h4 style="margin-bottom: 18px;"><a href="Unidad_Gruas_Y_Proyectos.php"><span class="bold">></span> Unidad Grúas y Proyectos</a></h4>
-                        Somos una empresa peruana con mas de 30 años en el mercado Que con cuatro lineas de negocio: unidad de gruas, unidad de fajas tranportadoras, tiendas y servicio tecnico.<br /><br />
-                        <div><a href="Unidad_Gruas_Y_Proyectos.php" style="">Ver más</a></div>
+                        <?php
+                             $arrayurl[0] = 'Unidad_Gruas_Y_Proyectos.php';
+                             $arrayurl[1] = 'Unidad_Fajas_Transportadoras.php';
+                             $arrayurl[2] = 'Unidad_Servicio_Tecnico.php';
+                             $arrayurl[3] = 'Unidad_Comercial.php';
+                             $datos = mo_get_url(7);
+                             $cont = 0 ;
+                             foreach ($datos as $arry){
+                            ?>
+                    <div style="width: 45%; display: inline-block; vertical-align: top; margin-right: 13px; margin-left: 13px; margin-bottom: 50px;">
+                        <h4 style="margin-bottom: 18px;"><a href="<?php echo $arrayurl[$cont]; ?>"><span class="bold">></span> <?php echo $arry[0]; ?></a></h4>
+                        <?php echo $arry[1]; ?><br /><br />
+                        <div><a href="<?php echo $arrayurl[$cont]; ?>" style="">Ver más</a></div>
                     </div>
-                    <div style="width: 43%; display: inline-block; vertical-align: top; margin-right: 13px; margin-left: 13px; margin-bottom: 50px;">
-                        <h4 style="margin-bottom: 18px;"><a href="Unidad_Fajas_Transportadoras.php"><span class="bold">></span> Unidad Fajas Transportadoras</a></h4>
-                        Somos una empresa peruana con mas de 30 años en el mercado Que con cuatro lineas de negocio: unidad de gruas, unidad de fajas tranportadoras, tiendas y servicio tecnico.<br /><br />
-                        <div><a href="Unidad_Fajas_Transportadoras.php" style="">Ver más</a></div>
-                    </div>    
-                    <div style="width: 43%; display: inline-block; vertical-align: top; margin-right: 13px; margin-left: 13px; margin-bottom: 50px;">
-                        <h4 style="margin-bottom: 18px;"><a href="Unidad_Servicio_Tecnico.php"><span class="bold">></span> Unidad Servicio Técnico</a></h4>
-                        Somos una empresa peruana con mas de 30 años en el mercado Que con cuatro lineas de negocio: unidad de gruas, unidad de fajas tranportadoras, tiendas y servicio tecnico.<br /><br />
-                        <div><a href="Unidad_Servicio_Tecnico.php" style="">Ver más</a></div>
-                    </div>
-                    <div style="width: 43%; display: inline-block; vertical-align: top; margin-right: 13px; margin-left: 13px; margin-bottom: 50px;">
-                        <h4 style="margin-bottom: 18px;"><a href="Unidad_Comercial.php"><span class="bold">></span> Unidad Comercial</a></h4>
-                        Somos una empresa peruana con mas de 30 años en el mercado Que con cuatro lineas de negocio: unidad de gruas, unidad de fajas tranportadoras, tiendas y servicio tecnico.<br /><br />
-                        <div><a href="Unidad_Comercial.php" style="">Ver más</a></div>
-                    </div>
+                        <?php
+                        $cont++ ;
+                        }
+                       ?>
                     <br />
                     </div>
                 </div>

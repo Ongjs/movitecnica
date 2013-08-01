@@ -102,7 +102,7 @@
         <div class="container">	
             <div id="post_grids" class="row" style=" margin-top: -20px; max-width: none;">
                 <div style="margin-left: 20px;">
-                    <span> <a href="../index.html">Inicio</a> > <a href="Media.php"> Media </a> > <a href="Media.php"> tipo </a> < Nombre</span>
+                    <span> <a href="../index.html">Inicio</a> > <a href="Media.php"> Media </a> > <a href="Media.php"> tipo </a> > Nombre</span>
                 <br />
                 <br />
                 <h1><b>Titulo</b></h1>

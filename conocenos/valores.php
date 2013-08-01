@@ -22,7 +22,7 @@
         <script type='text/javascript' src='../js/jquery.js'></script>
         <script type='text/javascript' src='../js/custom.js'></script>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
-    <body>
+    <body>  <?php  include '../class/Connection.class.php'; include '../class/Fuctions.php'; ?>
         <div class="top_wrapper">
             <div id="header">
                 <div class="container">
@@ -102,28 +102,15 @@
         <div class="container">	
             <div id="post_grids" class="row" style="margin-top: -20px;">
                 <div style="margin-left: 20px;">
-                <span> <a href="../index.html">Inicio</a> > <a href="Conocenos.php">Conocenos</a> > Valores</span>
+                <span> <a href="../index.html">Inicio</a> > <a href="Conocenos.php">Conocenos</a> > <?php echo mo_get_data(1, 5); ?></span>
                 <br />
                 <br />
-                <h1><b>Valores</b></h1>
+                <h1><b><?php echo mo_get_data(1, 5); ?></b></h1>
                 <div style="display: inline-block;" class="uni_response">
                     
                     <div style="width: 98%;">
-                        <div class="image_box" style="height: auto;"><img src="../images/Valores.png"></div><br />
-                        <span>
-                            <h3><b>Juego Limpio</b></h3>
-                            Es el comportamiento leal, honesto y fraterno hacia la competencia, los clientes, nuestros colaboradores, el Estado y la sociedad; siendo respetuosos de las reglas de juego y el correcto manejo de los clientes. <br /><br />
-
-                            <h3><b>Trabajamos y Ganamos en Equipo</b></h3>
-                            Surge de desarrollar y compartir nuestros conocimientos dentro de la organización. Fomentamos la integración donde los objetivos de la empresa son sentidos como propios por todos los colaboradores. <br /><br />
-
-                            <h3><b>Pasión por lo Que Hacemos</b></h3>
-                            Es nuestro entusiasmo y la satisfacción por la tarea Que se realiza Que nos impulsa a desarrollar nuestro máximo potencial.<br /><br />
-
-                            <h3><b>Formación de Talentos</b></h3>
-                            Es nuestro interés genuino por fomentar la formación y el desarrollo de los miembros del equipo Movitécnica a partir del análisis de sus necesidades y de la exposición a situaciones Que faciliten su crecimiento.<br />
-                        </span><br />
-                        <br />
+                        <div class="image_box" style="height: auto;"><img src="../images/<?php echo mo_get_data(2, 5); ?>"></div><br />
+                        <?php echo mo_get_data(3, 5); ?>
                     </div>
                 </div>
                 <div id="post_p" style="width: 320px; display: inline-block; margin-left: 20px; margin-top: 10px; vertical-align: top;">

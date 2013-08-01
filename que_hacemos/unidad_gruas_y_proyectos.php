@@ -22,7 +22,7 @@
         <script type='text/javascript' src='../js/jquery.js'></script>
         <script type='text/javascript' src='../js/custom.js'></script>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
-    <body>
+    <body>  <?php  include '../class/Connection.class.php'; include '../class/Fuctions.php'; ?>
         <div class="top_wrapper">
             <div id="header">
                 <div class="container">
@@ -102,40 +102,16 @@
         <div class="container">	
             <div id="post_grids" class="row" style="margin-top: -20px;">
                 <div style="margin-left: 20px;">
-                    <span> <a href="../index.html">Inicio</a> > <a href="Que_Hacemos.php">Que Hacemos</a> > Unidad de Grúas y Proyectos</span>
+                    <span> <a href="../index.html">Inicio</a> > <a href="Que_Hacemos.php">Que Hacemos</a> > <?php echo mo_get_data(1, 8); ?></span>
                     <br />
                     <br />
-                    <div class="image_box2"><img src="../images/gruas_y_proyectos.png" style=""></div>
+                    <div class="image_box2"><img src="../images/<?php echo mo_get_data(2, 8); ?>" style=""></div>
                     <br />
                     <br />
                     <div style="display: inline-block;" class="uni_response">
                         <div style="width: 98%; text-align: left;">
-                            <h1><b>Unidad de Grúas y Proyectos</b></h1>
-                            <div>
-                                Somos una empresa peruana con mas de 30 años en el mercado Que con cuatro lineas de negocio: unidad de gruas, unidad de fajas tranportadoras, tiendas y servicio tecnico. representamos a marcas de prestigio mundial como YALE INDUSTRAL PRODUCTS para la linea de iaje FENNER DUNLOP para la linea de fajas transportadoras, CONDUCTIX para sistema de electrificacion, ASGCO para accesorios de fajas transportadoras y DUNLOP para fajas en V. Nuestras mayores fortalezas son nuestro personal altamente calificado y el respaldo de nuestros proveedores.
-                                <br /><br />
-                            </div> 
-                            <div>
-                                <div class="image_carousel">
-                                    <div id="foo1">
-                                        <a rel="fancybox" href="../images/uni1.jpg">
-                                            <img src="../images/uni1.jpg" alt="basketball"  />
-                                        </a>
-                                        <a rel="fancybox" href="../images/uni2.jpg">
-                                            <img src="../images/uni2.jpg" alt="beachtree"  />
-                                        </a>
-                                        <a rel="fancybox" href="../images/uni3.jpg">
-                                            <img src="../images/uni3.jpg" alt="cupcackes"  />
-                                        </a>
-                                        <a rel="fancybox" href="../images/uni1.jpg">
-                                            <img src="../images/uni1.jpg" alt="basketball"  />
-                                        </a>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <br />
-                                <a href="ultimos_proyectos.php">Ir a  Últimos Proyectos ></a>
-                            </div>
+                            <h1><b><?php echo mo_get_data(1, 8); ?></b></h1>
+                            <?php echo mo_get_data(3, 8); ?>
                         </div>
                     </div>
                     <div id="post_p" style="width: 320px; display: inline-block; margin-left: 20px; margin-top: 10px; vertical-align: top;">

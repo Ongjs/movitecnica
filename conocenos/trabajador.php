@@ -22,7 +22,7 @@
         <script type='text/javascript' src='../js/jquery.js'></script>
         <script type='text/javascript' src='../js/custom.js'></script>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
-    <body>
+    <body>  <?php  include '../class/Connection.class.php'; include '../class/Fuctions.php'; ?>
         <div class="top_wrapper">
             <div id="header">
                 <div class="container">
@@ -102,17 +102,19 @@
         <div class="container">	
             <div id="post_grids" class="row" style="margin-top: -20px;">
                 <div style="margin-left: 20px;">
-                    <span> <a href="../index.html">Inicio</a> > <a href="Conocenos.php">Conocenos</a> > <a href="equipo_de_trabajo.php">Equipo de trabajo</a> > Nombre </span>
+                    <?php
+                    $id = $_REQUEST['cod'];
+                    $data = mo_get_data_select($id);
+                    ?>
+                    <span> <a href="../index.html">Inicio</a> > <a href="Conocenos.php">Conocenos</a> > <a href="equipo_de_trabajo.php">Equipo de trabajo</a> > <?php echo $data[0] ?> </span>
                     <br />
                     <br />
-                    <h1 style="margin-bottom: -5px"><b>Nombre</b></h1>
-                    <h3 style="margin-bottom: 5px">Cargo</h3>
+                    <h1 style="margin-bottom: -5px"><b><?php echo $data[0] ?></b></h1>
+                    <h3 style="margin-bottom: 5px"><?php echo $data[3] ?></h3>
                     <div style="display: inline-block;" class="uni_response">
                         <div style="width: 98%;">
-                            <div class="image_box"><img src="../images/CEO.png"></div><br />
-                            <span>Somos una empresa peruana con mas de 30 años en el mercado Que con cuatro lineas de negocio: unidad de gruas, unidad de fajas tranportadoras, tiendas y servicio tecnico. representamos a marcas de prestigio mundial como YALE INDUSTRAL PRODUCTS para la linea de iaje FENNER DUNLOP para la linea de fajas transportadoras, CONDUCTIX para sistema de electrificacion, ASGCO para accesorios de fajas transportadoras y DUNLOP para fajas en V. Nuestras mayores fortalezas son nuestro personal altamente calificado y el respaldo de nuestros proveedores.</span><br />
-                            <br />
-                            <a href="equipo_de_trabajo.php"> <b><</b> Regresar a Equipo de Trabajo</a>
+                            <div class="image_box"><img src="../images/<?php echo $data[1] ?>"></div><br />
+                            <?php echo $data[2] ?>
                             <br /><br />
                         </div>
                     </div>
@@ -151,17 +153,13 @@
                                             <li>
                                                 <h4>Equipo de Trabajo</h4>
                                                 <div class="otros_trab">
-                                                    <a href=""><img src="../images/img-chiquita.png"></a>
-                                                    <a href=""><img src="../images/img-chiquita.png"></a>
-                                                    <a href=""><img src="../images/img-chiquita.png"></a>
-                                                    <a href=""><img src="../images/img-chiquita.png"></a>
-                                                    <a href=""><img src="../images/img-chiquita.png"></a>
-                                                    <a href=""><img src="../images/img-chiquita.png"></a>
-                                                    <a href=""><img src="../images/img-chiquita.png"></a>
-                                                    <a href=""><img src="../images/img-chiquita.png"></a>
-                                                    <a href=""><img src="../images/img-chiquita.png"></a>
-                                                    <a href=""><img src="../images/img-chiquita.png"></a>
-                                                    <a href=""><img src="../images/img-chiquita.png"></a>
+                                                    <?php 
+                                                    foreach(mo_get_tra() as $thumb){
+                                                    ?>
+                                                    <a href="?cod=<?php echo $thumb[0] ?>"><img src="../images/<?php echo $thumb[1] ?>" style="max-width: 67px; max-height: 59px"></a>
+                                                    <?php
+                                                    }
+                                                    ?>
                                                 </div>
                                             </li>
                                         </ul>

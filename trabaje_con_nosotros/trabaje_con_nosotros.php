@@ -22,7 +22,7 @@
         <script type='text/javascript' src='../js/jquery.js'></script>
         <script type='text/javascript' src='../js/custom.js'></script>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
-    <body>
+    <body>  <?php  include '../class/Connection.class.php'; include '../class/Fuctions.php'; ?>
         <div class="top_wrapper">
             <div id="header">
                 <div class="container">
@@ -102,31 +102,32 @@
         <div class="container">	
             <div id="post_grids" class="row" style=" margin-top: -20px; max-width: none;">
                 <div style="margin-left: 20px;">
-                <span> <a href="../index.html">Inicio</a> > Trabaje con Nosotros </span>
+                <span> <a href="../index.html">Inicio</a> > <?php echo mo_get_data(1, 17); ?> </span>
                 <br />
                 <br />
-                <h1><b>Trabaje con Nosotros</b></h1>
+                <h1><b><?php echo mo_get_data(1, 17); ?></b></h1>
                 <div style="display: inline-block;" class="uni_response">
                     <div style="width: 98%; height: auto;">
-                        <div class="image_box"><img src="../images/trabaje_con_nosotros.png"></div><br />
-                        <span>Somos una empresa peruana con mas de 30 años en el mercado Que con cuatro lineas de negocio : <br /> unidad de gruas, unidad de fajas tranportadoras, tiendas y servicio tecnico. representamos a marcas de prestigio mundial como YALE INDUSTRAL PRODUCTS para la linea de iaje FENNER DUNLOP para la linea de fajas transportadoras, CONDUCTIX para sistema de electrificacion, ASGCO para accesorios de fajas transportadoras y DUNLOP para fajas en V. Nuestras mayores fortalezas son nuestro personal altamente calificado y el respaldo de nuestros proveedores.</span><br />
-                        <br />
+                        <div class="image_box"><img src="../images/<?php echo mo_get_data(2, 17); ?>"></div><br />
+                        <?php
+                             echo mo_get_data(3, 17);
+                             $arrayurl[0] = 'porque_movitecnica.php';
+                             $arrayurl[1] = 'testimonio.php';
+                             $arrayurl[2] = 'oferta_de_trabajo.php';
+                             $datos = mo_get_url(13);
+                             $cont = 0 ;
+                             foreach ($datos as $arry){
+                            ?>
                         <span>
-                            <h3 style="margin-bottom: 6px;">Porqué Movitécnica</h3>
-                            PageMaker, el cual incluye versiones de Lorem Ipsum <br />
-                            <div style="margin-top: 10px;"><a href="porque_movitecnica.php">Ver más</a></div>
-                        </span>
-                        <br /><br /><span>
-                            <h3 style="margin-bottom: 6px;">Testimonios</h3>
-                            PageMaker, el cual incluye versiones de Lorem Ipsum <br />
-                            <div style="margin-top: 10px;"><a href="testimonio.php">Ver más</a></div>
-                        </span>
-                        <br /><br /><span>
-                            <h3 style="margin-bottom: 6px;">Oferta de Trabajo</h3>
-                            PageMaker, el cual incluye versiones de Lorem Ipsum <br />
-                            <div style="margin-top: 10px;"><a href="oferta_de_trabajo.php">Ver más</a></div>
+                            <h3 style="margin-bottom: 6px;"><?php echo $arry[0]; ?></h3>
+                            <?php echo $arry[1]; ?><br />
+                            <div style="margin-top: 10px;"><a href="<?php echo $arrayurl[$cont]; ?>">Ver más</a></div>
                         </span>
                         <br /><br />
+                        <?php
+                        $cont++ ;
+                        }
+                       ?>
                     </div>
                 </div>
                 <div id="post_p" style="width: 320px; display: inline-block; margin-left: 20px; margin-top: 10px; vertical-align: top;">

@@ -7,8 +7,8 @@
         <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
         <link rel="shortcut icon" href="../images/favicon_movi.ico">
-
         <link href='http://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
         <link rel='stylesheet'  href='../css/mystyles.css' type='text/css' media='all' />
         <link rel='stylesheet' id='reset-css'  href='../css/reset9d52.css?ver=3.5.1' type='text/css' media='all' />
         <link rel='stylesheet' id='responsive'  href='../css/responsive.css' type='text/css' media='all' />
@@ -22,7 +22,10 @@
         <script type='text/javascript' src='../js/jquery.js'></script>
         <script type='text/javascript' src='../js/custom.js'></script>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
-    <body>
+    <body>  <?php
+include '../class/Connection.class.php';
+include '../class/Fuctions.php';
+?>
         <div class="top_wrapper">
             <div id="header">
                 <div class="container">
@@ -68,7 +71,7 @@
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../SIG/politica.php">Política</a></li>
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../SIG/garantia.php">Garantía</a></li>
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../SIG/reclamos.php">Reclamos</a></li>
-                                             </ul>
+                                            </ul>
                                         </li>
                                         <li id="menu-item-1126"  ><a href="../trabaje_con_nosotros/trabaje_con_nosotros.php">Trabaje con Nosotros</a>
                                             <ul class="sub-menu">
@@ -102,81 +105,95 @@
         <div class="container">	
             <div id="post_grids" class="row" style=" margin-top: -20px;">
                 <div style="margin-left: 20px;">
-                <span> <a href="../index.html">Inicio</a> > <a href="Conocenos.php">Conocenos</a> > Equipo de Trabajo</span>
-                <br />
-                <br />
-                <h1><b>Equipo de Trabajo</b></h1>
-                <div style=" display: inline-block; margin-top: 5px;" class="uni_response">
-                    <span>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsumha sido<br /> el  texto de rellenoestandar de las industrias desde el año 1500, cuando un impresor(N. del T.)</span><br /><br />
-                    <div style="width: 98%;">
-                        <div class="equipo_borde">
-                            <div class="equipo_image">
-                                <a href="Trabajador.php"><img src="../images/darb.png" style="min-width: 180px; height: 190px; width: 190px;"></a>
+                    <span> <a href="../index.html">Inicio</a> > <a href="Conocenos.php">Conocenos</a> > <?php echo mo_get_data(1, 20); ?></span>
+                    <br />
+                    <br />
+                    <h1><b><?php echo mo_get_data(1, 20); ?></b></h1>
+                    <div style=" display: inline-block; margin-top: 5px;" class="uni_response">
+                        <?php echo mo_get_data(3, 20); ?>
+                        <div style="width: 98%;">
+                            <?php
+                            $pag = isset($_REQUEST['pag']) ? $_REQUEST['pag'] : '1';
+                            $ele = mo_get_ar(1, $pag);
+                            $pagination = mo_get_pag(1, $pag);
+                            $fin = $pagination[0];
+                            foreach ($ele as $el){
+                            ?>
+                            <div class="equipo_borde">
+                                <div class="equipo_image">
+                                    <a href="Trabajador.php?cod=<?php echo $el[0]; ?>"><img src="../images/<?php echo $el[2]; ?>" style="min-width: 180px; height: 190px; width: 190px;"></a>
+                                </div>
+                                <div class="equipo_text">
+                                    <a href="Trabajador.php?cod=<?php echo $el[0]; ?>" ><h3><?php echo $el[1]; ?></h3></a>
+                                    <div style="margin-top: -12px; margin-bottom: 15px;"><h6><a href="Trabajador.php?cod=<?php echo $el[0]; ?>"><?php echo $el[6]; ?></a></h6></div>
+                                    <span><?php echo $el[4]; ?></span><br />                            
+                                    <div style="margin-top: 15px;"><a href="Trabajador.php?cod=<?php echo $el[0]; ?>">Ver más</a></div>
+                                </div>
                             </div>
-                            <div class="equipo_text">
-                                <a href="Trabajador.php" ><h3>Nombre</h3></a>
-                                <div style="margin-top: -12px; margin-bottom: 15px;"><h6><a href="Trabajador.php">cargo</a></h6></div>
-                                <span>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsumha sido el texto de rellenoestandar de las industrias desde el año 1500, cuando un impresor(N. del T.)<br /> Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsumha sido el texto de rellenoestandar de las industrias desde el año 1500, cuando un impresor(N. del T.)</span><br />                            
-                                <div style="margin-top: 15px;"><a href="Trabajador.php">Ver más</a></div>
-                            </div>
-                        </div>
-                        <br />
-                        <div class="equipo_borde">
-                            <div class="equipo_image">
-                                <a href="Trabajador.php"><img src="../images/darb.png" style="min-width: 180px; height: 190px; width: 190px;"></a>
-                            </div>
-                            <div class="equipo_text">
-                                <a href="Trabajador.php" ><h3>Nombre</h3></a>
-                                <div style="margin-top: -12px; margin-bottom: 15px;"><h6><a href="Trabajador.php">cargo</a></h6></div>
-                                <span>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsumha sido el texto de rellenoestandar de las industrias desde el año 1500, cuando un impresor(N. del T.)<br /> Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsumha sido el texto de rellenoestandar de las industrias desde el año 1500, cuando un impresor(N. del T.)</span><br />                            
-                                <div style="margin-top: 15px;"><a href="Trabajador.php">Ver más</a></div>
-                            </div>
-                        </div>
-                        <br />
-                        <div class="equipo_borde">
-                            <div class="equipo_image">
-                                <a href="Trabajador.php"><img src="../images/darb.png" style="min-width: 180px; height: 190px; width: 190px;"></a>
-                            </div>
-                            <div class="equipo_text">
-                                <a href="Trabajador.php" ><h3>Nombre</h3></a>
-                                <div style="margin-top: -12px; margin-bottom: 15px;"><h6><a href="Trabajador.php">cargo</a></h6></div>
-                                <span>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsumha sido el texto de rellenoestandar de las industrias desde el año 1500, cuando un impresor(N. del T.)<br /> Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsumha sido el texto de rellenoestandar de las industrias desde el año 1500, cuando un impresor(N. del T.)</span><br />                            
-                                <div style="margin-top: 15px;"><a href="Trabajador.php">Ver más</a></div>
-                            </div>
+                            <br />
+                            <?php
+                            }
+                            ?>
+                            <ul class="pagination">
+                                <?php
+                                if($pag > 1){
+                                ?>
+                                <li><a href="?pag=<?php echo $pag-1; ?>">&laquo;</a></li>
+                                <?php
+                                }
+                                $ini = (($pag - 2) < 1) ? 1 : ($pag - 2);
+                                for($x = $ini; $x<= $fin ; $x++){
+                                    if($pag == $x){
+                                        ?>
+                                        <li style="font-weight: bold;"><?php echo $x; ?></li>
+                                        <?php 
+                                    }else{
+                                ?>
+                                        <li><a href="?pag=<?php echo $x; ?>"><?php echo $x; ?></a></li>
+                                <?php
+                                    }
+                                }
+                                if($pag < $fin){
+                                ?>
+                                <li><a href="?pag=<?php echo $pag+1; ?>">&raquo;</a></li>
+                                <?php
+                                }
+                                ?>
+                            </ul>
+                            <br /><br />
                         </div>
                     </div>
-                </div>
-                <div id="post_p" style="width: 320px; display: inline-block; margin-left: 18px; margin-top: 10px; vertical-align: top;">
-                    <div class="widget tab_wrapper white_box" id="tab_wrapper_tab_widget-2">
-                        <div class="clear"></div>
-                        <div class="tabs_container">
-                            <div id="post_tab" class="tab_content recent_posts">
-                                <ul>
-                                    <li> 
-                                        <div style="border-top: 1px solid #D7D7D7; padding-top: 10px;">
-                                        <div style="width: 100%; margin-bottom: 10px;"> <h3 style="display: inline-block; vertical-align: top; margin-top: 10px;"> <b><a href="../Contactenos.php">Contáctenos</a></b> </h3><div style="display: inline-block; margin-left: 8px;"><img src="../images/logo_solo.png" style="width: 38px"></div></div>
-                                        <span>Póngase en contacto con nuestro expertos, para averiguar cómo podemos ayudarle a usted y a su empresa con su proyecto</span>
-                                        </div><br />
-                                        <div style="border-top: 1px solid #D7D7D7">
-                                            <br />
-                                        <h3><b>Noticias Recientes</b></h3>   
-                                        <span><a href="../media/noticia.php">Allnorth was a Finalist for the North Saska-toon Business Association (NSBA) Safe Employer Award - 04/10/2013</a> <br /><br />
-                                            Allnorth was a Finalist for the North Saska-toon Business Association (NSBA) Safe Employer Award - 04/10/2013</span>
-                                        <br /><br />
-                                        <a class="button normal small" href="../media/noticia.php">Ver más</a><br /><br />
-                                        <a href="../media/media.php">Ver Todas ></a>
-                                        </div>
-                                    </li>
-                                </ul>
+                    <div id="post_p" style="width: 320px; display: inline-block; margin-left: 18px; margin-top: 10px; vertical-align: top;">
+                        <div class="widget tab_wrapper white_box" id="tab_wrapper_tab_widget-2">
+                            <div class="clear"></div>
+                            <div class="tabs_container">
+                                <div id="post_tab" class="tab_content recent_posts">
+                                    <ul>
+                                        <li> 
+                                            <div style="border-top: 1px solid #D7D7D7; padding-top: 10px;">
+                                                <div style="width: 100%; margin-bottom: 10px;"> <h3 style="display: inline-block; vertical-align: top; margin-top: 10px;"> <b><a href="../Contactenos.php">Contáctenos</a></b> </h3><div style="display: inline-block; margin-left: 8px;"><img src="../images/logo_solo.png" style="width: 38px"></div></div>
+                                                <span>Póngase en contacto con nuestro expertos, para averiguar cómo podemos ayudarle a usted y a su empresa con su proyecto</span>
+                                            </div><br />
+                                            <div style="border-top: 1px solid #D7D7D7">
+                                                <br />
+                                                <h3><b>Noticias Recientes</b></h3>   
+                                                <span><a href="../media/noticia.php">Allnorth was a Finalist for the North Saska-toon Business Association (NSBA) Safe Employer Award - 04/10/2013</a> <br /><br />
+                                                    Allnorth was a Finalist for the North Saska-toon Business Association (NSBA) Safe Employer Award - 04/10/2013</span>
+                                                <br /><br />
+                                                <a class="button normal small" href="../media/noticia.php">Ver más</a><br /><br />
+                                                <a href="../media/media.php">Ver Todas ></a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
+
                         </div>
 
                     </div>
 
                 </div>
-
-            </div>
-            <footer class="footer">
+                <footer class="footer">
                     <br />
                     <section>
                         <span class="footer-menu"> <span style="font-size: 17px"><b>Ocultar Menú</b></span> <img src="../images/flecha_abajo.png" style="margin-bottom: -2px;"></span>
@@ -242,7 +259,7 @@
                         </section>
                     </div>
                 </footer>
-                </div>
+            </div>
         </div>
         <br />
         <div style="display:none">
@@ -324,6 +341,7 @@
     <script src="_switcher/script.js"></script>
 
     <div id="toTop"><a href="#">Subir</a></div>
+    <script src="../js/bootstrap.min.js"></script>
     <script type='text/javascript' src='../js/jQuery.easing-1.35152.js?ver=1.0'></script>
     <script type='text/javascript' src='../js/jQuery.masonry.min5152.js?ver=1.0'></script>
     <script type='text/javascript' src='../js/jQuery.imagesloaded.min5152.js?ver=1.0'></script>

@@ -22,7 +22,7 @@
         <script type='text/javascript' src='../js/jquery.js'></script>
         <script type='text/javascript' src='../js/custom.js'></script>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
-    <body>
+    <body>    <?php  include '../class/Connection.class.php'; include '../class/Fuctions.php'; ?>
         <div class="top_wrapper">
             <div id="header">
                 <div class="container">
@@ -102,70 +102,32 @@
         <div class="container">	
             <div id="post_grids" class="row" style=" margin-top: -20px; max-width: none;">
                 <div style="margin-left: 20px;">
-                    <span> <a href="../index.html">Inicio</a> > Conócenos</span>
+                    <span> <a href="../index.html">Inicio</a> > <?php echo mo_get_data(1, 2); ?></span>
                     <br />
                     <br />
-                    <h1><b>Conócenos</b></h1>
+                    <h1><b><?php echo mo_get_data(1, 2); ?></b></h1>
                     <div style="display: inline-block;" class="uni_response">
                         <div style="width: 98%; height: auto;">
-                            <div class="image_box"><img src="../images/Conocenos.png"></div><br />
-                            <div style="border-bottom: 1px solid #D7D7D7; width: 100%;">
-                                Somos una empresa peruana con más de 30 años en el mercado, líderes en el negocio de izaje en el Perú, contamos con profesionales altamente calificados para ofrecer la mejor calidad, atención y apoyo en todos los servicios. Proveemos  la ingeniería, los equipos, el servicio técnico, el montaje y la puesta en marcha del proyecto. Nuestra experiencia y solidez han contribuido a que contemos con una cobertura a nivel nacional, haciendo así que marcas de prestigio a nivel mundial, tales como Yale Hoist, Street, Dunlop, ASGCO, Conductix, Kühnezug,  Vetter y Cimbria,  nos confíen la distribución exclusiva de sus productos.
-                                <br /><br />
-                                <div class="listita">
-                                    <ul style="margin-bottom: 10px;"><div style="margin-bottom: 5px;"><b>Categorías:</b></div>
-                                        <li>Izaje</li>
-                                        <li>Accesorios de izaje.</li>
-                                        <li>Fajas transportadoras.</li>
-                                        <li>Accesorios de fajas.</li>
-                                        <li>Sistemas de electrificación.</li>
-                                        <li>Grúas.</li>
-                                        <li>Puentes Grúa.</li>
-                                        <li>Chutes antipolución.</li>
-                                    </ul>
-                                </div>
-                                <br />
-
-                                Nuestro servicio técnico certificado por nuestros proveedores, garantiza el mejor servicio post venta del mercado.
-                                <br /><br />
-                                <img src="../images/logos_marcas.png">
-                                <br /><br />
-                            </div>
-                            <br />
-                            <!--                        <h3><b>Historia</b></h3>
-                                                    <div id="mobanner-container">
-                                                        <div id="mobanner_arrow_left"></div>
-                                                        <div id="mobanner-content">
-                                                            <img id="mobanner" src="../images/linea-de-tiempo.png"/>
-                                                        </div>
-                                                        <div id="mobanner_arrow_right"></div>
-                                                    </div>
-                                                    <div id="div_linea_tiempo">
-                                                        
-                                                    </div>-->
-                            <br />
+                            <div class="image_box"><img src="../images/<?php echo mo_get_data(2, 2); ?>"></div><br />
+                            <?php
+                             echo mo_get_data(3, 2);
+                             $arrayurl[0] = 'mensaje_del_gerente.php';
+                             $arrayurl[1] = 'mision_y_vision.php';
+                             $arrayurl[2] = 'valores.php';
+                             $arrayurl[3] = 'equipo_de_trabajo.php';
+                             $datos = mo_get_url(2);
+                             $cont = 0 ;
+                             foreach ($datos as $arry){
+                            ?>
                             <span>
-                                <h3 style="margin-bottom: 6px;">Mensaje del Gerente</h3>
-                                PageMaker, el cual incluye versiones de Lorem Ipsum <br />
-                                <div style="margin-top: 10px;"><a href="mensaje_del_gerente.php">Ver más</a></div>
-                            </span>
-                            <br /><br /><span>
-                                <h3 style="margin-bottom: 6px;">Misión y Visión</h3>
-                                PageMaker, el cual incluye versiones de Lorem Ipsum <br />
-                                <div style="margin-top: 10px;"><a href="mision_y_vision.php">Ver más</a></div>
-                            </span>
-                            <br /><br /><span>
-                                <h3 style="margin-bottom: 6px;">Valores</h3>
-                                PageMaker, el cual incluye versiones de Lorem Ipsum <br />
-                                <div style="margin-top: 10px;"><a href="valores.php">Ver más</a></div>
-                            </span>
-                            <br /><br />
-                            <span>
-                                <h3 style="margin-bottom: 6px;">Equipo de trabajo</h3>
-                                PageMaker, el cual incluye versiones de Lorem Ipsum <br />
-                                <div style="margin-top: 10px;"><a href="equipo_de_trabajo.php">Ver más</a></div>
-                            </span>
-                            <br /><br />
+                                <h3 style="margin-bottom: 6px;"><?php echo $arry[0]; ?></h3>
+                                <?php echo $arry[1]; ?><br />
+                                <div style="margin-top: 10px;"><a href="<?php echo $arrayurl[$cont]; ?>">Ver más</a></div>
+                            </span><br /><br />
+                            <?php
+                            $cont++;
+                             }
+                            ?>
                         </div>
                     </div>
                     <div id="post_p" style="width: 320px; display: inline-block; margin-left: 20px; margin-top: 10px; vertical-align: top;">

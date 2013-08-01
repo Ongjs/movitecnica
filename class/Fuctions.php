@@ -1,4 +1,5 @@
 <?php
+
 function tbl_blog($do = "theme-list", $param = "") {
     $cn = Connection::getInstance();
     if ($do == "theme-detail") {
@@ -85,6 +86,73 @@ function mo_scape($text) {
 function mo_unscape($text) {
     return htmlspecialchars($text);
 }
-
 $states = array("AL" => "Alabama", "AK" => "Alaska", "AZ" => "Arizona", "AR" => "Arkansas", "CA" => "California", "CO" => "Colorado", "CT" => "Connecticut", "DE" => "Delaware", "DC" => "District of Columbia", "FL" => "Florida", "GA" => "Georgia", "HI" => "Hawaii", "ID" => "Idaho", "IL" => "Illinois", "IN" => "Indiana", "IA" => "Iowa", "KS" => "Kansas", "KY" => "Kentucky", "LA" => "Louisiana", "ME" => "Maine", "MD" => "Maryland", "MA" => "Massachusetts", "MI" => "Michigan", "MN" => "Minnesota", "MS" => "Mississippi", "MO" => "Missouri", "MT" => "Montana", "NE" => "Nebraska", "NV" => "Nevada", "NH" => "New Hampshire", "NJ" => "New Jersey", "NM" => "New Mexico", "NY" => "New York", "NC" => "North Carolina", "ND" => "North Dakota", "OH" => "Ohio", "OK" => "Oklahoma", "OR" => "Oregon", "PA" => "Pennsylvania", "RI" => "Rhode Island", "SC" => "South Carolina", "SD" => "South Dakota", "TN" => "Tennessee", "TX" => "Texas", "UT" => "Utah", "VT" => "Vermont", "VA" => "Virginia", "WA" => "Washington", "WV" => "West Virginia", "WI" => "Wisconsin", "WY" => "Wyoming");
+
+
+// MOVITECNICA!
+function mo_get_data($get,$id){
+    $cn = Connection::getInstance();
+    $result = "";
+    switch ($get){
+        case 1 :
+            $get = 'name';
+            break;
+        case 2 :
+            $get = 'image';
+            break;
+        case 3 :
+            $get = 'content';
+            break;
+    }
+    $cn->query("SELECT $get FROM content WHERE id = $id");
+    while ($row = $cn->fetch()) $result = $row;
+    return $result[0];
+}
+function mo_get_url($id){
+    $cn = Connection::getInstance();
+    $result = array();
+    $cn->query("SELECT name,description FROM content WHERE category_id = $id");
+    while ($row = $cn->fetch()) $result[] = $row;
+    return $result;
+}
+function mo_get_data_select($id){
+    $cn = Connection::getInstance();
+    $result = array();
+    $cn->query("SELECT name,image,content,extra1 FROM image WHERE id = $id");
+    while ($row = $cn->fetch()) $result[] = $row;
+    return $result[0];
+}
+function mo_get_ar($cod,$pag){
+    $cn = Connection::getInstance();
+    $ini = (($pag-1)*2);
+    $result = array();
+    $cn->query("SELECT id,name,thumbnail,image,description,content,extra1 FROM image WHERE category_id = $cod limit $ini,6");
+    while ($row = $cn->fetch()) $result[] = $row;
+    return $result;
+}
+function mo_get_pag($cod,$pag){
+    $cn = Connection::getInstance();
+    $rang = 0;
+    $result = array();
+    $cn->query("SELECT id FROM image WHERE category_id = $cod");
+    $total = $cn->numrows();
+    $total = ceil($total/6);
+    if(($pag + 2) > $total){
+        $result[0] = $total;
+        $result[1] = 0;
+        return $result;
+    }else{
+        $result[0] = $pag + 2;
+        $result[1] = 1;
+        return $result;
+    }
+}
+function mo_get_tra(){
+    $cn = Connection::getInstance();
+    $result = array();
+    $cn->query("SELECT id,thumbnail FROM image WHERE category_id = 1");
+    while ($row = $cn->fetch()) $result[] = $row;
+    return $result;
+}
+
 ?>

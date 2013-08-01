@@ -22,7 +22,7 @@
         <script type='text/javascript' src='../js/jquery.js'></script>
         <script type='text/javascript' src='../js/custom.js'></script>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
-    <body>
+    <body>  <?php  include '../class/Connection.class.php'; include '../class/Fuctions.php'; ?>
         <div class="top_wrapper">
             <div id="header">
                 <div class="container">
@@ -102,38 +102,59 @@
         <div class="container">	
             <div id="post_grids" class="row" style=" margin-top: -20px; max-width: none;">
                 <div style="margin-left: 20px;">
-                <div style="margin-left: 15px; margin-bottom: -5px"> <a href="../index.html">Inicio</a> > <a href="Trabaje_Con_Nosotros.php">Trabaje con Nosotros </a> > Testimonios </div>
+                <div style="margin-left: 15px; margin-bottom: -5px"> <a href="../index.html">Inicio</a> > <a href="Trabaje_Con_Nosotros.php">Trabaje con Nosotros </a> > <?php echo mo_get_data(1, 21); ?> </div>
                 <br />
                 <br />
-                <h1 style="margin-left: 8px;"><b>Testimonios</b></h1>
+                <h1 style="margin-left: 8px;"><b><?php echo mo_get_data(1, 21); ?></b></h1>
                 <div style="display: inline-block;" class="uni_response">
                     <div style="width: 98%; height: auto;">
-                        <div style="width: 96%; margin: 0 auto;">Somos una empresa peruana con mas de 30 años en el mercado Que con cuatro lineas de negocio : <br /> unidad de gruas, unidad de fajas tranportadoras, tiendas y servicio tecnico. representamos a marcas de prestigio mundial como YALE INDUSTRAL PRODUCTS para la linea de iaje FENNER DUNLOP para la linea de fajas transportadoras, CONDUCTIX para sistema de electrificacion, ASGCO para accesorios de fajas transportadoras y DUNLOP para fajas en V. Nuestras mayores fortalezas son nuestro personal altamente calificado y el respaldo de nuestros proveedores....</div><br />
+                        <?php echo mo_get_data(3, 21); ?>
                         <br />
+                        <?php
+                            $pag = isset($_REQUEST['pag']) ? $_REQUEST['pag'] : '1';
+                            $ele = mo_get_ar(4, $pag);
+                            $pagination = mo_get_pag(4, $pag);
+                            $fin = $pagination[0];
+                            $cont = 1;
+                            foreach ($ele as $el){
+                            ?>
                         <div class="testimoneo">
-                            <div class="image_test"><a href="Testimonio.php"><img src="../images/testimonios.jpg"></a><br /><div class="test_nomb"><h4 style="margin-bottom: 0px; margin-top: 10px;"><a href="Testimonio.php">Nombre</a></h4>Cargo</div><div class="logo_test"><img src="../images/test_logo.png"></div></div>
-                            <div class="text_test oculto"><div style="height: 195px">Somos una empresa peruana con mas de 30 años en el mercado Que con cuatro lineas de negocio unidad de gruas, unida.....<br/><h5>Nombre</h5></div><br /><a href="testimonio.php" class="ir_test">Leer el Testimoneo ></a></div>
+                            <div class="image_test"><a href="Testimonio.php?cod=<?php echo $el[0]; ?>"><img src="../images/<?php echo $el[2]; ?>"></a><br /><div class="test_nomb"><h4 style="margin-bottom: 0px; margin-top: 10px;"><a href="Testimonio.php?cod=<?php echo $el[0]; ?>"><?php echo $el[1]; ?></a></h4><?php echo $el[6]; ?></div><div class="logo_test"><img src="../images/test_logo.png"></div></div>
+                            <div class="text_test oculto"><div style="height: 195px"><?php echo $el[4]; ?><br/><h5><?php echo $el[1]; ?></h5></div><br /><a href="testimonio.php?cod=<?php echo $el[0]; ?>" class="ir_test">Leer el Testimoneo ></a></div>
                         </div>
-                        <div class="testimoneo">
-                            <div class="image_test"><a href="Testimonio.php"><img src="../images/testimonios.jpg"></a><br /><div class="test_nomb"><h4 style="margin-bottom: 0px; margin-top: 10px;"><a href="Testimonio.php">Nombre</a></h4>Cargo</div><div class="logo_test"><img src="../images/test_logo.png"></div></div>
-                            <div class="text_test oculto"><div style="height: 195px">Somos una empresa peruana con mas de 30 años en el mercado Que con cuatro lineas de negocio unidad de gruas, unida.....<br/><h5>Nombre</h5></div><br /><a href="testimonio.php" class="ir_test">Leer el Testimoneo ></a></div>
-                        </div>
-                        <div class="testimoneo">
-                            <div class="image_test"><a href="Testimonio.php"><img src="../images/testimonios.jpg"></a><br /><div class="test_nomb"><h4 style="margin-bottom: 0px; margin-top: 10px;"><a href="Testimonio.php">Nombre</a></h4>Cargo</div><div class="logo_test"><img src="../images/test_logo.png"></div></div>
-                            <div class="text_test oculto"><div style="height: 195px">Somos una empresa peruana con mas de 30 años en el mercado Que con cuatro lineas de negocio unidad de gruas, unida.....<br/><h5>Nombre</h5>.</div><br /><a href="testimonio.php" class="ir_test">Leer el Testimoneo ></a></div>
-                        </div><br /><br />
-                        <div class="testimoneo">
-                            <div class="image_test"><a href="Testimonio.php"><img src="../images/testimonios.jpg"></a><br /><div class="test_nomb"><h4 style="margin-bottom: 0px; margin-top: 10px;"><a href="Testimonio.php">Nombre</a></h4>Cargo</div><div class="logo_test"><img src="../images/test_logo.png"></div></div>
-                            <div class="text_test oculto"><div style="height: 195px">Somos una empresa peruana con mas de 30 años en el mercado Que con cuatro lineas de negocio unidad de gruas, unida.....<br/><h5>Nombre</h5></div><br /><a href="testimonio.php" class="ir_test">Leer el Testimoneo ></a></div>
-                        </div>
-                        <div class="testimoneo">
-                            <div class="image_test"><a href="Testimonio.php"><img src="../images/testimonios.jpg"></a><br /><div class="test_nomb"><h4 style="margin-bottom: 0px; margin-top: 10px;"><a href="Testimonio.php">Nombre</a></h4>Cargo</div><div class="logo_test"><img src="../images/test_logo.png"></div></div>
-                            <div class="text_test oculto"><div style="height: 195px;">Somos una empresa peruana con mas de 30 años en el mercado Que con cuatro lineas de negocio unidad de gruas, unida.....<br/><h5>Nombre</h5>.</div><br /><a href="testimonio.php" class="ir_test">Leer el Testimoneo ></a></div>
-                        </div>
-                        <div class="testimoneo">
-                            <div class="image_test"><a href="Testimonio.php"><img src="../images/testimonios.jpg"></a><br /><div class="test_nomb"><h4 style="margin-bottom: 0px; margin-top: 10px;"><a href="Testimonio.php">Nombre</a></h4>Cargo</div><div class="logo_test"><img src="../images/test_logo.png"></div></div>
-                            <div class="text_test oculto"><div style="height: 195px">Somos una empresa peruana con mas de 30 años en el mercado Que con cuatro lineas de negocio unidad de gruas, unida.....<br/><h5>Nombre</h5></div><br /><a href="testimonio.php" class="ir_test">Leer el Testimoneo ></a></div>
-                        </div><br /><br />
+                        <?php
+                        if($cont%3 == 0){
+                            echo "<br /><br />";
+                        }
+                        $cont++;
+                            }
+                        ?>
+                        <ul class="pagination">
+                                <?php
+                                if($pag > 1){
+                                ?>
+                                <li><a href="?pag=<?php echo $pag-1; ?>">&laquo;</a></li>
+                                <?php
+                                }
+                                $ini = (($pag - 2) < 1) ? 1 : ($pag - 2);
+                                for($x = $ini; $x<= $fin ; $x++){
+                                    if($pag == $x){
+                                        ?>
+                                        <li style="font-weight: bold;"><?php echo $x; ?></li>
+                                        <?php 
+                                    }else{
+                                ?>
+                                        <li><a href="?pag=<?php echo $x; ?>"><?php echo $x; ?></a></li>
+                                <?php
+                                    }
+                                }
+                                if($pag < $fin){
+                                ?>
+                                <li><a href="?pag=<?php echo $pag+1; ?>">&raquo;</a></li>
+                                <?php
+                                }
+                                ?>
+                            </ul><br /><br />
                     </div>
                 </div>
                 <div id="post_p" style="width: 320px; display: inline-block; margin-left: 20px; margin-top: 10px; vertical-align: top;">

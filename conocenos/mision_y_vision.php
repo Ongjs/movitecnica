@@ -22,7 +22,7 @@
         <script type='text/javascript' src='../js/jquery.js'></script>
         <script type='text/javascript' src='../js/custom.js'></script>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
-    <body>
+    <body>  <?php  include '../class/Connection.class.php'; include '../class/Fuctions.php'; ?>
         <div class="top_wrapper">
             <div id="header">
                 <div class="container">
@@ -102,21 +102,14 @@
         <div class="container">	
             <div id="post_grids" class="row" style=" margin-top: -20px;">
                 <div style="margin-left: 20px;">
-                <span> <a href="../index.html">Inicio</a> > <a href="Conocenos.php">Conocenos</a> > Misión y Visión</span>
+                <span> <a href="../index.html">Inicio</a> > <a href="Conocenos.php">Conocenos</a> > <?php echo mo_get_data(1, 4); ?></span>
                 <br />
                 <br />
-                <h1><b>Misión y Visión</b></h1>
+                <h1><b><?php echo mo_get_data(1, 4); ?></b></h1>
                 <div style="display: inline-block;" class="uni_response">
                     <div style="width: 98%;">
-                        <div class="image_box"><img src="../images/mision_y_vision.png"></div><br />
-                        <span>
-                            <h3><b>Misión</b></h3>
-                            Ayudar a nuestros clientes a mover, levantar, posicionar y asegurar todo tipo de material de una manera fácil y segura.<br /><br />
-
-                            <h3><b>Visión</b></h3>
-                            Ser líderes de la región sudamericana, como empresa que brinda soluciones integrales de ingeniería en materiales a todos los sectores productivos.<br />
-                        </span><br />
-                        <br />
+                        <div class="image_box"><img src="../images/<?php echo mo_get_data(2, 4); ?>"></div><br />
+                        <?php echo mo_get_data(3, 4); ?>
                     </div>
                 </div>
                 <div id="post_p" style="width: 320px; display: inline-block; margin-left: 20px; margin-top: 10px; vertical-align: top;">

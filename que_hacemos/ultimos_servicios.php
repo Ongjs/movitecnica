@@ -22,7 +22,7 @@
         <script type='text/javascript' src='../js/jquery.js'></script>
         <script type='text/javascript' src='../js/custom.js'></script>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
-    <body>
+    <body>  <?php  include '../class/Connection.class.php'; include '../class/Fuctions.php'; ?>
         <div class="top_wrapper">
             <div id="header">
                 <div class="container">
@@ -102,45 +102,61 @@
         <div class="container">	
             <div id="post_grids" class="row" style=" margin-top: -20px;">
                 <div style="margin-left: 20px;">
-                <span> <a href="../index.html">Inicio</a> > <a href="Que_Hacemos.php">Que Hacemos</a> > <a href="Unidad_Servicio_Tecnico.php">Unidad Servicio Técnico</a> > Últimos Servicios</span>
+                <span> <a href="../index.html">Inicio</a> > <a href="Que_Hacemos.php">Que Hacemos</a> > <a href="Unidad_Servicio_Tecnico.php">Unidad Servicio Técnico</a> > <?php echo mo_get_data(1, 24); ?></span>
                 <br />
                 <br />
-                <h1><b>Últimos Servicios</b></h1>
+                <h1><b><?php echo mo_get_data(1, 24); ?></b></h1>
                 <div style=" display: inline-block; margin-top: 5px;" class="uni_response">
-                    <span>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsumha sido<br /> el  texto de rellenoestandar de las industrias desde el año 1500, cuando un impresor(N. del T.)</span><br /><br />
+                    <?php echo mo_get_data(3, 24); ?>
                     <div style="width: 98%;">
+                        <?php
+                            $pag = isset($_REQUEST['pag']) ? $_REQUEST['pag'] : '1';
+                            $ele = mo_get_ar(3, $pag);
+                            $pagination = mo_get_pag(3, $pag);
+                            $fin = $pagination[0];
+                            foreach ($ele as $el){
+                            ?>
                         <div style="border-bottom: 1px solid #F3F3F3;  padding-bottom: 10px; margin-top: 10px;">
                             <div style="display: inline-block; vertical-align: top; max-width: 27%; width: 27%;margin-bottom: 15px; margin-right: 30px;">
-                                <a href="Servicios.php"><img src="../images/uni3.jpg" style="min-width: 180px; height: 190px; width: 190px;"></a>
+                                <a href="Servicios.php?cod=<?php echo $el[0]; ?>"><img src="../images/<?php echo $el[2]; ?>" style="min-width: 180px; height: 190px; width: 190px;"></a>
                             </div>
                             <div style="display: inline-block; vertical-align: top; max-width: 65%; margin-bottom: 15px; min-width: 400px;">
-                                <a href="Servicios.php" ><h4>Nombre</h4></a>
-                                <span>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsumha sido el texto de rellenoestandar de las industrias desde el año 1500, cuando un impresor(N. del T.)<br /> Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsumha sido el texto de rellenoestandar de las industrias desde el año 1500, cuando un impresor(N. del T.)</span><br />                            
-                                <div style="margin-top: 5px;"><a href="Servicios.php">Ver más</a></div>
+                                <a href="Servicios.php?cod=<?php echo $el[0]; ?>" ><h4><?php echo $el[1]; ?></h4></a>
+                                <span><?php echo $el[4]; ?></span><br />                            
+                                <div style="margin-top: 5px;"><a href="Servicios.php?cod=<?php echo $el[0]; ?>">Ver más</a></div>
                             </div>
                         </div>
                         <br />
-                        <div style="border-bottom: 1px solid #F3F3F3;  padding-bottom: 10px; margin-top: 10px;">
-                            <div style="display: inline-block; vertical-align: top; max-width: 27%; width: 27%;margin-bottom: 15px; margin-right: 30px;">
-                                <a href="Servicios.php"><img src="../images/uni3.jpg" style="min-width: 180px; height: 190px; width: 190px;"></a>
-                            </div>
-                            <div style="display: inline-block; vertical-align: top; max-width: 65%; margin-bottom: 15px; min-width: 400px;">
-                                <a href="Servicios.php" ><h4>Nombre</h4></a>
-                                <span>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsumha sido el texto de rellenoestandar de las industrias desde el año 1500, cuando un impresor(N. del T.)<br /> Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsumha sido el texto de rellenoestandar de las industrias desde el año 1500, cuando un impresor(N. del T.)</span><br />                            
-                                <div style="margin-top: 5px;"><a href="Servicios.php">Ver más</a></div>
-                            </div>
-                        </div>
-                        <br />
-                        <div style="padding-bottom: 10px; margin-top: 10px;">
-                            <div style="display: inline-block; vertical-align: top; max-width: 27%; width: 27%;margin-bottom: 15px; margin-right: 30px;">
-                                <a href="Servicios.php"><img src="../images/uni3.jpg" style="min-width: 180px; height: 190px; width: 190px;"></a>
-                            </div>
-                            <div style="display: inline-block; vertical-align: top; max-width: 65%; margin-bottom: 15px; min-width: 400px;">
-                                <a href="Servicios.php" ><h4>Nombre</h4></a>
-                                <span>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsumha sido el texto de rellenoestandar de las industrias desde el año 1500, cuando un impresor(N. del T.)<br /> Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsumha sido el texto de rellenoestandar de las industrias desde el año 1500, cuando un impresor(N. del T.)</span><br />                            
-                                <div style="margin-top: 5px;"><a href="Servicios.php">Ver más</a></div>
-                            </div>
-                        </div>
+                        <?php
+                            }
+                            ?>
+                        <ul class="pagination">
+                                <?php
+                                if($pag > 1){
+                                ?>
+                                <li><a href="?pag=<?php echo $pag-1; ?>">&laquo;</a></li>
+                                <?php
+                                }
+                                $ini = (($pag - 2) < 1) ? 1 : ($pag - 2);
+                                for($x = $ini; $x<= $fin ; $x++){
+                                    if($pag == $x){
+                                        ?>
+                                        <li style="font-weight: bold;"><?php echo $x; ?></li>
+                                        <?php 
+                                    }else{
+                                ?>
+                                        <li><a href="?pag=<?php echo $x; ?>"><?php echo $x; ?></a></li>
+                                <?php
+                                    }
+                                }
+                                if($pag < $fin){
+                                ?>
+                                <li><a href="?pag=<?php echo $pag+1; ?>">&raquo;</a></li>
+                                <?php
+                                }
+                                ?>
+                            </ul>
+                            <br /><br />
                     </div>
                 </div>
                 <div id="post_p" style="width: 320px; display: inline-block; margin-left: 18px; margin-top: 10px; vertical-align: top;">

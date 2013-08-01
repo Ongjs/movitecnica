@@ -1527,3 +1527,17 @@ blockquote.right{margin-left:20px;text-align:left;	margin-right:0;	width:33%; fl
 }
 
 @media only screen and (max-width: 320px) {}
+
+.pagination {
+    margin: 0 auto;
+    text-align: center;
+    text-decoration: none;
+}
+.pagination li {
+    display: inline-block;  
+    display: -moz-inline-stack; /* hack FF 2 */
+    *display: inline; /* hack IE 7 */
+}
+.pagination li a {
+    text-decoration : none;
+}

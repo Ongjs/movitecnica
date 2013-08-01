@@ -22,7 +22,7 @@
         <script type='text/javascript' src='../js/jquery.js'></script>
         <script type='text/javascript' src='../js/custom.js'></script>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
-    <body>
+    <body>  <?php  include '../class/Connection.class.php'; include '../class/Fuctions.php'; ?>
         <div class="top_wrapper">
             <div id="header">
                 <div class="container">
@@ -102,17 +102,17 @@
         <div class="container">	
             <div id="post_grids" class="row" style="margin-top: -20px;">
                 <div style="margin-left: 20px;">
-                <span> <a href="../index.html">Inicio</a> > <a href="Que_Hacemos.php">Que Hacemos</a> > <a href="Unidad_Servicio_Tecnico.php">Unidad Servicio Técnico</a> > <a href="Ultimos_Servicios.php">  Últimos Servicios</a></span> > Nombre Servicio
+                    <?php
+                    $id = $_REQUEST['cod'];
+                    $data = mo_get_data_select($id);
+                    ?>
+                <span> <a href="../index.html">Inicio</a> > <a href="Que_Hacemos.php">Que Hacemos</a> > <a href="Unidad_Servicio_Tecnico.php">Unidad Servicio Técnico</a> > <a href="Ultimos_Servicios.php">  Últimos Servicios</a></span> > <?php echo $data[0] ?>
                 <br /><br />
                 <div style="display: inline-block;" class="uni_response">
                     <div style="width: 98%; text-align: left;">
-                        <div class="image_box"><img src="../images/CEO.png" style=""></div><br/>
-                        <h3>Nombre del Servicio</h3>
-                        <div>
-                            Somos una empresa peruana con mas de 30 años en el mercado Que con cuatro lineas de negocio: unidad de gruas, unidad de fajas tranportadoras, tiendas y servicio tecnico. representamos a marcas de prestigio mundial como YALE INDUSTRAL PRODUCTS para la linea de iaje FENNER DUNLOP para la linea de fajas transportadoras, CONDUCTIX para sistema de electrificacion, ASGCO para accesorios de fajas transportadoras y DUNLOP para fajas en V. Nuestras mayores fortalezas son nuestro personal altamente calificado y el respaldo de nuestros proveedores.
-                            <br /><br />
-                        </div>  
-                        <div><a href="Ultimos_Servicios.php"> < Regresar a  Últimos Servicios</a></div>
+                        <div class="image_box"><img src="../images/<?php echo $data[1] ?>" style=""></div><br/>
+                        <h3><?php echo $data[0] ?></h3>
+                            <?php echo $data[2] ?>
                     <br />
                     </div>
                 </div>
