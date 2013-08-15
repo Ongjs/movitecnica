@@ -1,90 +1,74 @@
 <?php
 if(isset($_POST["tema"])){
-
     if (isset($_POST['check'])) {
         $check = '<tr>
-                    <td style="border-top: solid 1px rgba(225,225,225,1)">se solicita que el mensaje sea respondido</td>
+                    <td colspan="2" style="border-top: solid 1px rgba(225,225,225,1)"><br />Se solicita que el mensaje sea respondido.</td>
                   </tr>';
-        $acheck = ' \t se solicita que el mensaje sea respondido ';
+        $acheck = '\t Se solicita que el mensaje sea respondido. ';
     }else{
         $check = "";
         $acheck = "";
     }
-    
-require 'lib/PHPMailer/class.phpmailer.php';
+    require 'lib/PHPMailer/class.phpmailer.php';
+    $mail = new PHPMailer();
+    $mail->IsSMTP();                                      // Set mailer to use SMTP
+    $mail->Host = 'smtp.gmail.com';  // Specify main and backup server
+    $mail->Port = 465;
+    $mail->SMTPAuth = true;                               // Enable SMTP authenticationa
+    $mail->SMTPSecure = 'ssl';
+    $mail->Username = 'andresgarciadev@gmail.com';                            // SMTP username
+    $mail->Password = 'foreverlove12';                           // SMTP password
+    $mail->From = 'no-reply@movitecnica.com.pe';
+    $mail->FromName = 'Movitécnica';
+    $mail->AddAddress('andresgarciadev@gmail.com', 'Andres Garcia');  // Add a recipient
+    $mail->AddAddress('master.ojitos@gmail.com', 'Ricardo Garcia Rodriguez');  // Add a recipient
+    $mail->AddReplyTo($_POST["email"], $_POST["nombre"]." ".$_POST["apellido"]);
+    $mail->WordWrap = 50;                                 // Set word wrap to 50 characters
+    $mail->IsHTML(true);                                  // Set email format to HTML
+    $mail->CharSet = 'utf-8';
+    $mail->Subject = 'Movitécnica - Contactenos';
+    $mail->Body = '<table border="0" style="text-align: left; background: rgba(248,248,248,8); border-radius: 3px; line-height: 22px;">
+        <tr style="border-top: solid 1px rgba(225,225,225,1)">
+            <td><h2>Contactenos</h2></td>
+            <td style="width: 400px; text-align: right"><img src="www.movitecnica.com/images/logo_skin3.png" width="270" height="56"></td>
+        </tr>
+        <tr >
+            <td style="border-top: solid 1px rgba(225,225,225,1)"><strong>Tema:</strong></td>
+            <td style="border-top: solid 1px rgba(225,225,225,1)">' . $_POST["tema"] . '</td>
+        </tr>
+        <tr>
+            <td style="border-top: solid 1px rgba(225,225,225,1)"><strong>Nombre:</strong></td>
+            <td style="border-top: solid 1px rgba(225,225,225,1)">' . $_POST["nombre"] . ' ' . $_POST["apellido"] . '</td>
+        </tr>
+        <tr>
+            <td style="border-top: solid 1px rgba(225,225,225,1)"><strong>Mensaje:</strong></td>
+            <td style="border-top: solid 1px rgba(225,225,225,1)">' . nl2br($_POST["mensaje"]) . '</td>
+        </tr>
+        <tr>
+            <td style="border-top: solid 1px rgba(225,225,225,1)"><strong>Email:</strong></td>
+            <td style="border-top: solid 1px rgba(225,225,225,1)">' . $_POST["email"] . '</td>
+        </tr>
+        <tr>
+            <td style="border-top: solid 1px rgba(225,225,225,1)"><strong>Compañia:</strong></td>
+            <td style="border-top: solid 1px rgba(225,225,225,1)">' . $_POST["compania"] . '</td>
+        </tr>
+        <tr>
+            <td style="border-top: solid 1px rgba(225,225,225,1)"><strong>Telefono:</strong></td>
+            <td style="border-top: solid 1px rgba(225,225,225,1)">' . $_POST["telefono"] . '</td>
+        </tr>
+        '.$check.'
+    </table>';
+    $mail->AltBody = '\t Contactenos \n \n
+    \t Tema: \t '.$_POST["tema"].' \n
+    \t Nombre: \t '.$_POST["nombre"]." ".$_POST["apellido"].' \n
+    \t Mensaje: \n  \t'.$_POST["mensaje"].' \n
+    \t Email: \t '.$_POST["email"].' \n
+    \t Compañia: \t '.$_POST["compania"].' \n
+    \t Telefono: \t '.$_POST["telefono"].' \n
+    '.$acheck;
 
-$mail = new PHPMailer();
-
-$mail->IsSMTP();                                      // Set mailer to use SMTP
-$mail->Host = 'smtp.gmail.com';  // Specify main and backup server
-$mail->Port = 465;
-$mail->SMTPAuth = true;                               // Enable SMTP authenticationa
-$mail->Username = 'andresgarciadev@gmail.com';                            // SMTP username
-$mail->Password = 'foreverlove12';                           // SMTP password
-
-$mail->From = 'no-reply@movitecnica.com.pe';
-$mail->FromName = 'Movitecnica';
-$mail->AddAddress('andresgarciadev@gmail.com', 'Andres Garcia');  // Add a recipient
-$mail->AddAddress('ellen@example.com');               // Name is optional
-$mail->AddReplyTo($_POST["email"], $_POST["nombre"]." ".$_POST["apellido"]);
-
-$mail->WordWrap = 50;                                 // Set word wrap to 50 characters
-$mail->IsHTML(true);                                  // Set email format to HTML
-
-$mail->Subject = 'Movitécnica - Contactenos';
-$mail->Body    = '<table border="0" style="text-align: left; background: rgba(248,248,248,8); border-radius: 3px; line-height: 40px;">
-                <tr style="border-top: solid 1px rgba(225,225,225,1)">
-                    <td><h2>Contactenos</h2></td><td style="width: 400px; text-align: right"><img src="www.movitecnica.com/images/logo_skin3.png" width="270" height="56"></td>
-                </tr>
-                <tr >
-                    <td style="border-top: solid 1px rgba(225,225,225,1)">Tema:</td>
-                    <td style="border-top: solid 1px rgba(225,225,225,1)">'.$_POST["tema"].'</td>
-                </tr>
-                <tr>
-                    <td style="border-top: solid 1px rgba(225,225,225,1)">Nombre:</td>
-                    <td style="border-top: solid 1px rgba(225,225,225,1)">'.$_POST["nombre"]." ".$_POST["apellido"].'</td>
-                </tr>
-                <tr>
-                    <td colspan="2" style="border-top: solid 1px rgba(225,225,225,1)">Mensaje:</td>
-                </tr>
-                <tr>
-                    <td colspan="2">'.$_POST["mensaje"].'</td>
-                </tr>
-                <tr>
-                    <td style="border-top: solid 1px rgba(225,225,225,1)">Email:</td>
-                    <td style="border-top: solid 1px rgba(225,225,225,1)">'.$_POST["email"].'</td>
-                </tr>
-                <tr>
-                    <td style="border-top: solid 1px rgba(225,225,225,1)">Compañia:</td>
-                    <td style="border-top: solid 1px rgba(225,225,225,1)">'.$_POST["compania"].'</td>
-                </tr>
-                <tr>
-                    <td style="border-top: solid 1px rgba(225,225,225,1)">Telefono:</td>
-                    <td style="border-top: solid 1px rgba(225,225,225,1)">'.$_POST["telefono"].'</td>
-                </tr>
-                '.$check.'
-            </table>';
-            $mail->AltBody = '\t Contactenos \n \n
-                    \t Tema: \t '.$_POST["tema"].' \n
-                    \t Nombre: \t '.$_POST["nombre"]." ".$_POST["apellido"].' \n
-                    \t Mensaje \n  \t'.$_POST["mensaje"].' \n
-                    \t Email \t '.$_POST["email"].' \n
-                    \t Compañia \t '.$_POST["compania"].' \n
-                    \t Telefono \t '.$_POST["telefono"].' \n
-                    '.$acheck.'
-                ';
-if(!$mail->Send())
-{
-echo "Mailer Error: " . $mail->ErrorInfo;
+    $email_send = $mail->Send();
 }
-else
-{
-echo "Message has been sent";
-}
-$email_send = $mail->Send();
-}
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en-US">
@@ -95,8 +79,8 @@ $email_send = $mail->Send();
         <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
         <link rel="shortcut icon" href="images/favicon_movi.ico">
-        <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
-        <link href='http://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen" />
+        <link href='http://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css' />
         <link rel='stylesheet'  href='css/mystyles.css' type='text/css' media='all' />
         <link rel='stylesheet' id='reset-css'  href='css/reset9d52.css?ver=3.5.1' type='text/css' media='all' />
         <link rel='stylesheet' id='responsive'  href='css/responsive.css' type='text/css' media='all' />
@@ -219,25 +203,25 @@ include 'class/Fuctions.php'; ?>
                     <span> <a href="index.php"><?php echo mo_get_data(1, 1); ?></a> > <?php echo mo_get_data(1, 31); ?> </span>
                     <br />
                     <br />
-                    <h1><b><?php echo mo_get_data(1, 31); ?></b></h1>
                     <?php 
-                    if(isset($email_send)){
-                        if($email_send){
-                            ?>
-                    <div style="color: blue;"> Su mensaje ha sido enviado con exito</div><br />
-                            <?php
+                    if (isset($email_send)) {
+                        if ($email_send) {
+                    ?>
+                    <p class="lead alert-success">&nbsp;Su mensaje ha sido enviado con exito.</p>
+                    <?php
                         }else{
-                            ?>
-                    <div style="color: red;"> El Mensaje no ha podido ser enviado </div><br />
-                            <?php
+                    ?>
+                    <p class="lead alert-error">&nbsp;El Mensaje no ha podido ser enviado. Intente de nuevo por favor.</p>
+                    <?php
                         }
                     }
                     ?>
+                    <h1><b><?php echo mo_get_data(1, 31); ?></b></h1>
                     <span><?php echo mo_get_data(4, 31); ?></span>
                     <br />
                     <div id="post_p" style="display: inline-block; margin-top: 10px; vertical-align: top;">
                         <h3>Enviar un Mensaje</h3>
-                        <form class="form-horizontal" method="post">
+                        <form method="post">
                             <div class="control-group">
                                 <label class="control-label" for="inputTema">Tema</label>
                                 <div class="controls">
