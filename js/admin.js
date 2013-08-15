@@ -213,7 +213,7 @@ function mo_tinymce(){
         theme_advanced_toolbar_location: 'top', 
         theme_advanced_toolbar_align: 'left', 
         theme_advanced_resizing: false, 
-        content_css : 'css/reset.css, css/text.css'
+        content_css : 'css/reset.css, css/text.css, style9d52.css'
     });
     tinyMCE.init({
         mode : "textareas",
@@ -237,7 +237,7 @@ function mo_tinymce(){
         plugin_insertdate_dateFormat : '%m-%d-%Y', 
         plugin_insertdate_timeFormat : '%H:%M:%S', 
         theme_advanced_resizing : false, 
-        content_css : 'css/reset.css, css/text.css', 
+        content_css : 'css/reset.css, css/text.css, style9d52.css', 
         file_browser_callback : 'mo_ajaxfilemanager'
     });
 }
