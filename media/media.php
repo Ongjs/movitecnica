@@ -22,7 +22,8 @@
         <script type='text/javascript' src='../js/jquery.js'></script>
         <script type='text/javascript' src='../js/custom.js'></script>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
-    <body>
+    <body> <?php include '../class/Connection.class.php';
+include '../class/Fuctions.php'; ?>
         <div class="top_wrapper">
             <div id="header">
                 <div class="container">
@@ -33,54 +34,54 @@
                         </div>
                         <div class="twelve columns">
                             <div class="header_left">
-                                <h1 id="logo"><a href="../index.html" title=""><img src="../images/logo_skin3.png" alt="" id="header_logo" style="width: 270px"/></a></h1>
+                                <h1 id="logo"><a href="../index.php" title=""><img src="../images/logo_skin3.png" alt="" id="header_logo" style="width: 270px"/></a></h1>
 
 
                             </div>
 
                             <div class="header_right">
                                 <div id="top_menu" class="menu-navigation-container"><ul id="mainmenu" class="sf-menu">
-                                        <!--<li id="menu-item-861"  class="current-menu-item"><a href="../index.html">Homepage</a></li>-->
-                                        <li id="menu-item-1126"  ><a href="../conocenos/conocenos.php">Conócenos</a>
+                                        <!--<li id="menu-item-861"  class="current-menu-item"><a href="../index.php">Homepage</a></li>-->
+                                        <li id="menu-item-1126"  ><a href="../conocenos/conocenos.php"><?php echo mo_get_data(1, 2); ?></a>
                                             <ul class="sub-menu">
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../conocenos/mensaje_del_gerente.php">Mensaje del Gerente</a></li>
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../conocenos/valores.php">Misión y Visión</a></li>
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../Conocenos/Valores.php">Valores</a></li>
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../conocenos/equipo_de_trabajo.php">Equipo de Trabajo</a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../conocenos/mensaje_del_gerente.php"><?php echo mo_get_data(1, 3); ?></a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../conocenos/valores.php"><?php echo mo_get_data(1, 4); ?></a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../Conocenos/Valores.php"><?php echo mo_get_data(1, 5); ?></a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../conocenos/equipo_de_trabajo.php"><?php echo mo_get_data(1, 20); ?></a></li>
                                             </ul>
                                         </li>
-                                        <li id="menu-item-1126"  ><a href="../que_hacemos/que_hacemos.php">Que Hacemos</a>
+                                        <li id="menu-item-1126"  ><a href="../que_hacemos/que_hacemos.php"><?php echo mo_get_data(1, 7); ?></a>
                                             <ul class="sub-menu">
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199" style="width: 205px"><a href="../que_hacemos/unidad_gruas_y_proyectos.php">Unid. Grúas y Proyectos</a></li>
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199" style="width: 205px"><a href="../que_hacemos/unidad_fajas_transportadoras.php">Unid. Fajas Transportadoras</a></li>
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199" style="width: 205px"><a href="../que_hacemos/unidad_servicio_tecnico.php">Unid. Servicio Técnico</a></li>
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199" style="width: 205px"><a href="../que_hacemos/unidad_comercial.php">Unid. Comercial</a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199" style="width: 205px"><a href="../que_hacemos/unidad_gruas_y_proyectos.php"><?php echo mo_get_data(1, 8); ?></a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199" style="width: 205px"><a href="../que_hacemos/unidad_fajas_transportadoras.php"><?php echo mo_get_data(1, 9); ?></a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199" style="width: 205px"><a href="../que_hacemos/unidad_servicio_tecnico.php"><?php echo mo_get_data(1, 11); ?></a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199" style="width: 205px"><a href="../que_hacemos/unidad_comercial.php"><?php echo mo_get_data(1, 12); ?></a></li>
                                             </ul>
                                         </li>
-                                        <li id="menu-item-1126"  ><a href="../productos/productos.php">Productos</a>
+                                        <li id="menu-item-1126"  ><a href="../productos/productos.php"><?php echo mo_get_data(1, 25); ?></a>
                                             <ul class="sub-menu">
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../productos/productos.php">Categoría</a></li>
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../productos/productos.php">Marca</a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../productos/productos.php"><?php echo mo_get_data(1, 26); ?></a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../productos/productos.php"><?php echo mo_get_data(1, 27); ?></a></li>
                                             </ul>
                                         </li>
-                                        <li id="menu-item-1126"  ><a href="../SIG/sig.php">SIG</a>
+                                        <li id="menu-item-1126"  ><a href="../SIG/sig.php"><?php echo mo_get_data(1, 13); ?></a>
                                             <ul class="sub-menu">
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../SIG/politica.php">Política</a></li>
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../SIG/garantia.php">Garantía</a></li>
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../SIG/reclamos.php">Reclamos</a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../SIG/politica.php"><?php echo mo_get_data(1, 14); ?></a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../SIG/garantia.php"><?php echo mo_get_data(1, 15); ?></a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../SIG/reclamos.php"><?php echo mo_get_data(1, 16); ?></a></li>
                                             </ul>
                                         </li>
-                                        <li id="menu-item-1126"  ><a href="../trabaje_con_nosotros/trabaje_con_nosotros.php">Trabaje con Nosotros</a>
+                                        <li id="menu-item-1126"  ><a href="Trabaje_Con_Nosotros.php"><?php echo mo_get_data(1, 17); ?></a>
                                             <ul class="sub-menu">
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../Trabaje_Con_Nosotros/porque_movitecnica.php">Porqué Movitécnica</a></li>
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../trabaje_con_nosotros/testimonios.php">Testimonios</a></li>
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../trabaje_con_nosotros/oferta_de_trabajo.php">Oferta de Trabajo</a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../trabaje_con_nosotros/porque_movitecnica.php"><?php echo mo_get_data(1, 18); ?></a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../trabaje_con_nosotros/Testimonios.php"><?php echo mo_get_data(1, 21); ?></a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../trabaje_con_nosotros/oferta_de_trabajo.php"><?php echo mo_get_data(1, 19); ?></a></li>
                                             </ul>
                                         </li>
-                                        <li id="menu-item-1126"  ><a href="Media.php">Media</a>
+                                        <li id="menu-item-1126"  ><a href="../media/media.php"><?php echo mo_get_data(1, 28); ?></a>
                                             <ul class="sub-menu">
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="Media.php">Noticias</a></li>
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="Media.php">Notas de Prensa</a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../media/media.php?media=noticia"><?php echo mo_get_data(1, 29); ?></a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../media/media.php?media=nota"><?php echo mo_get_data(1, 30); ?></a></li>
                                             </ul>
                                         </li>
                                         <!--<li id="menu-item-1125" ><a href="single-ele.html">HTML Elements</a></li>-->
@@ -91,7 +92,7 @@
                                     <div class="header_search"><div class="search_zoom search_btn"></div>
                                         <div class="search_box">
                                             <form method="get" id="searchform" action="#"><input id="s" name="s"   type="text" placeholder="Escribir y dar enter para buscar" class="search_input" /></form></div></div>	
-                                </div>							
+                                </div>						
 
                             </div>
                         </div>	
@@ -102,138 +103,116 @@
         <div class="container">	
             <div id="post_grids" class="row" style=" margin-top: -20px;">
                 <div style="margin-left: 20px;">
-                    <span> <a href="../index.html">Inicio</a> > Media</span>
+                    <?php
+                    $pagfil = "";
+                    $media = mo_get_data(1, 28);
+                    $filtro = isset($_REQUEST['media']) ? ($_REQUEST['media'] == "noticia" ? 5 : 6) : "5,6";
+                    if (is_numeric($filtro)) {
+                        $indice = "<a href='Media.php'> > $media </a> > ";
+                        $indice .= $filtro == 5 ? "Noticias" : "Notas de Prensa";
+                        $pagfil = $filtro == 5 ? "&media=noticia" : "&media=nota";
+                    } else {
+                        $pagfil = "";
+                        $indice = "> $media";
+                    }
+                    ?>
+                    <span> <a href="../index.php"><?php echo mo_get_data(1, 1); ?></a> <?php echo $indice; ?></span>
                     <br />
                     <br />
-                    <h1><b>Media</b></h1>
+                    <h1><b><?php echo $media; ?></b></h1>
                     <div style="display: inline-block;" class="uni_response">
-                        <span>Encontrará una lista actualizada de los comunicados y anuncios por debajo de noticias de Movitécnica</span><br /><br />
+<?php echo mo_get_data(3, 28); ?>
                         <div style="width: 100%;background: rgba(243,243,243,1)">
-                            <div style="width: 90%; padding: 12px;">
-                                Filtrar por Categoria
-                                <select style="margin-left: 15px;">
-                                    <option>Todas Las Categorias</option>
-                                    <option>Noticias</option>
-                                    <option>Notas de Prensa</option>
-                                </select>
-                                <button type="submit" class="btn">Filtrar</button>
-                            </div>
+                            <form id="form1">
+                                <div style="width: 90%; padding: 12px;">
+                                    Filtrar por Categoria
+                                    <select style="margin-left: 15px;" name="media" id="media">
+                                        <option value="no">Todas Las Categorias</option>
+                                        <option <?php echo isset($_REQUEST['media']) ? ($_REQUEST['media'] == "noticia" ? "selected" : "") : ""; ?> value="noticia"><?php echo mo_get_data(1, 29); ?></option>
+                                        <option <?php echo isset($_REQUEST['media']) ? ($_REQUEST['media'] == "nota" ? "selected" : "") : ""; ?> value="nota"><?php echo mo_get_data(1, 30); ?></option>
+                                    </select>
+                                    <button type="submit" class="btn" id="filtrar">Filtrar</button>
+                                </div>
+                            </form>
                         </div>
                         <br />
                         <div style="width: 98%;">
-                            <div style="padding-bottom: 25px; margin-top: 10px;">
-                                <div style="width: 100%">
-                                    <a href="noticia.php"><h3 style="margin: -2px;">Titulo de la noticia</h3></a>
-                                    <span>publicado abril 10,2012<br /><br /></span>
-                                </div>
-                                <div style="margin-top: -8px;">
-                                    <div style="display: inline-block; vertical-align: top; width: 21%; width: 27%; margin-bottom: 15px; margin-right: 25px;">
-                                        <a href="Noticia.php"><img src="../images/uni3.jpg" style="min-width: 180px; width: 100%"></a>
+                            <?php
+                            $pag = isset($_REQUEST['pag']) ? $_REQUEST['pag'] : '1';
+                            $ele = mo_get_ar($filtro, $pag);
+                            $pagination = mo_get_pag($filtro, $pag);
+                            $fin = $pagination[0];
+                            foreach ($ele as $el) {
+                                ?>
+                                <div style="padding-bottom: 25px; margin-top: 10px;">
+                                    <div style="width: 100%">
+                                        <a href="noticia.php?cod=<?php echo $el[0]; ?>"><h3 style="margin: -2px;"><?php echo $el[1]; ?></h3></a>
+                                        <span>publicado en <?php echo substr($el[7], 0, strrpos($el[7], " ")); ?><br /><br /></span>
                                     </div>
-                                    <div style="display: inline-block; vertical-align: top; max-width: 100%; margin-bottom: 15px; min-width: 200px; width: 68%;">
-                                        <span>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsumha sido el texto de rellenoestandar de las industrias desde el año 1500, cuando un impresor(N. del T.)<br /> Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsumha sido el texto de rellenoestandar de las industrias desde el año 1500, cuando un impresor(N. del T.)</span><br />                            
-                                        <div style="margin-top: 5px;"><a href="Noticia.php">Ver más ></a></div>
+                                    <div style="margin-top: -8px;">
+                                        <div style="display: inline-block; vertical-align: top; width: 21%; width: 27%; margin-bottom: 15px; margin-right: 25px;">
+                                            <a href="Noticia.php?cod=<?php echo $el[0]; ?>"><img src="../userfiles/<?php echo $el[2]; ?>" style="min-width: 180px; width: 100%"></a>
+                                        </div>
+                                        <div style="display: inline-block; vertical-align: top; max-width: 100%; margin-bottom: 15px; min-width: 200px; width: 68%;">
+                                            <span><?php echo $el[4]; ?></span><br />                            
+                                            <div style="margin-top: 5px;"><a href="Noticia.php?cod=<?php echo $el[0]; ?>">Ver más ></a></div>
+                                        </div>
                                     </div>
+                                    <br />
                                 </div>
-                            </div>
-                            <div style="padding-bottom: 25px; margin-top: 10px;">
-                                <div style="width: 100%">
-                                    <a href="noticia.php"><h3 style="margin: -2px;">Titulo de la noticia</h3></a>
-                                    <span>publicado abril 10,2012<br /><br /></span>
-                                </div>
-                                <div style="margin-top: -8px;">
-                                    <div style="display: inline-block; vertical-align: top; width: 21%; width: 27%; margin-bottom: 15px; margin-right: 25px;">
-                                        <a href="Noticia.php"><img src="../images/uni3.jpg" style="min-width: 180px; width: 100%"></a>
-                                    </div>
-                                    <div style="display: inline-block; vertical-align: top; max-width: 100%; margin-bottom: 15px; min-width: 200px; width: 68%;">
-                                        <span>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsumha sido el texto de rellenoestandar de las industrias desde el año 1500, cuando un impresor(N. del T.)<br /> Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsumha sido el texto de rellenoestandar de las industrias desde el año 1500, cuando un impresor(N. del T.)</span><br />                            
-                                        <div style="margin-top: 5px;"><a href="Noticia.php">Ver más ></a></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div style="padding-bottom: 25px; margin-top: 10px;">
-                                <div style="width: 100%">
-                                    <a href="noticia.php"><h3 style="margin: -2px;">Titulo de la noticia</h3></a>
-                                    <span>publicado abril 10,2012<br /><br /></span>
-                                </div>
-                                <div style="margin-top: -8px;">
-                                    <div style="display: inline-block; vertical-align: top; width: 21%; width: 27%; margin-bottom: 15px; margin-right: 25px;">
-                                        <a href="Noticia.php"><img src="../images/uni3.jpg" style="min-width: 180px; width: 100%"></a>
-                                    </div>
-                                    <div style="display: inline-block; vertical-align: top; max-width: 100%; margin-bottom: 15px; min-width: 200px; width: 68%;">
-                                        <span>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsumha sido el texto de rellenoestandar de las industrias desde el año 1500, cuando un impresor(N. del T.)<br /> Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsumha sido el texto de rellenoestandar de las industrias desde el año 1500, cuando un impresor(N. del T.)</span><br />                            
-                                        <div style="margin-top: 5px;"><a href="Noticia.php">Ver más ></a></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div style="padding-bottom: 25px; margin-top: 10px;">
-                                <div style="width: 100%">
-                                    <a href="noticia.php"><h3 style="margin: -2px;">Titulo de la noticia</h3></a>
-                                    <span>publicado abril 10,2012<br /><br /></span>
-                                </div>
-                                <div style="margin-top: -8px;">
-                                    <div style="display: inline-block; vertical-align: top; width: 21%; width: 27%; margin-bottom: 15px; margin-right: 25px;">
-                                        <a href="Noticia.php"><img src="../images/uni3.jpg" style="min-width: 180px; width: 100%"></a>
-                                    </div>
-                                    <div style="display: inline-block; vertical-align: top; max-width: 100%; margin-bottom: 15px; min-width: 200px; width: 68%;">
-                                        <span>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsumha sido el texto de rellenoestandar de las industrias desde el año 1500, cuando un impresor(N. del T.)<br /> Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsumha sido el texto de rellenoestandar de las industrias desde el año 1500, cuando un impresor(N. del T.)</span><br />                            
-                                        <div style="margin-top: 5px;"><a href="Noticia.php">Ver más ></a></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div style="padding-bottom: 25px; margin-top: 10px;">
-                                <div style="width: 100%">
-                                    <a href="noticia.php"><h3 style="margin: -2px;">Titulo de la noticia</h3></a>
-                                    <span>publicado abril 10,2012<br /><br /></span>
-                                </div>
-                                <div style="margin-top: -8px;">
-                                    <div style="display: inline-block; vertical-align: top; width: 21%; width: 27%; margin-bottom: 15px; margin-right: 25px;">
-                                        <a href="Noticia.php"><img src="../images/uni3.jpg" style="min-width: 180px; width: 100%"></a>
-                                    </div>
-                                    <div style="display: inline-block; vertical-align: top; max-width: 100%; margin-bottom: 15px; min-width: 200px; width: 68%;">
-                                        <span>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsumha sido el texto de rellenoestandar de las industrias desde el año 1500, cuando un impresor(N. del T.)<br /> Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsumha sido el texto de rellenoestandar de las industrias desde el año 1500, cuando un impresor(N. del T.)</span><br />                            
-                                        <div style="margin-top: 5px;"><a href="Noticia.php">Ver más ></a></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div style="padding-bottom: 25px; margin-top: 10px;">
-                                <div style="width: 100%">
-                                    <a href="noticia.php"><h3 style="margin: -2px;">Titulo de la noticia</h3></a>
-                                    <span>publicado abril 10,2012<br /><br /></span>
-                                </div>
-                                <div style="margin-top: -8px;">
-                                    <div style="display: inline-block; vertical-align: top; width: 21%; width: 27%; margin-bottom: 15px; margin-right: 25px;">
-                                        <a href="Noticia.php"><img src="../images/uni3.jpg" style="min-width: 180px; width: 100%"></a>
-                                    </div>
-                                    <div style="display: inline-block; vertical-align: top; max-width: 100%; margin-bottom: 15px; min-width: 200px; width: 68%;">
-                                        Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsumha sido el texto de rellenoestandar de las industrias desde el año 1500, cuando un impresor(N. del T.)<br /> Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsumha sido el texto de rellenoestandar de las industrias desde el año 1500, cuando un impresor(N. del T.)<br />                            
-                                        <div style="margin-top: 5px;"><a href="Noticia.php">Ver más ></a></div>
-                                    </div>
-                                </div>
-                            </div>
+                                <?php
+                            }
+                            ?>
                             <br />
+                            <ul class="pagination">
+                                <?php
+                                if ($pag > 1) {
+                                    ?>
+                                    <li><a href="?pag=<?php echo ($pag - 1) . $pagfil; ?>">&laquo;</a></li>
+                                    <?php
+                                }
+                                $ini = (($pag - 2) < 1) ? 1 : ($pag - 2);
+                                for ($x = $ini; $x <= $fin; $x++) {
+                                    if ($pag == $x) {
+                                        ?>
+                                        <li style="font-weight: bold;"><?php echo $x; ?></li>
+                                        <?php
+                                    } else {
+                                        ?>
+                                        <li><a href="?pag=<?php echo $x . $pagfil; ?>"><?php echo $x; ?></a></li>
+                                        <?php
+                                    }
+                                }
+                                if ($pag < $fin) {
+                                    ?>
+                                    <li><a href="?pag=<?php echo ($pag + 1) . $pagfil; ?>">&raquo;</a></li>
+                                    <?php
+                                }
+                                ?>
+                            </ul>
+                            <br /><br />
                         </div>
                     </div>
                     <div id="post_p" style="width: 320px; display: inline-block; margin-left: 20px; margin-top: 10px; vertical-align: top;">
-                    <div class="widget tab_wrapper white_box" id="tab_wrapper_tab_widget-2">
-                        <div class="clear"></div>
-                        <div class="tabs_container">
-                            <div id="post_tab" class="tab_content recent_posts">
-                                <ul>
-                                    <li> 
-                                        <div style="border-top: 1px solid #D7D7D7; padding-top: 10px;">
-                                        <div style="width: 100%; margin-bottom: 10px;"> <h3 style="display: inline-block; vertical-align: top; margin-top: 10px;"> <b><a href="../Contactenos.php">Contáctenos</a></b> </h3><div style="display: inline-block; margin-left: 8px;"><img src="../images/logo_solo.png" style="width: 38px"></div></div>
-                                        <span>Póngase en contacto con nuestro expertos, para averiguar cómo podemos ayudarle a usted y a su empresa con su proyecto</span>
-                                        </div><br />
-                                    </li>
-                                </ul>
+                        <div class="widget tab_wrapper white_box" id="tab_wrapper_tab_widget-2">
+                            <div class="clear"></div>
+                            <div class="tabs_container">
+                                <div id="post_tab" class="tab_content recent_posts">
+                                    <ul>
+                                        <li> 
+                                            <div style="border-top: 1px solid #D7D7D7; padding-top: 10px;">
+                                                <div style="width: 100%; margin-bottom: 10px;"> <h3 style="display: inline-block; vertical-align: top; margin-top: 10px;"> <b><a href="../Contactenos.php">Contáctenos</a></b> </h3><div style="display: inline-block; margin-left: 8px;"><img src="../images/logo_solo.png" style="width: 38px"></div></div>
+                                                <span>Póngase en contacto con nuestro expertos, para averiguar cómo podemos ayudarle a usted y a su empresa con su proyecto</span>
+                                            </div><br />
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
+
                         </div>
 
                     </div>
 
-                </div>
-                    
                 </div>
                 <footer class="footer">
                     <br />
@@ -243,51 +222,51 @@
                     <div class='footer-trog'>
                         <section>
                             <article style="width: 170px;">
-                                <span style="font-size: 16px;"><b><a href="../conocenos/conocenos.php">Conócenos</a></b></span><br/>
+                                <span style="font-size: 16px;"><b><a href="../conocenos/conocenos.php"><?php echo mo_get_data(1, 2); ?></a></b></span><br/>
                                 <span>
-                                    <a href="../conocenos/mensaje_del_gerente.php">Mensaje del Gerente</a><br />
-                                    <a href="../conocenos/mision_y_vision.php">Misión y Visión</a><br />
-                                    <a href="../conocenos/valores.php">Valores</a><br />
-                                    <a href="../conocenos/equipo_de_trabajo.php">Equipo de trabajo</a><br />
+                                    <a href="../conocenos/mensaje_del_gerente.php"><?php echo mo_get_data(1, 3); ?></a><br />
+                                    <a href="../conocenos/mision_y_vision.php"><?php echo mo_get_data(1, 4); ?></a><br />
+                                    <a href="../conocenos/valores.php"><?php echo mo_get_data(1, 5); ?></a><br />
+                                    <a href="../conocenos/equipo_de_trabajo.php"><?php echo mo_get_data(1, 20); ?></a><br />
                                 </span>
                             </article>
-                            <article style="width: 205px">
-                                <span style="font-size: 16px;"><b><a href="../que_hacemos/que_hacemos.php">Qué Hacemos</a></b></span><br/>
+                            <article style="width: 235px">
+                                <span style="font-size: 16px;"><b><a href="../que_hacemos/que_hacemos.php"><?php echo mo_get_data(1, 7); ?></a></b></span><br/>
                                 <span>
-                                    <a href="../que_hacemos/unidad_gruas_y_proyectos.php">Unid. Grúas y Proyectos</a><br/>
-                                    <a href="../que_hacemos/unidad_fajas_transportadoras.php">Unid. Fajas Transportadoras</a><br/>
-                                    <a href="../que_hacemos/unidad_servicio_tecnico.php">Unid. Servicio Técnico</a><br/>
-                                    <a href="../que_hacemos/unidad_comercial.php">Unid. Comercial</a><br/>
-                                </span>
-                            </article>
-                            <article style="width: 120px">
-                                <span style="font-size: 16px;"><b><a href="../productos/productos.php">Productos</a></b></span><br/>
-                                <span>
-                                    <a href="../productos/productos.php">Marca</a><br/>
-                                    <a href="../productos/productos.php">Categoría</a><br/>
+                                    <a href="../que_hacemos/unidad_gruas_y_proyectos.php"><?php echo mo_get_data(1, 8); ?></a><br/>
+                                    <a href="../que_hacemos/unidad_fajas_transportadoras.php"><?php echo mo_get_data(1, 9); ?></a><br/>
+                                    <a href="../que_hacemos/unidad_servicio_tecnico.php"><?php echo mo_get_data(1, 11); ?></a><br/>
+                                    <a href="../que_hacemos/unidad_comercial.php"><?php echo mo_get_data(1, 12); ?></a><br/>
                                 </span>
                             </article>
                             <article style="width: 120px">
-                                <span style="font-size: 16px;"><b><a href="../SIG/sig.php">SIG</a></b></span><br/>
+                                <span style="font-size: 16px;"><b><a href="../productos/productos.php"><?php echo mo_get_data(1, 25); ?></a></b></span><br/>
                                 <span>
-                                    <a href="../SIG/politica.php">Política</a><br/>
-                                    <a href="../SIG/garantia.php">Garantía</a><br/>
-                                    <a href="../SIG/reclamos.php">Reclamos</a><br/>
+                                    <a href="../productos/productos.php"><?php echo mo_get_data(1, 26); ?></a><br/>
+                                    <a href="../productos/productos.php"><?php echo mo_get_data(1, 27); ?></a><br/>
+                                </span>
+                            </article>
+                            <article style="width: 120px">
+                                <span style="font-size: 16px;"><b><a href="../SIG/sig.php"><?php echo mo_get_data(1, 13); ?></a></b></span><br/>
+                                <span>
+                                    <a href="../SIG/politica.php"><?php echo mo_get_data(1, 14); ?></a><br/>
+                                    <a href="../SIG/garantia.php"><?php echo mo_get_data(1, 15); ?></a><br/>
+                                    <a href="../SIG/reclamos.php"><?php echo mo_get_data(1, 16); ?></a><br/>
                                 </span>
                             </article>
                             <article style="width: 210px">
-                                <span style="font-size: 16px;"><b><a href="../trabaje_con_nosotros/trabaje_con_nosotros.php">Trabaje con Nosotros</a></b></span><br/>
+                                <span style="font-size: 16px;"><b><a href="../trabaje_con_nosotros/trabaje_con_nosotros.php"><?php echo mo_get_data(1, 17); ?></a></b></span><br/>
                                 <span>
-                                    <a href="../trabaje_con_nosotros/porque_movitecnica.php">Por qué Movitécnica</a><br/>
-                                    <a href="../trabaje_con_nosotros/testimonios.php">Testimonios</a><br/>
-                                    <a href="../trabaje_con_nosotros/oferta_de_trabajo.php">Ofertas de Trabajo</a><br/>
+                                    <a href="../trabaje_con_nosotros/porque_movitecnica.php"><?php echo mo_get_data(1, 18); ?></a><br/>
+                                    <a href="../trabaje_con_nosotros/testimonios.php"><?php echo mo_get_data(1, 21); ?></a><br/>
+                                    <a href="../trabaje_con_nosotros/oferta_de_trabajo.php"><?php echo mo_get_data(1, 19); ?></a><br/>
                                 </span>
                             </article>
-                            <article style="width: 170px">
-                                <span style="font-size: 16px;"><b><a href="../media/media.php">Media</a></b></span><br/>
+                            <article style="width: 140px">
+                                <span style="font-size: 16px;"><b><a href="../media/media.php"><?php echo mo_get_data(1, 28); ?></a></b></span><br/>
                                 <span>
-                                    <a href="../media/media.php">Noticias</a><br/>
-                                    <a href="../media/media.php">Notas de Prensa</a><br/>
+                                    <a href="../media/media.php"><?php echo mo_get_data(1, 29); ?></a><br/>
+                                    <a href="../media/media.php"><?php echo mo_get_data(1, 30); ?></a><br/>
                                 </span>
                             </article>
 
@@ -295,8 +274,8 @@
                         <section style='margin-top: 15px;'>
                             <div class="footer-op">
                                 <span><img src="../images/sitemap.png">Sitemap</span>
-                                <span><a href="../contactenos.php"><img src="../images/contactenos.png">Contáctenos</a></span>
-                                <span><a href="../index.html"><img src="../images/home.png">Home</a></span>
+                                <span><a href="../contactenos.php"><img src="../images/contactenos.png"><?php echo mo_get_data(1, 31); ?></a></span>
+                                <span><a href="../index.php"><img src="../images/home.png"><?php echo mo_get_data(1, 1); ?></a></span>
                             </div>
                         </section>
                     </div>
@@ -332,7 +311,7 @@
     <link rel='stylesheet' id='demo-minicolor'  href='_switcher/miniColors/jQuery.miniColors.css' type='text/css' media='all' />
 
     <script type="text/javascript">
-        var template = '../index.html';
+        var template = '../index.php';
     </script>
     <div id="pl_control_panel" style="display: none;">
         <div id="panel_control" class="control-open"></div>
@@ -399,6 +378,14 @@
 </body>
 <script type="text/javascript">
     $j(document).ready(function() {
+        $j("#filtrar").click(function(e){
+            e.preventDefault();
+            if($j("#media").val() == "no"){
+                alert("Selecciona una Categoria");
+            }else{
+                $j("#form1").trigger('submit');
+            }
+        });
         $j("#skin3").trigger("click");
         var menu = true;
         $j(".footer-menu").click(function() {

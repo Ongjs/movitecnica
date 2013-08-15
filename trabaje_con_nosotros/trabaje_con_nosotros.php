@@ -33,65 +33,65 @@
                         </div>
                         <div class="twelve columns">
                             <div class="header_left">
-                                <h1 id="logo"><a href="../index.html" title=""><img src="../images/logo_skin3.png" alt="" id="header_logo" style="width: 270px"/></a></h1>
+                                <h1 id="logo"><a href="../index.php" title=""><img src="../images/logo_skin3.png" alt="" id="header_logo" style="width: 270px"/></a></h1>
 
 
                             </div>
 
                             <div class="header_right">
                                 <div id="top_menu" class="menu-navigation-container"><ul id="mainmenu" class="sf-menu">
-                                        <!--<li id="menu-item-861"  class="current-menu-item"><a href="../index.html">Homepage</a></li>-->
-                                        <li id="menu-item-1126"  ><a href="../conocenos/conocenos.php">Conócenos</a>
-                                            <ul class="sub-menu">
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../conocenos/mensaje_del_gerente.php">Mensaje del Gerente</a></li>
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../conocenos/valores.php">Misión y Visión</a></li>
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../Conocenos/Valores.php">Valores</a></li>
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../conocenos/equipo_de_trabajo.php">Equipo de trabajo</a></li>
-                                            </ul>
-                                        </li>
-                                        <li id="menu-item-1126"  ><a href="../que_hacemos/que_hacemos.php">Que Hacemos</a>
-                                            <ul class="sub-menu">
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199" style="width: 205px"><a href="../que_hacemos/unidad_gruas_y_proyectos.php">Unid. Grúas y Proyectos</a></li>
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199" style="width: 205px"><a href="../que_hacemos/unidad_fajas_transportadoras.php">Unid. Fajas Transportadoras</a></li>
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199" style="width: 205px"><a href="../que_hacemos/unidad_servicio_tecnico.php">Unid. Servicio Técnico</a></li>
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199" style="width: 205px"><a href="../que_hacemos/unidad_comercial.php">Unid. Comercial</a></li>
-                                            </ul>
-                                        </li>
-                                        <li id="menu-item-1126"  ><a href="../productos/productos.php">Productos</a>
-                                            <ul class="sub-menu">
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../productos/productos.php">Categoría</a></li>
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../productos/productos.php">Marca</a></li>
-                                            </ul>
-                                        </li>
-                                        <li id="menu-item-1126"  ><a href="../SIG/sig.php">SIG</a>
-                                            <ul class="sub-menu">
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../SIG/politica.php">Política</a></li>
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../SIG/garantia.php">Garantía</a></li>
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../SIG/reclamos.php">Reclamos</a></li>
-                                             </ul>
-                                        </li>
-                                        <li id="menu-item-1126"  ><a href="Trabaje_Con_Nosotros.php">Trabaje con Nosotros</a>
-                                            <ul class="sub-menu">
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="porque_movitecnica.php">Porqué Movitécnica</a></li>
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="Testimonios.php">Testimonios</a></li>
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="oferta_de_trabajo.php">Oferta de Trabajo</a></li>
-                                            </ul>
-                                        </li>
-                                        <li id="menu-item-1126"  ><a href="../media/media.php">Media</a>
-                                            <ul class="sub-menu">
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../media/media.php">Noticias</a></li>
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../media/media.php">Notas de Prensa</a></li>
-                                            </ul>
-                                        </li>
-                                        <!--<li id="menu-item-1125" ><a href="single-ele.html">HTML Elements</a></li>-->
-                                        <!--<li id="menu-item-1114" ><a href="single-full-widgets.html">Sidebars</a></li>-->
-
+                                <!--<li id="menu-item-861"  class="current-menu-item"><a href="../index.php">Homepage</a></li>-->
+                                <li id="menu-item-1126"  ><a href="../conocenos/conocenos.php"><?php echo mo_get_data(1, 2); ?></a>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../conocenos/mensaje_del_gerente.php"><?php echo mo_get_data(1, 3); ?></a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../conocenos/valores.php"><?php echo mo_get_data(1, 4); ?></a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../Conocenos/Valores.php"><?php echo mo_get_data(1, 5); ?></a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../conocenos/equipo_de_trabajo.php"><?php echo mo_get_data(1, 20); ?></a></li>
                                     </ul>
+                                </li>
+                                <li id="menu-item-1126"  ><a href="../que_hacemos/que_hacemos.php"><?php echo mo_get_data(1, 7); ?></a>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199" style="width: 205px"><a href="../que_hacemos/unidad_gruas_y_proyectos.php"><?php echo mo_get_data(1, 8); ?></a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199" style="width: 205px"><a href="../que_hacemos/unidad_fajas_transportadoras.php"><?php echo mo_get_data(1, 9); ?></a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199" style="width: 205px"><a href="../que_hacemos/unidad_servicio_tecnico.php"><?php echo mo_get_data(1, 11); ?></a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199" style="width: 205px"><a href="../que_hacemos/unidad_comercial.php"><?php echo mo_get_data(1, 12); ?></a></li>
+                                    </ul>
+                                </li>
+                                <li id="menu-item-1126"  ><a href="../productos/productos.php"><?php echo mo_get_data(1, 25); ?></a>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../productos/productos.php"><?php echo mo_get_data(1, 26); ?></a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../productos/productos.php"><?php echo mo_get_data(1, 27); ?></a></li>
+                                    </ul>
+                                </li>
+                                <li id="menu-item-1126"  ><a href="../SIG/sig.php"><?php echo mo_get_data(1, 13); ?></a>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../SIG/politica.php"><?php echo mo_get_data(1, 14); ?></a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../SIG/garantia.php"><?php echo mo_get_data(1, 15); ?></a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../SIG/reclamos.php"><?php echo mo_get_data(1, 16); ?></a></li>
+                                    </ul>
+                                </li>
+                                <li id="menu-item-1126"  ><a href="Trabaje_Con_Nosotros.php"><?php echo mo_get_data(1, 17); ?></a>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../trabaje_con_nosotros/porque_movitecnica.php"><?php echo mo_get_data(1, 18); ?></a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../trabaje_con_nosotros/Testimonios.php"><?php echo mo_get_data(1, 21); ?></a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../trabaje_con_nosotros/oferta_de_trabajo.php"><?php echo mo_get_data(1, 19); ?></a></li>
+                                    </ul>
+                                </li>
+                                <li id="menu-item-1126"  ><a href="../media/media.php"><?php echo mo_get_data(1, 28); ?></a>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../media/media.php?media=noticia"><?php echo mo_get_data(1, 29); ?></a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../media/media.php?media=nota"><?php echo mo_get_data(1, 30); ?></a></li>
+                                    </ul>
+                                </li>
+                                <!--<li id="menu-item-1125" ><a href="single-ele.html">HTML Elements</a></li>-->
+                                <!--<li id="menu-item-1114" ><a href="single-full-widgets.html">Sidebars</a></li>-->
 
-                                    <div class="header_search"><div class="search_zoom search_btn"></div>
-                                        <div class="search_box">
-                                            <form method="get" id="searchform" action="#"><input id="s" name="s"   type="text" placeholder="Escribir y dar enter para buscar" class="search_input" /></form></div></div>	
-                                </div>							
+                            </ul>
+
+                            <div class="header_search"><div class="search_zoom search_btn"></div>
+                                <div class="search_box">
+                                    <form method="get" id="searchform" action="#"><input id="s" name="s"   type="text" placeholder="Escribir y dar enter para buscar" class="search_input" /></form></div></div>	
+                        </div>							
 
                             </div>
                         </div>	
@@ -102,13 +102,13 @@
         <div class="container">	
             <div id="post_grids" class="row" style=" margin-top: -20px; max-width: none;">
                 <div style="margin-left: 20px;">
-                <span> <a href="../index.html">Inicio</a> > <?php echo mo_get_data(1, 17); ?> </span>
+                <span> <a href="../index.php"><?php echo mo_get_data(1, 1); ?></a> > <?php echo mo_get_data(1, 17); ?> </span>
                 <br />
                 <br />
                 <h1><b><?php echo mo_get_data(1, 17); ?></b></h1>
                 <div style="display: inline-block;" class="uni_response">
                     <div style="width: 98%; height: auto;">
-                        <div class="image_box"><img src="../images/<?php echo mo_get_data(2, 17); ?>"></div><br />
+                        <div class="image_box"><img src="../userfiles/<?php echo mo_get_data(2, 17); ?>"></div><br />
                         <?php
                              echo mo_get_data(3, 17);
                              $arrayurl[0] = 'porque_movitecnica.php';
@@ -144,11 +144,20 @@
                                         <div style="border-top: 1px solid #D7D7D7">
                                             <br />
                                         <h3><b>Noticias Recientes</b></h3>   
-                                        <span><a href="../media/noticia.php">Allnorth was a Finalist for the North Saska-toon Business Association (NSBA) Safe Employer Award - 04/10/2013</a> <br /><br />
-                                            Allnorth was a Finalist for the North Saska-toon Business Association (NSBA) Safe Employer Award - 04/10/2013</span>
-                                        <br /><br />
-                                        <a class="button normal small" href="../media/noticia.php">Ver más</a><br /><br />
-                                        <a href="../media/media.php">Ver Todas ></a>
+                                        <span>
+                                                    <?php
+                                                    foreach (mo_get_desc() as $array) {
+                                                        ?>
+                                                        <a href="../media/noticia.php?cod=<?php echo $array[0]; ?>">
+                                                            <?php echo substr($array[1], 0, 150) . "...."; ?>
+                                                        </a><br /><br />
+                                                        <?php
+                                                    }
+                                                    ?>
+                                                </span>
+                                                <br />
+                                                <a class="button normal small" href="../media/media.php">Ver más</a><br /><br />
+                                                <a href="../media/media.php">Ver Todas ></a>
                                         </div>
                                     </li>
                                 </ul>
@@ -221,7 +230,7 @@
                             <div class="footer-op">
                                 <span><img src="../images/sitemap.png">Sitemap</span>
                                 <span><a href="../contactenos.php"><img src="../images/contactenos.png">Contáctenos</a></span>
-                                <span><a href="../index.html"><img src="../images/home.png">Home</a></span>
+                                <span><a href="../index.php"><img src="../images/home.png">Home</a></span>
                             </div>
                         </section>
                     </div>
@@ -256,7 +265,7 @@
     <link rel='stylesheet' id='demo-minicolor'  href='_switcher/miniColors/jQuery.miniColors.css' type='text/css' media='all' />
 
     <script type="text/javascript">
-        var template = '../index.html';
+        var template = '../index.php';
     </script>
     <div id="pl_control_panel" style="display: none;">
         <div id="panel_control" class="control-open"></div>

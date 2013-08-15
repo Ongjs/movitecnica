@@ -103,6 +103,9 @@ function mo_get_data($get,$id){
         case 3 :
             $get = 'content';
             break;
+        case 4 :
+            $get = 'description';
+            break;
     }
     $cn->query("SELECT $get FROM content WHERE id = $id");
     while ($row = $cn->fetch()) $result = $row;
@@ -118,7 +121,7 @@ function mo_get_url($id){
 function mo_get_data_select($id){
     $cn = Connection::getInstance();
     $result = array();
-    $cn->query("SELECT name,image,content,extra1 FROM image WHERE id = $id");
+    $cn->query("SELECT name,image,content,extra1 FROM image WHERE id = $id order by (updated) desc");
     while ($row = $cn->fetch()) $result[] = $row;
     return $result[0];
 }
@@ -126,7 +129,7 @@ function mo_get_ar($cod,$pag){
     $cn = Connection::getInstance();
     $ini = (($pag-1)*2);
     $result = array();
-    $cn->query("SELECT id,name,thumbnail,image,description,content,extra1 FROM image WHERE category_id = $cod limit $ini,6");
+    $cn->query("SELECT id,name,thumbnail,image,description,content,extra1,updated FROM image WHERE category_id in($cod) order by (updated) desc limit $ini,6 ");
     while ($row = $cn->fetch()) $result[] = $row;
     return $result;
 }
@@ -134,7 +137,7 @@ function mo_get_pag($cod,$pag){
     $cn = Connection::getInstance();
     $rang = 0;
     $result = array();
-    $cn->query("SELECT id FROM image WHERE category_id = $cod");
+    $cn->query("SELECT id FROM image WHERE category_id in($cod)");
     $total = $cn->numrows();
     $total = ceil($total/6);
     if(($pag + 2) > $total){
@@ -154,5 +157,34 @@ function mo_get_tra(){
     while ($row = $cn->fetch()) $result[] = $row;
     return $result;
 }
+function mo_get_category($id){  
+    $cn = Connection::getInstance();
+    $cn->query("SELECT category_id FROM image WHERE id = $id");
+    while ($row = $cn->fetch()) $result = $row;
+    return $result[0];
+}
 
+function mo_get_desc(){
+    $cn = Connection::getInstance();
+    $result = array();
+    $cn->query("SELECT id,description,updated FROM `image` where category_id = 5 order by (updated) desc limit 0,2");
+    while ($row = $cn->fetch()) $result[] = $row;
+    return $result;
+}
+function mo_get_proy($catid){
+    $limit = 0;
+    switch ($catid){
+        case 2 :
+            $limit = 3;
+            break;
+        case 5 :
+            $limit = 2;
+            break;
+    }
+    $cn = Connection::getInstance();
+    $result = array();
+    $cn->query("SELECT id,name,description,thumbnail FROM `image`  where category_id = $catid order by (updated) desc limit 0,$limit");
+    while ($row = $cn->fetch()) $result[] = $row;
+    return $result;
+}
 ?>

@@ -11,7 +11,8 @@
                         <option value="2">Proyectos</option>
                         <option value="3">Servicios</option>
                         <option value="4">Testimonios</option>
-                        <option value="5">Media</option>
+                        <option value="5">Noticia</option>
+                        <option value="6">Nota de Prensa</option>
                     </select></td>
             </tr>
             <a href="#" class="new list">Nuevo</a>

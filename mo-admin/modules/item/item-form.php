@@ -21,11 +21,11 @@ if (!empty($id)) {
             </tr>
             <tr>
                 <td><label for="image">Imagen chica<br /><span class="recommended_size">(220px x 250px)</span></label></td>
-                <td><input type="file" id="image" name="thumbnail"/></td>
+                <td><input type="file" id="imagec"/></td>
             </tr>
             <tr>
                 <td><label for="image">Imagen grande<br /><span class="recommended_size">(900px x 550px)</span></label></td>
-                <td><input type="file" id="image" name="image"/></td>
+                <td><input type="file" id="imageg"/></td>
             </tr>
             <tr>
                 <td><label for="tinymce">Descripcion</label></td>
@@ -50,36 +50,42 @@ if (!empty($id)) {
 $(document).ready(function(){
     mo_tinymce();
 
-//    $("#file").makeAsyncUploader({
-//        upload_url: "<?php echo $_SERVER['PHP_SELF']; ?>?mod=1", 
-//        flash_url: '../lib/jquery-asyncUpload-0.1/swfupload.swf', 
-//        path_url: '../userfiles/', 
-//        disableDuringUpload: 'input[type="submit"]', 
-//        <?php /*if(!empty($id)){ ?>
-//        existingFilename: '<?php echo substr(strstr($row['image'], "_"), 1); ?>', 
-//        existingGuid: '<?php echo $row['image']; ?>', 
-//        existingFileSize: <?php echo filesize("../userfiles/".$row['image']); ?>, 
-//        <?php }*/ ?>
-//        file_types_description: 'Image or Video', 
-//        file_types: '*.jpg; *.gif; *.png; *.flv;', 
-//        file_size_limit: '<?php echo ini_get("upload_max_filesize"); ?>B', 
-//        button_image_url: '../lib/jquery-asyncUpload-0.1/blankButton.png'
-//    });
-//
-//    $("#thumbnail").makeAsyncUploader({
-//        upload_url: "<?php echo $_SERVER['PHP_SELF']; ?>?mod=1", 
-//        flash_url: '../lib/jquery-asyncUpload-0.1/swfupload.swf', 
-//        path_url: '../userfiles/', 
-//        disableDuringUpload: 'input[type="submit"]', 
-//        <?php /*if(!empty($id)){ ?>
-//        existingFilename: '<?php echo substr(strstr($row['content'], "_"), 1); ?>', 
-//        existingGuid: '<?php echo $row['content']; ?>', 
-//        existingFileSize: <?php echo filesize("../userfiles/".$row['content']); ?>, 
-//        <?php }*/ ?>
-//        file_types_description: 'All Images', 
-//        file_types: '*.jpg; *.gif; *.png;', 
-//        file_size_limit: '<?php echo ini_get("upload_max_filesize"); ?>B', 
-//        button_image_url: '../lib/jquery-asyncUpload-0.1/blankButton.png'
-//    });
+    $("#imagec").makeAsyncUploader({
+        upload_url: "<?php echo $_SERVER['PHP_SELF']; ?>?mod=1", 
+        flash_url: '../lib/jquery-asyncUpload-0.1/swfupload.swf', 
+        path_url: '../userfiles/', 
+        disableDuringUpload: 'input[type="submit"]', 
+        <?php if(!empty($id) && is_file("../userfiles/" . $row['image'])){ ?>
+        existingFilename: '<?php echo substr(strstr($row['image'], "_"), 1); ?>', 
+        existingGuid: '<?php echo $row['image']; ?>', 
+        existingFileSize: <?php echo filesize("../userfiles/" . $row['image']); ?>, 
+        <?php } ?>
+        file_types_description: 'Imagenes', 
+        file_types: '*.jpg; *.jpeg; *.gif; *.png;', 
+        file_size_limit: '<?php echo ini_get("upload_max_filesize"); ?>B', 
+        width: 120, 
+        button_text: "<font face='Arial' size='13pt'>Explorar</font>", 
+        button_text_left_padding: 30,
+        button_image_url: '../lib/jquery-asyncUpload-0.1/blankButton.png'
+    });
+    
+    $("#imageg").makeAsyncUploader({
+        upload_url: "<?php echo $_SERVER['PHP_SELF']; ?>?mod=1", 
+        flash_url: '../lib/jquery-asyncUpload-0.1/swfupload.swf', 
+        path_url: '../userfiles/', 
+        disableDuringUpload: 'input[type="submit"]', 
+        <?php if(!empty($id) && is_file("../userfiles/" . $row['image'])){ ?>
+        existingFilename: '<?php echo substr(strstr($row['image'], "_"), 1); ?>', 
+        existingGuid: '<?php echo $row['image']; ?>', 
+        existingFileSize: <?php echo filesize("../userfiles/" . $row['image']); ?>, 
+        <?php } ?>
+        file_types_description: 'Imagenes', 
+        file_types: '*.jpg; *.jpeg; *.gif; *.png;', 
+        file_size_limit: '<?php echo ini_get("upload_max_filesize"); ?>B', 
+        width: 120, 
+        button_text: "<font face='Arial' size='13pt'>Explorar</font>", 
+        button_text_left_padding: 30,
+        button_image_url: '../lib/jquery-asyncUpload-0.1/blankButton.png'
+    });
 });
 </script>

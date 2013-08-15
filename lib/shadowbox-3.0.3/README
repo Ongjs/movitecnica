@@ -43,7 +43,7 @@ tests, you first need to build the code using the `build:tests` Rake task.
 
     $ rake build:tests
 
-Once you have built the code, open `tests/index.html` in your browser of choice. Likewise,
+Once you have built the code, open `tests/index.php` in your browser of choice. Likewise,
 to run any of the examples you first need to run the `build:examples` Rake task before
 opening the example HTML file in your browser.
 

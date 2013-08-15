@@ -1,84 +1,4 @@
-<?php
-if(isset($_POST["tema"])){
 
-    if (isset($_POST['check'])) {
-        $check = '<tr>
-                    <td style="border-top: solid 1px rgba(225,225,225,1)">se solicita que el mensaje sea respondido</td>
-                  </tr>';
-        $acheck = ' \t se solicita que el mensaje sea respondido ';
-    }else{
-        $check = "";
-        $acheck = "";
-    }
-    
-require 'lib/PHPMailer/class.phpmailer.php';
-
-$mail = new PHPMailer;
-
-$mail->IsSMTP();                                      // Set mailer to use SMTP
-$mail->Host = 'smtp.gmail.com';  // Specify main and backup server
-$mail->Port = 465;
-$mail->SMTPAuth = true;                               // Enable SMTP authentication
-$mail->Username = 'andresgarciadev@gmail.com';                            // SMTP username
-$mail->Password = 'foreverlove12';                           // SMTP password
-
-$mail->From = 'no-reply@movitecnica.com.pe';
-$mail->FromName = 'Movitecnica';
-$mail->AddAddress('andresgarciadev@gmail.com', 'Andres Garcia');  // Add a recipient
-$mail->AddAddress('ellen@example.com');               // Name is optional
-$mail->AddReplyTo($_POST["email"], $_POST["nombre"]." ".$_POST["apellido"]);
-
-$mail->WordWrap = 50;                                 // Set word wrap to 50 characters
-$mail->IsHTML(true);                                  // Set email format to HTML
-
-$mail->Subject = 'Movitécnica - Contactenos';
-$mail->Body    = '<table border="0" style="text-align: left; background: rgba(248,248,248,8); border-radius: 3px; line-height: 40px;">
-                <tr style="border-top: solid 1px rgba(225,225,225,1)">
-                    <td><h2>Contactenos</h2></td><td style="width: 400px; text-align: right"><img src="www.movitecnica.com/images/logo_skin3.png" width="270" height="56"></td>
-                </tr>
-                <tr >
-                    <td style="border-top: solid 1px rgba(225,225,225,1)">Tema:</td>
-                    <td style="border-top: solid 1px rgba(225,225,225,1)">'.$_POST["tema"].'</td>
-                </tr>
-                <tr>
-                    <td style="border-top: solid 1px rgba(225,225,225,1)">Nombre:</td>
-                    <td style="border-top: solid 1px rgba(225,225,225,1)">'.$_POST["nombre"]." ".$_POST["apellido"].'</td>
-                </tr>
-                <tr>
-                    <td colspan="2" style="border-top: solid 1px rgba(225,225,225,1)">Mensaje:</td>
-                </tr>
-                <tr>
-                    <td colspan="2">'.$_POST["mensaje"].'</td>
-                </tr>
-                <tr>
-                    <td style="border-top: solid 1px rgba(225,225,225,1)">Email:</td>
-                    <td style="border-top: solid 1px rgba(225,225,225,1)">'.$_POST["email"].'</td>
-                </tr>
-                <tr>
-                    <td style="border-top: solid 1px rgba(225,225,225,1)">Compañia:</td>
-                    <td style="border-top: solid 1px rgba(225,225,225,1)">'.$_POST["compania"].'</td>
-                </tr>
-                <tr>
-                    <td style="border-top: solid 1px rgba(225,225,225,1)">Telefono:</td>
-                    <td style="border-top: solid 1px rgba(225,225,225,1)">'.$_POST["telefono"].'</td>
-                </tr>
-                '.$check.'
-            </table>';
-            $mail->AltBody = '\t Contactenos \n \n
-                    \t Tema: \t '.$_POST["tema"].' \n
-                    \t Nombre: \t '.$_POST["nombre"]." ".$_POST["apellido"].' \n
-                    \t Mensaje \n  \t'.$_POST["mensaje"].' \n
-                    \t Email \t '.$_POST["email"].' \n
-                    \t Compañia \t '.$_POST["compania"].' \n
-                    \t Telefono \t '.$_POST["telefono"].' \n
-                    '.$acheck.'
-                ';
-
-$email_send = $mail->Send();
-}
-
-
-?>
 <!DOCTYPE html>
 <html lang="en-US">
     <head>
@@ -88,7 +8,7 @@ $email_send = $mail->Send();
         <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
         <link rel="shortcut icon" href="images/favicon_movi.ico">
-        <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
+
         <link href='http://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
         <link rel='stylesheet'  href='css/mystyles.css' type='text/css' media='all' />
         <link rel='stylesheet' id='reset-css'  href='css/reset9d52.css?ver=3.5.1' type='text/css' media='all' />
@@ -100,34 +20,15 @@ $email_send = $mail->Send();
         <link rel='stylesheet' id='style-css'  href='style9d52.css?ver=3.5.1' type='text/css' media='all' />
         <link rel='stylesheet' id='fancybox-css'  href='js/fancybox/jQuery.fancybox-1.3.49d52.css?ver=3.5.1' type='text/css' media='all' />
         <link rel='stylesheet' id='skin'  href='css/skin1.css' type='text/css' media='all' />
+
         <script type='text/javascript' src='js/jQuery.js'></script>
         <script type='text/javascript' src='js/custom.js'></script>
+        <style>
+            h1{
+                letter-spacing: -2px;
+            }
+        </style>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
-    <style>
-        #post_p
-        {
-            width: 320px;
-        }
-        .uni_response
-        {
-            margin-left: 20px;
-        }
-        @media only screen and (max-width: 1048px )
-        {
-            #post_grids
-            {
-                margin-left: 25px;
-            }
-            #post_p
-            {
-                width: 70%;
-            } 
-            .uni_response
-            {
-                margin-left: 0px;
-            }
-        }
-    </style>
     <body> <?php include 'class/Connection.class.php';
 include 'class/Fuctions.php'; ?>
         <div class="top_wrapper">
@@ -145,7 +46,7 @@ include 'class/Fuctions.php'; ?>
 
                             </div>
 
-                            <div class="header_right">
+                            <div class="header_right" style="text-align: left">
                                 <div id="top_menu" class="menu-navigation-container"><ul id="mainmenu" class="sf-menu">
                                         <!--<li id="menu-item-861"  class="current-menu-item"><a href="../index.php">Homepage</a></li>-->
                                         <li id="menu-item-1126"  ><a href="conocenos/conocenos.php"><?php echo mo_get_data(1, 2); ?></a>
@@ -205,104 +106,267 @@ include 'class/Fuctions.php'; ?>
                     </div>	
                 </div><!-- .container -->
             </div><!-- #header -->
-        </div> <!--.top_wrapper -->	
-        <div class="container">	
-            <div id="post_grids" class="row" style=" margin-top: -20px;">
-                <div style="margin-left: 20px;">
-                    <span> <a href="index.php"><?php echo mo_get_data(1, 1); ?></a> > <?php echo mo_get_data(1, 31); ?> </span>
-                    <br />
-                    <br />
-                    <h1><b><?php echo mo_get_data(1, 31); ?></b></h1>
-                    <?php 
-                    if(isset($email_send)){
-                        if($email_send){
-                            ?>
-                    <div style="color: blue;"> Su mensaje ha sido enviado con exito</div><br />
-                            <?php
-                        }else{
-                            ?>
-                    <div style="color: red;"> El Mensaje no ha podido ser enviado </div><br />
-                            <?php
-                        }
-                    }
-                    ?>
-                    <span><?php echo mo_get_data(4, 31); ?></span>
-                    <br />
-                    <div id="post_p" style="display: inline-block; margin-top: 10px; vertical-align: top;">
-                        <h3>Enviar un Mensaje</h3>
-                        <form class="form-horizontal" method="post">
-                            <div class="control-group">
-                                <label class="control-label" for="inputTema">Tema</label>
-                                <div class="controls">
-                                    <input type="text" id="textTema" placeholder="Tema" name="tema">
-                                </div>
-                            </div>
-                            <br />
-                            <div class="control-group">
-                                <label class="control-label" for="inputMensaje">Mensaje</label>
-                                <div class="controls">
-                                    <textarea rows="3" placeholder="Mensaje" name="mensaje"></textarea>
-                                </div>
-                            </div>
-                            <br />
-                            <div class="control-group">
-                                <label class="control-label" for="inputCompania">Compañia</label>
-                                <div class="controls">
-                                    <input type="text" id="textCompania" placeholder="Compañia" name="compania">
-                                </div>
-                            </div>
-                            <br />
-                            <div class="control-group">
-                                <label class="control-label" for="inputNombre">Nombre</label>
-                                <div class="controls">
-                                    <input type="text" id="textNombre" placeholder="Nombre" name="nombre">
-                                </div>
-                            </div>
-                            <br />
-                            <div class="control-group">
-                                <label class="control-label" for="inputApellido">Apellido</label>
-                                <div class="controls">
-                                    <input type="text" id="textApellido" placeholder="Apellido" name="apellido">
-                                </div>
-                            </div>
-                            <br />
-                            <div class="control-group">
-                                <label class="control-label" for="inputEmail">Email</label>
-                                <div class="controls">
-                                    <input type="text" id="textEmail" placeholder="Email" name="email">
-                                </div>
-                            </div>
-                            <br />
-                            <div class="control-group">
-                                <label class="control-label" for="inputTelefono">Telefono</label>
-                                <div class="controls">
-                                    <input type="text" id="textTelefono" placeholder="Telefono" name="telefono">
-                                </div>
-                            </div>
-                            <br />
-                            <div class="control-group">
-                                <div class="controls">
-                                    <label class="checkbox">
-                                        <input type="checkbox" name="check"> Solicitar Devolucion de Mensaje
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="control-group">
-                                <div class="controls">
-                                    <button type="submit" class="btn">Enviar</button>
-                                </div>
-                            </div>
-                            <br />
-                        </form>
 
-                    </div>
-                    <div style="display: inline-block; " class="uni_response">
-                        <div style="width: 98%;">
-<?php echo mo_get_data(3, 31); ?>
-                        </div>
-                    </div>
+            <div class="slider" style="overflow:hidden;">
+                <div id="homeslider" class="fullwidth flexslider">
+                    <ul class="slides" style="width: 100%; background-repeat: no-repeat; background: fixed;">
 
+                        <li data-height="500" style="position:relative; background: url(images/_slider/1.jpg) 50% 0;" >
+                            <div class="caption_wrapper" >
+                                <div class="caption">
+                                    <h1><a href="conocenos/conocenos.php" style="color: #FFF">30 AÑOS DE EXPERIENCIA</a></h1>
+                                    <span style="display: block; color: #FFF">Nuestras mayores fortalezas son nuestro personal altamente calificado y el respaldo de nuestros proveedores... </span>
+                                    <a class="button normal small" href="conocenos/conocenos.php" style="float: right; margin-top: 7px;">Ver más</a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li data-height="500" style="position:relative; background: url(images/_slider/2.jpg) 50% 0">
+                            <div class="caption_wrapper">
+                                <div class="caption">
+                                    <h1><a href="productos/productos.php?filt=marcas">LAS MEJORES MARCAS REPRESENTADAS</a></h1>
+                                    <span style="display: block">Representamos a marcas de prestigio mundial como: <br />  YALE, STREET, DUNLOP, CONDUCTIX, ASGCO, CIMBRIA, MOVITECH, VETTER... </span>
+                                    <a class="button normal small" href="productos/productos.php?filt=marcas" style="float: right; margin-top: 7px;">Ver más</a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li data-height="500" style="position:relative; background: url(images/_slider/3.jpg) 50% 0">
+                            <div class="caption_wrapper">
+                                <div class="caption">
+                                    <h1><a href="conocenos/valores.php">LA PASIÓN ES NUESTRO PRINCIPAL MOTOR</a></h1>
+                                    <span style="display: block">Es nuestro entusiasmo y la satisfacción por la tarea Que se realiza Que nos impulsa a desarrollar nuestro máximo potencial... </span>
+                                    <a class="button normal small" href="conocenos/valores.php" style="float: right; margin-top: 7px;">Ver más</a>
+                                </div>
+                            </div>
+                        </li>
+
+
+                    </ul>
                 </div>
+                <script type="text/javascript">
+                    jQuery(document).ready(function($) {
+                        $('#tab_wrapper_tab_widget-2').each(function() {
+                            $(this).find(".tab_content").hide();
+                            $(this).find("ul.tab_menu li:first").addClass("active").show();
+                            $(this).find(".tab_content:first").show();
+                        });
+
+                        $("ul.tab_menu li").click(function(e) {
+                            $(this).parents('#tab_wrapper_tab_widget-2').find("ul.tab_menu li").removeClass("active");
+                            $(this).addClass("active");
+                            $(this).parents('#tab_wrapper_tab_widget-2').find(".tab_content").hide();
+
+                            var activeTab = $(this).find("a").attr("href");
+                            $(this).parents('#tab_wrapper_tab_widget-2').find(activeTab).fadeIn();
+
+                            e.preventDefault();
+                        });
+
+                        $("ul.tab_menu li a").click(function(e) {
+                            e.preventDefault();
+                        })
+                    });
+                </script>
+                <script type="text/javascript">
+                    $j(document).ready(function() {
+
+                        $j("#skin3").trigger("click");
+                        var menu = true;
+                        $j(".footer-menu").click(function() {
+                            $j('.footer-trog').stop().animate({
+                                height: 'toggle',
+                                opacity: 'toggle'
+                            }, 900);
+                            if (menu) {
+
+                                menu = false;
+                                $j(".footer-menu span b").text("Mostrar Menú");
+                                $j(".footer-menu img").attr("src", "images/flecha_arriba.png");
+                            } else {
+                                $j('html, body').animate({
+                                    scrollTop: $j(document).height()
+                                },
+                                1500);
+                                menu = true;
+                                $j(".footer-menu span b").text("Ocultar Menú");
+                                $j(".footer-menu img").attr("src", "images/flecha_abajo.png");
+                            }
+                        });
+
+                        $j('.flexslider').flexslider({
+                            autoPlay: true,
+                            pauseOnAction: false,
+                            animation: "fade",
+                            start: function(slider) {
+                                $j('.caption_wrapper').animate({"bottom": '28%', 'opacity': 1}, 500);
+                            },
+                            before: function(slider) {
+                                $j('.caption_wrapper').animate({"bottom": '0px', 'opacity': 0}, 500);
+                            },
+                            after: function(slider) {
+                                $j('.caption_wrapper').animate({"bottom": '28%', 'opacity': 1}, 500);
+                            }
+                        });
+
+                        set_slider_height();
+                        $j(window).resize(function() {
+                            set_slider_height();
+                        });
+
+                        function set_slider_height() {
+                            var default_height = parseInt($j('#homeslider ul.slides').find('li').attr('data-height'));
+                            var new_height;
+
+                            if ($j(window).width() < 1030) {
+                                new_height = (default_height * $j(window).width()) / 1030;
+                            } else {
+                                new_height = default_height;
+                            }
+                            $j('#homeslider ul.slides').find('li').height(new_height);
+                        }
+
+                    });
+                </script>
+
+            </div>
+
+
+
+        </div> <!--.top_wrapper -->	
+
+        <div class="container">	
+            <div id="post_grids" class="row">
+                <div style="width: 640px" class="uni_response">
+                    <div class="six columns post_col masonry-brick">
+
+                        <div class="post-973 post type-post status-publish format-standard hentry category-uncategorized post_item white_box">
+
+                            <div class="large_thumb thumb_hover">
+
+                                <a href="que_hacemos/unidad_gruas_y_proyectos.php" class="thumb_icon gruas"><span></span></a>
+
+                                <div class="mask post_top_element"></div> 
+                                <div class="img_wrapper"><a href="que_hacemos/unidad_gruas_y_proyectos.php" rel="bookmark" title="This is a image"><img src="images/uni1.jpg" width="710" height="454" alt="This is a image" class="post_top_element thumb" /></a></div>
+
+                            </div>
+                            <h3 class="post_item_title"><a href="que_hacemos/unidad_gruas_y_proyectos.php" rel="bookmark" title="This is a image"><?php echo mo_get_data(1, 8); ?></a></h3>
+
+                        </div>
+
+                    </div><!-- // post col -->
+
+                    <div class="six columns post_col masonry-brick">
+
+                        <div class="post-973 post type-post status-publish format-standard hentry category-uncategorized post_item white_box">
+
+                            <div class="large_thumb thumb_hover">
+
+                                <a href="que_hacemos/unidad_fajas_transportadoras.php" class="thumb_icon  fajas"><span></span></a>
+
+                                <div class="mask post_top_element"></div> 
+                                <div class="img_wrapper"><a href="que_hacemos/unidad_fajas_transportadoras.php" rel="bookmark" title="This is a image"><img src="images/uni2.jpg" width="710" height="454" alt="This is a image" class="post_top_element thumb" /></a></div>
+                            </div>
+                            <h3 class="post_item_title"><a href="que_hacemos/unidad_fajas_transportadoras.php" rel="bookmark" title="This is a image"><?php echo mo_get_data(1, 9); ?></a></h3>
+
+                        </div>
+
+                    </div><!-- // post col -->
+
+                    <div class="six columns post_col masonry-brick">
+
+                        <div class="post-973 post type-post status-publish format-standard hentry category-uncategorized post_item white_box">
+
+                            <div class="large_thumb thumb_hover">
+
+                                <a href="que_hacemos/unidad_servicio_tecnico.php" class="thumb_icon servicio"><span></span></a>
+
+                                <div class="mask post_top_element"></div> 
+                                <div class="img_wrapper"><a href="que_hacemos/unidad_servicio_tecnico.php" rel="bookmark" title="This is a image"><img src="images/uni3.jpg" width="710" height="454" alt="This is a image" class="post_top_element thumb" /></a></div>
+
+                            </div>
+
+
+                            <h3 class="post_item_title"><a href="que_hacemos/unidad_servicio_tecnico.php" rel="bookmark" title="This is a image"><br /><?php echo mo_get_data(1, 11); ?> </a></h3>
+
+                        </div>
+
+                    </div><!-- // post col -->
+
+                    <div class="six columns post_col masonry-brick">
+
+                        <div class="post-973 post type-post status-publish format-standard hentry category-uncategorized post_item white_box">
+
+                            <div class="large_thumb thumb_hover">
+
+                                <a href="que_hacemos/unidad_comercial.php" class="thumb_icon comercial"><span></span></a>
+
+                                <div class="mask post_top_element"></div> 
+                                <div class="img_wrapper"><a href="que_hacemos/unidad_comercial.php" rel="bookmark" title="This is a image"><img src="images/uni4.jpg" width="710" height="454" alt="This is a image" class="post_top_element thumb" /></a></div>
+
+                            </div>
+
+
+                            <h3 class="post_item_title"><a href="que_hacemos/unidad_comercial.php" rel="bookmark" title="This is a image"><br /><?php echo mo_get_data(1, 12); ?></a></h3>
+
+                        </div>
+
+                    </div><!-- // post col -->
+                    <!--<div class="clear"></div>-->	
+                </div>
+                <div id="post_p">
+                    <div class="widget tab_wrapper white_box" id="tab_wrapper_tab_widget-2">
+
+                        <ul class="tab_menu" style="line-height: 22px;">
+                            <li class="tab_post"><a href="#post_tab1"> Últimos <br /> Proyectos</a></li>
+                            <li  class="tab_comment"><a href="#post_tab2"><br />Noticias </a></li>
+                            <li class="tab_tag"><a href="#post_tab3">Trabaje con <br /> Nosotros</a></li>
+                        </ul>
+                        <div class="clear"></div>
+                        <div class="tabs_container">
+                            <div id="post_tab1" class="tab_content recent_posts">
+                                <ul>
+                                    <?php
+                                    foreach (mo_get_proy(2) as $array) {
+                                        ?>
+                                        <li> <a href="que_hacemos/ultimos_proyectos.php?cod=<?php echo $array[0]; ?>" title="Praesent Et Urna Turpis Sadips" class="small_thumb"><img src="userfiles/<?php echo $array[3]; ?>" width="100" height="100" alt="Praesent Et Urna Turpis Sadips"></a>
+                                            <a href="que_hacemos/ultimos_proyectos.php?cod=<?php echo $array[0]; ?>" title="Praesent Et Urna Turpis Sadips" class="title"><?php echo $array[1]; ?></a>
+                                            <?php echo $array[2] ?>
+                                            <div class="clear"></div>
+                                        </li>
+                                        <?php
+                                    }
+                                    ?>
+                                </ul>
+                            </div>
+                            <div id="post_tab2" class="tab_content recent_posts">
+                                <ul>
+                                    <?php
+                                    foreach (mo_get_proy(5) as $array) {
+                                        ?>
+                                        <li> <a href="media/noticia.php?cod=<?php echo $array[0]; ?>" title="Praesent Et Urna Turpis Sadips" class="small_thumb"><img src="userfiles/<?php echo $array[3]; ?>" width="100" height="100" alt="Praesent Et Urna Turpis Sadips"></a>
+                                            <a href="media/noticia.php?cod=<?php echo $array[0]; ?>" title="Praesent Et Urna Turpis Sadips" class="title"><?php echo $array[1]; ?></a>
+                                            <?php echo $array[2] ?>
+                                            <div class="clear"></div>
+                                        </li>
+                                        <?php
+                                    }
+                                    ?>
+                                </ul>
+                            </div>
+                            <div id="post_tab3" class="tab_content recent_posts">
+                                <ul>
+                                    <li> <a href="" title="Praesent Et Urna Turpis Sadips" class="small_thumb"><img src="images/icono.png" width="100" height="100" alt="Praesent Et Urna Turpis Sadips"></a><a href="" title="Praesent Et Urna Turpis Sadips" class="title">Praesent Et Urna Turpis Sadips</a>QuisQue ligulas ipsum, euismod atras vulputate iltricies etri<div class="clear"></div></li>
+                                </ul>
+                            </div>  
+
+                        </div>
+
+                    </div>	
+                </div>
+                <br />
+                <br />
+                <br />
                 <footer class="footer">
                     <br />
                     <section>
@@ -376,9 +440,46 @@ include 'class/Fuctions.php'; ?>
                     <iframe src="http://player.vimeo.com/video/52560308" width="800" height="450" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
                 </div>
             </div>
+
+
+            <script>
+                $j(document).ready(function() {
+                    var $container = $j('#post_grids');
+
+                    $container.imagesLoaded(function() {
+                        $container.masonry({
+                            itemSelector: '.post_col'
+                        });
+                    });
+
+                    $j('#post_grids').masonry({
+                        itemSelector: '.post_col',
+                        gutterWidth: 0,
+                        // set columnWidth a fraction of the container width
+                        columnWidth: function(containerWidth) {
+                            return containerWidth / 2;
+                        }
+                    });
+
+                    $container.infinitescroll({
+                        navSelector: '#page-nav', // selector for the paged navigation 
+                        nextSelector: '#page-nav a', // selector for the NEXT link (to page 2)
+                        itemSelector: '.post_col', // selector for all items you'll retrieve
+                        loading: {
+                            msgText: 'Loading new posts...',
+                            finishedMsg: 'No more pages to load.',
+                            img: 'http://i.imgur.com/6RMhx.gif'
+                        }
+                    })
+                    ,
+                });
+            </script>
+
+
+            <!-- infinite scroll -->
             <div class="load_more">	
                 <nav id="page-nav">
-                    <a href="#"></a>	</nav>
+                    <a href="index1.html"></a>	</nav>
             </div>
             <!-- end infinite scroll -->
         </div>
@@ -449,8 +550,7 @@ include 'class/Fuctions.php'; ?>
         <script src="_switcher/miniColors/jQuery.miniColors.min.js"></script>
         <script src="_switcher/script.js"></script>
 
-        <div id="toTop"><a href="#">Subir</a></div>
-        <script src="../js/bootstrap.min.js"></script>
+        <div id="toTop"><a href="#">Subir</a></div>	
         <script type='text/javascript' src='js/jQuery.easing-1.35152.js?ver=1.0'></script>
         <script type='text/javascript' src='js/jQuery.masonry.min5152.js?ver=1.0'></script>
         <script type='text/javascript' src='js/jQuery.imagesloaded.min5152.js?ver=1.0'></script>
@@ -464,31 +564,6 @@ include 'class/Fuctions.php'; ?>
         <script type='text/javascript' src='js/jQuery.placeholder.min5152.js?ver=1.0'></script>
         <script type='text/javascript' src='js/jflickrfeed.min5152.js?ver=1.0'></script>
 
-    </body>
-    <script type="text/javascript">
-        $j(document).ready(function() {
-            $j("#skin3").trigger("click");
-            var menu = true;
-            $j(".footer-menu").click(function() {
-                $j('.footer-trog').animate({
-                    height: 'toggle',
-                    opacity: 'toggle'
-                }, 900);
-                if (menu) {
 
-                    menu = false;
-                    $j(".footer-menu span b").text("Mostrar Menu");
-                    $j(".footer-menu img").attr("src", "images/flecha_arriba.png");
-                } else {
-                    $j('html, body').animate({
-                        scrollTop: $j(document).height()
-                    },
-                    1500);
-                    menu = true;
-                    $j(".footer-menu span b").text("Ocultar Menu");
-                    $j(".footer-menu img").attr("src", "images/flecha_abajo.png");
-                }
-            });
-        });
-    </script>
+    </body>
 </html>
