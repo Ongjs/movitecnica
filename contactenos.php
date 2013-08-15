@@ -13,12 +13,12 @@ if(isset($_POST["tema"])){
     
 require 'lib/PHPMailer/class.phpmailer.php';
 
-$mail = new PHPMailer;
+$mail = new PHPMailer();
 
 $mail->IsSMTP();                                      // Set mailer to use SMTP
 $mail->Host = 'smtp.gmail.com';  // Specify main and backup server
 $mail->Port = 465;
-$mail->SMTPAuth = true;                               // Enable SMTP authentication
+$mail->SMTPAuth = true;                               // Enable SMTP authenticationa
 $mail->Username = 'andresgarciadev@gmail.com';                            // SMTP username
 $mail->Password = 'foreverlove12';                           // SMTP password
 
@@ -73,7 +73,14 @@ $mail->Body    = '<table border="0" style="text-align: left; background: rgba(24
                     \t Telefono \t '.$_POST["telefono"].' \n
                     '.$acheck.'
                 ';
-
+if(!$mail->Send())
+{
+echo "Mailer Error: " . $mail->ErrorInfo;
+}
+else
+{
+echo "Message has been sent";
+}
 $email_send = $mail->Send();
 }
 
