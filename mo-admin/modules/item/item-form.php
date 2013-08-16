@@ -2,6 +2,7 @@
 require_once "../conf.php";
 $id = isset($_POST['id']) ? $_POST['id'] : "";
 $sele = isset($_POST['select']) ? $_POST['select'] : "";
+$extra = $sele == "7" ? "Ruta enlace" : "Dato adicional";
 if (!empty($id)) {
     $cn->query("SELECT name, content, thumbnail, image, description, extra1 from image WHERE id = '$id'");
     $row = $cn->fetch();
@@ -16,20 +17,20 @@ if (!empty($id)) {
                 <td><input type="text" name="name" id="name" value="<?php echo mo_unscape($row['name']); ?>" /></td>
             </tr>
             <tr>
-                <td><label for="name">cargo</label></td>
+                <td><label for="name"><?php echo $extra; ?></label></td>
                 <td><input type="text" name="extra1" id="name" value="<?php echo mo_unscape($row['extra1']); ?>" /></td>
             </tr>
             <tr>
-                <td><label for="image">Imagen chica<br /><span class="recommended_size">(220px x 250px)</span></label></td>
+                <td><label for="image">Miniatura<br /><span class="recommended_size">(220px x 250px)</span></label></td>
                 <td><input type="file" id="imagec"/></td>
             </tr>
             <tr>
-                <td><label for="image">Imagen grande<br /><span class="recommended_size">(900px x 550px)</span></label></td>
+                <td><label for="image">Imagen<br /><span class="recommended_size">(900px x 550px)</span></label></td>
                 <td><input type="file" id="imageg"/></td>
             </tr>
             <tr>
                 <td><label for="tinymce">Descripcion</label></td>
-                <td><textarea name="desc" id="" class=""><?php echo $row['description']; ?></textarea></td>
+                <td><textarea name="desc" id="" class="tinymce_mini"><?php echo $row['description']; ?></textarea></td>
             </tr>
             <tr>
                 <td><label for="tinymce">Contenido</label></td>

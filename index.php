@@ -52,7 +52,7 @@ include 'class/Fuctions.php'; ?>
                                         <li id="menu-item-1126"  ><a href="conocenos/conocenos.php"><?php echo mo_get_data(1, 2); ?></a>
                                             <ul class="sub-menu">
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="conocenos/mensaje_del_gerente.php"><?php echo mo_get_data(1, 3); ?></a></li>
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="conocenos/valores.php"><?php echo mo_get_data(1, 4); ?></a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="conocenos/mision_y_vision.php"><?php echo mo_get_data(1, 4); ?></a></li>
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="Conocenos/Valores.php"><?php echo mo_get_data(1, 5); ?></a></li>
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="conocenos/equipo_de_trabajo.php"><?php echo mo_get_data(1, 20); ?></a></li>
                                             </ul>
@@ -78,7 +78,7 @@ include 'class/Fuctions.php'; ?>
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="SIG/reclamos.php"><?php echo mo_get_data(1, 16); ?></a></li>
                                             </ul>
                                         </li>
-                                        <li id="menu-item-1126"  ><a href="Trabaje_Con_Nosotros.php"><?php echo mo_get_data(1, 17); ?></a>
+                                        <li id="menu-item-1126"  ><a href="trabaje_con_nosotros/Trabaje_Con_Nosotros.php"><?php echo mo_get_data(1, 17); ?></a>
                                             <ul class="sub-menu">
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="trabaje_con_nosotros/porque_movitecnica.php"><?php echo mo_get_data(1, 18); ?></a></li>
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="trabaje_con_nosotros/Testimonios.php"><?php echo mo_get_data(1, 21); ?></a></li>
@@ -110,38 +110,21 @@ include 'class/Fuctions.php'; ?>
             <div class="slider" style="overflow:hidden;">
                 <div id="homeslider" class="fullwidth flexslider">
                     <ul class="slides" style="width: 100%; background-repeat: no-repeat; background: fixed;">
-
-                        <li data-height="500" style="position:relative; background: url(images/_slider/1.jpg) 50% 0;" >
+                        <?php
+                         foreach (mo_get_galeria() as $ele){
+                       ?>
+                        <li data-height="500" style="position:relative; background: url(userfiles/<?php echo $ele[0]; ?>) 50% 0;" >
                             <div class="caption_wrapper" >
                                 <div class="caption">
-                                    <h1><a href="conocenos/conocenos.php" style="color: #FFF">30 AÑOS DE EXPERIENCIA</a></h1>
-                                    <span style="display: block; color: #FFF">Nuestras mayores fortalezas son nuestro personal altamente calificado y el respaldo de nuestros proveedores... </span>
-                                    <a class="button normal small" href="conocenos/conocenos.php" style="float: right; margin-top: 7px;">Ver más</a>
+                                    <h1><a href="<?php echo $ele[3]; ?>" style="color: #FFF"><?php echo $ele[1]; ?></a></h1>
+                                    <span style="display: block; color: #FFF"><?php echo $ele[2]; ?></span>
+                                    <a class="button normal small" href="<?php echo $ele[3]; ?>" style="float: right; margin-top: 7px;">Ver más</a>
                                 </div>
                             </div>
                         </li>
-
-                        <li data-height="500" style="position:relative; background: url(images/_slider/2.jpg) 50% 0">
-                            <div class="caption_wrapper">
-                                <div class="caption">
-                                    <h1><a href="productos/productos.php?filt=marcas">LAS MEJORES MARCAS REPRESENTADAS</a></h1>
-                                    <span style="display: block">Representamos a marcas de prestigio mundial como: <br />  YALE, STREET, DUNLOP, CONDUCTIX, ASGCO, CIMBRIA, MOVITECH, VETTER... </span>
-                                    <a class="button normal small" href="productos/productos.php?filt=marcas" style="float: right; margin-top: 7px;">Ver más</a>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li data-height="500" style="position:relative; background: url(images/_slider/3.jpg) 50% 0">
-                            <div class="caption_wrapper">
-                                <div class="caption">
-                                    <h1><a href="conocenos/valores.php">LA PASIÓN ES NUESTRO PRINCIPAL MOTOR</a></h1>
-                                    <span style="display: block">Es nuestro entusiasmo y la satisfacción por la tarea Que se realiza Que nos impulsa a desarrollar nuestro máximo potencial... </span>
-                                    <a class="button normal small" href="conocenos/valores.php" style="float: right; margin-top: 7px;">Ver más</a>
-                                </div>
-                            </div>
-                        </li>
-
-
+                        <?php
+                        }
+                        ?>
                     </ul>
                 </div>
                 <script type="text/javascript">
@@ -247,7 +230,7 @@ include 'class/Fuctions.php'; ?>
                                 <a href="que_hacemos/unidad_gruas_y_proyectos.php" class="thumb_icon gruas"><span></span></a>
 
                                 <div class="mask post_top_element"></div> 
-                                <div class="img_wrapper"><a href="que_hacemos/unidad_gruas_y_proyectos.php" rel="bookmark" title="This is a image"><img src="images/uni1.jpg" width="710" height="454" alt="This is a image" class="post_top_element thumb" /></a></div>
+                                <div class="img_wrapper"><a href="que_hacemos/unidad_gruas_y_proyectos.php" rel="bookmark" title="This is a image"><img src="userfiles/<?php echo mo_get_data(5,8); ?>" width="710" height="454" alt="This is a image" class="post_top_element thumb" /></a></div>
 
                             </div>
                             <h3 class="post_item_title"><a href="que_hacemos/unidad_gruas_y_proyectos.php" rel="bookmark" title="This is a image"><?php echo mo_get_data(1, 8); ?></a></h3>
@@ -265,7 +248,7 @@ include 'class/Fuctions.php'; ?>
                                 <a href="que_hacemos/unidad_fajas_transportadoras.php" class="thumb_icon  fajas"><span></span></a>
 
                                 <div class="mask post_top_element"></div> 
-                                <div class="img_wrapper"><a href="que_hacemos/unidad_fajas_transportadoras.php" rel="bookmark" title="This is a image"><img src="images/uni2.jpg" width="710" height="454" alt="This is a image" class="post_top_element thumb" /></a></div>
+                                <div class="img_wrapper"><a href="que_hacemos/unidad_fajas_transportadoras.php" rel="bookmark" title="This is a image"><img src="userfiles/<?php echo mo_get_data(5,9); ?>" width="710" height="454" alt="This is a image" class="post_top_element thumb" /></a></div>
                             </div>
                             <h3 class="post_item_title"><a href="que_hacemos/unidad_fajas_transportadoras.php" rel="bookmark" title="This is a image"><?php echo mo_get_data(1, 9); ?></a></h3>
 
@@ -282,7 +265,7 @@ include 'class/Fuctions.php'; ?>
                                 <a href="que_hacemos/unidad_servicio_tecnico.php" class="thumb_icon servicio"><span></span></a>
 
                                 <div class="mask post_top_element"></div> 
-                                <div class="img_wrapper"><a href="que_hacemos/unidad_servicio_tecnico.php" rel="bookmark" title="This is a image"><img src="images/uni3.jpg" width="710" height="454" alt="This is a image" class="post_top_element thumb" /></a></div>
+                                <div class="img_wrapper"><a href="que_hacemos/unidad_servicio_tecnico.php" rel="bookmark" title="This is a image"><img src="userfiles/<?php echo mo_get_data(5,11); ?>" width="710" height="454" alt="This is a image" class="post_top_element thumb" /></a></div>
 
                             </div>
 
@@ -302,7 +285,7 @@ include 'class/Fuctions.php'; ?>
                                 <a href="que_hacemos/unidad_comercial.php" class="thumb_icon comercial"><span></span></a>
 
                                 <div class="mask post_top_element"></div> 
-                                <div class="img_wrapper"><a href="que_hacemos/unidad_comercial.php" rel="bookmark" title="This is a image"><img src="images/uni4.jpg" width="710" height="454" alt="This is a image" class="post_top_element thumb" /></a></div>
+                                <div class="img_wrapper"><a href="que_hacemos/unidad_comercial.php" rel="bookmark" title="This is a image"><img src="userfiles/<?php echo mo_get_data(5,12); ?>" width="710" height="454" alt="This is a image" class="post_top_element thumb" /></a></div>
 
                             </div>
 

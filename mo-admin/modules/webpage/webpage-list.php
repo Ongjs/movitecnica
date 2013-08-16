@@ -13,14 +13,17 @@ $cn->query("SELECT id, name,content, image, status from content WHERE LOWER(name
         </tr>
     </thead>
     <tbody>
-        <?php while ($row = $cn->fetch()) { ?>
+        <?php
+        $cont = 1;
+        while ($row = $cn->fetch()) { 
+            ?>
             <tr>
-                <td class="center"><?php echo $row['id']; ?></td>
-                <td><a href="./?mod=81&id=<?php echo $row['id']; ?>"><?php echo mo_unscape($row['name']); ?></a></td>
-                <td class="center"><a href="../images/<?php echo $row['image']; ?>" rel="shadowbox;width=480;height=240;" class="button file" title="<?php echo mo_unscape($row['name']); ?>"></a></td>
+                <td class="center"><?php echo $cont; ?></td>
+                <td><?php echo mo_unscape($row['name']); ?></td>
+                <td class="center"><a href="../userfiles/<?php echo $row['image']; ?>" rel="shadowbox;width=480;height=240;" class="button file" title="<?php echo mo_unscape($row['name']); ?>"></a></td>
                 <td class="center"><a href="#" id="<?php echo $row['id']; ?>" class="button update" title="Editar"></a></td>
             </tr>
-        <?php } ?>
+        <?php $cont++;} ?>
         <?php if ($cn->numrows() == 0) echo '<tr><td colspan="10" class="row_error">No se encontraron registros.</td></tr>'; ?>
     </tbody>
 </table>

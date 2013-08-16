@@ -2,7 +2,7 @@
 require_once "../conf.php";
 $id = isset($_POST['id']) ? $_POST['id'] : "";
 if (!empty($id)) {
-    $cn->query("SELECT name, image, content from content WHERE id = '$id'");
+    $cn->query("SELECT name, image, content, description from content WHERE id = '$id'");
     $row = $cn->fetch();
 }
 ?>
@@ -17,6 +17,10 @@ if (!empty($id)) {
             <tr>
                 <td><label for="image">Imagen<br /><span class="recommended_size">(160w x 80h)</span></label></td>
                 <td><input type="file" id="image" /></td>
+            </tr>
+            <tr>
+                <td><label for="tinymce">Descripcion</label></td>
+                <td><textarea name="desc" id="" class="tinymce_mini"><?php echo $row['description']; ?></textarea></td>
             </tr>
             <tr>
                 <td><label for="tinymce">Contenido</label></td>

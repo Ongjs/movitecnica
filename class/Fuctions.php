@@ -106,6 +106,9 @@ function mo_get_data($get,$id){
         case 4 :
             $get = 'description';
             break;
+        case 5 :
+            $get = 'thumbnail';
+            break;
     }
     $cn->query("SELECT $get FROM content WHERE id = $id");
     while ($row = $cn->fetch()) $result = $row;
@@ -130,6 +133,13 @@ function mo_get_ar($cod,$pag){
     $ini = (($pag-1)*2);
     $result = array();
     $cn->query("SELECT id,name,thumbnail,image,description,content,extra1,updated FROM image WHERE category_id in($cod) order by (updated) desc limit $ini,6 ");
+    while ($row = $cn->fetch()) $result[] = $row;
+    return $result;
+}
+function mo_get_galeria(){
+    $cn = Connection::getInstance();
+    $result = array();
+    $cn->query("SELECT image,name,description,extra1 FROM image WHERE category_id in(7) order by (updated) desc");
     while ($row = $cn->fetch()) $result[] = $row;
     return $result;
 }

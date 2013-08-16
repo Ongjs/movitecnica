@@ -23,4 +23,7 @@ switch ($do) {
     case 4:
         $cn->query("DELETE from image WHERE id = " . $_POST['id']);
         break;
+    case 3: 
+	$cn->query("UPDATE image SET status = '".($_POST['value'] == 1 ? 0 : 1)."' WHERE id = '".$_POST['id']."'");
+	break;
 }

@@ -1,5 +1,5 @@
 <a href="#" class="cancel list">Cancelar</a>
-<h1>Paginas Web</h1><br /><br /><br >
+<h1>Lista de Elementos</h1><br /><br /><br >
 <div class="MOForm">
     <fieldset class="search">
         <legend>Filtrar Información</legend>
@@ -7,6 +7,7 @@
             <tr>
                 <td><label for="search">Seleccione categoria a filtrar</label></td>
                 <td><select name="opt_cat" id ="opt_cat">
+                        <option value="7">Galería Principal</option>
                         <option value="1">Equipo de Trabajo</option>
                         <option value="2">Proyectos</option>
                         <option value="3">Servicios</option>
@@ -36,6 +37,7 @@ $(document).ready(function() {
     $(".list").on("click", function(){ mo_list(mod); return false; });
     $(document).on("click",".update", function(){ mo_update(mod, $(this)); return false; });
     $(document).on("click",".delete", function(){ mo_delete(mod, $(this)); return false; });
+    $(document).on("click",".status", function(){ mo_status(mod, $(this)); return false; });
     $(".new").on("click", function(){ mo_new(mod, $(this)); return false; });
 
     $(document).on("submit","form#update", function() {
