@@ -37,34 +37,34 @@ if(isset($_POST["tema"])){
             <td style="border-top: solid 1px rgba(225,225,225,1)">' . $_POST["tema"] . '</td>
         </tr>
         <tr>
-            <td style="border-top: solid 1px rgba(225,225,225,1)"><strong>Nombre:</strong></td>
-            <td style="border-top: solid 1px rgba(225,225,225,1)">' . $_POST["nombre"] . ' ' . $_POST["apellido"] . '</td>
-        </tr>
-        <tr>
             <td style="border-top: solid 1px rgba(225,225,225,1)"><strong>Mensaje:</strong></td>
             <td style="border-top: solid 1px rgba(225,225,225,1)">' . nl2br($_POST["mensaje"]) . '</td>
-        </tr>
-        <tr>
-            <td style="border-top: solid 1px rgba(225,225,225,1)"><strong>Email:</strong></td>
-            <td style="border-top: solid 1px rgba(225,225,225,1)">' . $_POST["email"] . '</td>
         </tr>
         <tr>
             <td style="border-top: solid 1px rgba(225,225,225,1)"><strong>Compañia:</strong></td>
             <td style="border-top: solid 1px rgba(225,225,225,1)">' . $_POST["compania"] . '</td>
         </tr>
         <tr>
-            <td style="border-top: solid 1px rgba(225,225,225,1)"><strong>Telefono:</strong></td>
+            <td style="border-top: solid 1px rgba(225,225,225,1)"><strong>Nombre Completo:</strong></td>
+            <td style="border-top: solid 1px rgba(225,225,225,1)">' . $_POST["nombre"] . ' ' . $_POST["apellido"] . '</td>
+        </tr>
+        <tr>
+            <td style="border-top: solid 1px rgba(225,225,225,1)"><strong>Email:</strong></td>
+            <td style="border-top: solid 1px rgba(225,225,225,1)">' . $_POST["email"] . '</td>
+        </tr>
+        <tr>
+            <td style="border-top: solid 1px rgba(225,225,225,1)"><strong>Teléfono:</strong></td>
             <td style="border-top: solid 1px rgba(225,225,225,1)">' . $_POST["telefono"] . '</td>
         </tr>
         '.$check.'
     </table>';
     $mail->AltBody = '\t Contactenos \n \n
     \t Tema: \t '.$_POST["tema"].' \n
-    \t Nombre: \t '.$_POST["nombre"]." ".$_POST["apellido"].' \n
     \t Mensaje: \n  \t'.$_POST["mensaje"].' \n
-    \t Email: \t '.$_POST["email"].' \n
     \t Compañia: \t '.$_POST["compania"].' \n
-    \t Telefono: \t '.$_POST["telefono"].' \n
+    \t Nombre Completo: \t '.$_POST["nombre"]." ".$_POST["apellido"].' \n
+    \t Email: \t '.$_POST["email"].' \n
+    \t Teléfono: \t '.$_POST["telefono"].' \n
     '.$acheck;
 
     $email_send = $mail->Send();
@@ -265,7 +265,7 @@ include 'class/Fuctions.php'; ?>
                             </div>
                             <br />
                             <div class="control-group">
-                                <label class="control-label" for="inputTelefono">Telefono</label>
+                                <label class="control-label" for="inputTelefono">Teléfono</label>
                                 <div class="controls">
                                     <input type="text" id="textTelefono" placeholder="Telefono" name="telefono">
                                 </div>
