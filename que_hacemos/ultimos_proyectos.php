@@ -102,12 +102,12 @@
         <div class="container">	
             <div id="post_grids" class="row" style=" margin-top: -20px;">
                 <div style="margin-left: 20px;">
-                <span> <a href="../index.php"><?php echo mo_get_data(1, 1); ?></a> > <a href="Que_Hacemos.php"><?php echo mo_get_data(1, 7); ?></a> > <a href="Unidad_Gruas_Y_Proyectos.php"><?php echo mo_get_data(1, 8); ?></a> > <?php echo mo_get_data(1, 23); ?></span>
+                <span> <a href="../index.php"><?php echo mo_get_data(1, 1); ?></a> > <a href="Que_Hacemos.php"><?php echo mo_get_data(1, 7); ?></a> > <a href="Unidad_Gruas_Y_Proyectos.php"><?php echo mo_get_data(1, 8); ?></a> > <?php echo mo_get_data(1, 6); ?></span>
                 <br />
                 <br />
-                <h1><b><?php echo mo_get_data(1, 23); ?></b></h1>
+                <h1><b><?php echo mo_get_data(1, 6); ?></b></h1>
                 <div style=" display: inline-block; margin-top: 5px;" class="uni_response">
-                    <?php echo mo_get_data(3, 23); ?>
+                    <?php echo mo_get_data(3, 6); ?>
                     <div style="width: 98%;">
                         <?php
                             $pag = isset($_REQUEST['pag']) ? $_REQUEST['pag'] : '1';

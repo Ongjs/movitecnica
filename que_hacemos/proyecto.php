@@ -106,7 +106,7 @@
                     $id = $_REQUEST['cod'];
                     $data = mo_get_data_select($id);
                     ?>
-                <span> <a href="../index.php"><?php echo mo_get_data(1, 1); ?></a> > <a href="Que_Hacemos.php"><?php echo mo_get_data(1, 7); ?></a> > <a href="unidad_gruas_y_proyectos.php"><?php echo mo_get_data(1, 8); ?></a> > <a href="ultimos_proyectos.php"> <?php echo mo_get_data(1, 23); ?></a></span> > <?php echo $data[0] ?>
+                <span> <a href="../index.php"><?php echo mo_get_data(1, 1); ?></a> > <a href="Que_Hacemos.php"><?php echo mo_get_data(1, 7); ?></a> > <a href="unidad_gruas_y_proyectos.php"><?php echo mo_get_data(1, 8); ?></a> > <a href="ultimos_proyectos.php"> <?php echo mo_get_data(1, 6); ?></a></span> > <?php echo $data[0] ?>
                 <br /><br />
                 <div style="display: inline-block;" class="uni_response">
                     <div style="width: 98%; text-align: left;">
