@@ -197,4 +197,25 @@ function mo_get_proy($catid){
     while ($row = $cn->fetch()) $result[] = $row;
     return $result;
 }
+function mo_get_marc(){
+    $cn = Connection::getInstance();
+    $result = array();
+    $cn->query("SELECT id,name,image FROM `product_category`  where parent_id = 0");
+    while ($row = $cn->fetch()) $result[] = $row;
+    return $result;
+}
+function mo_get_subcat($id){
+    $cn = Connection::getInstance();
+    $result = array();
+    $cn->query("SELECT id,clase,name,image,content FROM `product_category`  where parent_id = $id");
+    while ($row = $cn->fetch()) $result[] = $row;
+    return $result;
+}
+function mo_get_prod($id){
+    $cn = Connection::getInstance();
+    $result = array();
+    $cn->query("SELECT id,clase,name,image,content FROM `product_category`  where parent_id = $id");
+    while ($row = $cn->fetch()) $result[] = $row;
+    return $result;
+}
 ?>

@@ -139,7 +139,7 @@
                     <span> <a href="index.php">Inicio</a> > <a href="productos/productos.php"> Productos </a> > Productos </span>
                     <br />
                     <br />
-                    <div class="image_box2"><img src="../userfiles/gruas_y_proyectos.png" style=""></div>
+                    <div class="image_box2"><img src="../userfiles/_gruas_y_proyectos.png" style=""></div>
                     <br />
                     <br />
                     <div id="post_p" style="display: inline-block; vertical-align: top; width: 230px; text-align: left;">
