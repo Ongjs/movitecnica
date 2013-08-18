@@ -110,21 +110,21 @@ function mo_get_data($get,$id){
             $get = 'thumbnail';
             break;
     }
-    $cn->query("SELECT $get FROM content WHERE id = $id");
+    $cn->query("SELECT $get FROM content WHERE id = $id and status = 1 ");
     while ($row = $cn->fetch()) $result = $row;
     return $result[0];
 }
 function mo_get_url($id){
     $cn = Connection::getInstance();
     $result = array();
-    $cn->query("SELECT name,description FROM content WHERE category_id = $id");
+    $cn->query("SELECT name,description FROM content WHERE category_id = $id and status = 1 ");
     while ($row = $cn->fetch()) $result[] = $row;
     return $result;
 }
 function mo_get_data_select($id){
     $cn = Connection::getInstance();
     $result = array();
-    $cn->query("SELECT name,image,content,extra1 FROM image WHERE id = $id order by (updated) desc");
+    $cn->query("SELECT name,image,content,extra1 FROM image WHERE id = $id and status = 1  order by (updated) desc");
     while ($row = $cn->fetch()) $result[] = $row;
     return $result[0];
 }
@@ -132,14 +132,14 @@ function mo_get_ar($cod,$pag){
     $cn = Connection::getInstance();
     $ini = (($pag-1)*2);
     $result = array();
-    $cn->query("SELECT id,name,thumbnail,image,description,content,extra1,updated FROM image WHERE category_id in($cod) order by (updated) desc limit $ini,6 ");
+    $cn->query("SELECT id,name,thumbnail,image,description,content,extra1,updated FROM image WHERE category_id in($cod) and status = 1  order by (updated) desc limit $ini,6 ");
     while ($row = $cn->fetch()) $result[] = $row;
     return $result;
 }
 function mo_get_galeria(){
     $cn = Connection::getInstance();
     $result = array();
-    $cn->query("SELECT image,name,description,extra1 FROM image WHERE category_id in(7) order by (updated) desc");
+    $cn->query("SELECT image,name,description,extra1 FROM image WHERE category_id in(7) and status = 1  order by (updated) desc");
     while ($row = $cn->fetch()) $result[] = $row;
     return $result;
 }
@@ -147,7 +147,7 @@ function mo_get_pag($cod,$pag){
     $cn = Connection::getInstance();
     $rang = 0;
     $result = array();
-    $cn->query("SELECT id FROM image WHERE category_id in($cod)");
+    $cn->query("SELECT id FROM image WHERE category_id in($cod) and status = 1 ");
     $total = $cn->numrows();
     $total = ceil($total/6);
     if(($pag + 2) > $total){
@@ -163,13 +163,13 @@ function mo_get_pag($cod,$pag){
 function mo_get_tra(){
     $cn = Connection::getInstance();
     $result = array();
-    $cn->query("SELECT id,thumbnail FROM image WHERE category_id = 1");
+    $cn->query("SELECT id,thumbnail FROM image WHERE category_id = 1 and status = 1 ");
     while ($row = $cn->fetch()) $result[] = $row;
     return $result;
 }
 function mo_get_category($id){  
     $cn = Connection::getInstance();
-    $cn->query("SELECT category_id FROM image WHERE id = $id");
+    $cn->query("SELECT category_id FROM image WHERE id = $id and status = 1 ");
     while ($row = $cn->fetch()) $result = $row;
     return $result[0];
 }
@@ -177,7 +177,7 @@ function mo_get_category($id){
 function mo_get_desc(){
     $cn = Connection::getInstance();
     $result = array();
-    $cn->query("SELECT id,description,updated FROM `image` where category_id = 5 order by (updated) desc limit 0,2");
+    $cn->query("SELECT id,description,updated FROM `image` where category_id = 5 and status = 1  order by (updated) desc limit 0,2");
     while ($row = $cn->fetch()) $result[] = $row;
     return $result;
 }
@@ -193,28 +193,28 @@ function mo_get_proy($catid){
     }
     $cn = Connection::getInstance();
     $result = array();
-    $cn->query("SELECT id,name,description,thumbnail FROM `image`  where category_id = $catid order by (updated) desc limit 0,$limit");
+    $cn->query("SELECT id,name,description,thumbnail FROM `image`  where category_id = $catid and status = 1  order by (updated) desc limit 0,$limit");
     while ($row = $cn->fetch()) $result[] = $row;
     return $result;
 }
 function mo_get_marc(){
     $cn = Connection::getInstance();
     $result = array();
-    $cn->query("SELECT id,name,image FROM `product_category`  where parent_id = 0");
+    $cn->query("SELECT id,name,image FROM `product_category`  where parent_id = 0 and status = 1 ");
     while ($row = $cn->fetch()) $result[] = $row;
     return $result;
 }
 function mo_get_subcat($id){
     $cn = Connection::getInstance();
     $result = array();
-    $cn->query("SELECT id,clase,name,image,content FROM `product_category`  where parent_id = $id");
+    $cn->query("SELECT id,clase,name,image,content FROM `product_category`  where parent_id = $id and status = 1 ");
     while ($row = $cn->fetch()) $result[] = $row;
     return $result;
 }
 function mo_get_prod($id){
     $cn = Connection::getInstance();
     $result = array();
-    $cn->query("SELECT id,clase,name,image,content FROM `product_category`  where parent_id = $id");
+    $cn->query("SELECT id,clase,name,image,content FROM `product_category`  where parent_id = $id and status = 1 ");
     while ($row = $cn->fetch()) $result[] = $row;
     return $result;
 }

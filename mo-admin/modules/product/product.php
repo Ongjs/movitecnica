@@ -18,7 +18,7 @@
             </tr>
             <a href="#" class="new list">Nuevo</a>
             <tr>
-                <td><label for="search">Introduzca el término a buscar</label></td>
+                <td><label for="search">Introduzca el termino a buscar</label></td>
                 <td><input type="text" name="search" id="search" /></td>
             </tr>
         </table>
@@ -29,7 +29,7 @@
 <script src="../lib/tiny_mce/tiny_mce.js" type="text/javascript"></script>
 <script type="text/javascript">
 $(document).ready(function() {
-    var mod = 30;
+    var mod = 42;
     mo_list(mod);
     Shadowbox.init();
     $("#opt_cat").change(function(){ mo_search(mod); return false; });

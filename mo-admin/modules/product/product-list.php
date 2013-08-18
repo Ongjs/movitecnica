@@ -9,12 +9,12 @@ $cn->query("SELECT id, name, content, thumbnail, image, description, status from
         <tr>
             <th width="30">N&deg;</th>
             <th width="170">Nombre</th>
-            <th width="">Descripción</th>
-            <th width="58">Miniatura</th>
+            <th width="">contenido</th>
+            <th width="58">miniatura</th>
             <th width="58">Imagen</th>
             <th width="40">Editar</th>
             <th width="40">Eliminar</th>
-            <th width="40">Activo</th>
+            <th width="40">Estatus</th>
         </tr>
     </thead>
     <tbody>

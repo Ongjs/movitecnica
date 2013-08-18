@@ -46,7 +46,7 @@
                                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../conocenos/mensaje_del_gerente.php"><?php echo mo_get_data(1, 3); ?></a></li>
                                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../conocenos/mision_y_vision.php"><?php echo mo_get_data(1, 4); ?></a></li>
                                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../Conocenos/Valores.php"><?php echo mo_get_data(1, 5); ?></a></li>
-                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../conocenos/equipo_de_trabajo.php"><?php echo mo_get_data(1, 20); ?></a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../conocenos/equipo_de_trabajo.php"><?php echo mo_get_data(1, 6); ?></a></li>
                                     </ul>
                                 </li>
                                 <li id="menu-item-1126"  ><a href="../que_hacemos/que_hacemos.php"><?php echo mo_get_data(1, 7); ?></a>
@@ -70,10 +70,10 @@
                                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../SIG/reclamos.php"><?php echo mo_get_data(1, 16); ?></a></li>
                                     </ul>
                                 </li>
-                                <li id="menu-item-1126"  ><a href="../trabaje_con_nosotros/Trabaje_Con_Nosotros.php"><?php echo mo_get_data(1, 17); ?></a>
+                                <li id="menu-item-1126"  ><a href="../trabaje_con_nosotros/trabaje_con_nosotros.php"><?php echo mo_get_data(1, 17); ?></a>
                                     <ul class="sub-menu">
                                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../trabaje_con_nosotros/porque_movitecnica.php"><?php echo mo_get_data(1, 18); ?></a></li>
-                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../trabaje_con_nosotros/Testimonios.php"><?php echo mo_get_data(1, 21); ?></a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../trabaje_con_nosotros/testimonios.php"><?php echo mo_get_data(1, 21); ?></a></li>
                                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../trabaje_con_nosotros/oferta_de_trabajo.php"><?php echo mo_get_data(1, 19); ?></a></li>
                                     </ul>
                                 </li>
@@ -106,7 +106,7 @@
                     $id = $_REQUEST['cod'];
                     $data = mo_get_data_select($id);
                     ?>
-                <span> <a href="../index.php"><?php echo mo_get_data(1, 1); ?></a> > <a href="../Trabaje_Con_Nosotros.php"><?php echo mo_get_data(1, 17); ?> </a> > <a href="Testimonios.php"> <?php echo mo_get_data(1, 21); ?> </a> > <?php echo $data[0] ?> </span>
+                <span> <a href="../index.php"><?php echo mo_get_data(1, 1); ?></a> > <a href="../trabaje_con_nosotros.php"><?php echo mo_get_data(1, 17); ?> </a> > <a href="testimonios.php"> <?php echo mo_get_data(1, 21); ?> </a> > <?php echo $data[0] ?> </span>
                 <br />
                 <br />
                 <h1><b><?php echo $data[0] ?></b></h1>
@@ -118,7 +118,7 @@
                         </div>
                         <br /><br />
                     </div>
-                    <a href="Testimonios.php">Regresar a <?php echo mo_get_data(1, 21); ?></a>
+                    <a href="testimonios.php">Regresar a <?php echo mo_get_data(1, 21); ?></a>
                 </div>
                 <div id="post_p" style="width: 320px; display: inline-block; margin-left: 20px; margin-top: 10px; vertical-align: top;">
                     <div class="widget tab_wrapper white_box" id="tab_wrapper_tab_widget-2">

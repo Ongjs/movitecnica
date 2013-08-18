@@ -2,16 +2,7 @@
 require_once "../conf.php";
 $id = isset($_POST['id']) ? $_POST['id'] : "";
 $sele = isset($_POST['select']) ? $_POST['select'] : "";
-switch ($sele){
-    case 1:
-        $extra = "Cargo";break;
-    case 4:
-        $extra = "Cargo";break;
-    case 7:
-        $extra = "Ruta enlace";break;
-    default: 
-        $extra = "Dato adicional";
-}
+$extra = $sele == "7" ? "Ruta enlace" : "Dato adicional";
 if (!empty($id)) {
     $cn->query("SELECT name, content, thumbnail, image, description, extra1 from image WHERE id = '$id'");
     $row = $cn->fetch();
