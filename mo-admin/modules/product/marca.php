@@ -29,7 +29,7 @@
 <script src="../lib/tiny_mce/tiny_mce.js" type="text/javascript"></script>
 <script type="text/javascript">
 $(document).ready(function() {
-    var mod = 40;
+    var mod = 41;
     mo_list(mod);
     Shadowbox.init();
     $("#opt_cat").change(function(){ mo_search(mod); return false; });

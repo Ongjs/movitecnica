@@ -22,8 +22,8 @@ switch ($mod) {
 
     case 30: include "modules/item/item$page.php"; break;
 
-    case 40: include "modules/product/marca$page.php"; break;
-    case 41: include "modules/product/category$page.php"; break;
+    case 40: include "modules/product/category$page.php"; break;
+    case 41: include "modules/product/marca$page.php"; break;
     case 42: include "modules/product/product$page.php"; break;
     
     default: include "modules/sale.php"; break;

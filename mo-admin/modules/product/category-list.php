@@ -1,35 +1,34 @@
 <?php
 require_once "../conf.php";
-$select = isset($_POST['select']) ? strtolower(mo_scape($_POST['select'])) : "0";
+$search = isset($_POST['search']) ? strtolower(mo_scape($_POST['search'])) : "";
+//$select = isset($_POST['select']) ? "parent_id = '" . strtolower(mo_scape($_POST['select'])) . "' and" : "";
+$select = "";
+$cn->query("SELECT id, name, image, status FROM product WHERE parent_id = '0' AND type = '1' AND $select LOWER(name) like '%$search%' ORDER BY id asc");
 ?>
 <table width="100%" class="listing">
+    <thead>
+        <tr>
+            <th width="30">N&deg;</th>
+            <th width="170">Nombre</th>
+            <th width="58">Miniatura</th>
+            <th width="40">Editar</th>
+            <th width="40">Eliminar</th>
+            <th width="40">Visible</th>
+        </tr>
+    </thead>
     <tbody>
         <?php
-        $catid = 6;
-        while(is_numeric($catid)){   
-        $cn->query("SELECT parent_id from product WHERE id = $catid");
-        $parent_id = $cn->fetch();
-        $parent_id = $parent_id["parent_id"];
-        $cn->query("SELECT id, name, parent_id from product WHERE parent_id = $catid ORDER BY id asc");
-        ?>
+        $cont = 1;
+        while ($row = $cn->fetch()) { ?>
             <tr>
-                <td>
-                    <?php echo $catid == 0 ? "Categorias": ""; ?>
-                </td>
-                <td>
-                    <select name="opt_cat" id ="opt_cat">
-                <?php
-                $cont = 1;
-                while ($row = $cn->fetch()) { ?>
-                        <option <?php echo (int)$row['id'] == $catid ? "selected" : ""; ?> value="<?php echo $row['id']."-".$catid; ?>"><?php echo $row['name']; ?></option>
-                <?php $cont++; } ?>
-                <?php if ($cn->numrows() == 0) echo '<tr><td colspan="10" class="row_error">No se encontraron registros.</td></tr>'; ?>
-                    </select>
-                </td>
+                <td class="center"><?php echo $cont; ?></td>
+                <td><?php echo mo_unscape($row['name']); ?></td>
+                <td class="center"><a href="../userfiles/<?php echo $row['image']; ?>" rel="shadowbox;width=220;height=250;" class="button file" title="<?php echo mo_unscape($row['name']); ?>"></a></td>
+                <td class="center"><a href="#" id="<?php echo $row['id']; ?>" class="button update" title="Editar"></a></td>
+                <td class="center"><a href="#" id="<?php echo $row['id']; ?>" class="button delete" title="Eliminar"></a></td>
+                <td class="center"><a href="#" id="<?php echo $row['id']; ?>" class="button status<?php if($row['status'] == 0) echo " status_inactive"; ?>"  value="<?php echo $row['status']; ?>"></a></td>
             </tr>
-        <?php
-        $catid = $parent_id;
-        }
-        ?>
+        <?php $cont++; } ?>
+        <?php if ($cn->numrows() == 0) echo '<tr><td colspan="10" class="row_error">No se encontraron registros.</td></tr>'; ?>
     </tbody>
 </table>
