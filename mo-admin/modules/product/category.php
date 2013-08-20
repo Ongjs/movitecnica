@@ -8,13 +8,8 @@
                 <td><label for="search">Seleccione categoria a filtrar</label></td>
                 <td><select name="opt_cat" id ="opt_cat">
                         <option value="7">Galería Principal</option>
-                        <option value="1">Equipo de Trabajo</option>
-                        <option value="2">Proyectos</option>
-                        <option value="3">Servicios</option>
-                        <option value="4">Testimonios</option>
-                        <option value="5">Noticia</option>
-                        <option value="6">Nota de Prensa</option>
-                    </select></td>
+                    </select>
+                </td>
             </tr>
             <a href="#" class="new list">Nuevo</a>
             <tr>

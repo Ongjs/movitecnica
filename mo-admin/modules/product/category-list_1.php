@@ -14,14 +14,14 @@ $select = isset($_POST['select']) ? strtolower(mo_scape($_POST['select'])) : "0"
         ?>
             <tr>
                 <td>
-                    <?php echo $catid == 0 ? "Categorias": ""; ?>
+                    <?php echo $catid == 0 ? "Categorias": "Sub-Categorias"; ?>
                 </td>
                 <td>
                     <select name="opt_cat" id ="opt_cat">
                 <?php
                 $cont = 1;
                 while ($row = $cn->fetch()) { ?>
-                        <option <?php echo (int)$row['id'] == $catid ? "selected" : ""; ?> value="<?php echo $row['id']."-".$catid; ?>"><?php echo $row['name']; ?></option>
+                        <option value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
                 <?php $cont++; } ?>
                 <?php if ($cn->numrows() == 0) echo '<tr><td colspan="10" class="row_error">No se encontraron registros.</td></tr>'; ?>
                     </select>
