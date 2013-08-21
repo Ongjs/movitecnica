@@ -4,6 +4,7 @@ $id = isset($_GET['id']) ? $_GET['id'] : "";
 $do = isset($_REQUEST['do']) ? $_REQUEST['do'] : "";
 $do = isset($_REQUEST['up']) ? 0 : $do;
 $page = isset($_POST['mod']) ? (empty($do) ? "-list" : ($do == 1 ? "-form" : "-action")) : "";
+$page = isset($_POST['cat']) ? "-list2" : $page;
 switch ($mod) {
     case 0: include "modules/welcome.php"; break;
     case 1: include "modules/upload.php"; break;

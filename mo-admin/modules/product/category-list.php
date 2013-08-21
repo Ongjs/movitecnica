@@ -1,9 +1,8 @@
 <?php
 require_once "../conf.php";
 $search = isset($_POST['search']) ? strtolower(mo_scape($_POST['search'])) : "";
-//$select = isset($_POST['select']) ? "parent_id = '" . strtolower(mo_scape($_POST['select'])) . "' and" : "";
-$select = "";
-$cn->query("SELECT id, name, image, status FROM product WHERE parent_id = '0' AND type = '1' AND $select LOWER(name) like '%$search%' ORDER BY id asc");
+$select = isset($_POST['select']) ? $_POST['select'] : "0";
+$cn->query("SELECT id, name, image, status FROM product WHERE parent_id = '$select' AND type = '1' AND LOWER(name) like '%$search%' ORDER BY id asc");
 ?>
 <table width="100%" class="listing">
     <thead>

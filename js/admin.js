@@ -98,6 +98,42 @@ function mo_search(mod){
     });
 }
 
+function mo_addcat(mod,val){
+    $.ajax({
+        data: "mod=" + mod + "&search=" + $("#search").val() + "&cat=" + val
+    }).done(function(html){
+        $("#category").find('tbody')
+            .append($('<tr>')
+            .append($('<td>')
+        )
+            .append($('<td>')
+            .html(html)
+        )
+        );
+        Shadowbox.setup();
+    });
+}
+
+function mo_list_cat(mod,val){
+    var add_data = $(".filter").length > 0 ? "&filter=" + $(".filter").val() : "";
+    add_data += "&select=" + val;
+    $.ajax({
+        data: "mod=" + mod + add_data
+    }).done(function(html){
+        $("#form, #list, .search, a.cancel").hide();
+        $("#list").html(html);
+        $(".search, #list, a.new").fadeIn();
+        Shadowbox.setup();
+        mo_style();
+        $("textarea[class*=tinymce]").each(function(){ tinyMCE.execCommand('mceRemoveControl', false, $(this).attr("id")); });
+        $("#content #list table.listing tbody tr:nth-child(odd)").addClass("odd");
+        $("#content #list table.listing tbody tr").hover(
+            function(){ $(this).addClass("hover"); },
+            function(){ $(this).removeClass("hover"); }
+        );
+    });
+}
+
 function mo_list(mod){
     var add_data = $(".filter").length > 0 ? "&filter=" + $(".filter").val() : "";
     add_data += "&select=" + $('#opt_cat :selected').val();
@@ -118,9 +154,9 @@ function mo_list(mod){
     });
 }
 
-function mo_new(mod){
+function mo_new(mod,ncat){
     $.ajax({
-        data: "mod=" + mod + "&select=" + $('#opt_cat :selected').val() + "&do=1"
+        data: "mod=" + mod + "&select=" + $('#opt_cat :selected').val() + "&do=1&ncat=" + ncat 
     }).done(function(html){
         $("#form, .search, #list, a.new").hide();
         $("#form").html(html);
@@ -143,12 +179,21 @@ function mo_update(mod, e){
     });
 }
 
-function mo_submit(mod, $do){
+function mo_submit(mod, $do, ncat){
     if ($("textarea[class*=tinymce]").length > 0) tinyMCE.triggerSave();
     $.ajax({
-        data: "mod=" + mod + "&do=" + $do + "&" + $("form").serialize()
+        data: "mod=" + mod + "&do=" + $do + "&ncat=" + ncat + "&" + $("form").serialize()
     }).done(function(){ 
         mo_list(mod); 
+    });
+}
+
+function mo_submit_cat(mod, $do, ncat){
+    if ($("textarea[class*=tinymce]").length > 0) tinyMCE.triggerSave();
+    $.ajax({
+        data: "mod=" + mod + "&do=" + $do + "&ncat=" + ncat + "&" + $("form").serialize()
+    }).done(function(){ 
+        mo_list_cat(mod,ncat); 
     });
 }
 
