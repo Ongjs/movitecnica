@@ -3,11 +3,10 @@ require_once "../conf.php";
 $id = isset($_POST['id']) ? $_POST['id'] : "";
 $ncat = isset($_POST['ncat']) ? $_POST['ncat'] : "";
 $sele = isset($_POST['select']) ? $_POST['select'] : "";
-$extra = $sele == "7" ? "Ruta enlace" : "Dato adicional";
 if (!empty($id)) {
     $cn->query("SELECT name, image, content from product WHERE id = '$id'");
     $row = $cn->fetch();
-}else $row = array("name"=>"", "content"=>"", "thumbnail"=>"", "description"=>"", "extra1"=>"", "image"=>"");
+}else $row = array("name"=>"", "content"=>"", "image"=>"");
 ?>
 <form id="<?php echo empty($id) ? "save" : "update"; ?>">
     <fieldset>

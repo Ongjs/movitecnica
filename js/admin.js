@@ -98,62 +98,20 @@ function mo_search(mod){
     });
 }
 
-function mo_add_parent_cat(mod,val){
+function mo_addcat(mod, val, text, ext) {
+    var td_label;
     $.ajax({
-        data: "mod=" + mod + "&search=" + $("#search").val() + "&cat=" + val
-    }).done(function(html){
-        $("#category").find('tbody')
-            .append($('<tr>')
-            .append($('<td>')
-            .text('Seleccione categoria a filtrar')
-        )
-            .append($('<td>')
-            .html(html)
-        )
-        );
-        Shadowbox.setup();
+        data: "mod=" + mod + "&search=" + $("#search").val() + "&cat=" + val + (ext !== null ? "&ext=" + ext : "")
+    }).done(function(html) {
+        if (html === "") return;
+        td_label = val === "" && text === "" ? 'Seleccione categoria a filtrar' : '';
+        $("#category").find('tbody').append($.parseHTML('<tr><td>' + td_label + '</td><td>' + html + '</td></tr>'));
     });
 }
 
-function mo_addcat(mod,val,ext){
-    $.ajax({
-        data: "mod=" + mod + "&search=" + $("#search").val() + "&cat=" + val + "&ext=" + ext
-    }).done(function(html){
-        $("#category").find('tbody')
-            .append($('<tr>')
-            .append($('<td>')
-        )
-            .append($('<td>')
-            .html(html)
-        )
-        );
-        Shadowbox.setup();
-    });
-}
-
-function mo_list_cat(mod,val){
+function mo_list(mod, val){
     var add_data = $(".filter").length > 0 ? "&filter=" + $(".filter").val() : "";
-    add_data += "&select=" + val;
-    $.ajax({
-        data: "mod=" + mod + add_data
-    }).done(function(html){
-        $("#form, #list, .search, a.cancel").hide();
-        $("#list").html(html);
-        $(".search, #list, a.new").fadeIn();
-        Shadowbox.setup();
-        mo_style();
-        $("textarea[class*=tinymce]").each(function(){ tinyMCE.execCommand('mceRemoveControl', false, $(this).attr("id")); });
-        $("#content #list table.listing tbody tr:nth-child(odd)").addClass("odd");
-        $("#content #list table.listing tbody tr").hover(
-            function(){ $(this).addClass("hover"); },
-            function(){ $(this).removeClass("hover"); }
-        );
-    });
-}
-
-function mo_list(mod){
-    var add_data = $(".filter").length > 0 ? "&filter=" + $(".filter").val() : "";
-    add_data += "&select=" + $('#opt_cat :selected').val();
+    add_data += "&select=" + (val !== null ? val : $('#opt_cat :selected').val());
     $.ajax({
         data: "mod=" + mod + add_data
     }).done(function(html){
@@ -205,27 +163,15 @@ function mo_submit(mod, $do, ncat){
     });
 }
 
-function mo_submit_cat(mod, $do, ncat, $array){
+function mo_submit_cat(mod, $do, category_value, $array){
     if ($("textarea[class*=tinymce]").length > 0) tinyMCE.triggerSave();
     $.ajax({
-        data: "mod=" + mod + "&do=" + $do + "&ncat=" + ncat + "&" + $("form").serialize()
-    }).done(function(){
-        mo_list_cat(mod,ncat); 
-        $("#category")
-        .html('')
-        .append($('<tr>')
-            .append($('<td>')
-                .append($('<label>')
-                    .text('Introduzca el termino a buscar')
-                )
-        )
-            .append($('<td>')
-                .html('<input type="text" name="search" id="search" />')
-            )
-        )
-            
+        data: "mod=" + mod + "&do=" + $do + "&ncat=" + category_value + "&" + $("form").serialize()
+    }).done(function() {
+        mo_list(mod, category_value); 
+        $("#category").html('').append($.parseHTML('<tr><td><label>Introduzca el termino a buscar</label></td><td><input type="text" name="search" id="search" /></td></tr>'));
         for (var i = 0; i < $array.length; i++) {
-            mo_addcat(mod,$array[i],$array[i+1]);
+            mo_addcat(mod, $array[i], '', $array[i + 1]);
         }
     });
 }
