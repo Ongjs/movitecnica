@@ -98,9 +98,26 @@ function mo_search(mod){
     });
 }
 
-function mo_addcat(mod,val){
+function mo_add_parent_cat(mod,val){
     $.ajax({
         data: "mod=" + mod + "&search=" + $("#search").val() + "&cat=" + val
+    }).done(function(html){
+        $("#category").find('tbody')
+            .append($('<tr>')
+            .append($('<td>')
+            .text('Seleccione categoria a filtrar')
+        )
+            .append($('<td>')
+            .html(html)
+        )
+        );
+        Shadowbox.setup();
+    });
+}
+
+function mo_addcat(mod,val,ext){
+    $.ajax({
+        data: "mod=" + mod + "&search=" + $("#search").val() + "&cat=" + val + "&ext=" + ext
     }).done(function(html){
         $("#category").find('tbody')
             .append($('<tr>')
@@ -188,12 +205,28 @@ function mo_submit(mod, $do, ncat){
     });
 }
 
-function mo_submit_cat(mod, $do, ncat){
+function mo_submit_cat(mod, $do, ncat, $array){
     if ($("textarea[class*=tinymce]").length > 0) tinyMCE.triggerSave();
     $.ajax({
         data: "mod=" + mod + "&do=" + $do + "&ncat=" + ncat + "&" + $("form").serialize()
-    }).done(function(){ 
+    }).done(function(){
         mo_list_cat(mod,ncat); 
+        $("#category")
+        .html('')
+        .append($('<tr>')
+            .append($('<td>')
+                .append($('<label>')
+                    .text('Introduzca el termino a buscar')
+                )
+        )
+            .append($('<td>')
+                .html('<input type="text" name="search" id="search" />')
+            )
+        )
+            
+        for (var i = 0; i < $array.length; i++) {
+            mo_addcat(mod,$array[i],$array[i+1]);
+        }
     });
 }
 
