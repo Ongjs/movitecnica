@@ -104,6 +104,7 @@ function mo_addcat(mod, val, text, ext) {
         data: "mod=" + mod + "&search=" + $("#search").val() + "&cat=" + val + (ext !== null ? "&ext=" + ext : "")
     }).done(function(html) {
         if (html === "") return;
+//        console.log("aaa")
         td_label = val === "" && text === "" ? 'Seleccione categoria a filtrar' : '';
         $("#category").find('tbody').append($.parseHTML('<tr><td>' + td_label + '</td><td>' + html + '</td></tr>'));
     });
