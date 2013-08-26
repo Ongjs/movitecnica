@@ -91,7 +91,7 @@ if(isset($_POST["tema"])){
         <link rel='stylesheet' id='style-css'  href='style9d52.css?ver=3.5.1' type='text/css' media='all' />
         <link rel='stylesheet' id='fancybox-css'  href='js/fancybox/jQuery.fancybox-1.3.49d52.css?ver=3.5.1' type='text/css' media='all' />
         <link rel='stylesheet' id='skin'  href='css/skin1.css' type='text/css' media='all' />
-        <script type='text/javascript' src='js/jQuery.js'></script>
+        <script type='text/javascript' src='js/jquery.js'></script>
         <script type='text/javascript' src='js/custom.js'></script>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
     <style>
@@ -442,17 +442,17 @@ include 'class/Fuctions.php'; ?>
 
         <div id="toTop"><a href="#">Subir</a></div>
         <script src="../js/bootstrap.min.js"></script>
-        <script type='text/javascript' src='js/jQuery.easing-1.35152.js?ver=1.0'></script>
-        <script type='text/javascript' src='js/jQuery.masonry.min5152.js?ver=1.0'></script>
-        <script type='text/javascript' src='js/jQuery.imagesloaded.min5152.js?ver=1.0'></script>
-        <script type='text/javascript' src='js/jQuery.infinitescroll.min5152.js?ver=1.0'></script>
+        <script type='text/javascript' src='js/jquery.easing-1.35152.js?ver=1.0'></script>
+        <script type='text/javascript' src='js/jquery.masonry.min5152.js?ver=1.0'></script>
+        <script type='text/javascript' src='js/jquery.imagesloaded.min5152.js?ver=1.0'></script>
+        <script type='text/javascript' src='js/jquery.infinitescroll.min5152.js?ver=1.0'></script>
         <script type='text/javascript' src='js/superfish5152.js?ver=1.0'></script>
         <script type='text/javascript' src='js/mediaelement/build/mediaelement-and-player.min5152.js?ver=1.0'></script>
         <script type='text/javascript' src='js/fancybox/jQuery.fancybox-1.3.4.pack5152.js?ver=1.0'></script>
-        <script type='text/javascript' src='js/jQuery.mobilemenu5152.js?ver=1.0'></script>
-        <script type='text/javascript' src='js/jQuery.fitvids5152.js?ver=1.0'></script>
-        <script type='text/javascript' src='js/jQuery.flexslider-min5152.js?ver=1.0'></script>
-        <script type='text/javascript' src='js/jQuery.placeholder.min5152.js?ver=1.0'></script>
+        <script type='text/javascript' src='js/jquery.mobilemenu5152.js?ver=1.0'></script>
+        <script type='text/javascript' src='js/jquery.fitvids5152.js?ver=1.0'></script>
+        <script type='text/javascript' src='js/jquery.flexslider-min5152.js?ver=1.0'></script>
+        <script type='text/javascript' src='js/jquery.placeholder.min5152.js?ver=1.0'></script>
         <script type='text/javascript' src='js/jflickrfeed.min5152.js?ver=1.0'></script>
 
     </body>

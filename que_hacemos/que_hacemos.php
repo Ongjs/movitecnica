@@ -316,17 +316,17 @@
         <script src="_switcher/script.js"></script>
 
         <div id="toTop"><a href="#">Subir</a></div>
-    <script type='text/javascript' src='../js/jQuery.easing-1.35152.js?ver=1.0'></script>
-    <script type='text/javascript' src='../js/jQuery.masonry.min5152.js?ver=1.0'></script>
-    <script type='text/javascript' src='../js/jQuery.imagesloaded.min5152.js?ver=1.0'></script>
-    <script type='text/javascript' src='../js/jQuery.infinitescroll.min5152.js?ver=1.0'></script>
+    <script type='text/javascript' src='../js/jquery.easing-1.35152.js?ver=1.0'></script>
+    <script type='text/javascript' src='../js/jquery.masonry.min5152.js?ver=1.0'></script>
+    <script type='text/javascript' src='../js/jquery.imagesloaded.min5152.js?ver=1.0'></script>
+    <script type='text/javascript' src='../js/jquery.infinitescroll.min5152.js?ver=1.0'></script>
     <script type='text/javascript' src='../js/superfish5152.js?ver=1.0'></script>
     <script type='text/javascript' src='../js/mediaelement/build/mediaelement-and-player.min5152.js?ver=1.0'></script>
     <script type='text/javascript' src='../js/fancybox/jQuery.fancybox-1.3.4.pack5152.js?ver=1.0'></script>
-    <script type='text/javascript' src='../js/jQuery.mobilemenu5152.js?ver=1.0'></script>
-    <script type='text/javascript' src='../js/jQuery.fitvids5152.js?ver=1.0'></script>
-    <script type='text/javascript' src='../js/jQuery.flexslider-min5152.js?ver=1.0'></script>
-    <script type='text/javascript' src='../js/jQuery.placeholder.min5152.js?ver=1.0'></script>
+    <script type='text/javascript' src='../js/jquery.mobilemenu5152.js?ver=1.0'></script>
+    <script type='text/javascript' src='../js/jquery.fitvids5152.js?ver=1.0'></script>
+    <script type='text/javascript' src='../js/jquery.flexslider-min5152.js?ver=1.0'></script>
+    <script type='text/javascript' src='../js/jquery.placeholder.min5152.js?ver=1.0'></script>
     <script type='text/javascript' src='../js/jflickrfeed.min5152.js?ver=1.0'></script>
 
 </body>
