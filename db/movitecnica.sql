@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 18-08-2013 a las 05:27:01
+-- Tiempo de generación: 26-08-2013 a las 14:59:11
 -- Versión del servidor: 5.5.24-log
 -- Versión de PHP: 5.3.13
 
@@ -204,7 +204,7 @@ CREATE TABLE IF NOT EXISTS `image` (
   `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` char(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=28 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=29 ;
 
 --
 -- Volcado de datos para la tabla `image`
@@ -253,34 +253,35 @@ CREATE TABLE IF NOT EXISTS `product` (
   `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=22 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
 
 --
 -- Volcado de datos para la tabla `product`
 --
 
 INSERT INTO `product` (`id`, `parent_id`, `type`, `name`, `image`, `content`, `file`, `created`, `updated`, `status`) VALUES
-(1, 0, 1, 'izage', '', '', '', '0000-00-00 00:00:00', '2013-08-18 00:17:42', 1),
-(2, 1, 1, 'Polipastos Manuales', '', '', '', '0000-00-00 00:00:00', '2013-08-18 00:17:42', 1),
-(3, 2, 1, 'Cadena', '', '', '', '0000-00-00 00:00:00', '2013-08-18 00:17:42', 1),
-(4, 2, 1, 'Palanca', '', '', '', '0000-00-00 00:00:00', '2013-08-18 00:17:42', 1),
-(5, 2, 1, 'Cable', '', '', '', '0000-00-00 00:00:00', '2013-08-18 00:17:42', 1),
-(6, 1, 1, 'Polipastos Eléctricos', '', '', '', '0000-00-00 00:00:00', '2013-08-18 00:17:42', 1),
-(7, 6, 1, 'Cadena', '', '', '', '0000-00-00 00:00:00', '2013-08-18 00:17:42', 1),
-(8, 6, 1, 'Cable', '', '', '', '0000-00-00 00:00:00', '2013-08-18 00:17:42', 1),
-(9, 1, 1, 'Polipastos Neumáticos', '', '', '', '0000-00-00 00:00:00', '2013-08-18 00:17:42', 1),
-(10, 0, 1, 'Fajas Transport', '', '', '', '0000-00-00 00:00:00', '2013-08-18 00:17:42', 1),
-(11, 9, 1, 'Fajas Transport', '', '', '', '0000-00-00 00:00:00', '2013-08-18 00:17:42', 1),
-(12, 10, 1, 'Fajas de Lona', '', '', '', '0000-00-00 00:00:00', '2013-08-18 00:17:42', 1),
-(13, 11, 1, 'Antiabrasivas', '', '', '', '0000-00-00 00:00:00', '2013-08-18 00:17:42', 1),
-(14, 11, 1, 'Alta Temperatura', '', '', '', '0000-00-00 00:00:00', '2013-08-18 00:17:42', 1),
-(15, 10, 0, 'Fajas de Acero', '', '', '', '0000-00-00 00:00:00', '2013-08-18 00:17:42', 1),
-(16, 0, 1, 'Carretillas', '', '', '', '0000-00-00 00:00:00', '2013-08-18 00:17:42', 1),
-(17, 15, 1, 'Carretilla Hidráulica Quicklift', '', '', '', '0000-00-00 00:00:00', '2013-08-18 00:17:42', 1),
-(18, 1, 2, 'Yale', '', '', '', '0000-00-00 00:00:00', '2013-08-18 00:17:42', 1),
-(19, 10, 2, 'Fenner Dunlop', '', '', '', '0000-00-00 00:00:00', '2013-08-18 00:17:42', 1),
-(20, 1, 2, 'Street', '', '', '', '0000-00-00 00:00:00', '2013-08-18 00:17:42', 1),
-(21, 16, 2, 'Movitech', '', '', '', '0000-00-00 00:00:00', '2013-08-18 00:17:42', 1);
+(1, 0, 1, 'izage', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1),
+(2, 1, 1, 'Polipastos Manuales', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1),
+(3, 2, 1, 'Cadena', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1),
+(4, 2, 1, 'Palanca', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1),
+(5, 2, 1, 'Cable', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1),
+(6, 1, 1, 'Polipastos Eléctricos', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1),
+(7, 6, 1, 'Cadena', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1),
+(8, 6, 1, 'Cable', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1),
+(9, 1, 1, 'Polipastos Neumáticos', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1),
+(10, 0, 1, 'Fajas Transport', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1),
+(11, 9, 1, 'Fajas Transport', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1),
+(12, 10, 1, 'Fajas de Lona', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1),
+(13, 11, 1, 'Antiabrasivas', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1),
+(14, 11, 1, 'Alta Temperatura', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1),
+(15, 10, 1, 'Fajas de Acero', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1),
+(16, 0, 1, 'Carretillas', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1),
+(17, 15, 1, 'Carretilla Hidráulica Quicklift', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1),
+(18, 1, 2, 'Yale', '_yale.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:03:58', 1),
+(19, 10, 2, 'Fenner Dunlop', '_fenner_dunlop.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:04:04', 1),
+(20, 1, 2, 'Street', '_street.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:04:20', 1),
+(21, 16, 2, 'Movitech', '_movitech.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:04:35', 1),
+(22, 3, 3, 'Magnis Magnis', '_polipasto.jpg', '<ul>\r\n                                                            <li>Capacidades de 750 – 6000 kg.</li>\r\n                                                            <li>Los ganchos superior e inferior se fabrican en acero especial, forjado y bonificado. En caso de sobrecarga se abren sin rotura.</li>\r\n                                                            <li>Las cadenas de eslabones se fabrican en acero bonificado con superficie galvanizada. Cumplen las normas nacionales e internacionales actualmente en vigor.</li>\r\n                                                            <li>Guía de cadena integrada en la carcasa para el recorrido preciso de la cadena sobre la nuez.</li>\r\n                                                            <li>Tope robusto</li>\r\n                                                            <li>Dispositivo de punto neutro para posicionar y pretensar rápidamente la cadena en ambas direcciones.</li>\r\n                                                            <li>Palanca corta con empuñadura de goma.</li>\r\n                                                            <li>Rueda de mano protegida contra la corrosión con cromado duro</li>\r\n                                                            <li>Freno de carga resistente a la corrosión y discos de fricción sin asbesto.</li>\r\n                                                            <li>Gancho de carga con pasteca robusta gracias a sus ejes encapsulados.</li>\r\n                                                            <li>Accionamiento fácil y sin esfuerzo de la palanca.</li>\r\n                                                        </ul>', '', '0000-00-00 00:00:00', '2013-08-25 23:02:40', 1);
 
 -- --------------------------------------------------------
 

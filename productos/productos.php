@@ -55,7 +55,7 @@
         {
             float: right;
         }
-        .list_prods :hover
+        .list_cats_mar,.list_prods_mar,.list_all_marcs,.list_cats,.list_prods :hover
         {
             cursor: pointer;
         }
@@ -213,23 +213,25 @@ include '../class/Fuctions.php';
                                 <h1><b>Catálogo de Productos</b></h1>
                                 <br />  
                                     <div style="">
-                                        <div class="six columns post_col masonry-brick list_all_marcs">
-                                            <div class="post-973 post type-post status-publish format-standard hentry category-uncategorized post_item white_box">
-                                                <div class="large_thumb thumb_hover" >
-                                                    <a href="../images/_demo/1.jpg" class="thumb_icon marcas fancybox" style="-webkit-transition:none; -moz-transition: none; margin-top: 28px;"><span></span></a>
-                                                    <div class="mask post_top_element"></div> 
-                                                    <div class="img_wrapper"><a href="#" rel="bookmark" title=""><img src="../images/foto_pro_marcas.png" width="710" height="454" alt="This is a image" class="post_top_element thumb" /></a></div>
-                                                </div>
-                                            </div>
-                                        </div>
                                         <div class="six columns post_col masonry-brick list_cats" data-id="">
                                             <div class="post-973 post type-post status-publish format-standard hentry category-uncategorized post_item white_box">
                                                 <div class="large_thumb thumb_hover">
-                                                    <a href="../images/_demo/1.jpg" class="thumb_icon productos fancybox" style="-webkit-transition:none; -moz-transition: none; margin-top: 28px;"><span></span></a>
+                                                    <!--<a href="../images/_demo/1.jpg" class="thumb_icon productos fancybox" style="-webkit-transition:none; -moz-transition: none; margin-top: 20%;"><span></span></a>-->
                                                     <div class="mask post_top_element"></div> 
                                                     <div class="img_wrapper"><a href="#" rel="bookmark" title=""><img src="../images/foto_pro_categoria.png" width="710" height="454" alt="This is a image" class="post_top_element thumb" /></a></div>
                                                 </div>
                                             </div>
+                                            <div style=" text-align: center; background-color: rgba(50,50,50,8); border-radius: 0px 0px  8px 8px; height: 35px;"><h2><font color="white">Categorias</font></h2></div>
+                                        </div>
+                                        <div class="six columns post_col masonry-brick list_all_marcs">
+                                            <div class="post-973 post type-post status-publish format-standard hentry category-uncategorized post_item white_box">
+                                                <div class="large_thumb thumb_hover" >
+                                                    <!--<a href="../images/_demo/1.jpg" class="thumb_icon marcas fancybox" style="-webkit-transition:none; -moz-transition: none; margin-top: 28px;"><span></span></a>-->
+                                                    <div class="mask post_top_element"></div> 
+                                                    <div class="img_wrapper"><a href="#" rel="bookmark" title=""><img src="../images/foto_pro_marcas.png" width="710" height="454" alt="This is a image" class="post_top_element thumb" /></a></div>
+                                                </div>
+                                            </div>
+                                            <div style=" text-align: center; background-color: rgba(50,50,50,8); border-radius: 0px 0px  8px 8px; height: 35px;"><h2><font color="white">Marcas</font></h2></div>
                                         </div>
                                     </div>
                                 <br />
@@ -461,6 +463,8 @@ include '../class/Fuctions.php';
                 type:  'post',
                 success:  function (html) {
                         $j("#product_content").html(html);
+                        var oScroll6 = $j('.scrollbar1');
+                        oScroll6.tinyscrollbar();
                 }
                 });
             });
@@ -482,6 +486,8 @@ include '../class/Fuctions.php';
                 type:  'post',
                 success:  function (html) {
                         $j("#product_content").html(html);
+                        var oScroll6 = $j('.scrollbar1');
+                        oScroll6.tinyscrollbar();
                 }
                 });
             });

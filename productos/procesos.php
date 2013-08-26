@@ -55,7 +55,7 @@ foreach ($content as $val){
         <?php
     }else if((int)($val[2]) == 3){
     ?>
-        <div class="prod_des" style="">
+        <div class="prod_des" style="margin-bottom: 10px;">
             <div class="prod_image " style="margin-bottom: 20px; margin-right: 30px;">
                 <a href="../userfiles/<?php echo $val[3]; ?>" class="fancybox"><img src="../userfiles/<?php echo $val[3]; ?>"></a>
             </div>
@@ -74,7 +74,7 @@ foreach ($content as $val){
                     </div>
                 </div>
             </div>
-            <div class="ficha_tecnica" style="">
+            <div class="ficha_tecnica" style="margin-top: 10px;">
                 <a href="../userfiles/<?php echo $val[5]; ?>"><img src="../images/pdf.png"></a>
             </div>
         </div>
