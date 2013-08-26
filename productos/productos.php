@@ -422,7 +422,7 @@ include '../class/Fuctions.php';
                     <?php
                 } else {
                     ?>
-                    <span class="list_prods" data-id="<?php echo $li[0]; ?>"><?php echo $li[1]; ?></span><br/>
+                    <span class="list_prods" data-id="<?php echo $li[0]; ?>" style="cursor:pointer"><?php echo $li[1]; ?></span><br/>
                     <?php
                 }
             }
@@ -462,9 +462,11 @@ include '../class/Fuctions.php';
                 url:   'procesos.php',
                 type:  'post',
                 success:  function (html) {
+                        $j.getScript("../js/fancybox/jQuery.fancybox-1.3.4.pack5152.js?ver=1.0");
                         $j("#product_content").html(html);
                         var oScroll6 = $j('.scrollbar1');
                         oScroll6.tinyscrollbar();
+                        console.log($j.getScript("../js/fancybox/jQuery.fancybox-1.3.4.pack5152.js?ver=1.0"))
                 }
                 });
             });
@@ -485,15 +487,14 @@ include '../class/Fuctions.php';
                 url:   'procesos.php',
                 type:  'post',
                 success:  function (html) {
+                        $j.getScript("../js/fancybox/jQuery.fancybox-1.3.4.pack5152.js?ver=1.0");
                         $j("#product_content").html(html);
                         var oScroll6 = $j('.scrollbar1');
                         oScroll6.tinyscrollbar();
                 }
                 });
             });
-            $j(document).on("click",".list_marc",function(){
-                $list_marc = $j(this).data("id");
-                $currentid = $j(this).data("currentid");
+            function ajax_marca_id($list_marc,$currentid){
                 $j.ajax({
                 data:  "id=" + $j(this).data("id") + "&do=1&parent=" + $list_marc + "&current=" + $currentid,
                 url:   'procesos.php',
@@ -502,6 +503,11 @@ include '../class/Fuctions.php';
                         $j("#product_content").html(html);
                 }
                 });
+            }
+            $j(document).on("click",".list_marc",function(){
+                $list_marc = $j(this).data("id");
+                $currentid = $j(this).data("currentid");
+                ajax_marca_id($list_marc,$currentid);
             });
             
             var menu = true, $height;

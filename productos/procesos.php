@@ -37,7 +37,7 @@ if(is_numeric($parent)){
         </div>
     </div>
 </div>
-<br /><br />
+<br /><hr><br />
     <?php
 } 
 foreach ($content as $val){
@@ -83,7 +83,7 @@ foreach ($content as $val){
 }
 }else{
     ?>
-    <h2> Datos no Disponibles</h2>
+    <h2>No se encontraron productos disponibles</h2>
     <?php
 }
 }
