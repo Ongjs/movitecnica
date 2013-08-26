@@ -25,7 +25,6 @@ if((int)$atras[3] == 0){
     ?>
     <div style="cursor: pointer; display: a" class="regresar">Regresar</div>
     <br />
-    
     <?php
 }
 ?>
