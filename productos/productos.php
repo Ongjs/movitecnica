@@ -455,6 +455,11 @@ include '../class/Fuctions.php';
     <script type="text/javascript">
         $j(document).ready(function() {
             var $list_marc = "",$currentid = "";
+            var product_content_html = $j("#product_content").html();
+            
+            $j(document).on("click",".regresar",function(){
+                $j("#product_content").html(product_content_html);
+            });
             
             $j(document).on("click",".list_cats,.list_prods",function(){
                 $j.ajax({
@@ -468,6 +473,7 @@ include '../class/Fuctions.php';
                         if ($j('a.fancybox').length && jQuery()) {
                             $j("a.fancybox").fancybox();
                         }
+                        addthis.toolbox('.addthis_toolbox');
                 }
                 });
             });
@@ -494,10 +500,14 @@ include '../class/Fuctions.php';
                         if ($j('a.fancybox').length && jQuery()) {
                             $j("a.fancybox").fancybox();
                         }
+                        addthis.toolbox('.addthis_toolbox');
                 }
                 });
             });
-            function ajax_marca_id($list_marc,$currentid){
+            
+            $j(document).on("click",".list_marc",function(){
+                $list_marc = $j(this).data("id");
+                $currentid = $j(this).data("currentid");
                 $j.ajax({
                 data:  "id=" + $j(this).data("id") + "&do=1&parent=" + $list_marc + "&current=" + $currentid,
                 url:   'procesos.php',
@@ -506,11 +516,6 @@ include '../class/Fuctions.php';
                         $j("#product_content").html(html);
                 }
                 });
-            }
-            $j(document).on("click",".list_marc",function(){
-                $list_marc = $j(this).data("id");
-                $currentid = $j(this).data("currentid");
-                ajax_marca_id($list_marc,$currentid);
             });
             
             var menu = true, $height;

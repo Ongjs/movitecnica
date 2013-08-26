@@ -247,7 +247,7 @@ function mo_get_all_cat_content(){
 function mo_get_curret_marc($id){
     $cn = Connection::getInstance();
     $result = "";
-    $cn->query("SELECT id,name,image FROM `product` where status = 1 and id = '$id'");
+    $cn->query("SELECT id,name,image,parent_id  FROM `product` where status = 1 and id = '$id'");
     while ($row = $cn->fetch()) $result = $row;
     return $result;
 }

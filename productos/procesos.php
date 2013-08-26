@@ -5,12 +5,38 @@ $id = isset($_POST['id']) ? $_POST['id'] : "";
 $do = isset($_POST['do']) ? $_POST['do'] : "";
 $parent = isset($_POST['parent']) ? $_POST['parent'] : "";
 $current = isset($_POST['current']) ? $_POST['current'] : "";
+
+if($id != "" && (int)$id > 0){   
+$atras = mo_get_curret_marc($id);
+if((int)$atras[3] == 0){
+    ?>
+        <span style="cursor: pointer" class="<?php echo $parent != "" ? "list_all_marcs" : "list_cats" ; ?>" data-id="">Regresar</span>
+        <br />
+    <?php
+}else{
+    ?>
+        <span style="cursor: pointer" class="<?php echo $parent == "" ? "list_prods" : "list_prods_mar" ; ?>" data-id="<?php echo $atras[3]; ?>">Regresar</span>
+        <br />
+    <?php
+}
+?>
+<?php
+}else if((int)$id == 0){
+    ?>
+    <div style="cursor: pointer; display: a" class="regresar">Regresar</div>
+    <br />
+    
+    <?php
+}
+?>
+
+<?php
 if($do == "2"){
 $content = mo_get_cats_mar();
 foreach ($content as $val){
     ?>
     <div style="width: 240px; float: left; text-align: center; height: 150px">
-        <div class='marca'>
+        <div class='marca' style="cursor : pointer">
             <div class="list_marc" data-id="<?php echo $val[0]; ?>" data-currentid="<?php echo $val[3]; ?>">
                 <img src="../userfiles/<?php echo $val[2]; ?>">
             </div>
@@ -63,14 +89,16 @@ foreach ($content as $val){
                 <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
                 <div class="viewport">
                     <div class="overview" style="">
-                        <div class="title_share">
+                        <div class="title_share" style="height: 40px">
                             <h3 style="width: 80%; float: left"><?php echo $val[1]; ?></h3>
                             <div class="addthis_toolbox addthis_default_style" style="width: 9%; float: right; height: 30px;">
                                 <a class="addthis_button_preferred_1"></a>
                                 <a class="addthis_button_preferred_3"></a>
                             </div>
                         </div>
+                        <div style="text-align: left">
                         <?php echo $val[4]; ?>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -88,3 +116,4 @@ foreach ($content as $val){
 }
 }
 ?>
+    
