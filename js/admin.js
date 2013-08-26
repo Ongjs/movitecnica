@@ -89,11 +89,13 @@ function mo_error(text){
     if(location.href.search(/mod/) >= 0) $("html, body").animate({scrollTop: $("#content").offset().top}, 1000);
 }
 
-function mo_search(mod){
+function mo_search(mod, fade_in){
     $.ajax({
         data: "mod=" + mod + "&search=" + $("#search").val() + "&select=" + $('#opt_cat :selected').val()
     }).done(function(html){
+        if (fade_in) $("#list").hide();
         $("#list").html(html);
+        if (fade_in) $("#list").fadeIn();
         Shadowbox.setup();
     });
 }
@@ -104,15 +106,15 @@ function mo_addcat(mod, val, text, ext) {
         data: "mod=" + mod + "&search=" + $("#search").val() + "&cat=" + val + (ext !== null ? "&ext=" + ext : "")
     }).done(function(html) {
         if (html === "") return;
-//        console.log("aaa")
-        td_label = val === "" && text === "" ? 'Seleccione categoria a filtrar' : '';
+        td_label = val === "" && text === "" ? '<label>Seleccione categoria a filtrar</label>' : '';
         $("#category").find('tbody').append($.parseHTML('<tr><td>' + td_label + '</td><td>' + html + '</td></tr>'));
+        mo_style();
     });
 }
 
 function mo_list(mod, val){
     var add_data = $(".filter").length > 0 ? "&filter=" + $(".filter").val() : "";
-    add_data += "&select=" + (val !== null ? val : $('#opt_cat :selected').val());
+    add_data += "&select=" + (val !== undefined ? val : $('#opt_cat :selected').val());
     $.ajax({
         data: "mod=" + mod + add_data
     }).done(function(html){

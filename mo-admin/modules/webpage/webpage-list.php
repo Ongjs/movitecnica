@@ -1,6 +1,6 @@
 <?php
 require_once "../conf.php";
-$search = isset($_POST['search']) ? strtolower(mo_scape($_POST['search'])) : "";
+$search = isset($_POST['search']) ? mb_strtolower(mo_scape($_POST['search']), "UTF-8") : "";
 $cn->query("SELECT id, name,content, image, status from content WHERE LOWER(name) like '%$search%' ORDER BY id asc");
 ?>
 <table width="100%" class="listing">

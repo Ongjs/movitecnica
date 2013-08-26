@@ -10,7 +10,7 @@ $cn->query("SELECT id, name FROM product WHERE parent_id = '0' AND type = '1' OR
         <legend>Filtrar Información</legend>
         <table id="category">
             <tr>
-                <td><label for="search">Introduzca el termino a buscar</label></td>
+                <td><label for="search">Búsqueda por nombre</label></td>
                 <td><input type="text" name="search" id="search" /></td>
             </tr>
         </table>
@@ -27,29 +27,29 @@ $cn->query("SELECT id, name FROM product WHERE parent_id = '0' AND type = '1' OR
         Shadowbox.init();
         var category_value = "", category_text, $array = new Array(), $select, $arraylen, cont, target;
         $array.push(category_value);
-        $(document).on("change",".cat_prod", function() {
+        $(document).on("change", ".cat_prod", function() {
             $select = $(this);
-            category_value = $select.val();
-            mo_list(mod, category_value);
-            category_text = $select.find("option:selected").text();
-            if (category_value !== "") {
-                mo_addcat(mod, category_value, category_text);
-            }
             $arraylen = $array.length;
+            category_value = $select.val();
+            category_text = $select.find("option:selected").text();
             cont = 0;
             target = $select.parent().parent();
+            if ($("#list td:eq(0)").is(".row_error")) {
+                cont++;
+            }
             if ($select.val() !== "" && category_text === "") {
                 target = target.prev();
             }
             while (target.next().is("tr")) {
                 cont++;
-                target.next().remove();
+                if (target.next().is("tr")) target.next().remove();
             }
-            $array.splice($arraylen - cont,cont);
-            if(category_value !== ""){
+            $array.splice($arraylen - cont, cont);
+            mo_list(mod, category_value);
+            if (category_value !== "") {
+                mo_addcat(mod, category_value, category_text);
                 $array.push(category_value);
             }
-            console.log($array); //SOLO FALTA ESTO, EN ALGUN MOMENTO, CUANDO CAMBIAS MUCHOS SELECTS (UNOS 3 ó 4 NIVELES), SE DUPLICA UN ID
             return false; 
         });
         $(document).on("keyup","#search",function(){ mo_search(mod); return false; });

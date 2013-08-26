@@ -5,7 +5,7 @@
         <legend>Filtrar Información</legend>
         <table>
             <tr>
-                <td><label for="search">Introduzca el término a buscar</label></td>
+                <td><label for="search">Búsqueda por nombre</label></td>
                 <td><input type="text" name="search" id="search" /></td>
             </tr>
         </table>

@@ -18,7 +18,7 @@
             </tr>
             <a href="#" class="new list">Nuevo</a>
             <tr>
-                <td><label for="search">Introduzca el término a buscar</label></td>
+                <td><label for="search">Búsqueda por nombre</label></td>
                 <td><input type="text" name="search" id="search" /></td>
             </tr>
         </table>
@@ -32,7 +32,7 @@ $(document).ready(function() {
     var mod = 30;
     mo_list(mod);
     Shadowbox.init();
-    $("#opt_cat").change(function(){ mo_search(mod); return false; });
+    $("#opt_cat").change(function(){ mo_search(mod, true); return false; });
     $("#search").keyup(function(){ mo_search(mod); return false; });
     $(".list").on("click", function(){ mo_list(mod); return false; });
     $(document).on("click",".update", function(){ mo_update(mod, $(this)); return false; });
