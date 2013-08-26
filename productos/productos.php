@@ -17,7 +17,7 @@
         <link rel='stylesheet' id='superfish-css'  href='../css/superfish9d52.css?ver=3.5.1' type='text/css' media='all' />
         <link rel='stylesheet' id='mediaelement-css'  href='../js/mediaelement/build/mediaelementplayer.min9d52.css?ver=3.5.1' type='text/css' media='all' />
         <link rel='stylesheet' id='style-css'  href='../style9d52.css?ver=3.5.1' type='text/css' media='all' />
-        <link rel='stylesheet' id='fancybox-css'  href='../js/fancybox/jQuery.fancybox-1.3.49d52.css?ver=3.5.1' type='text/css' media='all' />
+        <link rel='stylesheet' id='fancybox-css'  href='../js/fancybox/jquery.fancybox-1.3.49d52.css?ver=3.5.1' type='text/css' media='all' />
         <link rel='stylesheet' id='skin'  href='../css/skin3.css' type='text/css' media='all' />
         <script type='text/javascript' src='../js/jquery.js'></script>
         <script type='text/javascript' src='../js/custom.js'></script>
@@ -334,7 +334,7 @@ include '../class/Fuctions.php';
             <!-- #footer -->
 
             <link rel='stylesheet' id='demo-style'  href='_switcher/style.css' type='text/css' media='all' />
-            <link rel='stylesheet' id='demo-minicolor'  href='_switcher/miniColors/jQuery.miniColors.css' type='text/css' media='all' />
+            <link rel='stylesheet' id='demo-minicolor'  href='_switcher/miniColors/jquery.miniColors.css' type='text/css' media='all' />
 
             <script type="text/javascript">
                 var template = 'index.php';
@@ -385,7 +385,7 @@ include '../class/Fuctions.php';
             </div>	
 
             <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-51cd9546674927d0"></script>
-            <script src="../_switcher/miniColors/jQuery.miniColors.min.js"></script>
+            <script src="../_switcher/miniColors/jquery.miniColors.min.js"></script>
             <script src="../_switcher/script.js"></script>
             <div id="toTop"><a href="#">Subir</a></div>
             <script src="../js/bootstrap.min.js"></script>
@@ -396,7 +396,7 @@ include '../class/Fuctions.php';
             <script type='text/javascript' src='../js/jquery.infinitescroll.min5152.js?ver=1.0'></script>
             <script type='text/javascript' src='../js/superfish5152.js?ver=1.0'></script>
             <script type='text/javascript' src='../js/mediaelement/build/mediaelement-and-player.min5152.js?ver=1.0'></script>
-            <script type='text/javascript' src='../js/fancybox/jQuery.fancybox-1.3.4.pack5152.js?ver=1.0'></script>
+            <script type='text/javascript' src='../js/fancybox/jquery.fancybox-1.3.4.pack5152.js?ver=1.0'></script>
             <script type='text/javascript' src='../js/jquery.mobilemenu5152.js?ver=1.0'></script>
             <script type='text/javascript' src='../js/jquery.fitvids5152.js?ver=1.0'></script>
             <script type='text/javascript' src='../js/jquery.flexslider-min5152.js?ver=1.0'></script>
@@ -462,10 +462,12 @@ include '../class/Fuctions.php';
                 url:   'procesos.php',
                 type:  'post',
                 success:  function (html) {
-                        $j.getScript("../js/fancybox/jQuery.fancybox-1.3.4.pack5152.js?ver=1.0");
                         $j("#product_content").html(html);
                         var oScroll6 = $j('.scrollbar1');
                         oScroll6.tinyscrollbar();
+                        if ($j('a.fancybox').length && jQuery()) {
+                            $j("a.fancybox").fancybox();
+                        }
                 }
                 });
             });
@@ -486,10 +488,12 @@ include '../class/Fuctions.php';
                 url:   'procesos.php',
                 type:  'post',
                 success:  function (html) {
-                        $j.getScript("../js/fancybox/jQuery.fancybox-1.3.4.pack5152.js?ver=1.0");
                         $j("#product_content").html(html);
                         var oScroll6 = $j('.scrollbar1');
                         oScroll6.tinyscrollbar();
+                        if ($j('a.fancybox').length && jQuery()) {
+                            $j("a.fancybox").fancybox();
+                        }
                 }
                 });
             });
@@ -510,8 +514,10 @@ include '../class/Fuctions.php';
             });
             
             var menu = true, $height;
-            $height = parseInt($j(".title_share:first-child")[0].firstChild.nextSibling.offsetHeight) + 5;
-            $j(".title_share").css("height", $height + "px");
+            if ($j(".title_share").length) {
+                $height = parseInt($j(".title_share:first-child")[0].firstChild.nextSibling.offsetHeight) + 5;
+                $j(".title_share").css("height", $height + "px");
+            }
             //            $j(".selec_img_hover").on("mouseenter",function(){
             //                $j(this).fadeOut(0);
             //               $j(this).attr("src","../images/foto_pro_marcas_hover.png"); 

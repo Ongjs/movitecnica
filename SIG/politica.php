@@ -17,7 +17,7 @@
         <link rel='stylesheet' id='superfish-css'  href='../css/superfish9d52.css?ver=3.5.1' type='text/css' media='all' />
         <link rel='stylesheet' id='mediaelement-css'  href='../js/mediaelement/build/mediaelementplayer.min9d52.css?ver=3.5.1' type='text/css' media='all' />
         <link rel='stylesheet' id='style-css'  href='../style9d52.css?ver=3.5.1' type='text/css' media='all' />
-        <link rel='stylesheet' id='fancybox-css'  href='../js/fancybox/jQuery.fancybox-1.3.49d52.css?ver=3.5.1' type='text/css' media='all' />
+        <link rel='stylesheet' id='fancybox-css'  href='../js/fancybox/jquery.fancybox-1.3.49d52.css?ver=3.5.1' type='text/css' media='all' />
         <link rel='stylesheet' id='skin'  href='../css/skin3.css' type='text/css' media='all' />
         <script type='text/javascript' src='../js/jquery.js'></script>
         <script type='text/javascript' src='../js/custom.js'></script>
@@ -244,7 +244,7 @@
         <!-- #footer -->
 
         <link rel='stylesheet' id='demo-style'  href='_switcher/style.css' type='text/css' media='all' />
-        <link rel='stylesheet' id='demo-minicolor'  href='_switcher/miniColors/jQuery.miniColors.css' type='text/css' media='all' />
+        <link rel='stylesheet' id='demo-minicolor'  href='_switcher/miniColors/jquery.miniColors.css' type='text/css' media='all' />
 
         <script type="text/javascript">
             var template = '../index.php';
@@ -294,7 +294,7 @@
             </div>	
         </div>	
 
-        <script src="_switcher/miniColors/jQuery.miniColors.min.js"></script>
+        <script src="_switcher/miniColors/jquery.miniColors.min.js"></script>
         <script src="_switcher/script.js"></script>
 
         <div id="toTop"><a href="#">Subir</a></div>
@@ -304,7 +304,7 @@
     <script type='text/javascript' src='../js/jquery.infinitescroll.min5152.js?ver=1.0'></script>
     <script type='text/javascript' src='../js/superfish5152.js?ver=1.0'></script>
     <script type='text/javascript' src='../js/mediaelement/build/mediaelement-and-player.min5152.js?ver=1.0'></script>
-    <script type='text/javascript' src='../js/fancybox/jQuery.fancybox-1.3.4.pack5152.js?ver=1.0'></script>
+    <script type='text/javascript' src='../js/fancybox/jquery.fancybox-1.3.4.pack5152.js?ver=1.0'></script>
     <script type='text/javascript' src='../js/jquery.mobilemenu5152.js?ver=1.0'></script>
     <script type='text/javascript' src='../js/jquery.fitvids5152.js?ver=1.0'></script>
     <script type='text/javascript' src='../js/jquery.flexslider-min5152.js?ver=1.0'></script>

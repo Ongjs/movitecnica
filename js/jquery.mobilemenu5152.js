@@ -4,7 +4,7 @@
  * version 1.0(31-OCT-2011)
  * 
  * Built on top of the jQuery library
- *   http://jQuery.com
+ *   http://jquery.com
  * 
  * Documentation
  * 	 http://github.com/mambows/mobilemenu
