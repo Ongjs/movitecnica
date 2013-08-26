@@ -197,25 +197,59 @@ function mo_get_proy($catid){
     while ($row = $cn->fetch()) $result[] = $row;
     return $result;
 }
-function mo_get_marc(){
+
+
+function mo_get_cats_parents(){
     $cn = Connection::getInstance();
     $result = array();
-    $cn->query("SELECT id,name,image FROM `product_category`  where parent_id = 0 and status = 1 ");
+    $cn->query("SELECT id,name FROM `product` where parent_id = '0' and type = '1' and status = '1' ");
     while ($row = $cn->fetch()) $result[] = $row;
     return $result;
 }
-function mo_get_subcat($id){
+function mo_get_cats_mar(){
     $cn = Connection::getInstance();
     $result = array();
-    $cn->query("SELECT id,clase,name,image,content FROM `product_category`  where parent_id = $id and status = 1 ");
+    $cn->query("SELECT parent_id,name,image,id FROM `product` where  type = '2' and status = 1 ");
     while ($row = $cn->fetch()) $result[] = $row;
     return $result;
 }
-function mo_get_prod($id){
+
+function mo_get_sub_cat(){
     $cn = Connection::getInstance();
     $result = array();
-    $cn->query("SELECT id,clase,name,image,content FROM `product_category`  where parent_id = $id and status = 1 ");
+    $cn->query("SELECT parent_id FROM `product` where  type = '1' and status = 1");
     while ($row = $cn->fetch()) $result[] = $row;
     return $result;
 }
+
+function mo_get_cat_content($id){
+    $cn = Connection::getInstance();
+    $result = array();
+    $cn->query("SELECT id,name,parent_id,type FROM `product` where type = '1' and status = 1 and parent_id = '$id'");
+    while ($row = $cn->fetch()) $result[] = $row;
+    return $result;
+}
+
+function mo_get_all_content($id){
+    $cn = Connection::getInstance();
+    $result = array();
+    $cn->query("SELECT id,name,type,image,content,file FROM `product` where  status = 1 and parent_id = '$id' order by (type) asc");
+    while ($row = $cn->fetch()) $result[] = $row;
+    return $result;
+}
+function mo_get_all_cat_content(){
+    $cn = Connection::getInstance();
+    $result = array();
+    $cn->query("SELECT id,name,type,image,content,file FROM `product` where  status = 1 and type = '1' and parent_id = '0' order by (type) asc");
+    while ($row = $cn->fetch()) $result[] = $row;
+    return $result;
+}
+function mo_get_curret_marc($id){
+    $cn = Connection::getInstance();
+    $result = "";
+    $cn->query("SELECT id,name,image FROM `product` where status = 1 and id = '$id'");
+    while ($row = $cn->fetch()) $result = $row;
+    return $result;
+}
+
 ?>
