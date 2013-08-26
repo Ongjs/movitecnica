@@ -466,7 +466,6 @@ include '../class/Fuctions.php';
                         $j("#product_content").html(html);
                         var oScroll6 = $j('.scrollbar1');
                         oScroll6.tinyscrollbar();
-                        console.log($j.getScript("../js/fancybox/jQuery.fancybox-1.3.4.pack5152.js?ver=1.0"))
                 }
                 });
             });
