@@ -468,6 +468,7 @@ include '../class/Fuctions.php';
                         if ($j('a.fancybox').length && jQuery()) {
                             $j("a.fancybox").fancybox();
                         }
+                        addthis.toolbox('.addthis_toolbox');
                 }
                 });
             });
@@ -494,6 +495,7 @@ include '../class/Fuctions.php';
                         if ($j('a.fancybox').length && jQuery()) {
                             $j("a.fancybox").fancybox();
                         }
+                        addthis.toolbox('.addthis_toolbox');
                 }
                 });
             });

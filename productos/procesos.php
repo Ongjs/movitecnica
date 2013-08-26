@@ -57,7 +57,9 @@ foreach ($content as $val){
     ?>
         <div class="prod_des" style="margin-bottom: 10px;">
             <div class="prod_image " style="margin-bottom: 20px; margin-right: 30px;">
+                <?php if ($val[3] != "") { ?>
                 <a href="../userfiles/<?php echo $val[3]; ?>" class="fancybox"><img src="../userfiles/<?php echo $val[3]; ?>"></a>
+                <?php } ?>
             </div>
             <div class="scrollbar1" style="">
                 <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
@@ -75,7 +77,7 @@ foreach ($content as $val){
                 </div>
             </div>
             <div class="ficha_tecnica" style="margin-top: 10px;">
-                <a href="../userfiles/<?php echo $val[5]; ?>"><img src="../images/pdf.png"></a>
+                <?php if ($val[5] != "") { ?><a href="../userfiles/<?php echo $val[5]; ?>"><img src="../images/pdf.png"></a><?php } ?>
             </div>
         </div>
     <?php
