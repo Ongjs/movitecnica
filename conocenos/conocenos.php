@@ -59,8 +59,8 @@
                                 </li>
                                 <li id="menu-item-1126"  ><a href="../productos/productos.php"><?php echo mo_get_data(1, 25); ?></a>
                                     <ul class="sub-menu">
-                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../productos/productos.php"><?php echo mo_get_data(1, 26); ?></a></li>
-                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../productos/productos.php"><?php echo mo_get_data(1, 27); ?></a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../productos/productos.php?filtro=categorias"><?php echo mo_get_data(1, 26); ?></a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../productos/productos.php?filtro=marcas"><?php echo mo_get_data(1, 27); ?></a></li>
                                     </ul>
                                 </li>
                                 <li id="menu-item-1126"  ><a href="../SIG/sig.php"><?php echo mo_get_data(1, 13); ?></a>
@@ -197,8 +197,8 @@
                             <article style="width: 120px">
                                 <span style="font-size: 16px;"><b><a href="../productos/productos.php"><?php echo mo_get_data(1, 25); ?></a></b></span><br/>
                                 <span>
-                                    <a href="../productos/productos.php"><?php echo mo_get_data(1, 26); ?></a><br/>
-                                    <a href="../productos/productos.php"><?php echo mo_get_data(1, 27); ?></a><br/>
+                                    <a href="../productos/productos.php?filtro=categorias"><?php echo mo_get_data(1, 26); ?></a><br/>
+                                    <a href="../productos/productos.php?filtro=marcas"><?php echo mo_get_data(1, 27); ?></a><br/>
                                 </span>
                             </article>
                             <article style="width: 120px">

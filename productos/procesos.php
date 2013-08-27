@@ -5,32 +5,84 @@ $id = isset($_POST['id']) ? $_POST['id'] : "";
 $do = isset($_POST['do']) ? $_POST['do'] : "";
 $parent = isset($_POST['parent']) ? $_POST['parent'] : "";
 $current = isset($_POST['current']) ? $_POST['current'] : "";
-
+$filt = isset($_POST['filt']) ? $_POST['filt'] : "";
+?>
+<div style="margin-bottom: 10px;">
+<?php
+if($do != "3"){
 if($id != "" && (int)$id > 0){   
 $atras = mo_get_curret_marc($id);
 if((int)$atras[3] == 0){
     ?>
         <span style="cursor: pointer" class="<?php echo $parent != "" ? "list_all_marcs" : "list_cats" ; ?>" data-id="">Regresar</span>
-        <br />
     <?php
 }else{
     ?>
         <span style="cursor: pointer" class="<?php echo $parent == "" ? "list_prods" : "list_prods_mar" ; ?>" data-id="<?php echo $atras[3]; ?>">Regresar</span>
-        <br />
     <?php
 }
 ?>
 <?php
 }else if((int)$id == 0){
     ?>
-    <div style="cursor: pointer; display: a" class="regresar">Regresar</div>
-    <br />
+    <span style="cursor: pointer; display: a" class="regresar">Regresar</span>
     <?php
 }
+}else if($do == "3"){   
 ?>
-
+    <span style="cursor: pointer; display: a" class="regresar">Regresar</span>
 <?php
-if($do == "2"){
+}
+?>
+    <input type="button" value="" title="buscar" id="buscar" style=" float: right;"><input type="text" name="buscar_prod" value="" id="prod" size="42" style=" float: right;" placeholder="Introdusca Nombre de Producto a Buscar">
+</div>
+<br />
+<br />
+<?php
+if($do == "3"){
+$array_prod = mo_get_filt_prod($filt);
+if(count($array_prod) > 0){ 
+    ?>
+        <h3>Resultados para <strong><?php echo $filt; ?></strong></h3>
+        <br />
+<?php
+foreach ($array_prod as $val){
+    ?>
+<div class="prod_des" style="margin-bottom: 10px;">
+    <div class="prod_image " style="margin-bottom: 20px; margin-right: 30px;">
+        <?php if ($val[3] != "") { ?>
+        <a href="../userfiles/<?php echo $val[3]; ?>" class="fancybox"><img src="../userfiles/<?php echo $val[3]; ?>"></a>
+        <?php } ?>
+    </div>
+    <div class="scrollbar1" style="">
+        <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+        <div class="viewport">
+            <div class="overview" style="">
+                <div class="title_share" style="height: 40px">
+                    <h3 style="width: 80%; float: left"><?php echo $val[1]; ?></h3>
+                    <div class="addthis_toolbox addthis_default_style" style="width: 9%; float: right; height: 30px;">
+                        <a class="addthis_button_preferred_1"></a>
+                        <a class="addthis_button_preferred_3"></a>
+                    </div>
+                </div>
+                <div style="text-align: left">
+                <?php echo $val[4]; ?>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="ficha_tecnica" style="margin-top: 10px;">
+        <?php if ($val[5] != "") { ?><a href="../userfiles/<?php echo $val[5]; ?>"><img src="../images/pdf.png"></a><?php } ?>
+    </div>
+</div>
+<?php
+}  
+}else{
+?>
+    <h3>No se encontraron resultados para <strong><?php echo $filt; ?></strong></h3>
+<?php
+}    
+}else if($do == "2"){
 $content = mo_get_cats_mar();
 foreach ($content as $val){
     ?>
@@ -112,7 +164,7 @@ foreach ($content as $val){
 }
 }else{
     ?>
-    <h2>No se encontraron productos disponibles</h2>
+    <h3>No se encontraron productos disponibles</h3>
     <?php
 }
 }

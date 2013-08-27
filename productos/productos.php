@@ -99,8 +99,8 @@ include '../class/Fuctions.php';
                                         </li>
                                         <li id="menu-item-1126"  ><a href="../productos/productos.php"><?php echo mo_get_data(1, 25); ?></a>
                                             <ul class="sub-menu">
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../productos/productos.php"><?php echo mo_get_data(1, 26); ?></a></li>
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../productos/productos.php"><?php echo mo_get_data(1, 27); ?></a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../productos/productos.php?filtro=categorias"><?php echo mo_get_data(1, 26); ?></a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../productos/productos.php?filtro=marcas"><?php echo mo_get_data(1, 27); ?></a></li>
                                             </ul>
                                         </li>
                                         <li id="menu-item-1126"  ><a href="../SIG/sig.php"><?php echo mo_get_data(1, 13); ?></a>
@@ -208,11 +208,15 @@ include '../class/Fuctions.php';
                     </div>
                     <?php
                         ?>
-                        <div style="display: inline-block; width: 73%; min-width: 220px; " class="uni_response">
-                            <div style="width: 98%;" id="product_content">
-                                <h1><b>Catálogo de Productos</b></h1>
-                                <br />  
-                                    <div style="">
+                    <span style="display: none" id="filtrado"><?php echo isset($_GET['filtro']) ? $_GET['filtro'] : "";  ?></span>
+                    <span style="display: none" id="normal_content">
+                        <div>
+                                    <div style="font-size: 25px; float: left;">Catálogo de Productos</div>
+                                    <input type="button" value="" title="buscar" id="buscar" style=" float: right;"><input type="text" name="buscar_prod" value="" id="prod" size="42" style="display: inline-block; float: right;" placeholder="Introdusca Nombre de Producto a Buscar">
+                                </div>
+                                <br />
+                                <br />  <br />  
+                                    <div style="margin-top: 10px">
                                         <div class="six columns post_col masonry-brick list_cats" data-id="">
                                             <div class="post-973 post type-post status-publish format-standard hentry category-uncategorized post_item white_box">
                                                 <div class="large_thumb thumb_hover">
@@ -235,6 +239,10 @@ include '../class/Fuctions.php';
                                         </div>
                                     </div>
                                 <br />
+                    </span>
+                        <div style="display: inline-block; width: 73%; min-width: 220px; " class="uni_response">
+                            <div style="width: 98%;" id="product_content">
+                                
                             </div>
                         </div>
                         
@@ -269,8 +277,8 @@ include '../class/Fuctions.php';
                                 <article style="width: 120px">
                                     <span style="font-size: 16px;"><b><a href="../productos/productos.php"><?php echo mo_get_data(1, 25); ?></a></b></span><br/>
                                     <span>
-                                        <a href="../productos/productos.php"><?php echo mo_get_data(1, 26); ?></a><br/>
-                                        <a href="../productos/productos.php"><?php echo mo_get_data(1, 27); ?></a><br/>
+                                        <a href="../productos/productos.php?filtro=categorias"><?php echo mo_get_data(1, 26); ?></a><br/>
+                                        <a href="../productos/productos.php?filtro=marcas"><?php echo mo_get_data(1, 27); ?></a><br/>
                                     </span>
                                 </article>
                                 <article style="width: 120px">
@@ -455,15 +463,48 @@ include '../class/Fuctions.php';
     <script type="text/javascript">
         $j(document).ready(function() {
             var $list_marc = "",$currentid = "";
-            var product_content_html = $j("#product_content").html();
+            var product_content_html = $j("#normal_content").html();
             
-            $j(document).on("click",".regresar",function(){
+            var $filtrado = $j("#filtrado").text();
+            if($filtrado === "categorias"){
+                normal_cats("");
+            }else if($filtrado === "marcas"){
+                all_marks();
+            }else{
                 $j("#product_content").html(product_content_html);
-            });
+            }
             
-            $j(document).on("click",".list_cats,.list_prods",function(){
+           function normal_cats(id){
                 $j.ajax({
-                data:  "id=" + $j(this).data("id"),
+                data:  "id=" + id,
+                url:   'procesos.php',
+                type:  'post',
+                success:  function (html) {
+                        $j("#product_content").html(html);
+                        var oScroll6 = $j('.scrollbar1');
+                        oScroll6.tinyscrollbar();
+                        if ($j('a.fancybox').length && jQuery()) {
+                            $j("a.fancybox").fancybox();
+                        }
+                        addthis.toolbox('.addthis_toolbox');
+                }
+                });
+            }
+            function all_marks(){
+            $j.ajax({
+                data:  "do=2",
+                url:   'procesos.php',
+                type:  'post',
+                success:  function (html) {
+                        $j("#product_content").html(html);
+                }
+                });
+            }
+            
+            $j(document).on("click","#buscar", function(){
+                $j(this).val()
+                $j.ajax({
+                data:  "do=3&filt=" + $j(prod).val(),
                 url:   'procesos.php',
                 type:  'post',
                 success:  function (html) {
@@ -477,15 +518,17 @@ include '../class/Fuctions.php';
                 }
                 });
             });
+            
+            $j(document).on("click",".regresar",function(){
+                $j("#product_content").html(product_content_html);
+            });
+            
+            $j(document).on("click",".list_cats,.list_prods",function(){
+                normal_cats($j(this).data("id"));
+            });
+            
             $j(document).on("click",".list_all_marcs",function(){
-                $j.ajax({
-                data:  "do=2",
-                url:   'procesos.php',
-                type:  'post',
-                success:  function (html) {
-                        $j("#product_content").html(html);
-                }
-                });
+                all_marks();
             });
             
             $j(document).on("click",".list_cats_mar,.list_prods_mar",function(){

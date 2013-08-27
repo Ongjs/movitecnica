@@ -251,5 +251,12 @@ function mo_get_curret_marc($id){
     while ($row = $cn->fetch()) $result = $row;
     return $result;
 }
+function mo_get_filt_prod($text){
+    $cn = Connection::getInstance();
+    $result = array();
+    $cn->query("SELECT id,name,type,image,content,file FROM `product` where  status = 1 and type = '3' and name like '%$text%' order by (name) asc");
+    while ($row = $cn->fetch()) $result[] = $row;
+    return $result;
+}
 
 ?>
