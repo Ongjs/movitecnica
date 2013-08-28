@@ -53,7 +53,7 @@ $cn->query("SELECT id, name FROM product WHERE parent_id = '0' AND type = '1' OR
             return false; 
         });
         $(document).on("keyup","#search",function(){ mo_search(mod); return false; });
-        $(document).on("click",".list", function(){ mo_list(mod); return false; });
+        $(document).on("click",".list", function(){ mo_list(mod,category_value); return false; });
         $(document).on("click",".update", function(){ mo_update(mod, $(this));  return false; });
         $(document).on("click",".delete", function(){ mo_delete(mod, $(this)); return false; });
         $(document).on("click",".status", function(){ mo_status(mod, $(this)); return false; });

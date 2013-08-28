@@ -42,11 +42,6 @@ if (!empty($id)) {
                 <td><input type="file" id="image"/></td>
             </tr>
             <tr>
-                <td><label for="tinymce">Content</label></td>
-                <td><textarea name="cont" id="" class="tinymce_mini"><?php echo $row['content']; ?></textarea></td>
-            </tr>
-            
-            <tr>
                 <td colspan="2"><br /><input type="submit" value="Submit" /></td>
             </tr>
         </table>

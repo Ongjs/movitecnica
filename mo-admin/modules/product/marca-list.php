@@ -29,7 +29,7 @@ $cn->query("SELECT id, name, image, status FROM product WHERE $cadena AND LOWER(
             <tr>
                 <td class="center"><?php echo $cont; ?></td>
                 <td><?php echo mo_unscape($row['name']); ?></td>
-                <td class="center"><a href="../userfiles/<?php echo $row['image']; ?>" rel="shadowbox;width=220;height=250;" class="button file" title="<?php echo mo_unscape($row['name']); ?>"></a></td>
+                <td class="center"><a href="../userfiles/<?php echo $row['image'] != "" ? $row['image'] : "_nodispo.jpg" ; ?>" rel="shadowbox;width=220;height=250;" class="button file" title="<?php echo mo_unscape($row['name']); ?>"></a></td>
             <?php 
             if($select == ""){
             ?>

@@ -22,7 +22,7 @@ $cn->query("SELECT id, name, image, status FROM product WHERE parent_id = '$sele
             <tr>
                 <td class="center"><?php echo $cont; ?></td>
                 <td><?php echo mo_unscape($row['name']); ?></td>
-                <td class="center"><a href="../userfiles/<?php echo $row['image']; ?>" rel="shadowbox;width=220;height=250;" class="button file" title="<?php echo mo_unscape($row['name']); ?>"></a></td>
+                <td class="center"><a href="../userfiles/<?php echo $row['image'] != "" ? $row['image'] : "_nodispo.jpg" ; ?>" rel="shadowbox;width=220;height=250;" class="button file" title="<?php echo mo_unscape($row['name']); ?>"></a></td>
                 <td class="center"><a href="#" id="<?php echo $row['id']; ?>" class="button update" title="Editar"></a></td>
                 <td class="center"><a href="#" id="<?php echo $row['id']; ?>" class="button delete" title="Eliminar"></a></td>
                 <td class="center"><a href="#" id="<?php echo $row['id']; ?>" class="button status<?php if($row['status'] == 0) echo " status_inactive"; ?>"  value="<?php echo $row['status']; ?>"></a></td>
