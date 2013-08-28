@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 26-08-2013 a las 14:59:11
+-- Tiempo de generación: 28-08-2013 a las 23:14:40
 -- Versión del servidor: 5.5.24-log
 -- Versión de PHP: 5.3.13
 
@@ -252,6 +252,7 @@ CREATE TABLE IF NOT EXISTS `product` (
   `created` datetime NOT NULL,
   `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` int(11) NOT NULL,
+  `hidden` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
 
@@ -259,29 +260,29 @@ CREATE TABLE IF NOT EXISTS `product` (
 -- Volcado de datos para la tabla `product`
 --
 
-INSERT INTO `product` (`id`, `parent_id`, `type`, `name`, `image`, `content`, `file`, `created`, `updated`, `status`) VALUES
-(1, 0, 1, 'izage', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1),
-(2, 1, 1, 'Polipastos Manuales', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1),
-(3, 2, 1, 'Cadena', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1),
-(4, 2, 1, 'Palanca', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1),
-(5, 2, 1, 'Cable', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1),
-(6, 1, 1, 'Polipastos Eléctricos', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1),
-(7, 6, 1, 'Cadena', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1),
-(8, 6, 1, 'Cable', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1),
-(9, 1, 1, 'Polipastos Neumáticos', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1),
-(10, 0, 1, 'Fajas Transport', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1),
-(11, 9, 1, 'Fajas Transport', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1),
-(12, 10, 1, 'Fajas de Lona', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1),
-(13, 11, 1, 'Antiabrasivas', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1),
-(14, 11, 1, 'Alta Temperatura', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1),
-(15, 10, 1, 'Fajas de Acero', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1),
-(16, 0, 1, 'Carretillas', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1),
-(17, 15, 1, 'Carretilla Hidráulica Quicklift', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1),
-(18, 1, 2, 'Yale', '_yale.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:03:58', 1),
-(19, 10, 2, 'Fenner Dunlop', '_fenner_dunlop.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:04:04', 1),
-(20, 1, 2, 'Street', '_street.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:04:20', 1),
-(21, 16, 2, 'Movitech', '_movitech.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:04:35', 1),
-(22, 3, 3, 'Magnis Magnis', '_polipasto.jpg', '<ul>\r\n                                                            <li>Capacidades de 750 – 6000 kg.</li>\r\n                                                            <li>Los ganchos superior e inferior se fabrican en acero especial, forjado y bonificado. En caso de sobrecarga se abren sin rotura.</li>\r\n                                                            <li>Las cadenas de eslabones se fabrican en acero bonificado con superficie galvanizada. Cumplen las normas nacionales e internacionales actualmente en vigor.</li>\r\n                                                            <li>Guía de cadena integrada en la carcasa para el recorrido preciso de la cadena sobre la nuez.</li>\r\n                                                            <li>Tope robusto</li>\r\n                                                            <li>Dispositivo de punto neutro para posicionar y pretensar rápidamente la cadena en ambas direcciones.</li>\r\n                                                            <li>Palanca corta con empuñadura de goma.</li>\r\n                                                            <li>Rueda de mano protegida contra la corrosión con cromado duro</li>\r\n                                                            <li>Freno de carga resistente a la corrosión y discos de fricción sin asbesto.</li>\r\n                                                            <li>Gancho de carga con pasteca robusta gracias a sus ejes encapsulados.</li>\r\n                                                            <li>Accionamiento fácil y sin esfuerzo de la palanca.</li>\r\n                                                        </ul>', '', '0000-00-00 00:00:00', '2013-08-25 23:02:40', 1);
+INSERT INTO `product` (`id`, `parent_id`, `type`, `name`, `image`, `content`, `file`, `created`, `updated`, `status`, `hidden`) VALUES
+(1, 0, 1, 'izage', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-28 20:53:25', 1, ''),
+(2, 1, 1, 'Polipastos Manuales', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1, ''),
+(3, 2, 1, 'Cadena', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-28 00:01:41', 1, ''),
+(4, 2, 1, 'Palanca', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1, ''),
+(5, 2, 1, 'Cable', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1, ''),
+(6, 1, 1, 'Polipastos Eléctricos', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1, ''),
+(7, 6, 1, 'Cadena', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1, ''),
+(8, 6, 1, 'Cable', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1, ''),
+(9, 1, 1, 'Polipastos Neumáticos', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1, ''),
+(10, 0, 1, 'Fajas Transport', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1, ''),
+(11, 9, 1, 'Fajas Transport', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1, ''),
+(12, 10, 1, 'Fajas de Lona', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1, ''),
+(13, 11, 1, 'Antiabrasivas', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1, ''),
+(14, 11, 1, 'Alta Temperatura', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1, ''),
+(15, 10, 1, 'Fajas de Acero', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1, ''),
+(16, 0, 1, 'Carretillas', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1, ''),
+(17, 15, 1, 'Carretilla Hidráulica Quicklift', '_poli-ejem.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:02:24', 1, ''),
+(18, 1, 2, 'Yale', '_yale.png', '', '', '0000-00-00 00:00:00', '2013-08-28 23:07:18', 1, ',6,10,2'),
+(19, 10, 2, 'Fenner Dunlop', '_fenner_dunlop.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:04:04', 1, ''),
+(20, 1, 2, 'Street', '_street.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:04:20', 1, ''),
+(21, 16, 2, 'Movitech', '_movitech.png', '', '', '0000-00-00 00:00:00', '2013-08-25 23:04:35', 1, ''),
+(22, 3, 3, 'Magnis Magnis', '_polipasto.jpg', '<ul>\r\n<li>Capacidades de 750 &ndash; 6000 kg.</li>\r\n<li>Los ganchos superior e inferior se fabrican en acero especial, forjado y bonificado. En caso de sobrecarga se abren sin rotura.</li>\r\n<li>Las cadenas de eslabones se fabrican en acero bonificado con superficie galvanizada. Cumplen las normas nacionales e internacionales actualmente en vigor.</li>\r\n<li>Gu&iacute;a de cadena integrada en la carcasa para el recorrido preciso de la cadena sobre la nuez.</li>\r\n<li>Tope robusto</li>\r\n<li>Dispositivo de punto neutro para posicionar y pretensar r&aacute;pidamente la cadena en ambas direcciones.</li>\r\n<li>Palanca corta con empu&ntilde;adura de goma.</li>\r\n<li>Rueda de mano protegida contra la corrosi&oacute;n con cromado duro</li>\r\n<li>Freno de carga resistente a la corrosi&oacute;n y discos de fricci&oacute;n sin asbesto.</li>\r\n<li>Gancho de carga con pasteca robusta gracias a sus ejes encapsulados.</li>\r\n<li>Accionamiento f&aacute;cil y sin esfuerzo de la palanca.</li>\r\n</ul>', '', '0000-00-00 00:00:00', '2013-08-28 17:13:58', 1, '');
 
 -- --------------------------------------------------------
 
