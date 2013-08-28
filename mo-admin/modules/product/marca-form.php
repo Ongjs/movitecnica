@@ -10,7 +10,7 @@ if (!empty($id)) {
     $row = $cn->fetch();
     $ext = (int)$row['parent_id'];
 }else
-    $row = array("name" => "", "content" => "", "image" => "");
+    $row = array("name" => "", "content" => "", "image" => "", "hidden" => "");
 ?>
 <style>
     .activo{
@@ -71,7 +71,12 @@ if (!empty($id)) {
     $(document).ready(function(){
         mo_sub_cats(41,$('#marca_subs :selected').val(),$("#marca_id").val());
         var string = $("#subs_status").val();
-        $array_subs = string.split(',');
+        console.log()
+            var $array_subs = new Array();
+        if(!$("#subs_status").val()){
+        }else{
+            var $array_subs = string.split(',');
+        }
         if($array_subs.indexOf("")){
             $array_subs.splice($array_subs.indexOf(""), 1);
         }

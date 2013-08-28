@@ -145,7 +145,6 @@ function mo_new(mod,ncat){
 }
 
 function mo_sub_cats(mod, id, val){
-console.log(id)
     $.ajax({
         data: "mod=" + mod + "&id=" + id + "&subs=1&hid=" + val
     }).done(function(html){
