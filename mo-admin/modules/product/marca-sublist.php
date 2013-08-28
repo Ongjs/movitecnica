@@ -19,7 +19,7 @@ function sub_categorys($id,$hidden) {
             <?php
             foreach ($array_fill as $li) {
                 ?>
-                <li style="width: 300px">-<?php echo $li[1]; ?> <img src="../images/<?php echo in_array($li[0], $hidden) ? "inactive" : "active" ?>.png" data-id="<?php echo $li[0]; ?>" style="width: 18px; height: 18px; margin-bottom: -3px; float: right; cursor: pointer" id="sub_status">
+                <li style="width: 300px"><span>&DoubleRightArrow; <?php echo $li[1]; ?> <img src="../images/<?php echo in_array($li[0], $hidden) ? "inactive" : "active" ?>.png" data-id="<?php echo $li[0]; ?>" id="sub_status"></span>
                     <?php sub_categorys($li[0],$hidden); ?>
                 </li>
                 <?php
