@@ -212,7 +212,7 @@ include '../class/Fuctions.php';
                     <span style="display: none" id="normal_content">
                         <div>
                                     <div style="font-size: 25px; float: left;">Catálogo de Productos</div>
-                                    <input type="button" value="" title="buscar" id="buscar" style=" float: right;"><input type="text" name="buscar_prod" value="" id="prod" size="42" style="display: inline-block; float: right;" placeholder="Introdusca Nombre de Producto a Buscar">
+                                    <input type="button" value="►" title="buscar" id="buscar" style=" float: right;"><input type="text" name="buscar_prod" value="" id="prod" size="42" style="display: inline-block; float: right;" placeholder="Introdusca Nombre de Producto a Buscar">
                                 </div>
                                 <br />
                                 <br />  <br />  
@@ -240,6 +240,7 @@ include '../class/Fuctions.php';
                                     </div>
                                 <br />
                     </span>
+                    
                         <div style="display: inline-block; width: 73%; min-width: 220px; " class="uni_response">
                             <div style="width: 98%;" id="product_content">
                                 
@@ -464,6 +465,7 @@ include '../class/Fuctions.php';
         $j(document).ready(function() {
             var $list_marc = "",$currentid = "";
             var product_content_html = $j("#normal_content").html();
+            $j("#normal_content").remove();
             
             var $filtrado = $j("#filtrado").text();
             if($filtrado === "categorias"){
@@ -502,9 +504,8 @@ include '../class/Fuctions.php';
             }
             
             $j(document).on("click","#buscar", function(){
-                $j(this).val()
                 $j.ajax({
-                data:  "do=3&filt=" + $j(prod).val(),
+                data:  "do=3&filt=" + $j("#prod").val(),
                 url:   'procesos.php',
                 type:  'post',
                 success:  function (html) {

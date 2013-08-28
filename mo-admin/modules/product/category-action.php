@@ -12,7 +12,7 @@ switch ($do) {
         $image = mo_scape($_POST["image_guid"]);
         $content = mo_scape($_POST['cont']);
         $ncat = mo_scape($_POST['ncat']) != "" ? mo_scape($_POST['ncat']) : "0";
-        $cn->query("insert into product(id,parent_id,type,name,image,content) VALUES ('',$ncat,'1','$name','$image','$content')");
+        $cn->query("insert into product(id,parent_id,type,name,image,content,status) VALUES ('',$ncat,'1','$name','$image','$content','1')");
         break;
     case 4:
         $cn->query("DELETE from product WHERE id = " . mo_scape($_POST['id']));

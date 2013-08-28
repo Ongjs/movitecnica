@@ -258,5 +258,11 @@ function mo_get_filt_prod($text){
     while ($row = $cn->fetch()) $result[] = $row;
     return $result;
 }
+function mo_get_hidden($id){
+    $cn = Connection::getInstance();
+    $cn->query("SELECT hidden FROM `product` where  id = '$id'");
+    while ($row = $cn->fetch()) $result = $row;
+    return $result[0];
+}
 
 ?>

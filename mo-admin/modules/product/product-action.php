@@ -14,7 +14,7 @@ switch ($do) {
         $content = mo_scape($_POST['cont']);
         $file = mo_scape($_POST["pdf_guid"]);
         $ncat = mo_scape($_POST['ncat']) != "" ? mo_scape($_POST['ncat']) : "0";
-        $cn->query("insert into product(id,parent_id,type,name,image,content,file) VALUES ('',$ncat,'3','$name','$image','$content','$file')");
+        $cn->query("insert into product(id,parent_id,type,name,image,content,file,status) VALUES ('',$ncat,'3','$name','$image','$content','$file','1')");
         break;
     case 4:
         $cn->query("DELETE from product WHERE id = " . mo_scape($_POST['id']));

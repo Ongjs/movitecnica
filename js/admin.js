@@ -144,6 +144,15 @@ function mo_new(mod,ncat){
     });
 }
 
+function mo_sub_cats(mod, id, val){
+console.log(id)
+    $.ajax({
+        data: "mod=" + mod + "&id=" + id + "&subs=1&hid=" + val
+    }).done(function(html){
+        $("#td_subs").html(html);
+    });
+}
+
 function mo_update(mod, e){
     $.ajax({
         data: "mod=" + mod + "&select=" + $('#opt_cat :selected').val() + "&do=1&id=" + e.attr("id")

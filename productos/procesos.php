@@ -34,7 +34,7 @@ if((int)$atras[3] == 0){
 <?php
 }
 ?>
-    <input type="button" value="" title="buscar" id="buscar" style=" float: right;"><input type="text" name="buscar_prod" value="" id="prod" size="42" style=" float: right;" placeholder="Introdusca Nombre de Producto a Buscar">
+    <input type="button" value="►" title="buscar" id="buscar" style=" float: right;"><input type="text" name="buscar_prod" value="" id="prod" size="42" style=" float: right;" placeholder="Introdusca Nombre de Producto a Buscar">
 </div>
 <br />
 <br />
@@ -96,7 +96,13 @@ foreach ($content as $val){
     </div>
     <?php
 }
-}else{ 
+}else{
+    if(is_numeric($parent)){
+        $hidden = mo_get_hidden($current);
+        $hidden = explode(",", $hidden);
+    }else{
+        $hidden = array();
+    }
 if($id != ""){
 $content = mo_get_all_content($id);
 }  else {
@@ -118,6 +124,7 @@ if(is_numeric($parent)){
     <?php
 } 
 foreach ($content as $val){
+if(!in_array($val[0], $hidden)){
     if((int)($val[2]) == 1){
     ?>
         <div style="float: left; width: 100%; margin-top: 20px; ">
@@ -161,6 +168,7 @@ foreach ($content as $val){
         </div>
     <?php
     }
+}
 }
 }else{
     ?>
