@@ -70,31 +70,6 @@ if (!empty($id)) {
 <script type="text/javascript">
     $(document).ready(function(){
         mo_sub_cats(41,$('#marca_subs :selected').val(),$("#marca_id").val());
-        var string = $("#subs_status").val();
-        console.log()
-            var $array_subs = new Array();
-        if(!$("#subs_status").val()){
-        }else{
-            var $array_subs = string.split(',');
-        }
-        if($array_subs.indexOf("")){
-            $array_subs.splice($array_subs.indexOf(""), 1);
-        }
-        $(document).on("change","#marca_subs", function() {
-            mo_sub_cats(41,$("#marca_subs").val(),$("#marca_id").val());
-        });
-        
-        $(document).on("click",".sub_status", function() {
-            if($(this).attr("src") == "../images/active.png"){
-                $array_subs.push(String($(this).data("id")));
-                $(this).attr("src","../images/inactive.png")
-            }else{
-                $array_subs.splice($array_subs.indexOf(String($(this).data("id"))), 1);
-                $(this).attr("src","../images/active.png")
-            }
-            $("#subs_status").val($array_subs.join(","));
-        });
-        
         mo_tinymce();
         $("#image").makeAsyncUploader({
             upload_url: "<?php echo $_SERVER['PHP_SELF']; ?>?mod=1", 

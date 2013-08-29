@@ -53,6 +53,32 @@ $cn->query("SELECT id, name FROM product WHERE parent_id = '0' AND type = '1' OR
             console.log($array)
             return false; 
         });
+
+        $(document).on("change","#marca_subs", function() {
+            mo_sub_cats(41,$("#marca_subs").val(),$("#marca_id").val());
+        });
+        
+        $(document).on("click",".sub_status", function() {
+            var string = $("#subs_status").val();
+            var $array_subs = new Array();
+            if(!$("#subs_status").val()){
+            }else{
+                var $array_subs = string.split(',');
+            }
+            if($array_subs.indexOf("")){
+                $array_subs.splice($array_subs.indexOf(""), 1);
+            }
+            console.log("abc", $(this).attr("src") == "../images/active.png");
+            if($(this).attr("src") == "../images/active.png"){
+                $array_subs.push(String($(this).data("id")));
+                $(this).attr("src","../images/inactive.png")
+            }else{
+                $array_subs.splice($array_subs.indexOf(String($(this).data("id"))), 1);
+                $(this).attr("src","../images/active.png")
+            }
+            $("#subs_status").val($array_subs.join(","));
+        });
+    
         $(document).on("keyup","#search",function(){ mo_search(mod); return false; });
         $(document).on("click",".list", function(){ mo_list(mod,category_value); return false; });
         $(document).on("click",".update", function(){ mo_update(mod, $(this));  return false; });
