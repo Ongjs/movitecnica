@@ -438,3 +438,24 @@ div.message {
 {
     font-size: 13px;
 }
+
+#td_subs ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+#td_subs ul li {
+    margin: 0;
+    padding: 0 0 0 20px;
+}
+#td_subs ul li span {
+    display: block;
+    padding: 3px 0;
+}
+#td_subs ul li span img {
+    cursor: pointer;
+    float: right;
+    height: 18px;
+    margin-bottom: -3px;
+    width: 18px;
+}
