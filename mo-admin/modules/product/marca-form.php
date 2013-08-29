@@ -84,7 +84,7 @@ if (!empty($id)) {
             mo_sub_cats(41,$("#marca_subs").val(),$("#marca_id").val());
         });
         
-        $(document).on("click","#sub_status", function() {
+        $(document).on("click",".sub_status", function() {
             if($(this).attr("src") == "../images/active.png"){
                 $array_subs.push(String($(this).data("id")));
                 $(this).attr("src","../images/inactive.png")
