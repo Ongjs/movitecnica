@@ -170,7 +170,7 @@ function mo_submit(mod, $do, ncat){
     $.ajax({
         data: "mod=" + mod + "&do=" + $do + "&ncat=" + ncat + "&" + $("form").serialize()
     }).done(function(){ 
-        mo_list(mod); 
+        mo_list(mod);
     });
 }
 
