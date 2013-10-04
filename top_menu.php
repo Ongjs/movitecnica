@@ -17,7 +17,7 @@ include 'class/Fuctions.php';
         <div class="container">
             <div class="row">
                 <div style="text-align: right; margin-right: 3%; color: #FFF; font-weight: bold; font-size: 10px;">
-                    <span style="margin-left: 15px; margin-right: 15px;"><a href="../Contactenos.php">Contáctenos</a></span> <span>|</span> <span style="margin-left: 15px; margin-right: 12px;">Siguenos</span> <img class="movirs" src="../images/facebook.png">
+                    <span style="margin-left: 15px; margin-right: 15px;"><a href="../contactenos.php">Contáctenos</a></span> <span>|</span> <span style="margin-left: 15px; margin-right: 12px;">Siguenos</span> <img class="movirs" src="../images/facebook.png">
                     <img class="movirs" src="../images/flickr.png">
                 </div>
                 <div class="twelve columns">
@@ -34,7 +34,7 @@ include 'class/Fuctions.php';
                                     <ul class="sub-menu">
                                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="conocenos/mensaje_del_gerente.php"><?php echo mo_get_data(1, 3); ?></a></li>
                                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="conocenos/mision_y_vision.php"><?php echo mo_get_data(1, 4); ?></a></li>
-                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="Conocenos/Valores.php"><?php echo mo_get_data(1, 5); ?></a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="conocenos/valores.php"><?php echo mo_get_data(1, 5); ?></a></li>
                                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="conocenos/equipo_de_trabajo.php"><?php echo mo_get_data(1, 6); ?></a></li>
                                     </ul>
                                 </li>

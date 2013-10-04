@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 include '../class/Connection.class.php';
 include '../class/Fuctions.php';
 $id = isset($_POST['id']) ? $_POST['id'] : "";
@@ -6,6 +6,8 @@ $do = isset($_POST['do']) ? $_POST['do'] : "";
 $parent = isset($_POST['parent']) ? $_POST['parent'] : "";
 $current = isset($_POST['current']) ? $_POST['current'] : "";
 $filt = isset($_POST['filt']) ? $_POST['filt'] : "";
+//$content = mo_get_all_content($id);
+//echo sizeof($content);
 ?>
 <div style="margin-bottom: 10px;">
 <?php
@@ -14,11 +16,11 @@ if($id != "" && (int)$id > 0){
 $atras = mo_get_curret_marc($id);
 if((int)$atras[3] == 0){
     ?>
-        <span style="cursor: pointer" class="<?php echo $parent != "" ? "list_all_marcs" : "list_cats" ; ?>" data-id="">Regresar</span>
+        
     <?php
 }else{
     ?>
-        <span style="cursor: pointer" class="<?php echo $parent == "" ? "list_prods" : "list_prods_mar" ; ?>" data-id="<?php echo $atras[3]; ?>">Regresar</span>
+        
     <?php
 }
 ?>
@@ -38,6 +40,7 @@ if((int)$atras[3] == 0){
 </div>
 <br />
 <br />
+
 <?php
 if($do == "3"){
 $array_prod = mo_get_filt_prod($filt);
@@ -57,7 +60,7 @@ foreach ($array_prod as $val){
     <div class="scrollbar1" style="">
         <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
         <div class="viewport">
-            <div class="overview" style="">
+            <div class="overview" style="width: 100%">
                 <div class="title_share" style="height: 40px">
                     <h3 style="width: 80%; float: left"><?php echo $val[1]; ?></h3>
                     <div class="addthis_toolbox addthis_default_style" style="width: 9%; float: right; height: 30px;">
@@ -108,7 +111,6 @@ $content = mo_get_all_content($id);
 }  else {
 $content = mo_get_all_cat_content();
 }
-if(count($content)>0){
 if(is_numeric($parent)){
     $marc = mo_get_curret_marc($current);
     ?>
@@ -116,21 +118,27 @@ if(is_numeric($parent)){
     <h4><?php echo $marc[1]; ?></h4>
     <div class='marca' style="margin-left: -7px; float: none">
         <div>
-            <a href="#"><img src="../userfiles/<?php echo $marc[2]; ?>"></a>
+            <img src="../userfiles/<?php echo $marc[2]; ?>">
         </div>
     </div>
 </div>
 <br /><hr><br />
     <?php
-} 
+}
+if(count($content)>0){
+if(sizeof($content)>0){
+    ?>
+    <div id="vacio" style="margin-top: 10px">
+    <?php
+}
 foreach ($content as $val){
 if(!in_array($val[0], $hidden)){
     if((int)($val[2]) == 1){
     ?>
         <div style="float: left; width: 100%; margin-top: 20px; ">
-            <h4 class="<?php echo is_numeric($parent) ? "list_cats_mar" : "list_cats"; ?>"><?php echo $val[1]; ?></h4>
+            <h4 ><?php echo $val[1]; ?></h4>
             <div style="margin-top: 7px; margin-bottom: 7px;">
-                <div style="width: 35%; float: left;" class="<?php echo is_numeric($parent) ? "list_cats_mar" : "list_cats"; ?>" data-id="<?php echo $val[0]; ?>"> <img src="../userfiles/<?php echo $val[3]; ?>" style=""></div>
+                <div style="width: 35%; float: left;"  data-id="<?php echo $val[0]; ?>"> <img src="../userfiles/<?php echo $val[3]; ?>" style=""></div>
                 <div style="" class="sub_cate_content">
                     <?php echo $val[4]; ?>
                 </div>
@@ -148,7 +156,7 @@ if(!in_array($val[0], $hidden)){
             <div class="scrollbar1" style="">
                 <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
                 <div class="viewport">
-                    <div class="overview" style="">
+                    <div class="overview" style="width: 100%">
                         <div class="title_share" style="height: 40px">
                             <h3 style="width: 80%; float: left"><?php echo $val[1]; ?></h3>
                             <div class="addthis_toolbox addthis_default_style" style="width: 9%; float: right; height: 30px;">
@@ -172,7 +180,7 @@ if(!in_array($val[0], $hidden)){
 }
 }else{
     ?>
-    <h3>No se encontraron productos disponibles</h3>
+    </div>
     <?php
 }
 }

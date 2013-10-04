@@ -190,6 +190,9 @@ function mo_get_proy($catid){
         case 5 :
             $limit = 2;
             break;
+        case 4 :
+            $limit = 1;
+            break;
     }
     $cn = Connection::getInstance();
     $result = array();
@@ -209,7 +212,7 @@ function mo_get_cats_parents(){
 function mo_get_cats_mar(){
     $cn = Connection::getInstance();
     $result = array();
-    $cn->query("SELECT parent_id,name,image,id FROM `product` where  type = '2' and status = 1 ");
+    $cn->query("SELECT parent_id,name,image,id,hidden FROM `product` where  type = '2' and status = 1 ");
     while ($row = $cn->fetch()) $result[] = $row;
     return $result;
 }
@@ -217,7 +220,7 @@ function mo_get_cats_mar(){
 function mo_get_sub_cat(){
     $cn = Connection::getInstance();
     $result = array();
-    $cn->query("SELECT parent_id FROM `product` where  type = '1' and status = 1");
+    $cn->query("SELECT parent_id FROM `product` where  type = '1'    and status = 1");
     while ($row = $cn->fetch()) $result[] = $row;
     return $result;
 }
@@ -233,7 +236,7 @@ function mo_get_cat_content($id){
 function mo_get_all_content($id){
     $cn = Connection::getInstance();
     $result = array();
-    $cn->query("SELECT id,name,type,image,content,file FROM `product` where  status = 1 and parent_id = '$id' order by (type) asc");
+    $cn->query("SELECT id,name,type,image,content,file FROM `product` where  status = 1 and parent_id = '$id' and type = '3' order by (type) asc");
     while ($row = $cn->fetch()) $result[] = $row;
     return $result;
 }

@@ -50,7 +50,6 @@ $cn->query("SELECT id, name FROM product WHERE parent_id = '0' AND type = '1' OR
                 mo_addcat(mod, category_value, category_text);
                 $array.push(category_value);
             }
-            console.log($array)
             return false; 
         });
         $(document).on("keyup","#search",function(){ mo_search(mod); return false; });

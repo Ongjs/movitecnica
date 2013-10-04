@@ -65,10 +65,10 @@ $(document).ready(function(){
         flash_url: '../lib/jquery-asyncUpload-0.1/swfupload.swf', 
         path_url: '../userfiles/', 
         disableDuringUpload: 'input[type="submit"]', 
-        <?php if(!empty($id) && is_file("../userfiles/" . $row['image'])){ ?>
-        existingFilename: '<?php echo substr(strstr($row['image'], "_"), 1); ?>', 
-        existingGuid: '<?php echo $row['image']; ?>', 
-        existingFileSize: <?php echo filesize("../userfiles/" . $row['image']); ?>, 
+        <?php if(!empty($id) && is_file("../userfiles/" . $row['thumbnail'])){ ?>
+        existingFilename: '<?php echo substr(strstr($row['thumbnail'], "_"), 1); ?>', 
+        existingGuid: '<?php echo $row['thumbnail']; ?>', 
+        existingFileSize: <?php echo filesize("../userfiles/" . $row['thumbnail']); ?>, 
         <?php } ?>
         file_types_description: 'Imagenes', 
         file_types: '*.jpg; *.jpeg; *.gif; *.png;', 

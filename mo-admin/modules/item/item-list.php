@@ -1,6 +1,6 @@
 <?php
 require_once "../conf.php";
-$search = isset($_POST['search']) ? mb_strtolower(mo_scape($_POST['search']), "UTF-8") : "";
+$search = isset($_POST['search']) ? mo_scape($_POST['search']) : "";
 $select = isset($_POST['select']) ? strtolower(mo_scape($_POST['select'])) : "1";
 $cn->query("SELECT id, name, content, thumbnail, image, description, status from image WHERE LOWER(name) like '%$search%' and category_id = $select  ORDER BY id asc");
 ?>

@@ -28,7 +28,7 @@
                 <div class="container">
                     <div class="row">
                         <div style="text-align: right; margin-right: 3%; color: #FFF; font-weight: bold; font-size: 10px;">
-                            <span style="margin-left: 15px; margin-right: 15px;"><a href="../Contactenos.php">Contáctenos</a></span> <span>|</span> <span style="margin-left: 15px; margin-right: 12px;">Siguenos</span> <img class="movirs" src="../images/facebook.png">
+                            <span style="margin-left: 15px; margin-right: 15px;"><a href="../contactenos.php">Contáctenos</a></span> <span>|</span> <span style="margin-left: 15px; margin-right: 12px;">Siguenos</span> <img class="movirs" src="../images/facebook.png">
                             <img class="movirs" src="../images/flickr.png">
                         </div>
                         <div class="twelve columns">
@@ -45,7 +45,7 @@
                                     <ul class="sub-menu">
                                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../conocenos/mensaje_del_gerente.php"><?php echo mo_get_data(1, 3); ?></a></li>
                                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../conocenos/mision_y_vision.php"><?php echo mo_get_data(1, 4); ?></a></li>
-                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../Conocenos/Valores.php"><?php echo mo_get_data(1, 5); ?></a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../conocenos/valores.php"><?php echo mo_get_data(1, 5); ?></a></li>
                                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../conocenos/equipo_de_trabajo.php"><?php echo mo_get_data(1, 6); ?></a></li>
                                     </ul>
                                 </li>
@@ -119,8 +119,8 @@
                             foreach ($ele as $el){
                             ?>
                         <div class="testimoneo">
-                            <div class="image_test"><a href="Testimonio.php?cod=<?php echo $el[0]; ?>"><img src="../userfiles/<?php echo $el[2]; ?>"></a><br /><div class="test_nomb"><h4 style="margin-bottom: 0px; margin-top: 10px;"><a href="Testimonio.php?cod=<?php echo $el[0]; ?>"><?php echo $el[1]; ?></a></h4><?php echo $el[6]; ?></div><div class="logo_test"><img src="../images/test_logo.png"></div></div>
-                            <div class="text_test oculto"><div style="height: 195px"><?php echo $el[4]; ?><br/><h5><?php echo $el[1]; ?></h5></div><br /><a href="testimonio.php?cod=<?php echo $el[0]; ?>" class="ir_test">Leer el Testimoneo ></a></div>
+                            <div class="image_test"><a href="testimonio.php?cod=<?php echo $el[0]; ?>"><img src="../userfiles/<?php echo $el[2]; ?>"></a><br /><div class="test_nomb"><h4 style="margin-bottom: 0px; margin-top: 10px;"><a href="testimonio.php?cod=<?php echo $el[0]; ?>"><?php echo $el[1]; ?></a></h4><?php echo $el[6]; ?></div><div class="logo_test"><img src="../images/test_logo.png"></div></div>
+                            <div class="text_test oculto"><div style="height: 195px"><?php echo $el[4]; ?><h5><?php echo $el[1]; ?></h5></div><br /><a href="testimonio.php?cod=<?php echo $el[0]; ?>" class="ir_test">Leer el Testimoneo ></a></div>
                         </div>
                         <?php
                         if($cont%3 == 0){
@@ -165,7 +165,7 @@
                                 <ul>
                                     <li> 
                                         <div style="border-top: 1px solid #D7D7D7; padding-top: 10px;">
-                                        <div style="width: 100%; margin-bottom: 10px;"> <h3 style="display: inline-block; vertical-align: top; margin-top: 10px;"> <b><a href="../Contactenos.php">Contáctenos</a></b> </h3><div style="display: inline-block; margin-left: 8px;"><img src="../images/logo_solo.png" style="width: 38px"></div></div>
+                                        <div style="width: 100%; margin-bottom: 10px;"> <h3 style="display: inline-block; vertical-align: top; margin-top: 10px;"> <b><a href="../contactenos.php">Contáctenos</a></b> </h3><div style="display: inline-block; margin-left: 8px;"><img src="../images/logo_solo.png" style="width: 38px"></div></div>
                                         <span>Póngase en contacto con nuestro expertos, para averiguar cómo podemos ayudarle a usted y a su empresa con su proyecto</span>
                                         </div><br />
                                         <div style="border-top: 1px solid #D7D7D7">

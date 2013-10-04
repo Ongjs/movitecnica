@@ -29,14 +29,15 @@
             }
         </style>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
-    <body> <?php include 'class/Connection.class.php';
-include 'class/Fuctions.php'; ?>
+    <body> <?php 
+    include 'class/Connection.class.php';
+    include 'class/Fuctions.php'; ?>
         <div class="top_wrapper">
             <div id="header">
                 <div class="container">
                     <div class="row">
                         <div style="text-align: right; margin-right: 3%; color: #FFF; font-weight: bold; font-size: 10px;">
-                            <span style="margin-left: 15px; margin-right: 15px;"><a href="Contactenos.php">Contáctenos</a></span> <span>|</span> <span style="margin-left: 15px; margin-right: 12px;">Siguenos</span> <img class="movirs" src="images/facebook.png">
+                            <span style="margin-left: 15px; margin-right: 15px;"><a href="contactenos.php">Contáctenos</a></span> <span>|</span> <span style="margin-left: 15px; margin-right: 12px;">Siguenos</span> <img class="movirs" src="images/facebook.png">
                             <img class="movirs" src="images/flickr.png">
                         </div>
                         <div class="twelve columns">
@@ -53,7 +54,7 @@ include 'class/Fuctions.php'; ?>
                                             <ul class="sub-menu">
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="conocenos/mensaje_del_gerente.php"><?php echo mo_get_data(1, 3); ?></a></li>
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="conocenos/mision_y_vision.php"><?php echo mo_get_data(1, 4); ?></a></li>
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="Conocenos/Valores.php"><?php echo mo_get_data(1, 5); ?></a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="conocenos/valores.php"><?php echo mo_get_data(1, 5); ?></a></li>
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="conocenos/equipo_de_trabajo.php"><?php echo mo_get_data(1, 6); ?></a></li>
                                             </ul>
                                         </li>
@@ -233,7 +234,7 @@ include 'class/Fuctions.php'; ?>
                                 <div class="img_wrapper"><a href="que_hacemos/unidad_gruas_y_proyectos.php" rel="bookmark" title="This is a image"><img src="userfiles/<?php echo mo_get_data(5,8); ?>" width="710" height="454" alt="This is a image" class="post_top_element thumb" /></a></div>
 
                             </div>
-                            <h3 class="post_item_title"><a href="que_hacemos/unidad_gruas_y_proyectos.php" rel="bookmark" title="This is a image"><?php echo mo_get_data(1, 8); ?></a></h3>
+                            <h3 class="post_item_title"><a href="que_hacemos/unidad_gruas_y_proyectos.php" rel="bookmark" title="This is a image"><br /><?php echo mo_get_data(1, 8); ?></a></h3>
 
                         </div>
 
@@ -270,7 +271,7 @@ include 'class/Fuctions.php'; ?>
                             </div>
 
 
-                            <h3 class="post_item_title"><a href="que_hacemos/unidad_servicio_tecnico.php" rel="bookmark" title="This is a image"><br /><?php echo mo_get_data(1, 11); ?> </a></h3>
+                            <h3 class="post_item_title"><a href="que_hacemos/unidad_servicio_tecnico.php" rel="bookmark" title="This is a image"><?php echo mo_get_data(1, 11); ?> </a></h3>
 
                         </div>
 
@@ -312,9 +313,9 @@ include 'class/Fuctions.php'; ?>
                                     <?php
                                     foreach (mo_get_proy(2) as $array) {
                                         ?>
-                                        <li> <a href="que_hacemos/ultimos_proyectos.php?cod=<?php echo $array[0]; ?>" title="Praesent Et Urna Turpis Sadips" class="small_thumb"><img src="userfiles/<?php echo $array[3]; ?>" width="100" height="100" alt="Praesent Et Urna Turpis Sadips"></a>
-                                            <a href="que_hacemos/ultimos_proyectos.php?cod=<?php echo $array[0]; ?>" title="Praesent Et Urna Turpis Sadips" class="title"><?php echo $array[1]; ?></a>
-                                            <?php echo $array[2] ?>
+                                        <li> <a href="que_hacemos/proyecto.php?cod=<?php echo $array[0]; ?>" title="Praesent Et Urna Turpis Sadips" class="small_thumb"><img src="userfiles/<?php echo $array[3]; ?>" width="100" height="100" alt="Praesent Et Urna Turpis Sadips"></a>
+                                            <a href="que_hacemos/proyecto.php?cod=<?php echo $array[0]; ?>" title="Praesent Et Urna Turpis Sadips" class="title"><?php echo $array[1]; ?></a>
+                                            <?php echo substr($array[2], 0, 130)."...."; ?>
                                             <div class="clear"></div>
                                         </li>
                                         <?php
@@ -329,7 +330,7 @@ include 'class/Fuctions.php'; ?>
                                         ?>
                                         <li> <a href="media/noticia.php?cod=<?php echo $array[0]; ?>" title="Praesent Et Urna Turpis Sadips" class="small_thumb"><img src="userfiles/<?php echo $array[3]; ?>" width="100" height="100" alt="Praesent Et Urna Turpis Sadips"></a>
                                             <a href="media/noticia.php?cod=<?php echo $array[0]; ?>" title="Praesent Et Urna Turpis Sadips" class="title"><?php echo $array[1]; ?></a>
-                                            <?php echo $array[2] ?>
+                                            <?php echo substr($array[2], 0, 130)."...."; ?>
                                             <div class="clear"></div>
                                         </li>
                                         <?php
@@ -339,7 +340,17 @@ include 'class/Fuctions.php'; ?>
                             </div>
                             <div id="post_tab3" class="tab_content recent_posts">
                                 <ul>
-                                    <li> <a href="" title="Praesent Et Urna Turpis Sadips" class="small_thumb"><img src="images/icono.png" width="100" height="100" alt="Praesent Et Urna Turpis Sadips"></a><a href="" title="Praesent Et Urna Turpis Sadips" class="title">Praesent Et Urna Turpis Sadips</a>QuisQue ligulas ipsum, euismod atras vulputate iltricies etri<div class="clear"></div></li>
+                                    <?php
+                                    foreach (mo_get_proy(4) as $array) {
+                                        ?>
+                                        <li> <a href="media/noticia.php?cod=<?php echo $array[0]; ?>" title="Praesent Et Urna Turpis Sadips" class="small_thumb"><img src="userfiles/<?php echo $array[3]; ?>" width="100" height="100" alt="Praesent Et Urna Turpis Sadips"></a>
+                                            <a href="media/noticia.php?cod=<?php echo $array[0]; ?>" title="Praesent Et Urna Turpis Sadips" class="title"><?php echo $array[1]; ?></a>
+                                            <?php echo substr($array[2], 0, 130)."...."; ?>
+                                            <div class="clear"></div>
+                                        </li>
+                                        <?php
+                                    }
+                                    ?>
                                 </ul>
                             </div>  
 

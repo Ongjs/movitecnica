@@ -31,7 +31,7 @@ include '../class/Fuctions.php';
                 <div class="container">
                     <div class="row">
                         <div style="text-align: right; margin-right: 3%; color: #FFF; font-weight: bold; font-size: 10px;">
-                            <span style="margin-left: 15px; margin-right: 15px;"><a href="../Contactenos.php">Contáctenos</a></span> <span>|</span> <span style="margin-left: 15px; margin-right: 12px;">Siguenos</span> <img class="movirs" src="../images/facebook.png">
+                            <span style="margin-left: 15px; margin-right: 15px;"><a href="../contactenos.php">Contáctenos</a></span> <span>|</span> <span style="margin-left: 15px; margin-right: 12px;">Siguenos</span> <img class="movirs" src="../images/facebook.png">
                             <img class="movirs" src="../images/flickr.png">
                         </div>
                         <div class="twelve columns">
@@ -48,7 +48,7 @@ include '../class/Fuctions.php';
                                     <ul class="sub-menu">
                                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../conocenos/mensaje_del_gerente.php"><?php echo mo_get_data(1, 3); ?></a></li>
                                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../conocenos/mision_y_vision.php"><?php echo mo_get_data(1, 4); ?></a></li>
-                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../Conocenos/Valores.php"><?php echo mo_get_data(1, 5); ?></a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../conocenos/valores.php"><?php echo mo_get_data(1, 5); ?></a></li>
                                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../conocenos/equipo_de_trabajo.php"><?php echo mo_get_data(1, 6); ?></a></li>
                                     </ul>
                                 </li>
@@ -105,7 +105,7 @@ include '../class/Fuctions.php';
         <div class="container">	
             <div id="post_grids" class="row" style=" margin-top: -20px;">
                 <div style="margin-left: 20px;">
-                    <span> <a href="../index.php"><?php echo mo_get_data(1, 1); ?></a> > <a href="Conocenos.php"><?php echo mo_get_data(1, 2); ?></a> > <?php echo mo_get_data(1, 6); ?></span>
+                    <span> <a href="../index.php"><?php echo mo_get_data(1, 1); ?></a> > <a href="conocenos.php"><?php echo mo_get_data(1, 2); ?></a> > <?php echo mo_get_data(1, 6); ?></span>
                     <br />
                     <br />
                     <h1><b><?php echo mo_get_data(1, 6); ?></b></h1>
@@ -121,13 +121,13 @@ include '../class/Fuctions.php';
                             ?>
                             <div class="equipo_borde">
                                 <div class="equipo_image">
-                                    <a href="Trabajador.php?cod=<?php echo $el[0]; ?>"><img src="../userfiles/<?php echo $el[2]; ?>" style="min-width: 180px; height: 190px; width: 190px;"></a>
+                                    <a href="trabajador.php?cod=<?php echo $el[0]; ?>"><img src="../userfiles/<?php echo $el[2]; ?>" style="min-width: 180px; height: 190px; width: 190px;"></a>
                                 </div>
                                 <div class="equipo_text">
-                                    <a href="Trabajador.php?cod=<?php echo $el[0]; ?>" ><h3><?php echo $el[1]; ?></h3></a>
-                                    <div style="margin-top: -12px; margin-bottom: 15px;"><h6><a href="Trabajador.php?cod=<?php echo $el[0]; ?>"><?php echo $el[6]; ?></a></h6></div>
+                                    <a href="trabajador.php?cod=<?php echo $el[0]; ?>" ><h3><?php echo $el[1]; ?></h3></a>
+                                    <div style="margin-top: -12px; margin-bottom: 15px;"><h6><a href="trabajador.php?cod=<?php echo $el[0]; ?>"><?php echo $el[6]; ?></a></h6></div>
                                     <span><?php echo $el[4]; ?></span><br />                            
-                                    <div style="margin-top: 15px;"><a href="Trabajador.php?cod=<?php echo $el[0]; ?>">Ver más</a></div>
+                                    <div style="margin-top: 15px;"><a href="trabajador.php?cod=<?php echo $el[0]; ?>">Ver más</a></div>
                                 </div>
                             </div>
                             <br />
@@ -171,7 +171,7 @@ include '../class/Fuctions.php';
                                     <ul>
                                         <li> 
                                             <div style="border-top: 1px solid #D7D7D7; padding-top: 10px;">
-                                                <div style="width: 100%; margin-bottom: 10px;"> <h3 style="display: inline-block; vertical-align: top; margin-top: 10px;"> <b><a href="../Contactenos.php">Contáctenos</a></b> </h3><div style="display: inline-block; margin-left: 8px;"><img src="../images/logo_solo.png" style="width: 38px"></div></div>
+                                                <div style="width: 100%; margin-bottom: 10px;"> <h3 style="display: inline-block; vertical-align: top; margin-top: 10px;"> <b><a href="../contactenos.php">Contáctenos</a></b> </h3><div style="display: inline-block; margin-left: 8px;"><img src="../images/logo_solo.png" style="width: 38px"></div></div>
                                                 <span>Póngase en contacto con nuestro expertos, para averiguar cómo podemos ayudarle a usted y a su empresa con su proyecto</span>
                                             </div><br />
                                             <div style="border-top: 1px solid #D7D7D7">
