@@ -26,8 +26,8 @@ $(document).ready(function() {
     $(document).on("submit","form#update", function() {
         $("#img_file").val($("#image").val()); 
         tinyMCE.triggerSave();
-        if (!required('#name', 'You must enter a Name')) return false;
-        if (!required('#tinymce', 'You must enter a Content')) return false;
+        if (!required('#name', 'Debe ingresar un nombre.')) return false;
+        if (!required('#tinymce', 'Debe ingresar un contenido.')) return false;
         mo_submit(mod, 5);
         return false;
     });

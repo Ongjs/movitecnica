@@ -21,6 +21,9 @@
         <link rel='stylesheet' id='fancybox-css'  href='js/fancybox/jquery.fancybox-1.3.49d52.css?ver=3.5.1' type='text/css' media='all' />
         <link rel='stylesheet' id='skin'  href='css/skin1.css' type='text/css' media='all' />
 
+        <link rel='stylesheet' id='demo-style'  href='_switcher/style.css' type='text/css' media='all' />
+        <link rel='stylesheet' id='demo-minicolor'  href='_switcher/miniColors/jquery.miniColors.css' type='text/css' media='all' />
+
         <script type='text/javascript' src='js/jquery.js'></script>
         <script type='text/javascript' src='js/custom.js'></script>
         <style>
@@ -220,8 +223,8 @@
         </div> <!--.top_wrapper -->	
 
         <div class="container">	
-            <div id="post_grids" class="row">
-                <div style="width: 640px" class="uni_response">
+            <div class="row">
+                <div id="post_grids" style="width: 640px; display: inline-block;" class="uni_response">
                     <div class="six columns post_col masonry-brick">
 
                         <div class="post-973 post type-post status-publish format-standard hentry category-uncategorized post_item white_box">
@@ -234,7 +237,7 @@
                                 <div class="img_wrapper"><a href="que_hacemos/unidad_gruas_y_proyectos.php" rel="bookmark" title="This is a image"><img src="userfiles/<?php echo mo_get_data(5,8); ?>" width="710" height="454" alt="This is a image" class="post_top_element thumb" /></a></div>
 
                             </div>
-                            <h3 class="post_item_title"><a href="que_hacemos/unidad_gruas_y_proyectos.php" rel="bookmark" title="This is a image"><br /><?php echo mo_get_data(1, 8); ?></a></h3>
+                            <h3 class="post_item_title"><a href="que_hacemos/unidad_gruas_y_proyectos.php" rel="bookmark" title="This is a image"><?php echo mo_get_data(1, 8); ?></a></h3>
 
                         </div>
 
@@ -291,7 +294,7 @@
                             </div>
 
 
-                            <h3 class="post_item_title"><a href="que_hacemos/unidad_comercial.php" rel="bookmark" title="This is a image"><br /><?php echo mo_get_data(1, 12); ?></a></h3>
+                            <h3 class="post_item_title"><a href="que_hacemos/unidad_comercial.php" rel="bookmark" title="This is a image"><?php echo mo_get_data(1, 12); ?></a></h3>
 
                         </div>
 
@@ -464,8 +467,7 @@
                             finishedMsg: 'No more pages to load.',
                             img: 'http://i.imgur.com/6RMhx.gif'
                         }
-                    })
-                    ,
+                    });
                 });
             </script>
 
@@ -489,9 +491,6 @@
             </div><!-- .container -->	
         </div>
         <!-- #footer -->
-
-        <link rel='stylesheet' id='demo-style'  href='_switcher/style.css' type='text/css' media='all' />
-        <link rel='stylesheet' id='demo-minicolor'  href='_switcher/miniColors/jquery.miniColors.css' type='text/css' media='all' />
 
         <script type="text/javascript">
             var template = 'index.php';
