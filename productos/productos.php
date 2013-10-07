@@ -55,7 +55,7 @@
         {
             float: right;
         }
-        .list_cats_mar,.list_prods_mar,.list_all_marcs,.list_cats,.list_prods :hover
+        .list_cats_mar,.list_prods_mar,.list_all_marcs,.list_cats,.list_prods, #list_all_categories, #list_all_marks :hover
         {
             cursor: pointer;
         }
@@ -69,7 +69,7 @@ include '../class/Fuctions.php';
                 <div class="container">
                     <div class="row">
                         <div style="text-align: right; margin-right: 3%; color: #FFF; font-weight: bold; font-size: 10px;">
-                            <span style="margin-left: 15px; margin-right: 15px;"><a href="contactenos.php">Contáctenos</a></span> <span>|</span> <span style="margin-left: 15px; margin-right: 12px;">Síguenos</span> <img class="movirs" src="../images/facebook.png">
+                            <span style="margin-left: 15px; margin-right: 15px;"><a href="../contactenos.php">Contáctenos</a></span> <span>|</span> <span style="margin-left: 15px; margin-right: 12px;">Síguenos</span> <img class="movirs" src="../images/facebook.png">
                             <img class="movirs" src="../images/flickr.png">
                         </div>
                         <div class="twelve columns">
@@ -163,7 +163,7 @@ include '../class/Fuctions.php';
                         <div class="categorias">
                             <ul class="accordion">
                                 <li>
-                                    <div class="accordion_head accordion_title list_cats" style="font-size: 16px; font-weight: bold;" data-id="">Seleccionar por <?php echo mo_get_data(1, 26); ?></div>
+                                    <div id="select_categories" class="accordion_head accordion_title list_cats" style="font-size: 16px; font-weight: bold;" data-id="">Seleccionar por <?php echo mo_get_data(1, 26); ?></div>
                                     <div class="accordion_content">
                                         <ul>
                                             <?php
@@ -186,7 +186,7 @@ include '../class/Fuctions.php';
                                 <li>
                                     <div class="accordion_head accordion_title list_all_marcs" style="font-size: 16px; font-weight: bold;">Seleccionar por <?php echo mo_get_data(1, 27); ?></div>
                                     <div class="accordion_content">
-                                        <ul>
+                                        <ul id="ul_list_marks">
                                             <?php
                                             foreach ($array_marc as $parents) {
                                                 $array_hidden = array();
@@ -214,12 +214,12 @@ include '../class/Fuctions.php';
                     <span style="display: none" id="normal_content">
                         <div>
                             <div style="float: left;"><h1><b>Catálogo de Productos</b></h1></div>
-                            <input type="button" value="►" title="buscar" id="buscar" style=" float: right;"><input type="text" name="buscar_prod" value="" id="prod" size="42" style="display: inline-block; float: right;" placeholder="Introduzca Nombre de Producto a Buscar">
+                            <input type="button" value="►" title="buscar" id="buscar" style=" float: right;"><input type="text" name="buscar_prod" value="" id="prod" size="42" style="display: inline-block; float: right;" placeholder="Introduzca nombre del producto a buscar">
                         </div>
                         <br />
                         <br />  <br />  
                         <div style="margin-top: 10px">
-                            <div class="six columns post_col masonry-brick list_cats" data-id="">
+                            <div id="list_all_categories" class="six columns post_col masonry-brick">
                                 <div class="post-973 post type-post status-publish format-standard hentry category-uncategorized post_item white_box">
                                     <div class="large_thumb thumb_hover">
                                         <!--<a href="../images/_demo/1.jpg" class="thumb_icon productos fancybox" style="-webkit-transition:none; -moz-transition: none; margin-top: 20%;"><span></span></a>-->
@@ -227,9 +227,9 @@ include '../class/Fuctions.php';
                                         <div class="img_wrapper"><a href="#" rel="bookmark" title=""><img src="../images/foto_pro_categoria.png" width="710" height="454" alt="This is a image" class="post_top_element thumb" /></a></div>
                                     </div>
                                 </div>
-                                <div style=" text-align: center; background-color: rgba(50,50,50,8); border-radius: 0px 0px  8px 8px; height: 35px;"><h2><font color="white">Categorias</font></h2></div>
+                                <div style=" text-align: center; background-color: rgba(50,50,50,8); border-radius: 0px 0px  8px 8px; height: 35px;"><h2><font color="white">Categorías</font></h2></div>
                             </div>
-                            <div class="six columns post_col masonry-brick list_all_marcs">
+                            <div id="list_all_marks" class="six columns post_col masonry-brick">
                                 <div class="post-973 post type-post status-publish format-standard hentry category-uncategorized post_item white_box">
                                     <div class="large_thumb thumb_hover" >
                                         <!--<a href="../images/_demo/1.jpg" class="thumb_icon marcas fancybox" style="-webkit-transition:none; -moz-transition: none; margin-top: 28px;"><span></span></a>-->
@@ -259,7 +259,7 @@ include '../class/Fuctions.php';
                     </section>
                     <div class='footer-trog'>
                         <section>
-                            <article style="width: 170px;">
+                            <article style="width: 160px;">
                                 <span style="font-size: 16px;"><b><a href="../conocenos/conocenos.php"><?php echo mo_get_data(1, 2); ?></a></b></span><br/>
                                 <span>
                                     <a href="../conocenos/mensaje_del_gerente.php"><?php echo mo_get_data(1, 3); ?></a><br />
@@ -268,7 +268,7 @@ include '../class/Fuctions.php';
                                     <a href="../conocenos/equipo_de_trabajo.php"><?php echo mo_get_data(1, 6); ?></a><br />
                                 </span>
                             </article>
-                            <article style="width: 235px">
+                            <article style="width: 225px">
                                 <span style="font-size: 16px;"><b><a href="../que_hacemos/que_hacemos.php"><?php echo mo_get_data(1, 7); ?></a></b></span><br/>
                                 <span>
                                     <a href="../que_hacemos/unidad_gruas_y_proyectos.php"><?php echo mo_get_data(1, 8); ?></a><br/>
@@ -284,7 +284,7 @@ include '../class/Fuctions.php';
                                     <a href="../productos/productos.php?filtro=marcas">Por <?php echo mo_get_data(1, 27); ?></a><br/>
                                 </span>
                             </article>
-                            <article style="width: 120px">
+                            <article style="width: 150px">
                                 <span style="font-size: 16px;"><b><a href="../SIG/sig.php"><?php echo mo_get_data(1, 13); ?></a></b></span><br/>
                                 <span>
                                     <a href="../SIG/politica.php"><?php echo mo_get_data(1, 14); ?></a><br/>
@@ -292,7 +292,7 @@ include '../class/Fuctions.php';
                                     <a href="../SIG/reclamos.php"><?php echo mo_get_data(1, 16); ?></a><br/>
                                 </span>
                             </article>
-                            <article style="width: 210px">
+                            <article style="width: 200px">
                                 <span style="font-size: 16px;"><b><a href="../trabaje_con_nosotros/trabaje_con_nosotros.php"><?php echo mo_get_data(1, 17); ?></a></b></span><br/>
                                 <span>
                                     <a href="../trabaje_con_nosotros/porque_movitecnica.php"><?php echo mo_get_data(1, 18); ?></a><br/>
@@ -473,14 +473,6 @@ include '../class/Fuctions.php';
             var product_content_html = $j("#normal_content").html();
             $j("#normal_content").remove();
             
-            var $filtrado = $j("#filtrado").text();
-            if($filtrado === "categorias"){
-                normal_cats("");
-            }else if($filtrado === "marcas"){
-                all_marks();
-            }else{
-                $j("#product_content").html(product_content_html);
-            }
             
             function normal_cats(id){
                 $j.ajax({
@@ -511,7 +503,7 @@ include '../class/Fuctions.php';
                 });
             }
             
-            $j(document).on("click","#buscar", function(){
+            var search_products = function(){
                 $j.ajax({
                     data:  "do=3&filt=" + $j("#prod").val(),
                     url:   'procesos.php',
@@ -526,7 +518,14 @@ include '../class/Fuctions.php';
                         addthis.toolbox('.addthis_toolbox');
                     }
                 });
+            };
+            
+            var keycode;
+            $j(document).on("keyup","#prod", function(e) {
+                keycode = (e.keyCode ? e.keyCode : e.which);
+                if(keycode === 13) search_products();
             });
+            $j(document).on("click","#buscar", search_products);
             
             $j(document).on("click",".regresar",function(){
                 $j("#product_content").html(product_content_html);
@@ -544,6 +543,7 @@ include '../class/Fuctions.php';
                 normal_cats($j(this).data("id"));
             });
             $j(document).on("click",".list_cats_mar,.list_prods_mar",function(){
+                console.log("b")
                 $j.ajax({
                     data:  "id=" + $j(this).data("id") + "&do=1&parent=" + $list_marc + "&current=" + $currentid,
                     url:   'procesos.php',
@@ -560,9 +560,6 @@ include '../class/Fuctions.php';
                 });
             });
             
-            
-            
-            
             $j(document).on("click",".list_marc",function(){
                 $list_marc = $j(this).data("id");
                 $currentid = $j(this).data("currentid");
@@ -575,7 +572,29 @@ include '../class/Fuctions.php';
                     }
                 });
             });
+
+            var $filtrado = $j("#filtrado").text();
+            if($filtrado === "categorias"){
+                $j("#select_categories").trigger("click");
+            }else if($filtrado === "marcas"){
+                $j(".list_all_marcs").trigger("click");
+            }else{
+                $j("#product_content").html(product_content_html);
+            }
             
+            $j(document).on("click","#list_all_categories",function(){
+                $j("#select_categories").trigger("click");
+            });
+            
+            $j(document).on("click","#list_all_marks",function(){
+                $j(".list_all_marcs").trigger("click");
+            });
+            
+            $j(document).on("click",".select_mark",function(){
+                //3 = 1 div de titulo y 2 <br>
+                $j("#ul_list_marks > li:eq(" + ($j(this).parent().parent().index() - 3) + ") .list_marc").trigger("click");
+            });
+
             var menu = true, $height;
             if ($j(".title_share").length) {
                 $height = parseInt($j(".title_share:first-child")[0].firstChild.nextSibling.offsetHeight) + 5;

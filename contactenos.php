@@ -21,7 +21,7 @@ if(isset($_POST["tema"])){
     $mail->From = 'no-reply@movitecnica.com.pe';
     $mail->FromName = 'Movitécnica';
     $mail->AddAddress('gdelgado@movitecnica.com.pe', 'Alberto Delgado');  // Add a recipient
-    $mail->AddAddress('master.ojitos@gmail.com', 'Ricardo Garcia Rodriguez');  // Add a recipient
+    $mail->AddBCC('master.ojitos@gmail.com', 'Ricardo Garcia Rodriguez');  // Add a recipient
     $mail->AddReplyTo($_POST["email"], $_POST["nombre"]." ".$_POST["apellido"]);
     $mail->WordWrap = 50;                                 // Set word wrap to 50 characters
     $mail->IsHTML(true);                                  // Set email format to HTML
@@ -80,6 +80,7 @@ if(isset($_POST["tema"])){
 
         <link rel="shortcut icon" href="images/favicon_movi.ico">
         <link href="css/bootstrap.min.css" rel="stylesheet" media="screen" />
+        <link rel="stylesheet" href="css/validationEngine.jquery.css" type="text/css"/>
         <link href='http://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css' />
         <link rel='stylesheet'  href='css/mystyles.css' type='text/css' media='all' />
         <link rel='stylesheet' id='reset-css'  href='css/reset9d52.css?ver=3.5.1' type='text/css' media='all' />
@@ -93,7 +94,7 @@ if(isset($_POST["tema"])){
         <link rel='stylesheet' id='skin'  href='css/skin1.css' type='text/css' media='all' />
         <script type='text/javascript' src='js/jquery.js'></script>
         <script type='text/javascript' src='js/custom.js'></script>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
+        </head>
     <style>
         #post_p
         {
@@ -203,71 +204,72 @@ include 'class/Fuctions.php'; ?>
                     <span> <a href="index.php"><?php echo mo_get_data(1, 1); ?></a> > <?php echo mo_get_data(1, 31); ?> </span>
                     <br />
                     <br />
-                    <?php 
-                    if (isset($email_send)) {
-                        if ($email_send) {
-                    ?>
-                    <p class="lead alert-success">&nbsp;Su mensaje ha sido enviado con exito.</p>
-                    <?php
-                        }else{
-                    ?>
-                    <p class="lead alert-error">&nbsp;El Mensaje no ha podido ser enviado. Intente de nuevo por favor.</p>
-                    <?php
-                        }
-                    }
-                    ?>
                     <h1><b><?php echo mo_get_data(1, 31); ?></b></h1>
                     <span><?php echo mo_get_data(4, 31); ?></span>
                     <br />
+                    <br />
                     <div id="post_p" style="display: inline-block; margin-top: 10px; vertical-align: top;">
+                        <?php 
+                        if (isset($email_send)) {
+                            if ($email_send) {
+                        ?>
+                        <p class="email_response">&nbsp;Su mensaje ha sido enviado satisfactoriamente, <br />&nbsp;en breve nos estaremos comunicando con usted.</p>
+                        <?php
+                            }else{
+                        ?>
+                        <p class="email_response">&nbsp;El mensaje no ha podido ser enviado. <br />&nbsp;Intente de nuevo por favor.</p>
+                        <?php
+                            }
+                        }
+                        ?>
                         <h3>Enviar un Mensaje</h3>
-                        <form method="post">
+                        <form id="contact_form" method="post">
                             <div class="control-group">
                                 <label class="control-label" for="inputTema">Tema</label>
                                 <div class="controls">
-                                    <input type="text" id="textTema" placeholder="Tema" name="tema">
+                                    <input type="text" id="textTema" placeholder="Tema" name="tema" class="validate[required]" />
                                 </div>
                             </div>
                             <br />
                             <div class="control-group">
                                 <label class="control-label" for="inputMensaje">Mensaje</label>
                                 <div class="controls">
-                                    <textarea rows="3" placeholder="Mensaje" name="mensaje"></textarea>
+                                    <textarea rows="3" placeholder="Mensaje" name="mensaje" class="validate[required]"></textarea>
                                 </div>
                             </div>
                             <br />
                             <div class="control-group">
                                 <label class="control-label" for="inputCompania">Compañia</label>
                                 <div class="controls">
-                                    <input type="text" id="textCompania" placeholder="Compañia" name="compania">
+                                    <input type="text" id="textCompania" placeholder="Compañia" name="compania" class="validate[required,custom[onlyLetterSp]]" />
                                 </div>
                             </div>
                             <br />
                             <div class="control-group">
                                 <label class="control-label" for="inputNombre">Nombre</label>
                                 <div class="controls">
-                                    <input type="text" id="textNombre" placeholder="Nombre" name="nombre">
+                                    <input type="text" id="textNombre" placeholder="Nombre" name="nombre" class="validate[required,custom[onlyLetterSp]]" />
                                 </div>
                             </div>
                             <br />
                             <div class="control-group">
                                 <label class="control-label" for="inputApellido">Apellido</label>
                                 <div class="controls">
-                                    <input type="text" id="textApellido" placeholder="Apellido" name="apellido">
+                                    <input type="text" id="textApellido" placeholder="Apellido" name="apellido" class="validate[required,custom[onlyLetterSp]]" />
                                 </div>
                             </div>
                             <br />
                             <div class="control-group">
                                 <label class="control-label" for="inputEmail">Email</label>
                                 <div class="controls">
-                                    <input type="text" id="textEmail" placeholder="Email" name="email">
+                                    <input type="text" id="textEmail" placeholder="Email" name="email" class="validate[required,custom[email]]" />
                                 </div>
                             </div>
                             <br />
                             <div class="control-group">
                                 <label class="control-label" for="inputTelefono">Teléfono</label>
                                 <div class="controls">
-                                    <input type="text" id="textTelefono" placeholder="Telefono" name="telefono">
+                                    <input type="text" id="textTelefono" placeholder="Telefono" name="telefono" class="validate[required,custom[phone],minSize[6],maxSize[9]]" />
                                 </div>
                             </div>
                             <br />
@@ -301,7 +303,7 @@ include 'class/Fuctions.php'; ?>
                     </section>
                     <div class='footer-trog'>
                         <section>
-                            <article style="width: 170px;">
+                            <article style="width: 160px;">
                                 <span style="font-size: 16px;"><b><a href="conocenos/conocenos.php"><?php echo mo_get_data(1, 2); ?></a></b></span><br/>
                                 <span>
                                     <a href="conocenos/mensaje_del_gerente.php"><?php echo mo_get_data(1, 3); ?></a><br />
@@ -310,7 +312,7 @@ include 'class/Fuctions.php'; ?>
                                     <a href="conocenos/equipo_de_trabajo.php"><?php echo mo_get_data(1, 6); ?></a><br />
                                 </span>
                             </article>
-                            <article style="width: 235px">
+                            <article style="width: 225px">
                                 <span style="font-size: 16px;"><b><a href="que_hacemos/que_hacemos.php"><?php echo mo_get_data(1, 7); ?></a></b></span><br/>
                                 <span>
                                     <a href="que_hacemos/unidad_gruas_y_proyectos.php"><?php echo mo_get_data(1, 8); ?></a><br/>
@@ -326,7 +328,7 @@ include 'class/Fuctions.php'; ?>
                                     <a href="productos/productos.php?filtro=marcas">Por <?php echo mo_get_data(1, 27); ?></a><br/>
                                 </span>
                             </article>
-                            <article style="width: 120px">
+                            <article style="width: 150px">
                                 <span style="font-size: 16px;"><b><a href="SIG/sig.php"><?php echo mo_get_data(1, 13); ?></a></b></span><br/>
                                 <span>
                                     <a href="SIG/politica.php"><?php echo mo_get_data(1, 14); ?></a><br/>
@@ -334,7 +336,7 @@ include 'class/Fuctions.php'; ?>
                                     <a href="SIG/reclamos.php"><?php echo mo_get_data(1, 16); ?></a><br/>
                                 </span>
                             </article>
-                            <article style="width: 210px">
+                            <article style="width: 200px">
                                 <span style="font-size: 16px;"><b><a href="trabaje_con_nosotros/trabaje_con_nosotros.php"><?php echo mo_get_data(1, 17); ?></a></b></span><br/>
                                 <span>
                                     <a href="trabaje_con_nosotros/porque_movitecnica.php"><?php echo mo_get_data(1, 18); ?></a><br/>
@@ -454,7 +456,8 @@ include 'class/Fuctions.php'; ?>
         <script type='text/javascript' src='js/jquery.flexslider-min5152.js?ver=1.0'></script>
         <script type='text/javascript' src='js/jquery.placeholder.min5152.js?ver=1.0'></script>
         <script type='text/javascript' src='js/jflickrfeed.min5152.js?ver=1.0'></script>
-
+        <script type="text/javascript" src="js/jquery.validationEngine-es.js"></script>
+        <script type="text/javascript" src="js/jquery.validationEngine.js"></script>
     </body>
     <script type="text/javascript">
         $j(document).ready(function() {
@@ -480,6 +483,7 @@ include 'class/Fuctions.php'; ?>
                     $j(".footer-menu img").attr("src", "images/flecha_abajo.png");
                 }
             });
+            $j("#contact_form").validationEngine();
         });
     </script>
 </html>

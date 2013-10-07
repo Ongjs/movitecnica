@@ -91,7 +91,7 @@ foreach ($content as $val){
     ?>
     <div style="width: 240px; float: left; text-align: center; height: 150px">
         <div class='marca' style="cursor : pointer">
-            <div class="list_marc" data-id="<?php echo $val[0]; ?>" data-currentid="<?php echo $val[3]; ?>">
+            <div class="select_mark">
                 <img src="../userfiles/<?php echo $val[2]; ?>">
             </div>
         </div>
@@ -171,7 +171,7 @@ if(!in_array($val[0], $hidden)){
                 </div>
             </div>
             <div class="ficha_tecnica" style="margin-top: 10px;">
-                <?php if ($val[5] != "") { ?><a href="../userfiles/<?php echo $val[5]; ?>"><img src="../images/pdf.png"></a><?php } ?>
+                <?php if ($val[5] != "") { ?><a href="../userfiles/<?php echo $val[5]; ?>" target="_blank"><img src="../images/pdf.png"></a><?php } ?>
             </div>
         </div>
     <?php

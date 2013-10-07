@@ -147,7 +147,7 @@ include '../class/Fuctions.php'; ?>
                                 <div style="padding-bottom: 25px; margin-top: 10px;">
                                     <div style="width: 100%">
                                         <a href="noticia.php?cod=<?php echo $el[0]; ?>"><h3 style="margin: -2px;"><?php echo $el[1]; ?></h3></a>
-                                        <span>publicado en <?php echo substr($el[7], 0, strrpos($el[7], " ")); ?><br /><br /></span>
+                                        <span style="font-style: italic;">Publicado en <?php echo substr($el[7], 0, strrpos($el[7], " ")); ?></span><br /><br />
                                     </div>
                                     <div style="margin-top: -8px;">
                                         <div style="display: inline-block; vertical-align: top; width: 21%; width: 27%; margin-bottom: 15px; margin-right: 25px;">
@@ -221,7 +221,7 @@ include '../class/Fuctions.php'; ?>
                     </section>
                     <div class='footer-trog'>
                         <section>
-                            <article style="width: 170px;">
+                            <article style="width: 160px;">
                                 <span style="font-size: 16px;"><b><a href="../conocenos/conocenos.php"><?php echo mo_get_data(1, 2); ?></a></b></span><br/>
                                 <span>
                                     <a href="../conocenos/mensaje_del_gerente.php"><?php echo mo_get_data(1, 3); ?></a><br />
@@ -230,7 +230,7 @@ include '../class/Fuctions.php'; ?>
                                     <a href="../conocenos/equipo_de_trabajo.php"><?php echo mo_get_data(1, 6); ?></a><br />
                                 </span>
                             </article>
-                            <article style="width: 235px">
+                            <article style="width: 225px">
                                 <span style="font-size: 16px;"><b><a href="../que_hacemos/que_hacemos.php"><?php echo mo_get_data(1, 7); ?></a></b></span><br/>
                                 <span>
                                     <a href="../que_hacemos/unidad_gruas_y_proyectos.php"><?php echo mo_get_data(1, 8); ?></a><br/>
@@ -246,7 +246,7 @@ include '../class/Fuctions.php'; ?>
                                     <a href="../productos/productos.php?filtro=marcas">Por <?php echo mo_get_data(1, 27); ?></a><br/>
                                 </span>
                             </article>
-                            <article style="width: 120px">
+                            <article style="width: 150px">
                                 <span style="font-size: 16px;"><b><a href="../SIG/sig.php"><?php echo mo_get_data(1, 13); ?></a></b></span><br/>
                                 <span>
                                     <a href="../SIG/politica.php"><?php echo mo_get_data(1, 14); ?></a><br/>
@@ -254,7 +254,7 @@ include '../class/Fuctions.php'; ?>
                                     <a href="../SIG/reclamos.php"><?php echo mo_get_data(1, 16); ?></a><br/>
                                 </span>
                             </article>
-                            <article style="width: 210px">
+                            <article style="width: 200px">
                                 <span style="font-size: 16px;"><b><a href="../trabaje_con_nosotros/trabaje_con_nosotros.php"><?php echo mo_get_data(1, 17); ?></a></b></span><br/>
                                 <span>
                                     <a href="../trabaje_con_nosotros/porque_movitecnica.php"><?php echo mo_get_data(1, 18); ?></a><br/>

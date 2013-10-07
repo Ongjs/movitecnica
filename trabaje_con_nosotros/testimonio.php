@@ -166,52 +166,52 @@
                     </section>
                     <div class='footer-trog'>
                         <section>
-                            <article style="width: 170px;">
-                                <span style="font-size: 16px;"><b><a href="../conocenos/conocenos.php">Conócenos</a></b></span><br/>
+                            <article style="width: 160px;">
+                                <span style="font-size: 16px;"><b><a href="../conocenos/conocenos.php"><?php echo mo_get_data(1, 2); ?></a></b></span><br/>
                                 <span>
-                                    <a href="../conocenos/mensaje_del_gerente.php">Mensaje del Gerente</a><br />
-                                    <a href="../conocenos/mision_y_vision.php">Misión y Visión</a><br />
-                                    <a href="../conocenos/valores.php">Valores</a><br />
-                                    <a href="../conocenos/equipo_de_trabajo.php">Equipo de trabajo</a><br />
+                                    <a href="../conocenos/mensaje_del_gerente.php"><?php echo mo_get_data(1, 3); ?></a><br />
+                                    <a href="../conocenos/mision_y_vision.php"><?php echo mo_get_data(1, 4); ?></a><br />
+                                    <a href="../conocenos/valores.php"><?php echo mo_get_data(1, 5); ?></a><br />
+                                    <a href="../conocenos/equipo_de_trabajo.php"><?php echo mo_get_data(1, 6); ?></a><br />
                                 </span>
                             </article>
-                            <article style="width: 205px">
-                                <span style="font-size: 16px;"><b><a href="../que_hacemos/que_hacemos.php">Qué Hacemos</a></b></span><br/>
+                            <article style="width: 225px">
+                                <span style="font-size: 16px;"><b><a href="../que_hacemos/que_hacemos.php"><?php echo mo_get_data(1, 7); ?></a></b></span><br/>
                                 <span>
-                                    <a href="../que_hacemos/unidad_gruas_y_proyectos.php">Unid. Grúas y Proyectos</a><br/>
-                                    <a href="../que_hacemos/unidad_fajas_transportadoras.php">Unid. Fajas Transportadoras</a><br/>
-                                    <a href="../que_hacemos/unidad_servicio_tecnico.php">Unid. Servicio Técnico</a><br/>
-                                    <a href="../que_hacemos/unidad_comercial.php">Unid. Comercial</a><br/>
-                                </span>
-                            </article>
-                            <article style="width: 120px">
-                                <span style="font-size: 16px;"><b><a href="../productos/productos.php">Productos</a></b></span><br/>
-                                <span>
-                                    <a href="../productos/productos.php">Marca</a><br/>
-                                    <a href="../productos/productos.php">Categoría</a><br/>
+                                    <a href="../que_hacemos/unidad_gruas_y_proyectos.php"><?php echo mo_get_data(1, 8); ?></a><br/>
+                                    <a href="../que_hacemos/unidad_fajas_transportadoras.php"><?php echo mo_get_data(1, 9); ?></a><br/>
+                                    <a href="../que_hacemos/unidad_servicio_tecnico.php"><?php echo mo_get_data(1, 11); ?></a><br/>
+                                    <a href="../que_hacemos/unidad_comercial.php"><?php echo mo_get_data(1, 12); ?></a><br/>
                                 </span>
                             </article>
                             <article style="width: 120px">
-                                <span style="font-size: 16px;"><b><a href="../SIG/sig.php">SIG</a></b></span><br/>
+                                <span style="font-size: 16px;"><b><a href="../productos/productos.php"><?php echo mo_get_data(1, 25); ?></a></b></span><br/>
                                 <span>
-                                    <a href="../SIG/politica.php">Política</a><br/>
-                                    <a href="../SIG/garantia.php">Garantía</a><br/>
-                                    <a href="../SIG/reclamos.php">Reclamos</a><br/>
+                                    <a href="../productos/productos.php?filtro=categorias">Por <?php echo mo_get_data(1, 26); ?></a><br/>
+                                    <a href="../productos/productos.php?filtro=marcas">Por <?php echo mo_get_data(1, 27); ?></a><br/>
                                 </span>
                             </article>
-                            <article style="width: 210px">
-                                <span style="font-size: 16px;"><b><a href="../trabaje_con_nosotros/trabaje_con_nosotros.php">Trabaje con Nosotros</a></b></span><br/>
+                            <article style="width: 150px">
+                                <span style="font-size: 16px;"><b><a href="../SIG/sig.php"><?php echo mo_get_data(1, 13); ?></a></b></span><br/>
                                 <span>
-                                    <a href="../trabaje_con_nosotros/porque_movitecnica.php">Por qué Movitécnica</a><br/>
-                                    <a href="../trabaje_con_nosotros/testimonios.php">Testimonios</a><br/>
-                                    <a href="../trabaje_con_nosotros/oferta_de_trabajo.php">Ofertas de Trabajo</a><br/>
+                                    <a href="../SIG/politica.php"><?php echo mo_get_data(1, 14); ?></a><br/>
+                                    <a href="../SIG/garantia.php"><?php echo mo_get_data(1, 15); ?></a><br/>
+                                    <a href="../SIG/reclamos.php"><?php echo mo_get_data(1, 16); ?></a><br/>
                                 </span>
                             </article>
-                            <article style="width: 170px">
-                                <span style="font-size: 16px;"><b><a href="../media/media.php">Media</a></b></span><br/>
+                            <article style="width: 200px">
+                                <span style="font-size: 16px;"><b><a href="../trabaje_con_nosotros/trabaje_con_nosotros.php"><?php echo mo_get_data(1, 17); ?></a></b></span><br/>
                                 <span>
-                                    <a href="../media/media.php">Noticias</a><br/>
-                                    <a href="../media/media.php">Notas de Prensa</a><br/>
+                                    <a href="../trabaje_con_nosotros/porque_movitecnica.php"><?php echo mo_get_data(1, 18); ?></a><br/>
+                                    <a href="../trabaje_con_nosotros/testimonios.php"><?php echo mo_get_data(1, 21); ?></a><br/>
+                                    <a href="../trabaje_con_nosotros/oferta_de_trabajo.php"><?php echo mo_get_data(1, 19); ?></a><br/>
+                                </span>
+                            </article>
+                            <article style="width: 140px">
+                                <span style="font-size: 16px;"><b><a href="../media/media.php"><?php echo mo_get_data(1, 28); ?></a></b></span><br/>
+                                <span>
+                                    <a href="../media/media.php"><?php echo mo_get_data(1, 29); ?></a><br/>
+                                    <a href="../media/media.php"><?php echo mo_get_data(1, 30); ?></a><br/>
                                 </span>
                             </article>
 
@@ -219,8 +219,8 @@
                         <section style='margin-top: 15px;'>
                             <div class="footer-op">
                                 <span><img src="../images/sitemap.png">Sitemap</span>
-                                <span><a href="../contactenos.php"><img src="../images/contactenos.png">Contáctenos</a></span>
-                                <span><a href="../index.php"><img src="../images/home.png">Home</a></span>
+                                <span><a href="../contactenos.php"><img src="../images/contactenos.png"><?php echo mo_get_data(1, 31); ?></a></span>
+                                <span><a href="../index.php"><img src="../images/home.png"><?php echo mo_get_data(1, 1); ?></a></span>
                             </div>
                         </section>
                     </div>

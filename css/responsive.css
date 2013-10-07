@@ -3,7 +3,7 @@
 .row { max-width: 100%; margin: 0 auto; }
 .row .row { width: auto; max-width: none; min-width: 0; margin: 0 -15px; }
 
-.column, .columns { float: left; min-height: 1px; padding: 0 15px; position: relative; margin-bottom: 15px; }
+.column, .columns { float: left; min-height: 1px; padding: 0 5px; position: relative; margin-bottom: 15px; }
 .column.end, .columns.end { float:right;}
 
 .column.wrapper, .columns.wrapper{ margin-bottom:0; }

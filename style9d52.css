@@ -429,7 +429,7 @@ h3.heading_title{background: #eee url(images/g_light_top.png) repeat-x; margin:0
 
 .post_item_title { margin:0; }
 .post_item_title a {
-    background:rgba(10,38,54,1); color: #fff; padding:8px 20px; -webkit-transition: all .3s ease; display:block; border-top:3px solid #3498DB; text-align: center;
+    background:rgba(10,38,54,1); color: #fff; padding:8px; -webkit-transition: all .3s ease; display:block; border-top:3px solid #3498DB; text-align: center;
 }
 .post_item_title a:hover { background-color:#3498DB} 
 .post_item_inner { padding:20px; position:relative; }
@@ -1540,4 +1540,10 @@ blockquote.right{margin-left:20px;text-align:left;	margin-right:0;	width:33%; fl
 }
 .pagination li a {
     text-decoration : none;
+}
+
+.email_response {
+    background-color: #F5F5F5;
+    margin: -10px 0 10px;
+    width: 300px;
 }

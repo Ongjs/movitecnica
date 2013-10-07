@@ -316,8 +316,8 @@
                                     <?php
                                     foreach (mo_get_proy(2) as $array) {
                                         ?>
-                                        <li> <a href="que_hacemos/proyecto.php?cod=<?php echo $array[0]; ?>" title="Praesent Et Urna Turpis Sadips" class="small_thumb"><img src="userfiles/<?php echo $array[3]; ?>" width="100" height="100" alt="Praesent Et Urna Turpis Sadips"></a>
-                                            <a href="que_hacemos/proyecto.php?cod=<?php echo $array[0]; ?>" title="Praesent Et Urna Turpis Sadips" class="title"><?php echo $array[1]; ?></a>
+                                        <li> <a href="que_hacemos/proyecto.php?cod=<?php echo $array[0]; ?>" title="<?php echo $array[1]; ?>" class="small_thumb"><img src="userfiles/<?php echo $array[3]; ?>" width="100" height="100" alt=""></a>
+                                            <a href="que_hacemos/proyecto.php?cod=<?php echo $array[0]; ?>" title="<?php echo $array[1]; ?>" class="title"><?php echo $array[1]; ?></a>
                                             <?php echo substr($array[2], 0, 130)."...."; ?>
                                             <div class="clear"></div>
                                         </li>
@@ -331,8 +331,8 @@
                                     <?php
                                     foreach (mo_get_proy(5) as $array) {
                                         ?>
-                                        <li> <a href="media/noticia.php?cod=<?php echo $array[0]; ?>" title="Praesent Et Urna Turpis Sadips" class="small_thumb"><img src="userfiles/<?php echo $array[3]; ?>" width="100" height="100" alt="Praesent Et Urna Turpis Sadips"></a>
-                                            <a href="media/noticia.php?cod=<?php echo $array[0]; ?>" title="Praesent Et Urna Turpis Sadips" class="title"><?php echo $array[1]; ?></a>
+                                        <li> <a href="media/noticia.php?cod=<?php echo $array[0]; ?>" title="<?php echo $array[1]; ?>" class="small_thumb"><img src="userfiles/<?php echo $array[3]; ?>" width="100" height="100" alt=""></a>
+                                            <a href="media/noticia.php?cod=<?php echo $array[0]; ?>" title="<?php echo $array[1]; ?>" class="title"><?php echo $array[1]; ?></a>
                                             <?php echo substr($array[2], 0, 130)."...."; ?>
                                             <div class="clear"></div>
                                         </li>
@@ -343,17 +343,11 @@
                             </div>
                             <div id="post_tab3" class="tab_content recent_posts">
                                 <ul>
-                                    <?php
-                                    foreach (mo_get_proy(4) as $array) {
-                                        ?>
-                                        <li> <a href="que_hacemos/ultimos_proyectos.php" title="Praesent Et Urna Turpis Sadips" class="small_thumb"><img src="userfiles/ultimos_pro.png" width="100" height="100" alt="Praesent Et Urna Turpis Sadips"></a>
-                                            <a href="que_hacemos/ultimos_proyectos.php" title="Praesent Et Urna Turpis Sadips" class="title"><?php echo $array[1]; ?></a>
-                                            <?php echo substr($array[2], 0, 130)."...."; ?>
-                                            <div class="clear"></div>
-                                        </li>
-                                        <?php
-                                    }
-                                    ?>
+                                    <li> <a href="que_hacemos/ultimos_proyectos.php" title="Trabaje con Nosotros" class="small_thumb"><img src="userfiles/ultimos_pro.png" width="100" height="100" alt=""></a>
+                                        <a href="que_hacemos/ultimos_proyectos.php" title="Postula ahora" class="title">Postula ahora</a>
+                                        Queremos que seas parte de nuestro equipo, teniendo la posibilidad de escoger el puesto que mejor se acomode a tu perfil y así poder aportar y crecer profesionalmente con nosotros.
+                                        <div class="clear"></div>
+                                    </li>
                                 </ul>
                             </div>  
 
@@ -371,7 +365,7 @@
                     </section>
                     <div class='footer-trog'>
                         <section>
-                            <article style="width: 170px;">
+                            <article style="width: 160px;">
                                 <span style="font-size: 16px;"><b><a href="conocenos/conocenos.php"><?php echo mo_get_data(1, 2); ?></a></b></span><br/>
                                 <span>
                                     <a href="conocenos/mensaje_del_gerente.php"><?php echo mo_get_data(1, 3); ?></a><br />
@@ -380,7 +374,7 @@
                                     <a href="conocenos/equipo_de_trabajo.php"><?php echo mo_get_data(1, 6); ?></a><br />
                                 </span>
                             </article>
-                            <article style="width: 235px">
+                            <article style="width: 225px">
                                 <span style="font-size: 16px;"><b><a href="que_hacemos/que_hacemos.php"><?php echo mo_get_data(1, 7); ?></a></b></span><br/>
                                 <span>
                                     <a href="que_hacemos/unidad_gruas_y_proyectos.php"><?php echo mo_get_data(1, 8); ?></a><br/>
@@ -396,7 +390,7 @@
                                     <a href="productos/productos.php?filtro=marcas">Por <?php echo mo_get_data(1, 27); ?></a><br/>
                                 </span>
                             </article>
-                            <article style="width: 120px">
+                            <article style="width: 150px">
                                 <span style="font-size: 16px;"><b><a href="SIG/sig.php"><?php echo mo_get_data(1, 13); ?></a></b></span><br/>
                                 <span>
                                     <a href="SIG/politica.php"><?php echo mo_get_data(1, 14); ?></a><br/>
@@ -404,7 +398,7 @@
                                     <a href="SIG/reclamos.php"><?php echo mo_get_data(1, 16); ?></a><br/>
                                 </span>
                             </article>
-                            <article style="width: 210px">
+                            <article style="width: 200px">
                                 <span style="font-size: 16px;"><b><a href="trabaje_con_nosotros/trabaje_con_nosotros.php"><?php echo mo_get_data(1, 17); ?></a></b></span><br/>
                                 <span>
                                     <a href="trabaje_con_nosotros/porque_movitecnica.php"><?php echo mo_get_data(1, 18); ?></a><br/>

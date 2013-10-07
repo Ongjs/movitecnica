@@ -27,7 +27,6 @@ $(document).ready(function() {
         $("#img_file").val($("#image").val()); 
         tinyMCE.triggerSave();
         if (!required('#name', 'Debe ingresar un nombre.')) return false;
-        if (!required('#tinymce', 'Debe ingresar un contenido.')) return false;
         mo_submit(mod, 5);
         return false;
     });
