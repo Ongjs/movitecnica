@@ -36,7 +36,7 @@ if((int)$atras[3] == 0){
 <?php
 }
 ?>
-    <input type="button" value="►" title="buscar" id="buscar" style=" float: right;"><input type="text" name="buscar_prod" value="" id="prod" size="42" style=" float: right;" placeholder="Introdusca Nombre de Producto a Buscar">
+    <input type="button" value="►" title="buscar" id="buscar" style=" float: right;"><input type="text" name="buscar_prod" value="" id="prod" size="42" style=" float: right;" placeholder="Introduzca Nombre de Producto a Buscar">
 </div>
 <br />
 <br />
@@ -75,7 +75,7 @@ foreach ($array_prod as $val){
         </div>
     </div>
     <div class="ficha_tecnica" style="margin-top: 10px;">
-        <?php if ($val[5] != "") { ?><a href="../userfiles/<?php echo $val[5]; ?>"><img src="../images/pdf.png"></a><?php } ?>
+        <?php if ($val[5] != "") { ?><a href="../userfiles/<?php echo $val[5]; ?>" target="_blank"><img src="../images/pdf.png"></a><?php } ?>
     </div>
 </div>
 <?php

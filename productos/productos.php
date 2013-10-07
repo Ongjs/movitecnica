@@ -69,7 +69,7 @@ include '../class/Fuctions.php';
                 <div class="container">
                     <div class="row">
                         <div style="text-align: right; margin-right: 3%; color: #FFF; font-weight: bold; font-size: 10px;">
-                            <span style="margin-left: 15px; margin-right: 15px;"><a href="contactenos.php">Contáctenos</a></span> <span>|</span> <span style="margin-left: 15px; margin-right: 12px;">Siguenos</span> <img class="movirs" src="../images/facebook.png">
+                            <span style="margin-left: 15px; margin-right: 15px;"><a href="contactenos.php">Contáctenos</a></span> <span>|</span> <span style="margin-left: 15px; margin-right: 12px;">Síguenos</span> <img class="movirs" src="../images/facebook.png">
                             <img class="movirs" src="../images/flickr.png">
                         </div>
                         <div class="twelve columns">
@@ -92,16 +92,16 @@ include '../class/Fuctions.php';
                                         </li>
                                         <li id="menu-item-1126"  ><a href="../que_hacemos/que_hacemos.php"><?php echo mo_get_data(1, 7); ?></a>
                                             <ul class="sub-menu">
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199" style="width: 205px"><a href="../que_hacemos/unidad_gruas_y_proyectos.php"><?php echo mo_get_data(1, 8); ?></a></li>
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199" style="width: 205px"><a href="../que_hacemos/unidad_fajas_transportadoras.php"><?php echo mo_get_data(1, 9); ?></a></li>
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199" style="width: 205px"><a href="../que_hacemos/unidad_servicio_tecnico.php"><?php echo mo_get_data(1, 11); ?></a></li>
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199" style="width: 205px"><a href="../que_hacemos/unidad_comercial.php"><?php echo mo_get_data(1, 12); ?></a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199" style="width: 237px"><a href="../que_hacemos/unidad_gruas_y_proyectos.php"><?php echo mo_get_data(1, 8); ?></a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199" style="width: 237px"><a href="../que_hacemos/unidad_fajas_transportadoras.php"><?php echo mo_get_data(1, 9); ?></a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199" style="width: 237px"><a href="../que_hacemos/unidad_servicio_tecnico.php"><?php echo mo_get_data(1, 11); ?></a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199" style="width: 237px"><a href="../que_hacemos/unidad_comercial.php"><?php echo mo_get_data(1, 12); ?></a></li>
                                             </ul>
                                         </li>
                                         <li id="menu-item-1126"  ><a href="../productos/productos.php"><?php echo mo_get_data(1, 25); ?></a>
                                             <ul class="sub-menu">
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../productos/productos.php?filtro=categorias"><?php echo mo_get_data(1, 26); ?></a></li>
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../productos/productos.php?filtro=marcas"><?php echo mo_get_data(1, 27); ?></a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../productos/productos.php?filtro=categorias">Por <?php echo mo_get_data(1, 26); ?></a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../productos/productos.php?filtro=marcas">Por <?php echo mo_get_data(1, 27); ?></a></li>
                                             </ul>
                                         </li>
                                         <li id="menu-item-1126"  ><a href="../SIG/sig.php"><?php echo mo_get_data(1, 13); ?></a>
@@ -129,7 +129,7 @@ include '../class/Fuctions.php';
 
                                     </ul>
 
-                                    <div class="header_search"><div class="search_zoom search_btn"></div>
+                                    <div class="header_search"> 
                                         <div class="search_box">
                                             <form method="get" id="searchform" action="#"><input id="s" name="s"   type="text" placeholder="Escribir y dar enter para buscar" class="search_input" /></form></div></div>	
                                 </div>						
@@ -163,7 +163,7 @@ include '../class/Fuctions.php';
                         <div class="categorias">
                             <ul class="accordion">
                                 <li>
-                                    <div class="accordion_head accordion_title list_cats" style="font-size: 16px; font-weight: bold;" data-id="">Seleccionar por Categorias</div>
+                                    <div class="accordion_head accordion_title list_cats" style="font-size: 16px; font-weight: bold;" data-id="">Seleccionar por <?php echo mo_get_data(1, 26); ?></div>
                                     <div class="accordion_content">
                                         <ul>
                                             <?php
@@ -184,7 +184,7 @@ include '../class/Fuctions.php';
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="accordion_head accordion_title list_all_marcs" style="font-size: 16px; font-weight: bold;">Seleccionar por Marcas</div>
+                                    <div class="accordion_head accordion_title list_all_marcs" style="font-size: 16px; font-weight: bold;">Seleccionar por <?php echo mo_get_data(1, 27); ?></div>
                                     <div class="accordion_content">
                                         <ul>
                                             <?php
@@ -213,8 +213,8 @@ include '../class/Fuctions.php';
                     <span style="display: none" id="filtrado"><?php echo isset($_GET['filtro']) ? $_GET['filtro'] : ""; ?></span>
                     <span style="display: none" id="normal_content">
                         <div>
-                            <div style="font-size: 25px; float: left;">Catálogo de Productos</div>
-                            <input type="button" value="►" title="buscar" id="buscar" style=" float: right;"><input type="text" name="buscar_prod" value="" id="prod" size="42" style="display: inline-block; float: right;" placeholder="Introdusca Nombre de Producto a Buscar">
+                            <div style="float: left;"><h1><b>Catálogo de Productos</b></h1></div>
+                            <input type="button" value="►" title="buscar" id="buscar" style=" float: right;"><input type="text" name="buscar_prod" value="" id="prod" size="42" style="display: inline-block; float: right;" placeholder="Introduzca Nombre de Producto a Buscar">
                         </div>
                         <br />
                         <br />  <br />  
@@ -280,8 +280,8 @@ include '../class/Fuctions.php';
                             <article style="width: 120px">
                                 <span style="font-size: 16px;"><b><a href="../productos/productos.php"><?php echo mo_get_data(1, 25); ?></a></b></span><br/>
                                 <span>
-                                    <a href="../productos/productos.php?filtro=categorias"><?php echo mo_get_data(1, 26); ?></a><br/>
-                                    <a href="../productos/productos.php?filtro=marcas"><?php echo mo_get_data(1, 27); ?></a><br/>
+                                    <a href="../productos/productos.php?filtro=categorias">Por <?php echo mo_get_data(1, 26); ?></a><br/>
+                                    <a href="../productos/productos.php?filtro=marcas">Por <?php echo mo_get_data(1, 27); ?></a><br/>
                                 </span>
                             </article>
                             <article style="width: 120px">
