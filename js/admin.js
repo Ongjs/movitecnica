@@ -132,15 +132,19 @@ function mo_list(mod, val){
     });
 }
 
-function mo_new(mod,ncat){
+function mo_new(mod, ncat, subcat){
     $.ajax({
-        data: "mod=" + mod + "&select=" + $('#opt_cat :selected').val() + "&do=1&ncat=" + ncat 
+        data: "mod=" + mod + "&select=" + $('#opt_cat :selected').val() + "&do=1&ncat=" + ncat + "&subcat=" + subcat
     }).done(function(html){
-        $("#form, .search, #list, a.new").hide();
-        $("#form").html(html);
-        $("#form, a.cancel").fadeIn();
-        $.getScript("directory.php?mod=2");
-        mo_style();
+        if(html === ""){
+            alert("No es posible crear un producto en la categoria actual");
+        }else{   
+            $("#form, .search, #list, a.new").hide();
+            $("#form").html(html);
+            $("#form, a.cancel").fadeIn();
+            $.getScript("directory.php?mod=2");
+            mo_style();
+        }
     });
 }
 
@@ -152,16 +156,20 @@ function mo_sub_cats(mod, id, val){
     });
 }
 
-function mo_update(mod, e){
+function mo_update(mod, e, subcat){
     $.ajax({
-        data: "mod=" + mod + "&select=" + $('#opt_cat :selected').val() + "&do=1&id=" + e.attr("id")
+        data: "mod=" + mod + "&select=" + $('#opt_cat :selected').val() + "&do=1&id=" + e.attr("id") + "&subcat=" + subcat
     }).done(function(html){
-        $("#form, .search, a.new").hide();
-        $("#list").empty();
-        $("#form").html(html);
-        $("#form, a.cancel").fadeIn();
-        $.getScript("directory.php?mod=2");
-        mo_style();
+        if(html === ""){
+            alert("No es posible crear un producto en la categoria actual");
+        }else{
+            $("#form, .search, a.new").hide();
+            $("#list").empty();
+            $("#form").html(html);
+            $("#form, a.cancel").fadeIn();
+            $.getScript("directory.php?mod=2");
+            mo_style();
+        }
     });
 }
 

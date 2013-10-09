@@ -3,10 +3,22 @@ require_once "../conf.php";
 $id = isset($_POST['id']) ? $_POST['id'] : "";
 $ncat = isset($_POST['ncat']) ? $_POST['ncat'] : "";
 $sele = isset($_POST['select']) ? $_POST['select'] : "";
+$subcat = isset($_POST['subcat']) ? $_POST['subcat'] : "";
+$array_mark = array();
+if($subcat !== ""){
+    if((int)mo_get_parent($subcat) === 0){
+        exit;
+    }else{
+        while((int)mo_get_parent($subcat) !== 0){
+            $subcat = (int)mo_get_parent($subcat);
+        }
+        $array_mark = mo_get_marc_parent($subcat);
+    }
+}
 if (!empty($id)) {
-    $cn->query("SELECT name, image, content, file from product WHERE id = '$id'");
+    $cn->query("SELECT name, image, content, file, prod_mark from product WHERE id = '$id'");
     $row = $cn->fetch();
-}else $row = array("name"=>"", "content"=>"", "image"=>"");
+}else $row = array("name"=>"", "content"=>"", "image"=>"", "file"=>"", "prod_mark"=>"");
 ?>
 <form id="<?php echo empty($id) ? "save" : "update"; ?>">
     <fieldset>
@@ -15,6 +27,16 @@ if (!empty($id)) {
             <tr>
                 <td><label for="name">Nombre</label></td>
                 <td><input type="text" name="name" id="name" value="<?php echo mo_unscape($row['name']); ?>" /></td>
+            </tr>
+            <tr>
+                <td><label for="name">Marca</label></td>
+                <td><select name="prd_mark">
+                        <?php 
+                        foreach($array_mark as $mark){
+                        ?>
+                        <option <?php echo ((int)($mark[0]) == (int)($row['prod_mark'])) ? "selected" : "" ?> value="<?php echo $mark[0]; ?>"><?php echo $mark[1]; ?></option>
+                        <?php } ?>
+                    </select></td>
             </tr>
             <tr>
                 <td><label for="image">Imagen<br /><span class="recommended_size">(150px x 150px)</span></label></td>

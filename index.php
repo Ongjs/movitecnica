@@ -40,7 +40,7 @@
                 <div class="container">
                     <div class="row">
                         <div style="text-align: right; margin-right: 3%; color: #FFF; font-weight: bold; font-size: 10px;">
-                            <span style="margin-left: 15px; margin-right: 15px;"><a href="contactenos.php">Contáctenos</a></span> <span>|</span> <span style="margin-left: 15px; margin-right: 12px;">Síguenos</span> <img class="movirs" src="images/facebook.png">
+                            <span style="margin-left: 15px; margin-right: 15px;"><a href="contactenos.php"><?php echo mo_get_data(1, 31); ?></a></span> <span>|</span> <span style="margin-left: 15px; margin-right: 12px;">Síguenos</span> <img class="movirs" src="images/facebook.png">
                             <img class="movirs" src="images/flickr.png">
                         </div>
                         <div class="twelve columns">
@@ -417,7 +417,7 @@
                         </section>
                         <section style='margin-top: 15px;'>
                             <div class="footer-op">
-                                <span><img src="images/sitemap.png">Sitemap</span>
+                                <span><img src="images/sitemap.png"><a href="sitemap.php">Sitemap</a></span>
                                 <span><a href="contactenos.php"><img src="images/contactenos.png"><?php echo mo_get_data(1, 31); ?></a></span>
                                 <span><a href="index.php"><img src="images/home.png"><?php echo mo_get_data(1, 1); ?></a></span>
                             </div>
