@@ -1,29 +1,23 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.1
+-- version 3.4.10.1deb1
 -- http://www.phpmyadmin.net
 --
--- Servidor: localhost
--- Tiempo de generación: 09-10-2013 a las 03:04:15
--- Versión del servidor: 5.5.24-log
--- Versión de PHP: 5.3.13
+-- Host: localhost
+-- Generation Time: Jan 12, 2014 at 04:46 PM
+-- Server version: 5.5.29
+-- PHP Version: 5.5.7-1+sury.org~precise+1
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-
 --
--- Base de datos: `movitecnica`
+-- Database: `movitecnica`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `category`
+-- Table structure for table `category`
 --
 
 CREATE TABLE IF NOT EXISTS `category` (
@@ -37,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `category` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=29 ;
 
 --
--- Volcado de datos para la tabla `category`
+-- Dumping data for table `category`
 --
 
 INSERT INTO `category` (`id`, `name`, `parent_id`, `created`, `updated`, `status`) VALUES
@@ -73,7 +67,7 @@ INSERT INTO `category` (`id`, `name`, `parent_id`, `created`, `updated`, `status
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `configuration`
+-- Table structure for table `configuration`
 --
 
 CREATE TABLE IF NOT EXISTS `configuration` (
@@ -101,7 +95,7 @@ CREATE TABLE IF NOT EXISTS `configuration` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `configuration`
+-- Dumping data for table `configuration`
 --
 
 INSERT INTO `configuration` (`name`, `username`, `password`, `email`, `logo`, `favicon`, `contact_email`, `address1`, `address2`, `phone1`, `phone2`, `fax`, `title`, `description`, `keywords`, `google`, `facebook`, `twitter`, `linkedin`, `skype`, `youtube`) VALUES
@@ -110,7 +104,7 @@ INSERT INTO `configuration` (`name`, `username`, `password`, `email`, `logo`, `f
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `contact`
+-- Table structure for table `contact`
 --
 
 CREATE TABLE IF NOT EXISTS `contact` (
@@ -131,7 +125,7 @@ CREATE TABLE IF NOT EXISTS `contact` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `content`
+-- Table structure for table `content`
 --
 
 CREATE TABLE IF NOT EXISTS `content` (
@@ -150,7 +144,7 @@ CREATE TABLE IF NOT EXISTS `content` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=33 ;
 
 --
--- Volcado de datos para la tabla `content`
+-- Dumping data for table `content`
 --
 
 INSERT INTO `content` (`id`, `category_id`, `name`, `thumbnail`, `image`, `description`, `content`, `overlap`, `created`, `updated`, `status`) VALUES
@@ -167,7 +161,7 @@ INSERT INTO `content` (`id`, `category_id`, `name`, `thumbnail`, `image`, `descr
 (29, 28, 'Noticias', '', '', '', '', '', '0000-00-00 00:00:00', '2013-08-15 22:30:29', '1'),
 (30, 28, 'Notas de Prensa', '', '', '', '', '', '0000-00-00 00:00:00', '2013-08-15 22:30:29', '1'),
 (31, 1, 'Contáctenos', '', '', 'Con múltiples lugares de toda América del Norte, nuestras oficinas están ubicadas estratégicamente para garantizar que podemos atender a nuestros clientes allí donde nos necesiten', '<div>\r\n                                <b>Enviar a nuestro email</b><br />\r\n                                <a href="Movitécnica@Movitécnica.com">Movitécnica@Movitécnica.com</a>\r\n                            </div><br />\r\n                            Para enviar su hoja de vida, por favor haga clic aquí. Usted recibirá un email de confirmación a la recepción<br /><br />\r\n                            <b>Danos una llamada</b><br />\r\n                            1-345-546-4356<br />\r\n                            Lunes a Viernes, de 8 a 5, PST<br /><br /><br />\r\n                            <div style="width: 40%; margin-right: 9%; display: inline-block; vertical-align: top; margin-bottom: 5%;">\r\n                                <h4>Movitécnica  Office</h4>\r\n                                Movitécnica <br />\r\n                                2013 PG Pulpmill Road, PO Box 968<br />\r\n                                Movitécnica, BC  V2L 4V1<br />\r\n                                T: 324-319-1364<br />\r\n                                F: 656-665-3490<br />\r\n                            </div>\r\n                            <div style="width: 40%; margin-right: 9%; display: inline-block; vertical-align: top; margin-bottom: 5%;">\r\n                                <h4>Movitécnica  Office</h4>\r\n                                Movitécnica <br />\r\n                                2013 PG Pulpmill Road, PO Box 968<br />\r\n                                Movitécnica, BC  V2L 4V1<br />\r\n                                T: 324-319-1364<br />\r\n                                F: 656-665-3490<br />\r\n                            </div>', '', '0000-00-00 00:00:00', '2013-08-15 22:30:29', '1'),
-(8, 7, 'Unidad de Grúas y Proyectos', '_uni1.jpg', '_gruas_y_proyectos.png', '<p>Somos una empresa peruana con mas de 30 a&ntilde;os en el mercado Que con cuatro lineas de negocio: unidad de gruas, unidad de fajas tranportadoras, tiendas y servicio tecnico.</p>', '<div>Somos una empresa peruana con mas de 30 a&ntilde;os en el mercado Que con cuatro lineas de negocio: unidad de gruas, unidad de fajas tranportadoras, tiendas y servicio tecnico. representamos a marcas de prestigio mundial como YALE INDUSTRAL PRODUCTS para la linea de iaje FENNER DUNLOP para la linea de fajas transportadoras, CONDUCTIX para sistema de electrificacion, ASGCO para accesorios de fajas transportadoras y DUNLOP para fajas en V. Nuestras mayores fortalezas son nuestro personal altamente calificado y el respaldo de nuestros proveedores. <br /><br /></div>\r\n<div>\r\n<div class="image_carousel">\r\n<div id="foo1"><a href="../userfiles/_uni1.jpg" rel="fancybox"> <img src="../userfiles/_uni1.jpg" alt="basketball" /> </a> <a href="../userfiles/_uni2.jpg" rel="fancybox"> <img src="../userfiles/_uni2.jpg" alt="beachtree" /> </a> <a href="../userfiles/_uni3.jpg" rel="fancybox"> <img src="../userfiles/_uni3.jpg" alt="cupcackes" /> </a> <a href="../userfiles/_uni1.jpg" rel="fancybox"> <img src="../userfiles/_uni1.jpg" alt="basketball" /> </a></div>\r\n</div>\r\n<br /> <a href="ultimos_proyectos.php">Ir a &Uacute;ltimos Proyectos &gt;</a></div>', '', '0000-00-00 00:00:00', '2013-09-14 18:59:58', '1'),
+(8, 7, 'Unidad de Grúas y Proyectos', '_uni1.jpg', '_gruas_y_proyectos.png', '<p>Somos una empresa peruana con mas de 30 a&ntilde;os en el mercado Que con cuatro lineas de negocio: unidad de gruas, unidad de fajas tranportadoras, tiendas y servicio tecnico.</p>', '<ul>\r\n<li>\r\n<pre><strong>Listado de Equipos de Izaje / Levante y Movimiento de Materiales</strong></pre>\r\n<pre><strong><br /></strong></pre>\r\n<pre><strong style="font-size: 13px;">Equipos de Levante Industriales</strong></pre>\r\n<pre><strong style="font-size: 13px;"><br /></strong></pre>\r\n<pre><span style="font-size: 13px;">Gr&uacute;as Puente Industriales</span></pre>\r\n<pre><span style="font-size: 13px;">Gr&uacute;as Pescante (Jib Cranes) Manuales</span></pre>\r\n<ul>\r\n<li>\r\n<pre>Gr&uacute;as Pescante (Jib Cranes) Motorizadas</pre>\r\n</li>\r\n<li>\r\n<pre>Estaciones de Trabajo</pre>\r\n</li>\r\n<li>\r\n<pre>Equipos a Prueba de Explosi&oacute;n (Ex)</pre>\r\n</li>\r\n<li>\r\n<pre>Tecles&nbsp; a cadena, cable y cinta</pre>\r\n</li>\r\n<li>\r\n<pre>Winches El&eacute;ctricos</pre>\r\n</li>\r\n<li>\r\n<pre>Carros tractores (tractor drive)</pre>\r\n</li>\r\n<li>\r\n<pre>Polipastos a cable (Wire Rope)</pre>\r\n</li>\r\n<li>\r\n<pre>Polipastos de doble gancho (twin hook)</pre>\r\n</li>\r\n</ul>\r\n&nbsp;\r\n<pre><strong>Equipos de Levante de Proceso / Producci&oacute;n</strong></pre>\r\n<pre><strong>&nbsp;</strong></pre>\r\n<ul>\r\n<li>\r\n<pre>Gr&uacute;as P&oacute;rtico y Semi-P&oacute;rtico</pre>\r\n</li>\r\n<li>\r\n<pre>Carros con sistema de rotaci&oacute;n</pre>\r\n</li>\r\n<li>\r\n<pre>Gr&uacute;as de Pedestal</pre>\r\n</li>\r\n<li>\r\n<pre>Gr&uacute;as Puente de Proceso y Producci&oacute;n</pre>\r\n</li>\r\n<li>\r\n<pre>(Refiner&iacute;as SX-EW, Fundiciones, Acer&iacute;as,</pre>\r\n</li>\r\n<li>\r\n<pre>Cemento, Plantas de Generaci&oacute;n, Movimiento Metal Caliente, Celulosa y Papel</pre>\r\n</li>\r\n</ul>\r\n<pre><strong>&nbsp;</strong></pre>\r\n<pre><strong>Componentes para Equipos de Izaje</strong></pre>\r\n<pre><strong>&nbsp;</strong></pre>\r\n<ul>\r\n<li>\r\n<pre>Carros Completos y Polipastos</pre>\r\n</li>\r\n<li>\r\n<pre>Testeras y Boggies</pre>\r\n</li>\r\n<li>\r\n<pre>Reductores, Motores y Frenos</pre>\r\n</li>\r\n<li>\r\n<pre>Cabinas de Operaci&oacute;n</pre>\r\n</li>\r\n<li>\r\n<pre>Sistemas de Aire Acondicionado para Cabinas</pre>\r\n</li>\r\n<li>\r\n<pre>Sistemas de Electrificaci&oacute;n</pre>\r\n</li>\r\n<li>\r\n<pre>Radio Control</pre>\r\n</li>\r\n<li>\r\n<pre>Modernizaci&oacute;n de Componentes Mec&aacute;nicos</pre>\r\n</li>\r\n<li>\r\n<pre>y El&eacute;ctricos</pre>\r\n</li>\r\n<li>\r\n<pre>Variadores de Frecuencia</pre>\r\n</li>\r\n<li>\r\n<pre>Botoneras de Operaci&oacute;n</pre>\r\n</li>\r\n<li>\r\n<pre>Sistemas Anticolisi&oacute;n</pre>\r\n</li>\r\n</ul>\r\n&nbsp;\r\n<pre><strong>Sistemas de Electrificaci&oacute;n </strong></pre>\r\n<pre><strong>&nbsp;</strong></pre>\r\n<ul>\r\n<li>\r\n<pre>Carretes Retr&aacute;ctiles a Resorte</pre>\r\n</li>\r\n<li>\r\n<pre>Carretes Retr&aacute;ctiles Motorizados</pre>\r\n</li>\r\n<li>\r\n<pre>Carretes Motorizados</pre>\r\n</li>\r\n<li>\r\n<pre>Cables Planos y Redondos (PVC o Neopreno)</pre>\r\n</li>\r\n<li>\r\n<pre>Barras Conductoras de Electrificaci&oacute;n</pre>\r\n</li>\r\n<li>\r\n<pre>(10 a 6.000 amperes)</pre>\r\n</li>\r\n</ul>\r\n&nbsp;&nbsp;&nbsp;\r\n<pre><strong>Mecanismos y Accesorios</strong></pre>\r\n<pre><strong>&nbsp;</strong></pre>\r\n<ul>\r\n<li>\r\n<pre>Ganchos Autom&aacute;ticos ELEBIA</pre>\r\n</li>\r\n<li>\r\n<pre>Magnetos y Electroimanes</pre>\r\n</li>\r\n<li>\r\n<pre>Cucharas Almeja</pre>\r\n</li>\r\n<li>\r\n<pre>Ganchos y Garras</pre>\r\n</li>\r\n<li>\r\n<pre>Vigas alargables y Spreader</pre>\r\n</li>\r\n<li>\r\n<pre>Ganchos tipo C</pre>\r\n</li>\r\n<li>\r\n<pre>Balanceadores y Manipuladores</pre>\r\n</li>\r\n</ul>\r\n&nbsp;\r\n<pre><strong>Rieles y Accesorios</strong></pre>\r\n<ul>\r\n<li>\r\n<pre>Rieles de Rodadura para Gr&uacute;as (ASCE, DIN)</pre>\r\n</li>\r\n<li>\r\n<pre>Clips de sujeci&oacute;n de rieles</pre>\r\n</li>\r\n<li>\r\n<pre>Eclisas</pre>\r\n</li>\r\n<li>\r\n<pre>Pad de apoyo de riel</pre>\r\n</li>\r\n<li>\r\n<pre>Accesorios para Rieles de Rodadura</pre>\r\n</li>\r\n<li>&nbsp;</li>\r\n</ul>\r\n<pre><strong>Componentes y Repuestos Mec&aacute;nico / El&eacute;ctrico </strong></pre>\r\n<pre><strong>(Para cualquier marca de Puente Gr&uacute;a)</strong></pre>\r\n<pre><strong>&nbsp;</strong></pre>\r\n<ul>\r\n<li>\r\n<pre>Aparejos completos</pre>\r\n</li>\r\n<li>\r\n<pre>Ganchos (simples y dobles)</pre>\r\n</li>\r\n<li>\r\n<pre>Ruedas</pre>\r\n</li>\r\n<li>\r\n<pre>Tambores</pre>\r\n</li>\r\n<li>\r\n<pre>Cables de Acero</pre>\r\n</li>\r\n<li>\r\n<pre>Reductores</pre>\r\n</li>\r\n<li>\r\n<pre>Frenos</pre>\r\n</li>\r\n<li>\r\n<pre>Motores</pre>\r\n</li>\r\n<li>\r\n<pre>Sistemas de Control</pre>\r\n</li>\r\n<li>\r\n<pre>Limites de Carrera</pre>\r\n</li>\r\n<li>\r\n<pre>Sensores &ndash; Encoder</pre>\r\n<pre>&nbsp;</pre>\r\n</li>\r\n</ul>\r\n<pre><strong>SERVICIOS / INSPECCIONES / MODERNIZACIONES</strong></pre>\r\n<pre><strong>(Para cualquier marca de Puente Gr&uacute;a)</strong></pre>\r\n<pre><strong>&nbsp;</strong></pre>\r\n<ul>\r\n<li>\r\n<pre>Inspecciones T&eacute;cnicas</pre>\r\n</li>\r\n<li>\r\n<pre>Servicio T&eacute;cnico &ndash; Montaje y Puesta</pre>\r\n</li>\r\n<li>\r\n<pre>en Operaci&oacute;n</pre>\r\n</li>\r\n<li>\r\n<pre>Pruebas de Carga</pre>\r\n</li>\r\n<li>\r\n<pre>Certificaci&oacute;n de Equipos de Izaje</pre>\r\n</li>\r\n<li>\r\n<pre>Cursos de Capacitaci&oacute;n</pre>\r\n</li>\r\n<li>\r\n<pre>(Mantenci&oacute;n y Operaci&oacute;n)</pre>\r\n</li>\r\n<li>\r\n<pre>Contratos de Mantenci&oacute;n</pre>\r\n</li>\r\n<li>\r\n<pre>Estudios de Automatizaci&oacute;n</pre>\r\n</li>\r\n<li>\r\n<pre>Estudios de Factibilidad</pre>\r\n</li>\r\n<li>\r\n<pre>(Modernizaci&oacute;n, Aumento de Capacidad</pre>\r\n</li>\r\n<li>\r\n<pre>y de Clasificaci&oacute;n de Servicio)</pre>\r\n</li>\r\n<li>\r\n<pre>Servicios de Mantenci&oacute;n Preventiva y Correctiva</pre>\r\n<pre>&nbsp;</pre>\r\n</li>\r\n</ul>\r\n</li>\r\n</ul>', '', '0000-00-00 00:00:00', '2014-01-12 13:25:13', '1'),
 (9, 7, 'Unidad de Fajas Transportadoras', '_uni2.jpg', '_fajas_transportadoras.png', 'Somos una empresa peruana con mas de 30 años en el mercado Que con cuatro lineas de negocio: unidad de gruas, unidad de fajas tranportadoras, tiendas y servicio tecnico.', '<div>\n                                Somos una empresa peruana con mas de 30 años en el mercado Que con cuatro lineas de negocio: unidad de gruas, unidad de fajas tranportadoras, tiendas y servicio tecnico. representamos a marcas de prestigio mundial como YALE INDUSTRAL PRODUCTS para la linea de iaje FENNER DUNLOP para la linea de fajas transportadoras, CONDUCTIX para sistema de electrificacion, ASGCO para accesorios de fajas transportadoras y DUNLOP para fajas en V. Nuestras mayores fortalezas son nuestro personal altamente calificado y el respaldo de nuestros proveedores.\n                                <br /><br />\n                            </div> \n                            <div>\n                                <div class="image_carousel">\n                                    <div id="foo1">\n                                        <a rel="fancybox" href="../userfiles/_uni1.jpg">\n                                            <img src="../userfiles/_uni1.jpg" alt="basketball"  />\n                                        </a>\n                                        <a rel="fancybox" href="../userfiles/_uni2.jpg">\n                                            <img src="../userfiles/_uni2.jpg" alt="beachtree"  />\n                                        </a>\n                                        <a rel="fancybox" href="../userfiles/_uni3.jpg">\n                                            <img src="../userfiles/_uni3.jpg" alt="cupcackes"  />\n                                        </a>\n                                        <a rel="fancybox" href="../userfiles/_uni1.jpg">\n                                            <img src="../userfiles/_uni1.jpg" alt="basketball"  />\n                                        </a>\n                                    </div>\n                                    <div class="clearfix"></div>\n                                </div>\n                                <br />\n                            </div>\n                            <div><a href="Servicio_De_Empalme.php"> Ir a Servicio de Empalme de Fajas ></a></div>\n                            <br />', '', '0000-00-00 00:00:00', '2013-09-04 16:25:51', '1'),
 (10, 9, 'Servicio de Empalme de Fajas', '', '', 'Somos una empresa peruana con mas de 30 años en el mercado Que con cuatro lineas de negocio: unidad de gruas, unidad de fajas tranportadoras, tiendas y servicio tecnico.', '<div style="display: inline-block;" class="uni_response">\r\n                    \r\n                    <div style="width: 98%;">\r\n                        <span>\r\n                            Es el comportamiento leal, honesto y fraterno hacia la competencia, los clientes, nuestros colaboradores, el Estado y la sociedad; siendo respetuosos de las reglas de juego y el correcto manejo de los clientes. <br />\r\n                            Surge de desarrollar y compartir nuestros conocimientos dentro de la organización. Fomentamos la integración donde los objetivos de la empresa son sentidos como propios por todos los colaboradores. <br />\r\n                            Es nuestro entusiasmo y la satisfacción por la tarea Que se realiza Que nos impulsa a desarrollar nuestro máximo potencial.<br />\r\n                            Es nuestro interés genuino por fomentar la formación y el desarrollo de los miembros del equipo Movitécnica a partir del análisis de sus necesidades y de la exposición a situaciones Que faciliten su crecimiento.<br />\r\n                        </span><br />\r\n                        <br />\r\n                        <div class="image_box" style="height: auto;"><img src="../userfiles/Valores.png"></div>\r\n                        <a href="Unidad_Fajas_Transportadoras.php"> < Regresar a Unidad Fajas Transportadoras</a>\r\n                        <br/><br/>\r\n                    </div>\r\n                </div>', '', '0000-00-00 00:00:00', '2013-08-06 02:13:58', '1'),
 (11, 7, 'Unidad de Servicio Técnico', '_uni3.jpg', '_Servicio_tecnico.png', 'Somos una empresa peruana con mas de 30 años en el mercado Que con cuatro lineas de negocio: unidad de gruas, unidad de fajas tranportadoras, tiendas y servicio tecnico.', '<div>\n                                Somos una empresa peruana con mas de 30 años en el mercado Que con cuatro lineas de negocio: unidad de gruas, unidad de fajas tranportadoras, tiendas y servicio tecnico. representamos a marcas de prestigio mundial como YALE INDUSTRAL PRODUCTS para la linea de iaje FENNER DUNLOP para la linea de fajas transportadoras, CONDUCTIX para sistema de electrificacion, ASGCO para accesorios de fajas transportadoras y DUNLOP para fajas en V. Nuestras mayores fortalezas son nuestro personal altamente calificado y el respaldo de nuestros proveedores.\n                                <br /><br />\n                            </div> \n                            <div>\n                                <div class="image_carousel">\n                                    <div id="foo1">\n                                        <a rel="fancybox" href="../userfiles/_uni1.jpg">\n                                            <img src="../userfiles/_uni1.jpg" alt="basketball"  />\n                                        </a>\n                                        <a rel="fancybox" href="../userfiles/_uni2.jpg">\n                                            <img src="../userfiles/_uni2.jpg" alt="beachtree"  />\n                                        </a>\n                                        <a rel="fancybox" href="../userfiles/_uni3.jpg">\n                                            <img src="../userfiles/_uni3.jpg" alt="cupcackes"  />\n                                        </a>\n                                        <a rel="fancybox" href="../userfiles/_uni1.jpg">\n                                            <img src="../userfiles/_uni1.jpg" alt="basketball"  />\n                                        </a>\n                                    </div>\n                                    <div class="clearfix"></div>\n                                </div>\n                                <br />\n                            </div>\n                            <div><a href="Ultimos_Servicios.php">Ir a  Últimos Servicios ></a></div>\n                            <br />', '', '0000-00-00 00:00:00', '2013-09-04 16:26:46', '1'),
@@ -187,7 +181,7 @@ INSERT INTO `content` (`id`, `category_id`, `name`, `thumbnail`, `image`, `descr
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `image`
+-- Table structure for table `image`
 --
 
 CREATE TABLE IF NOT EXISTS `image` (
@@ -207,7 +201,7 @@ CREATE TABLE IF NOT EXISTS `image` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=29 ;
 
 --
--- Volcado de datos para la tabla `image`
+-- Dumping data for table `image`
 --
 
 INSERT INTO `image` (`id`, `category_id`, `name`, `thumbnail`, `image`, `description`, `content`, `extra1`, `extra2`, `created`, `updated`, `status`) VALUES
@@ -238,7 +232,7 @@ INSERT INTO `image` (`id`, `category_id`, `name`, `thumbnail`, `image`, `descrip
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `product`
+-- Table structure for table `product`
 --
 
 CREATE TABLE IF NOT EXISTS `product` (
@@ -258,7 +252,7 @@ CREATE TABLE IF NOT EXISTS `product` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=24 ;
 
 --
--- Volcado de datos para la tabla `product`
+-- Dumping data for table `product`
 --
 
 INSERT INTO `product` (`id`, `parent_id`, `type`, `name`, `image`, `content`, `file`, `created`, `updated`, `status`, `hidden`, `prod_mark`) VALUES
@@ -289,7 +283,7 @@ INSERT INTO `product` (`id`, `parent_id`, `type`, `name`, `image`, `content`, `f
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `product_category`
+-- Table structure for table `product_category`
 --
 
 CREATE TABLE IF NOT EXISTS `product_category` (
@@ -307,7 +301,7 @@ CREATE TABLE IF NOT EXISTS `product_category` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
 
 --
--- Volcado de datos para la tabla `product_category`
+-- Dumping data for table `product_category`
 --
 
 INSERT INTO `product_category` (`id`, `parent_id`, `clase`, `name`, `image`, `content`, `file`, `created`, `updated`, `status`) VALUES
@@ -328,6 +322,3 @@ INSERT INTO `product_category` (`id`, `parent_id`, `clase`, `name`, `image`, `co
 (16, 10, 'p', 'Magnis Magnis', '_polipasto.jpg', '<ul>\r\n                                                            <li>Capacidades de 750 – 6000 kg.</li>\r\n                                                            <li>Los ganchos superior e inferior se fabrican en acero especial, forjado y bonificado. En caso de sobrecarga se abren sin rotura.</li>\r\n                                                            <li>Las cadenas de eslabones se fabrican en acero bonificado con superficie galvanizada. Cumplen las normas nacionales e internacionales actualmente en vigor.</li>\r\n                                                            <li>Guía de cadena integrada en la carcasa para el recorrido preciso de la cadena sobre la nuez.</li>\r\n                                                            <li>Tope robusto</li>\r\n                                                            <li>Dispositivo de punto neutro para posicionar y pretensar rápidamente la cadena en ambas direcciones.</li>\r\n                                                            <li>Palanca corta con empuñadura de goma.</li>\r\n                                                            <li>Rueda de mano protegida contra la corrosión con cromado duro</li>\r\n                                                            <li>Freno de carga resistente a la corrosión y discos de fricción sin asbesto.</li>\r\n                                                            <li>Gancho de carga con pasteca robusta gracias a sus ejes encapsulados.</li>\r\n                                                            <li>Accionamiento fácil y sin esfuerzo de la palanca.</li>\r\n                                                        </ul>', 'file.pdf', '0000-00-00 00:00:00', '2013-08-17 05:35:30', 0),
 (17, 10, 'p', 'Magnis Magnis', '_polipasto.jpg', '<ul>\r\n                                                            <li>Capacidades de 750 – 6000 kg.</li>\r\n                                                            <li>Los ganchos superior e inferior se fabrican en acero especial, forjado y bonificado. En caso de sobrecarga se abren sin rotura.</li>\r\n                                                            <li>Las cadenas de eslabones se fabrican en acero bonificado con superficie galvanizada. Cumplen las normas nacionales e internacionales actualmente en vigor.</li>\r\n                                                            <li>Guía de cadena integrada en la carcasa para el recorrido preciso de la cadena sobre la nuez.</li>\r\n                                                            <li>Tope robusto</li>\r\n                                                            <li>Dispositivo de punto neutro para posicionar y pretensar rápidamente la cadena en ambas direcciones.</li>\r\n                                                            <li>Palanca corta con empuñadura de goma.</li>\r\n                                                            <li>Rueda de mano protegida contra la corrosión con cromado duro</li>\r\n                                                            <li>Freno de carga resistente a la corrosión y discos de fricción sin asbesto.</li>\r\n                                                            <li>Gancho de carga con pasteca robusta gracias a sus ejes encapsulados.</li>\r\n                                                            <li>Accionamiento fácil y sin esfuerzo de la palanca.</li>\r\n                                                        </ul>', 'file.pdf', '0000-00-00 00:00:00', '2013-08-17 05:35:30', 0);
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

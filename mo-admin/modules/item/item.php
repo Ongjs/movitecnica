@@ -8,12 +8,16 @@
                 <td><label for="search">Seleccione categoria a filtrar</label></td>
                 <td><select name="opt_cat" id ="opt_cat">
                         <option value="7">Galería Principal</option>
-                        <option value="1">Equipo de Trabajo</option>
-                        <option value="2">Proyectos</option>
-                        <option value="3">Servicios</option>
-                        <option value="4">Testimonios</option>
-                        <option value="5">Noticia</option>
-                        <option value="6">Nota de Prensa</option>
+                        <option value="1"><?php echo mo_get_data(1, 6); ?></option>
+                        <option value="2"><?php echo mo_get_data(1, 23); ?></option>
+                        <option value="3"><?php echo mo_get_data(1, 24); ?></option>
+                        <option value="4"><?php echo mo_get_data(1, 21); ?></option>
+                        <option value="5"><?php echo mo_get_data(1, 29); ?></option>
+                        <option value="6"><?php echo mo_get_data(1, 30); ?></option>
+                        <option value="8"><?php echo mo_get_data(1, 8); ?></option>
+                        <option value="9"><?php echo mo_get_data(1, 9); ?></option>
+                        <option value="10"><?php echo mo_get_data(1, 11); ?></option>
+                        <option value="11"><?php echo mo_get_data(1, 12); ?></option>
                     </select></td>
             </tr>
             <a href="#" class="new list">Nuevo</a>

@@ -111,7 +111,9 @@
                     <div style="display: inline-block;" class="uni_response">
                         <div style="width: 98%; text-align: left;">
                             <h1><b><?php echo mo_get_data(1, 8); ?></b></h1>
-                            <?php echo mo_get_data(3, 8); ?>
+                            <div class="que-hacemos-contenedor"><?php echo mo_get_data(3, 8); ?></div>
+                            <a href="que_hacemos/ultimos_proyectos.php"><span>Ir a &uacute;ltimos proyectos &gt;</span></a>
+                            <br /><br />
                         </div>
                     </div>
                     <div id="post_p" style="width: 320px; display: inline-block; margin-left: 20px; margin-top: 10px; vertical-align: top;">
@@ -134,15 +136,37 @@
                                                         ?>
                                                         <a href="../media/noticia.php?cod=<?php echo $array[0]; ?>">
                                                             <?php echo substr($array[1], 0, 150) . "...."; ?>
-                                                        </a><br /><br />
+                                                        </a>
+                                                        <br />
+                                                        <a class="button normal small pull-right" href="../media/media.php">Ver más</a>
+                                                        <br /><br /><br />
                                                         <?php
                                                     }
                                                     ?>
                                                 </span>
-                                                <br />
-                                                <a class="button normal small" href="../media/media.php">Ver más</a><br /><br />
                                                 <a href="../media/media.php">Ver Todas ></a>
+                                                <br /><br />
                                             </div>
+                                            <?php
+                                            $images = mo_get_ar(8, 1);
+                                            if (count($images)) {
+                                            ?>
+                                            <div style="border-top: 1px solid #D7D7D7;">
+                                                <br />
+                                                <h3><b>Galería de Imágenes</b></h3>   
+                                                <div class="image_carousel">
+                                                    <div id="foo1">
+                                                        <?php
+                                                        foreach ($images as $image) {
+                                                            echo '<a href="../userfiles/' . $image['image'] . '" rel="fancybox"> <img src="../userfiles/' . $image['thumbnail'] . '" alt="' . $image['name'] . '" /> </a>';
+                                                        }
+                                                        ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <?php
+                                            }
+                                            ?>
                                         </li>
                                     </ul>
                                 </div>
@@ -151,7 +175,6 @@
                         </div>
 
                     </div>
-
                 </div>
                 <footer class="footer">
                     <br />
