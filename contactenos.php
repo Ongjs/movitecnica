@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 if(isset($_POST["tema"])){
     if (isset($_POST['check'])) {
         $check = '<tr>
