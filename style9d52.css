@@ -1543,7 +1543,8 @@ blockquote.right{margin-left:20px;text-align:left;	margin-right:0;	width:33%; fl
 .email_response {
     background-color: #F5F5F5;
     margin: -10px 0 10px;
-    width: 300px;
+    padding: 5px;
+    width: 98%;
 }
 
 .que-hacemos-contenedor {

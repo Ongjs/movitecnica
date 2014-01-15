@@ -16,8 +16,8 @@ if(isset($_POST["tema"])){
     $mail->Port = 465;
     $mail->SMTPAuth = true;                               // Enable SMTP authenticationa
     $mail->SMTPSecure = 'ssl';
-    $mail->Username = 'andresgarciadev@gmail.com';                            // SMTP username
-    $mail->Password = '';                           // SMTP password
+    $mail->Username = 'masterojitos.test@gmail.com';                            // SMTP username
+    $mail->Password = 'masterojitos';                           // SMTP password
     $mail->From = 'no-reply@movitecnica.com.pe';
     $mail->FromName = 'Movitécnica';
     $mail->AddAddress('gdelgado@movitecnica.com.pe', 'Alberto Delgado');  // Add a recipient
@@ -30,7 +30,7 @@ if(isset($_POST["tema"])){
     $mail->Body = '<table border="0" style="text-align: left; background: rgba(248,248,248,8); border-radius: 3px; line-height: 22px;">
         <tr style="border-top: solid 1px rgba(225,225,225,1)">
             <td><h2>Contactenos</h2></td>
-            <td style="width: 400px; text-align: right"><img src="http://www.movitecnica.com/images/logo_skin3.png" width="270" height="56"></td>
+            <td style="width: 400px; text-align: right"><img src="http://www.movitecnica.com.pe/images/logo_skin3.png" width="270" height="56"></td>
         </tr>
         <tr >
             <td style="border-top: solid 1px rgba(225,225,225,1)"><strong>Tema:</strong></td>
@@ -69,6 +69,7 @@ if(isset($_POST["tema"])){
 
     $email_send = $mail->Send();
 }
+$email_send = true;
 ?>
 <!DOCTYPE html>
 <html lang="en-US">

@@ -1,3 +1,78 @@
+<?php
+if(isset($_POST["nombre"])){
+    
+    require '../lib/PHPMailer/class.phpmailer.php';
+    $mail = new PHPMailer();
+    $mail->IsSMTP();                                      // Set mailer to use SMTP
+    $mail->Host = 'smtp.gmail.com';  // Specify main and backup server
+    $mail->Port = 465;
+    $mail->SMTPAuth = true;                               // Enable SMTP authenticationa
+    $mail->SMTPSecure = 'ssl';
+    $mail->Username = 'masterojitos.test@gmail.com';                            // SMTP username
+    $mail->Password = 'masterojitos';                           // SMTP password
+    $mail->From = 'no-reply@movitecnica.com.pe';
+    $mail->FromName = 'Movitécnica';
+    $mail->AddAddress('gdelgado@movitecnica.com.pe', 'Alberto Delgado');  // Add a recipient
+    $mail->AddBCC('master.ojitos@gmail.com', 'Ricardo Garcia Rodriguez');  // Add a recipient
+    $mail->AddReplyTo($_POST["email"], $_POST["nombre"]." ".$_POST["apellido"]);
+    $mail->WordWrap = 50;                                 // Set word wrap to 50 characters
+    $mail->IsHTML(true);                                  // Set email format to HTML
+    $mail->CharSet = 'utf-8';
+    $mail->Subject = 'Movitécnica - Reclamos';
+    $mail->Body = '<table border="0" style="text-align: left; background: rgba(248,248,248,8); border-radius: 3px; line-height: 22px;">
+        <tr style="border-top: solid 1px rgba(225,225,225,1)">
+            <td><h2>Reclamos</h2></td>
+            <td style="width: 400px; text-align: right"><img src="http://www.movitecnica.com.pe/images/logo_skin3.png" width="270" height="56"></td>
+        </tr>
+        <tr>
+            <td style="border-top: solid 1px rgba(225,225,225,1)"><strong>Nombre Completo:</strong></td>
+            <td style="border-top: solid 1px rgba(225,225,225,1)">' . $_POST["nombre"] . ' ' . $_POST["apellido"] . '</td>
+        </tr>
+        <tr>
+            <td style="border-top: solid 1px rgba(225,225,225,1)"><strong>E-mail:</strong></td>
+            <td style="border-top: solid 1px rgba(225,225,225,1)">' . $_POST["email"] . '</td>
+        </tr>
+        <tr>
+            <td style="border-top: solid 1px rgba(225,225,225,1)"><strong>Compañia:</strong></td>
+            <td style="border-top: solid 1px rgba(225,225,225,1)">' . $_POST["compania"] . '</td>
+        </tr>
+        <tr>
+            <td style="border-top: solid 1px rgba(225,225,225,1)" valign="top"><strong>Motivo de Reclamo:</strong></td>
+            <td style="border-top: solid 1px rgba(225,225,225,1)">' . nl2br($_POST["mensaje"]) . '</td>
+        </tr>
+    </table>';
+    $mail->AltBody = '\t Reclamos \n \n
+    \t Nombre Completo: \t '.$_POST["nombre"]." ".$_POST["apellido"].' \n
+    \t Email: \t '.$_POST["email"].' \n
+    \t Compañia: \t '.$_POST["compania"].' \n
+    \t Motivo de Reclamo: \n  \t'.$_POST["mensaje"];
+    $email_send1 = $mail->Send();
+    
+    $mail = new PHPMailer();
+    $mail->IsSMTP();                                      // Set mailer to use SMTP
+    $mail->Host = 'smtp.gmail.com';  // Specify main and backup server
+    $mail->Port = 465;
+    $mail->SMTPAuth = true;                               // Enable SMTP authenticationa
+    $mail->SMTPSecure = 'ssl';
+    $mail->Username = 'masterojitos.test@gmail.com';                            // SMTP username
+    $mail->Password = 'masterojitos';                           // SMTP password
+    $mail->From = 'no-reply@movitecnica.com.pe';
+    $mail->FromName = 'Movitécnica';
+    $mail->AddAddress($_POST["email"], $_POST["nombre"]." ".$_POST["apellido"]);  // Add a recipient
+    $mail->WordWrap = 50;                                 // Set word wrap to 50 characters
+    $mail->IsHTML(true);                                  // Set email format to HTML
+    $mail->CharSet = 'utf-8';
+    $mail->Subject = 'Movitécnica - Reclamos';
+    $mail->Body = '<img src="http://www.movitecnica.com.pe/images/logo_skin3.png" width="270" height="56" />
+        <br /><br /><strong>' . $_POST["nombre"] . ' ' . $_POST["apellido"] . '</strong><br />
+        Su mensaje ha sido recibido satisfactoriamente, en breve nos estaremos comunicando con usted.<br />
+    ';
+    $mail->AltBody = '\t Movitécnica - Reclamos \n \n
+    \t ' . $_POST["nombre"] . ' ' . $_POST["apellido"] . ' \n
+    \t Su mensaje ha sido recibido satisfactoriamente, en breve nos estaremos comunicando con usted.\n';
+    $email_send2 = $mail->Send();
+}
+?>
 <!DOCTYPE html>
 <html lang="en-US">
     <head>
@@ -9,6 +84,7 @@
         <link rel="shortcut icon" href="../images/favicon_movi.ico">
         <link href='http://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
         <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link rel="stylesheet" href="../css/validationEngine.jquery.css" type="text/css"/>
         <link rel='stylesheet'  href='../css/mystyles.css' type='text/css' media='all' />
         <link rel='stylesheet' id='reset-css'  href='../css/reset9d52.css?ver=3.5.1' type='text/css' media='all' />
         <link rel='stylesheet' id='responsive'  href='../css/responsive.css' type='text/css' media='all' />
@@ -110,6 +186,65 @@
                         <div style="width: 98%;">
                             <div class="image_box"><img src="../userfiles/<?php echo mo_get_data(2, 16); ?>"></div><br />
                             <?php echo mo_get_data(3, 16); ?>
+                            <div>
+                                <br /><br />
+                                <?php 
+                                if (isset($email_send1) || isset($email_send2)) {
+                                    if ($email_send1 || $email_send2) {
+                                ?>
+                                <p class="email_response">&nbsp;Su mensaje ha sido enviado satisfactoriamente, &nbsp;en breve nos estaremos comunicando con usted.</p>
+                                <?php
+                                    }else{
+                                ?>
+                                <p class="email_response">&nbsp;El mensaje no ha podido ser enviado. &nbsp;Intente de nuevo por favor.</p>
+                                <?php
+                                    }
+                                }
+                                ?>
+                                <h3>Enviar un Reclamo</h3>
+                                <form id="claim_form" class="form-horizontal" method="post">
+                                    <div class="control-group">
+                                        <label class="control-label" for="inputFirstname">Nombre</label>
+                                        <div class="controls">
+                                            <input type="text" id="inputFirstname" placeholder="Nombre" name="nombre" class="validate[required,custom[onlyLetterSp]]" />
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div class="control-group">
+                                        <label class="control-label" for="inputLastname">Apellido</label>
+                                        <div class="controls">
+                                            <input type="text" id="inputLastname" placeholder="Apellido" name="apellido" class="validate[required,custom[onlyLetterSp]]" />
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div class="control-group">
+                                        <label class="control-label" for="inputEmail">E-mail</label>
+                                        <div class="controls">
+                                            <input type="text" id="inputEmail" placeholder="E-mail" name="email" class="validate[required,custom[email]]" />
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div class="control-group">
+                                        <label class="control-label" for="inputCompany">Compañia</label>
+                                        <div class="controls">
+                                            <input type="text" id="inputCompany" placeholder="Compañia" name="compania" class="validate[required,custom[onlyLetterSp]]" />
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div class="control-group">
+                                        <label class="control-label" for="inputClaim">Motivo de Reclamo</label>
+                                        <div class="controls">
+                                            <textarea id="inputClaim" rows="3" placeholder="Motivo de Reclamo" name="mensaje" class="validate[required]"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <div class="controls">
+                                            <button type="submit" class="btn">Enviar</button>
+                                        </div>
+                                    </div>
+                                    <br />
+                                </form>
+                            </div>
                         </div>
                     </div>
                     <div id="post_p" style="width: 320px; display: inline-block; margin-left: 20px; margin-top: 10px; vertical-align: top;">
@@ -311,7 +446,8 @@
         <script type='text/javascript' src='../js/jquery.flexslider-min5152.js?ver=1.0'></script>
         <script type='text/javascript' src='../js/jquery.placeholder.min5152.js?ver=1.0'></script>
         <script type='text/javascript' src='../js/jflickrfeed.min5152.js?ver=1.0'></script>
-
+        <script type="text/javascript" src="../js/jquery.validationEngine-es.js"></script>
+        <script type="text/javascript" src="../js/jquery.validationEngine.js"></script>
     </body>
     <script type="text/javascript">
         $j(document).ready(function() {
@@ -337,6 +473,7 @@
                     $j(".footer-menu img").attr("src", "../images/flecha_abajo.png");
                 }
             });
+            $j("#claim_form").validationEngine();
         });
     </script>
 </html>
