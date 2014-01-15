@@ -121,20 +121,7 @@ include '../class/Fuctions.php'; ?>
                     <br />
                     <h1><b><?php echo $media; ?></b></h1>
                     <div style="display: inline-block;" class="uni_response">
-<?php echo mo_get_data(3, 28); ?>
-                        <div style="width: 100%;background: rgba(243,243,243,1)">
-                            <form id="form1">
-                                <div style="width: 90%; padding: 12px;">
-                                    Filtrar por Categoria
-                                    <select style="margin-left: 15px;" name="media" id="media">
-                                        <option value="no">Todas Las Categorias</option>
-                                        <option <?php echo isset($_REQUEST['media']) ? ($_REQUEST['media'] == "noticias" ? "selected" : "") : ""; ?> value="noticias"><?php echo mo_get_data(1, 29); ?></option>
-                                        <option <?php echo isset($_REQUEST['media']) ? ($_REQUEST['media'] == "identidad-de-marca" ? "selected" : "") : ""; ?> value="identidad-de-marca"><?php echo mo_get_data(1, 30); ?></option>
-                                    </select>
-                                    <button type="submit" class="btn" id="filtrar">Filtrar</button>
-                                </div>
-                            </form>
-                        </div>
+                        <?php echo mo_get_data(3, 28); ?>
                         <br />
                         <div style="width: 98%;">
                             <?php
@@ -158,7 +145,6 @@ include '../class/Fuctions.php'; ?>
                                             <div style="margin-top: 5px;"><a href="noticia.php?cod=<?php echo $el[0]; ?>">Ver más ></a></div>
                                         </div>
                                     </div>
-                                    <br />
                                 </div>
                                 <?php
                             }
