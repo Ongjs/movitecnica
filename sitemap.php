@@ -79,8 +79,8 @@
                                 </li>
                                 <li id="menu-item-1126"  ><a href="media/media.php"><?php echo mo_get_data(1, 28); ?></a>
                                     <ul class="sub-menu">
-                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="media/media.php?media=noticia"><?php echo mo_get_data(1, 29); ?></a></li>
-                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="media/media.php?media=nota"><?php echo mo_get_data(1, 30); ?></a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="media/media.php?media=noticias"><?php echo mo_get_data(1, 29); ?></a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="media/media.php?media=identidad-de-marca"><?php echo mo_get_data(1, 30); ?></a></li>
                                     </ul>
                                 </li>
                                 <!--<li id="menu-item-1125" ><a href="single-ele.html">HTML Elements</a></li>-->
@@ -131,8 +131,8 @@
                              <li><a href="trabaje_con_nosotros/testimonios.php"><?php echo mo_get_data(1, 21); ?></a></li>
                             <li><a href="trabaje_con_nosotros/oferta_de_trabajo.php"><?php echo mo_get_data(1, 19); ?></a></li>
                          <ul style="font-weight: bold"><a href="media/media.php"><?php echo mo_get_data(1, 28); ?></a></ul>
-                            <li><a href="media/media.php?media=noticia"><?php echo mo_get_data(1, 29); ?></a></li>
-                            <li><a href="media/media.php?media=noticia"><?php echo mo_get_data(1, 30); ?></a></li>
+                            <li><a href="media/media.php?media=noticias"><?php echo mo_get_data(1, 29); ?></a></li>
+                            <li><a href="media/media.php?media=identidad-de-marca"><?php echo mo_get_data(1, 30); ?></a></li>
                          <ul style="font-weight: bold"><a href="contactenos.php"><?php echo mo_get_data(1, 31); ?></a></ul>
                     </div>
                 </div>
@@ -226,8 +226,8 @@
                             <article style="width: 140px">
                                 <span style="font-size: 16px;"><b><a href="media/media.php"><?php echo mo_get_data(1, 28); ?></a></b></span><br/>
                                 <span>
-                                    <a href="media/media.php"><?php echo mo_get_data(1, 29); ?></a><br/>
-                                    <a href="media/media.php"><?php echo mo_get_data(1, 30); ?></a><br/>
+                                    <a href="media/media.php?media=noticias"><?php echo mo_get_data(1, 29); ?></a><br/>
+                                    <a href="media/media.php?media=identidad-de-marca"><?php echo mo_get_data(1, 30); ?></a><br/>
                                 </span>
                             </article>
 

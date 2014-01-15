@@ -80,8 +80,8 @@ include '../class/Fuctions.php'; ?>
                                         </li>
                                         <li id="menu-item-1126"  ><a href="../media/media.php"><?php echo mo_get_data(1, 28); ?></a>
                                             <ul class="sub-menu">
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../media/media.php?media=noticia"><?php echo mo_get_data(1, 29); ?></a></li>
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../media/media.php?media=nota"><?php echo mo_get_data(1, 30); ?></a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../media/media.php?media=noticias"><?php echo mo_get_data(1, 29); ?></a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../media/media.php?media=identidad-de-marca"><?php echo mo_get_data(1, 30); ?></a></li>
                                             </ul>
                                         </li>
                                         <!--<li id="menu-item-1125" ><a href="single-ele.html">HTML Elements</a></li>-->
@@ -106,11 +106,11 @@ include '../class/Fuctions.php'; ?>
                     <?php
                     $pagfil = "";
                     $media = mo_get_data(1, 28);
-                    $filtro = isset($_REQUEST['media']) ? ($_REQUEST['media'] == "noticia" ? 5 : 6) : "5,6";
+                    $filtro = isset($_REQUEST['media']) ? ($_REQUEST['media'] == "noticias" ? 5 : 6) : "5,6";
                     if (is_numeric($filtro)) {
-                        $indice = "<a href='Media.php'> > $media </a> > ";
-                        $indice .= $filtro == 5 ? "Noticias" : "Notas de Prensa";
-                        $pagfil = $filtro == 5 ? "&media=noticia" : "&media=nota";
+                        $indice = "<a href='media.php'> > $media </a> > ";
+                        $indice .= $filtro == 5 ? mo_get_data(1, 29) : mo_get_data(1, 30);
+                        $pagfil = $filtro == 5 ? "&media=noticias" : "&media=identidad-de-marca";
                     } else {
                         $pagfil = "";
                         $indice = "> $media";
@@ -128,8 +128,8 @@ include '../class/Fuctions.php'; ?>
                                     Filtrar por Categoria
                                     <select style="margin-left: 15px;" name="media" id="media">
                                         <option value="no">Todas Las Categorias</option>
-                                        <option <?php echo isset($_REQUEST['media']) ? ($_REQUEST['media'] == "noticia" ? "selected" : "") : ""; ?> value="noticia"><?php echo mo_get_data(1, 29); ?></option>
-                                        <option <?php echo isset($_REQUEST['media']) ? ($_REQUEST['media'] == "nota" ? "selected" : "") : ""; ?> value="nota"><?php echo mo_get_data(1, 30); ?></option>
+                                        <option <?php echo isset($_REQUEST['media']) ? ($_REQUEST['media'] == "noticias" ? "selected" : "") : ""; ?> value="noticias"><?php echo mo_get_data(1, 29); ?></option>
+                                        <option <?php echo isset($_REQUEST['media']) ? ($_REQUEST['media'] == "identidad-de-marca" ? "selected" : "") : ""; ?> value="identidad-de-marca"><?php echo mo_get_data(1, 30); ?></option>
                                     </select>
                                     <button type="submit" class="btn" id="filtrar">Filtrar</button>
                                 </div>
@@ -265,8 +265,8 @@ include '../class/Fuctions.php'; ?>
                             <article style="width: 140px">
                                 <span style="font-size: 16px;"><b><a href="../media/media.php"><?php echo mo_get_data(1, 28); ?></a></b></span><br/>
                                 <span>
-                                    <a href="../media/media.php"><?php echo mo_get_data(1, 29); ?></a><br/>
-                                    <a href="../media/media.php"><?php echo mo_get_data(1, 30); ?></a><br/>
+                                    <a href="../media/media.php?media=noticias"><?php echo mo_get_data(1, 29); ?></a><br/>
+                                    <a href="../media/media.php?media=identidad-de-marca"><?php echo mo_get_data(1, 30); ?></a><br/>
                                 </span>
                             </article>
 

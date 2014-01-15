@@ -82,8 +82,8 @@ include '../class/Fuctions.php';
                                 </li>
                                 <li id="menu-item-1126"  ><a href="../media/media.php"><?php echo mo_get_data(1, 28); ?></a>
                                     <ul class="sub-menu">
-                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../media/media.php?media=noticia"><?php echo mo_get_data(1, 29); ?></a></li>
-                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../media/media.php?media=nota"><?php echo mo_get_data(1, 30); ?></a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../media/media.php?media=noticias"><?php echo mo_get_data(1, 29); ?></a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="../media/media.php?media=identidad-de-marca"><?php echo mo_get_data(1, 30); ?></a></li>
                                     </ul>
                                 </li>
                                 <!--<li id="menu-item-1125" ><a href="single-ele.html">HTML Elements</a></li>-->
@@ -253,8 +253,8 @@ include '../class/Fuctions.php';
                             <article style="width: 140px">
                                 <span style="font-size: 16px;"><b><a href="../media/media.php"><?php echo mo_get_data(1, 28); ?></a></b></span><br/>
                                 <span>
-                                    <a href="../media/media.php"><?php echo mo_get_data(1, 29); ?></a><br/>
-                                    <a href="../media/media.php"><?php echo mo_get_data(1, 30); ?></a><br/>
+                                    <a href="../media/media.php?media=noticias"><?php echo mo_get_data(1, 29); ?></a><br/>
+                                    <a href="../media/media.php?media=identidad-de-marca"><?php echo mo_get_data(1, 30); ?></a><br/>
                                 </span>
                             </article>
 
