@@ -1008,7 +1008,7 @@ p.form-allowed-tags {font-size:11px; color:#999; font-style:italic	}
     float: left;
     margin: 7px;
     padding: 9px;
-    width: 100px
+    width: 100px;
 }
 .image_carousel a 
 {
@@ -1549,6 +1549,6 @@ blockquote.right{margin-left:20px;text-align:left;	margin-right:0;	width:33%; fl
 .que-hacemos-contenedor {
     margin: 20px 0;
     max-height: 600px;
-    overflow: scroll;
+    overflow: auto;
     overflow-x: hidden;
 }
