@@ -227,49 +227,49 @@ include 'class/Fuctions.php'; ?>
                             <div class="control-group">
                                 <label class="control-label" for="inputTema">Tema</label>
                                 <div class="controls">
-                                    <input type="text" id="textTema" placeholder="Tema" name="tema" class="validate[required]" />
+                                    <input type="text" id="inputTema" placeholder="Tema" name="tema" class="validate[required]" />
                                 </div>
                             </div>
                             <br />
                             <div class="control-group">
                                 <label class="control-label" for="inputMensaje">Mensaje</label>
                                 <div class="controls">
-                                    <textarea rows="3" placeholder="Mensaje" name="mensaje" class="validate[required]"></textarea>
+                                    <textarea id="inputMensaje" rows="3" placeholder="Mensaje" name="mensaje" class="validate[required]"></textarea>
                                 </div>
                             </div>
                             <br />
                             <div class="control-group">
                                 <label class="control-label" for="inputCompania">Compañia</label>
                                 <div class="controls">
-                                    <input type="text" id="textCompania" placeholder="Compañia" name="compania" class="validate[required,custom[onlyLetterSp]]" />
+                                    <input type="text" id="inputCompania" placeholder="Compañia" name="compania" class="validate[required,custom[onlyLetterSp]]" />
                                 </div>
                             </div>
                             <br />
                             <div class="control-group">
                                 <label class="control-label" for="inputNombre">Nombre</label>
                                 <div class="controls">
-                                    <input type="text" id="textNombre" placeholder="Nombre" name="nombre" class="validate[required,custom[onlyLetterSp]]" />
+                                    <input type="text" id="inputNombre" placeholder="Nombre" name="nombre" class="validate[required,custom[onlyLetterSp]]" />
                                 </div>
                             </div>
                             <br />
                             <div class="control-group">
                                 <label class="control-label" for="inputApellido">Apellido</label>
                                 <div class="controls">
-                                    <input type="text" id="textApellido" placeholder="Apellido" name="apellido" class="validate[required,custom[onlyLetterSp]]" />
+                                    <input type="text" id="inputApellido" placeholder="Apellido" name="apellido" class="validate[required,custom[onlyLetterSp]]" />
                                 </div>
                             </div>
                             <br />
                             <div class="control-group">
                                 <label class="control-label" for="inputEmail">Email</label>
                                 <div class="controls">
-                                    <input type="text" id="textEmail" placeholder="Email" name="email" class="validate[required,custom[email]]" />
+                                    <input type="text" id="inputEmail" placeholder="Email" name="email" class="validate[required,custom[email]]" />
                                 </div>
                             </div>
                             <br />
                             <div class="control-group">
                                 <label class="control-label" for="inputTelefono">Teléfono</label>
                                 <div class="controls">
-                                    <input type="text" id="textTelefono" placeholder="Telefono" name="telefono" class="validate[required,custom[phone],minSize[6],maxSize[9]]" />
+                                    <input type="text" id="inputTelefono" placeholder="Telefono" name="telefono" class="validate[required,custom[phone],minSize[6],maxSize[9]]" />
                                 </div>
                             </div>
                             <br />
