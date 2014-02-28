@@ -472,23 +472,44 @@ include '../class/Fuctions.php';
             var $list_marc = "",$currentid = "";
             var product_content_html = $j("#normal_content").html();
             $j("#normal_content").remove();
-            
-            
-            function normal_cats(id){
+            $j(".list_cats, .list_cats_mar, .list_marc, .list_all_marcs").on("click",function (){
+                if($j(this).hasClass("list_all_marcs")){
+                    $j("#select_categories").next().find(".active").removeClass("active").next().css("display","none");     
+                    $j(this).next().find(".active").removeClass("active").next().css("display","none");     
+                }else if($j(this).attr('id') == "select_categories"){
+                    $j(".list_all_marcs").next().find(".active").removeClass("active").next().css("display","none");     
+                    $j(this).next().find(".active").removeClass("active").next().css("display","none");     
+                }else{
+                    $j(this).next().find(".active").removeClass("active").next().css("display","none");     
+                }
+            });
+            function trigger_list_all($this){
+                if(!$this.hasClass("active")){
+                    if($j($this.parent().parent().parent().parent().children(".active")).hasClass("list_all_marcs")){
+                        all_marks();
+                    }
+                }
+            }
+            function normal_cats(id,$this){
                 $j.ajax({
                     data:  "id=" + id,
                     url:   'procesos.php',
                     type:  'post',
                     success:  function (html) {
-                        if (html.indexOf('vacio') >= 0){
-                            $j("#product_content").html(html);
-                        var oScroll6 = $j('.scrollbar1');
-                        oScroll6.tinyscrollbar();
-                        if ($j('a.fancybox').length && jQuery()) {
-                            $j("a.fancybox").fancybox();
+                        if(!$this.hasClass("active") && $this.attr('id') == "select_categories"){
+                            $j("#product_content").html(product_content_html);
+                        }else{
+                            if (html.indexOf('vacio') >= 0){
+                                $j("#product_content").html(html);
+                                var oScroll6 = $j('.scrollbar1');
+                                oScroll6.tinyscrollbar();
+                                if ($j('a.fancybox').length && jQuery()) {
+                                    $j("a.fancybox").fancybox();
+                                }
+                                addthis.toolbox('.addthis_toolbox');
+                            }
                         }
-                        addthis.toolbox('.addthis_toolbox');
-                        }
+                        
                     }
                 });
             }
@@ -529,21 +550,29 @@ include '../class/Fuctions.php';
             
             $j(document).on("click",".regresar",function(){
                 $j("#product_content").html(product_content_html);
+                $j("div.list_all_marcs.active").click();
+                $j("div#select_categories.active").click();
             });
             
             
             $j(document).on("click",".list_all_marcs",function(){
-                all_marks();
+                if($j(this).hasClass("active")){
+                    all_marks();
+                }else{
+                    $j("#product_content").html(product_content_html);
+                }
             });
             
-            
+            $j(document).on("click","#select_categories",function(){
+                
+            });
             
             
             $j(document).on("click",".list_cats,.list_prods",function(){
-                normal_cats($j(this).data("id"));
+                normal_cats($j(this).data("id"),$j(this));
             });
+            
             $j(document).on("click",".list_cats_mar,.list_prods_mar",function(){
-                console.log("b")
                 $j.ajax({
                     data:  "id=" + $j(this).data("id") + "&do=1&parent=" + $list_marc + "&current=" + $currentid,
                     url:   'procesos.php',
@@ -563,12 +592,14 @@ include '../class/Fuctions.php';
             $j(document).on("click",".list_marc",function(){
                 $list_marc = $j(this).data("id");
                 $currentid = $j(this).data("currentid");
+                $this = $j(this);
                 $j.ajax({
                     data:  "id=" + $j(this).data("id") + "&do=1&parent=" + $list_marc + "&current=" + $currentid,
                     url:   'procesos.php',
                     type:  'post',
                     success:  function (html) {
                         $j("#product_content").html(html);
+                        trigger_list_all($this);
                     }
                 });
             });
