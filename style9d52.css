@@ -1369,7 +1369,7 @@ text_test div h5
     list-style: square;
 }
 .scrollbar1 { width: 65%;float: left;}
-        .scrollbar1 .viewport { width: 95%;; height: 200px; overflow: hidden; position: relative; }
+        .scrollbar1 .viewport { width: 95%; height: 200px; overflow: hidden; position: relative; }
         .scrollbar1 .overview { list-style: none; position: absolute; left: 0; top: 0; line-height: 14px;}
         .scrollbar1 .thumb .end,
         .scrollbar1 .thumb { background-color: #003D5D; }
@@ -1549,8 +1549,13 @@ blockquote.right{margin-left:20px;text-align:left;	margin-right:0;	width:33%; fl
 }
 
 .que-hacemos-contenedor {
+    float: none;
     margin: 20px 0;
-    max-height: 600px;
     overflow: auto;
     overflow-x: hidden;
+    width: 100%;
+}
+
+.que-hacemos-contenedor .viewport {
+    height: 600px;
 }

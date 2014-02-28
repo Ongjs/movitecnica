@@ -111,7 +111,16 @@
                     <div style="display: inline-block;" class="uni_response">
                         <div style="width: 98%; text-align: left;">
                             <h1><b><?php echo mo_get_data(1, 11); ?></b></h1>
-                            <div class="que-hacemos-contenedor"><?php echo mo_get_data(3, 11); ?></div>
+                            <div class="scrollbar1 que-hacemos-contenedor">
+                                <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+                                <div class="viewport">
+                                    <div class="overview" style="width: 100%">
+                                        <div style="text-align: left">
+                                        <?php echo mo_get_data(3, 11); ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <a href="ultimos_servicios.php"><span>Ir a Últimos Servicios &gt;</span></a>
                             <br /><br />
                         </div>
@@ -275,6 +284,7 @@
         <!--<script src="../_switcher/script.js"></script>-->
 
         <div id="toTop"><a href="#">Subir</a></div>
+        <script type='text/javascript' src='../js/tinyscrollbar.js'></script>
         <script type="text/javascript" src="../js/jquery.carouFredSel-6.2.1.js"></script>
         <script type='text/javascript' src='../js/jquery.easing-1.35152.js?ver=1.0'></script>
         <script type='text/javascript' src='../js/jquery.masonry.min5152.js?ver=1.0'></script>
@@ -339,6 +349,8 @@
                     $j(".footer-menu img").attr("src", "../images/flecha_abajo.png");
                 }
             });
+            
+            $j('.scrollbar1').tinyscrollbar();
         });
     </script>
 </html>
