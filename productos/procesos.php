@@ -27,12 +27,12 @@ if((int)$atras[3] == 0){
 <?php
 }else if((int)$id == 0){
     ?>
-    <span style="cursor: pointer; display: a" class="regresar">Regresar</span>
+    <span style="cursor: pointer;" class="regresar">Regresar</span>
     <?php
 }
 }else if($do == "3"){   
 ?>
-    <span style="cursor: pointer; display: a" class="regresar">Regresar</span>
+    <span style="cursor: pointer;" class="regresar">Regresar</span>
 <?php
 }
 ?>
