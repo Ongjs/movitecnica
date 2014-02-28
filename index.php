@@ -346,7 +346,7 @@ ini_set('display_errors', 1);
                             <div id="post_tab3" class="tab_content recent_posts">
                                 <ul>
                                     <li> <a href="trabaje_con_nosotros/oferta_de_trabajo.php" title="Trabaje con Nosotros" class="small_thumb"><img src="userfiles/ultimos_pro.png" width="100" height="100" alt=""></a>
-                                        <a href="tabaje_con_nosotros/oferta_de_trabajo.php" title="Postula ahora" class="title">Postula ahora</a>
+                                        <a href="trabaje_con_nosotros/oferta_de_trabajo.php" title="Postula ahora" class="title">Postula ahora</a>
                                         Queremos que seas parte de nuestro equipo y así aportar y crecer profesionalmente con nosotros.
                                         <div class="clear"></div>
                                     </li>
