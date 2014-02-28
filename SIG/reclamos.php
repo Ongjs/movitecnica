@@ -22,7 +22,7 @@ if(isset($_POST["nombre"])){
     $mail->Body = '<table border="0" style="text-align: left; background: rgba(248,248,248,8); border-radius: 3px; line-height: 22px;">
         <tr style="border-top: solid 1px rgba(225,225,225,1)">
             <td><h2>Reclamos</h2></td>
-            <td style="width: 400px; text-align: right"><img src="http://www.movitecnica.com.pe/images/logo_skin3.png" width="270" height="56"></td>
+            <td style="width: 400px; text-align: right"><img src="http://www.movitecnica.com.pe/images/Logotipo_Movitecnica.jpg" width="270" height="56"></td>
         </tr>
         <tr>
             <td style="border-top: solid 1px rgba(225,225,225,1)"><strong>Nombre Completo:</strong></td>
@@ -63,7 +63,7 @@ if(isset($_POST["nombre"])){
     $mail->IsHTML(true);                                  // Set email format to HTML
     $mail->CharSet = 'utf-8';
     $mail->Subject = 'Movitécnica - Reclamos';
-    $mail->Body = '<img src="http://www.movitecnica.com.pe/images/logo_skin3.png" width="270" height="56" />
+    $mail->Body = '<img src="http://www.movitecnica.com.pe/images/Logotipo_Movitecnica.jpg" width="270" height="56" />
         <br /><br /><strong>' . $_POST["nombre"] . ' ' . $_POST["apellido"] . '</strong><br />
         Su mensaje ha sido recibido satisfactoriamente, en breve nos estaremos comunicando con usted.<br />
     ';
