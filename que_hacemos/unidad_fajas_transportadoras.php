@@ -221,8 +221,8 @@
         </div>
         <!-- #footer -->
 
-        <link rel='stylesheet' id='demo-style'  href='_switcher/style.css' type='text/css' media='all' />
-        <link rel='stylesheet' id='demo-minicolor'  href='_switcher/miniColors/jquery.miniColors.css' type='text/css' media='all' />
+        <link rel='stylesheet' id='demo-style'  href='../_switcher/style.css' type='text/css' media='all' />
+        <link rel='stylesheet' id='demo-minicolor'  href='../_switcher/miniColors/jquery.miniColors.css' type='text/css' media='all' />
 
         <script type="text/javascript">
             var template = '../index.php';
@@ -252,16 +252,16 @@
                 <div class='input'>
                     <h4>Example Patterns</h4>
                     <div id='custom_bg_image' class="custom_bg_image">
-                        <img src='_switcher/../images/_blank.png' data-img="bg0" alt="demo" />
-                        <img src='_switcher/../images/_blank.png' data-img="bg1" alt="demo" />
-                        <img src='_switcher/../images/_blank.png' data-img="bg2" alt="demo" />
-                        <img src='_switcher/../images/_blank.png' data-img="bg3" alt="demo" />
-                        <img src='_switcher/../images/_blank.png' data-img="retina_wood" alt="demo" />
-                        <img src='_switcher/../images/_blank.png' data-img="bg4" alt="demo" />
-                        <img src='_switcher/../images/_blank.png' data-img="bg5" alt="demo" />
-                        <img src='_switcher/../images/_blank.png' data-img="white_brick_wall" alt="demo" />
-                        <img src='_switcher/../images/_blank.png' data-img="rip_jobs" alt="demo" />
-                        <img src='_switcher/../images/_blank.png' data-img="purty_wood" alt="demo" />
+                        <img src='../_switcher/images/_blank.png' data-img="bg0" alt="demo" />
+                        <img src='../_switcher/images/_blank.png' data-img="bg1" alt="demo" />
+                        <img src='../_switcher/images/_blank.png' data-img="bg2" alt="demo" />
+                        <img src='../_switcher/images/_blank.png' data-img="bg3" alt="demo" />
+                        <img src='../_switcher/images/_blank.png' data-img="retina_wood" alt="demo" />
+                        <img src='../_switcher/images/_blank.png' data-img="bg4" alt="demo" />
+                        <img src='../_switcher/images/_blank.png' data-img="bg5" alt="demo" />
+                        <img src='../_switcher/images/_blank.png' data-img="white_brick_wall" alt="demo" />
+                        <img src='../_switcher/images/_blank.png' data-img="rip_jobs" alt="demo" />
+                        <img src='../_switcher/images/_blank.png' data-img="purty_wood" alt="demo" />
                         <div class="clear"></div>
                     </div>
                 </div>
@@ -272,8 +272,8 @@
             </div>	
         </div>	
 
-        <script src="_switcher/miniColors/jquery.miniColors.min.js"></script>
-        <script src="_switcher/script.js"></script>
+        <script src="../_switcher/miniColors/jquery.miniColors.min.js"></script>
+        <!--<script src="../_switcher/script.js"></script>-->
 
         <div id="toTop"><a href="#">Subir</a></div>
         <script type="text/javascript" src="../js/jquery.carouFredSel-6.2.1.js"></script>
