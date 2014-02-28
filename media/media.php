@@ -111,9 +111,11 @@ include '../class/Fuctions.php'; ?>
                         $indice = "<a href='media.php'> > $media </a> > ";
                         $indice .= $media = $filtro == 5 ? mo_get_data(1, 29) : mo_get_data(1, 30);
                         $pagfil = $filtro == 5 ? "&media=noticias" : "&media=identidad-de-marca";
+                        $content_id = $filtro == 5 ? 29 : 30;
                     } else {
                         $pagfil = "";
                         $indice = "> $media";
+                        $content_id = 28;
                     }
                     ?>
                     <span> <a href="../index.php"><?php echo mo_get_data(1, 1); ?></a> <?php echo $indice; ?></span>
@@ -121,7 +123,24 @@ include '../class/Fuctions.php'; ?>
                     <br />
                     <h1><b><?php echo $media; ?></b></h1>
                     <div style="display: inline-block;" class="uni_response">
-                        <?php echo mo_get_data(3, 28); ?>
+                        <?php
+                        $content = mo_get_data(3, $content_id);
+                        $characters_length = strlen(strtr(strip_tags($content), array("&nbsp;" => " ", " " => "", "\n" => "")));
+                        if ($characters_length <= 1000) {
+                            echo $content;
+                        } else {
+                        ?>
+                        <div class="scrollbar1 que-hacemos-contenedor">
+                            <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+                            <div class="viewport" style="height: 500px;">
+                                <div class="overview" style="width: 100%">
+                                    <div style="text-align: left">
+                                    <?php echo mo_get_data(3, $content_id); ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <?php } ?>
                         <br />
                         <div style="width: 98%;">
                             <?php
@@ -348,6 +367,7 @@ include '../class/Fuctions.php'; ?>
     <script src="_switcher/script.js"></script>
 
     <div id="toTop"><a href="#">Subir</a></div>
+    <script type='text/javascript' src='../js/tinyscrollbar.js'></script>
     <script type='text/javascript' src='../js/jquery.easing-1.35152.js?ver=1.0'></script>
     <script type='text/javascript' src='../js/jquery.masonry.min5152.js?ver=1.0'></script>
     <script type='text/javascript' src='../js/jquery.imagesloaded.min5152.js?ver=1.0'></script>
@@ -394,6 +414,8 @@ include '../class/Fuctions.php'; ?>
                 $j(".footer-menu img").attr("src", "../images/flecha_abajo.png");
             }
         });
+        
+        $j('.scrollbar1').tinyscrollbar();
     });
 </script>
 </html>
