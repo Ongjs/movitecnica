@@ -17,7 +17,7 @@ include 'class/Fuctions.php';
         <div class="container">
             <div class="row">
                 <div style="text-align: right; margin-right: 3%; color: #FFF; font-weight: bold; font-size: 10px;">
-                    <span style="margin-left: 15px; margin-right: 15px;"><a href="../contactenos.php">Contáctenos</a></span> <span>|</span> <span style="margin-left: 15px; margin-right: 12px;">Síguenos</span> <img class="movirs" src="../images/facebook.png">
+                    <span style="margin-left: 15px; margin-right: 15px;"><a href="../contactenos.php"><?php echo mo_get_data(1, 31); ?></a></span> <span>|</span> <span style="margin-left: 15px; margin-right: 12px;">Síguenos</span> <img class="movirs" src="../images/facebook.png">
                     <img class="movirs" src="../images/flickr.png">
                 </div>
                 <div class="twelve columns">
@@ -68,8 +68,8 @@ include 'class/Fuctions.php';
                                 </li>
                                 <li id="menu-item-1126"  ><a href="media/media.php"><?php echo mo_get_data(1, 28); ?></a>
                                     <ul class="sub-menu">
-                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="media/media.php?media=noticia"><?php echo mo_get_data(1, 29); ?></a></li>
-                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="media/media.php?media=nota"><?php echo mo_get_data(1, 30); ?></a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="media/media.php?media=noticias"><?php echo mo_get_data(1, 29); ?></a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="media/media.php?media=identidad-de-marca"><?php echo mo_get_data(1, 30); ?></a></li>
                                     </ul>
                                 </li>
                                 <!--<li id="menu-item-1125" ><a href="single-ele.html">HTML Elements</a></li>-->
@@ -136,15 +136,15 @@ include 'class/Fuctions.php';
         <article style="width: 140px">
             <span style="font-size: 16px;"><b><a href="media/media.php"><?php echo mo_get_data(1, 28); ?></a></b></span><br/>
             <span>
-                <a href="media/media.php"><?php echo mo_get_data(1, 29); ?></a><br/>
-                <a href="media/media.php"><?php echo mo_get_data(1, 30); ?></a><br/>
+                <a href="media/media.php?media=noticias"><?php echo mo_get_data(1, 29); ?></a><br/>
+                <a href="media/media.php?media=identidad-de-marca"><?php echo mo_get_data(1, 30); ?></a><br/>
             </span>
         </article>
 
     </section>
     <section style='margin-top: 15px;'>
         <div class="footer-op">
-            <span><img src="images/sitemap.png">Sitemap</span>
+            <span><img src="images/sitemap.png"><a href="sitemap.php">Sitemap</a></span>
             <span><a href="contactenos.php"><img src="images/contactenos.png"><?php echo mo_get_data(1, 31); ?></a></span>
             <span><a href="index.php"><img src="images/home.png"><?php echo mo_get_data(1, 1); ?></a></span>
         </div>

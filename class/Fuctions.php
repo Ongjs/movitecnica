@@ -110,7 +110,7 @@ function mo_get_data($get,$id){
             $get = 'thumbnail';
             break;
     }
-    $cn->query("SELECT $get FROM content WHERE id = $id and status = 1 ");
+    $cn->query("SELECT $get FROM content WHERE id = $id");
     while ($row = $cn->fetch()) $result = $row;
     return $result[0];
 }
@@ -240,6 +240,13 @@ function mo_get_all_content($id){
     while ($row = $cn->fetch()) $result[] = $row;
     return $result;
 }
+function mo_get_all_content_mark($id, $mark){
+    $cn = Connection::getInstance();
+    $result = array();
+    $cn->query("SELECT id,name,type,image,content,file FROM `product` where  status = 1 and parent_id = '$id' and type = '3' and prod_mark = '$mark'  order by (type) asc");
+    while ($row = $cn->fetch()) $result[] = $row;
+    return $result;
+}
 function mo_get_all_cat_content(){
     $cn = Connection::getInstance();
     $result = array();
@@ -266,6 +273,19 @@ function mo_get_hidden($id){
     $cn->query("SELECT hidden FROM `product` where  id = '$id'");
     while ($row = $cn->fetch()) $result = $row;
     return $result[0];
+}
+function mo_get_parent($id){
+    $cn = Connection::getInstance();
+    $cn->query("SELECT parent_id FROM `product` where  id = '$id'");
+    while ($row = $cn->fetch()) $result = $row;
+    return $result[0];
+}
+function mo_get_marc_parent($id){
+    $cn = Connection::getInstance();
+    $result = array();
+    $cn->query("SELECT id,name FROM `product` where type = '2' and parent_id = '$id'");
+    while ($row = $cn->fetch()) $result[] = $row;
+    return $result;
 }
 
 ?>

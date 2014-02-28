@@ -107,9 +107,13 @@ foreach ($content as $val){
         $hidden = array();
     }
 if($id != ""){
-$content = mo_get_all_content($id);
+    if(is_numeric($parent)){
+        $content = mo_get_all_content_mark($id,$current);    
+    }else{
+        $content = mo_get_all_content($id);
+    }
 }  else {
-$content = mo_get_all_cat_content();
+    $content = mo_get_all_cat_content();
 }
 if(is_numeric($parent)){
     $marc = mo_get_curret_marc($current);

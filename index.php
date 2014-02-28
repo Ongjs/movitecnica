@@ -1,4 +1,6 @@
-
+<?php
+ini_set('display_errors', 1);
+?>
 <!DOCTYPE html>
 <html lang="en-US">
     <head>
@@ -40,7 +42,7 @@
                 <div class="container">
                     <div class="row">
                         <div style="text-align: right; margin-right: 3%; color: #FFF; font-weight: bold; font-size: 10px;">
-                            <span style="margin-left: 15px; margin-right: 15px;"><a href="contactenos.php">Contáctenos</a></span> <span>|</span> <span style="margin-left: 15px; margin-right: 12px;">Síguenos</span> <img class="movirs" src="images/facebook.png">
+                            <span style="margin-left: 15px; margin-right: 15px;"><a href="contactenos.php"><?php echo mo_get_data(1, 31); ?></a></span> <span>|</span> <span style="margin-left: 15px; margin-right: 12px;">Síguenos</span> <img class="movirs" src="images/facebook.png">
                             <img class="movirs" src="images/flickr.png">
                         </div>
                         <div class="twelve columns">
@@ -91,8 +93,8 @@
                                         </li>
                                         <li id="menu-item-1126"  ><a href="media/media.php"><?php echo mo_get_data(1, 28); ?></a>
                                             <ul class="sub-menu">
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="media/media.php?media=noticia"><?php echo mo_get_data(1, 29); ?></a></li>
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="media/media.php?media=nota"><?php echo mo_get_data(1, 30); ?></a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="media/media.php?media=noticias"><?php echo mo_get_data(1, 29); ?></a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="media/media.php?media=identidad-de-marca"><?php echo mo_get_data(1, 30); ?></a></li>
                                             </ul>
                                         </li>
                                         <!--<li id="menu-item-1125" ><a href="single-ele.html">HTML Elements</a></li>-->
@@ -316,8 +318,8 @@
                                     <?php
                                     foreach (mo_get_proy(2) as $array) {
                                         ?>
-                                        <li> <a href="que_hacemos/proyecto.php?cod=<?php echo $array[0]; ?>" title="<?php echo $array[1]; ?>" class="small_thumb"><img src="userfiles/<?php echo $array[3]; ?>" width="100" height="100" alt=""></a>
-                                            <a href="que_hacemos/proyecto.php?cod=<?php echo $array[0]; ?>" title="<?php echo $array[1]; ?>" class="title"><?php echo $array[1]; ?></a>
+                                        <li> <a href="que_hacemos/ultimos_proyectos.php" title="<?php echo $array[1]; ?>" class="small_thumb"><img src="userfiles/<?php echo $array[3]; ?>" width="100" height="100" alt=""></a>
+                                            <a href="que_hacemos/ultimos_proyectos.php" title="<?php echo $array[1]; ?>" class="title"><?php echo $array[1]; ?></a>
                                             <?php echo substr($array[2], 0, 130)."...."; ?>
                                             <div class="clear"></div>
                                         </li>
@@ -343,9 +345,9 @@
                             </div>
                             <div id="post_tab3" class="tab_content recent_posts">
                                 <ul>
-                                    <li> <a href="que_hacemos/ultimos_proyectos.php" title="Trabaje con Nosotros" class="small_thumb"><img src="userfiles/ultimos_pro.png" width="100" height="100" alt=""></a>
-                                        <a href="que_hacemos/ultimos_proyectos.php" title="Postula ahora" class="title">Postula ahora</a>
-                                        Queremos que seas parte de nuestro equipo, teniendo la posibilidad de escoger el puesto que mejor se acomode a tu perfil y así poder aportar y crecer profesionalmente con nosotros.
+                                    <li> <a href="trabaje_con_nosotros/oferta_de_trabajo.php" title="Trabaje con Nosotros" class="small_thumb"><img src="userfiles/ultimos_pro.png" width="100" height="100" alt=""></a>
+                                        <a href="tabaje_con_nosotros/oferta_de_trabajo.php" title="Postula ahora" class="title">Postula ahora</a>
+                                        Queremos que seas parte de nuestro equipo y así aportar y crecer profesionalmente con nosotros.
                                         <div class="clear"></div>
                                     </li>
                                 </ul>
@@ -409,15 +411,15 @@
                             <article style="width: 140px">
                                 <span style="font-size: 16px;"><b><a href="media/media.php"><?php echo mo_get_data(1, 28); ?></a></b></span><br/>
                                 <span>
-                                    <a href="media/media.php"><?php echo mo_get_data(1, 29); ?></a><br/>
-                                    <a href="media/media.php"><?php echo mo_get_data(1, 30); ?></a><br/>
+                                    <a href="media/media.php?media=noticias"><?php echo mo_get_data(1, 29); ?></a><br/>
+                                    <a href="media/media.php?media=identidad-de-marca"><?php echo mo_get_data(1, 30); ?></a><br/>
                                 </span>
                             </article>
 
                         </section>
                         <section style='margin-top: 15px;'>
                             <div class="footer-op">
-                                <span><img src="images/sitemap.png">Sitemap</span>
+                                <span><img src="images/sitemap.png"><a href="sitemap.php">Sitemap</a></span>
                                 <span><a href="contactenos.php"><img src="images/contactenos.png"><?php echo mo_get_data(1, 31); ?></a></span>
                                 <span><a href="index.php"><img src="images/home.png"><?php echo mo_get_data(1, 1); ?></a></span>
                             </div>

@@ -24,6 +24,7 @@ $cn->query("SELECT id, name FROM product WHERE parent_id = '0' AND type = '1' OR
         var mod = 42;
         mo_addcat(mod, "", "");
         mo_list(mod);
+        $select = "";
         Shadowbox.init();
         var category_value = "", category_text, $array = new Array(), $select, $arraylen, cont, target;
         $array.push(category_value);
@@ -53,10 +54,26 @@ $cn->query("SELECT id, name FROM product WHERE parent_id = '0' AND type = '1' OR
         });
         $(document).on("keyup","#search",function(){ mo_search(mod); return false; });
         $(document).on("click",".list", function(){ mo_list(mod,category_value); return false; });
-        $(document).on("click",".update", function(){ mo_update(mod, $(this));  return false; });
+        $(document).on("click",".update", function(){
+            if($select === ""){
+//                alert("Seleccione una sub categoria");
+            }else if($select.val() === ""){
+//                alert("Seleccione una sub categoria");
+            }else{
+                mo_update(mod, $(this), $select.val()); 
+            }
+            return false; });
         $(document).on("click",".delete", function(){ mo_delete(mod, $(this)); return false; });
         $(document).on("click",".status", function(){ mo_status(mod, $(this)); return false; });
-        $(".new").on("click", function(){ mo_new(mod, category_value); return false; });
+        $(".new").on("click", function(){ 
+            if($select === ""){
+                alert("No es posible crear un producto en la categoria actual");
+            }else if($select.val() === ""){
+                alert("No es posible crear un producto en la categoria actual");
+            }else{
+                mo_new(mod, category_value, $select.val());
+            } 
+            return false; });
 
         $(document).on("submit","form#update", function() {
             $("#img_file").val($("#image").val()); 

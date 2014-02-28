@@ -1,4 +1,4 @@
-$.ajaxSetup({
+﻿$.ajaxSetup({
     type: 'post',
     url: 'directory.php',
     error: function(data){ alert(data.responseText); }
@@ -132,15 +132,19 @@ function mo_list(mod, val){
     });
 }
 
-function mo_new(mod,ncat){
+function mo_new(mod, ncat, subcat){
     $.ajax({
-        data: "mod=" + mod + "&select=" + $('#opt_cat :selected').val() + "&do=1&ncat=" + ncat 
+        data: "mod=" + mod + "&select=" + $('#opt_cat :selected').val() + "&do=1&ncat=" + ncat + "&subcat=" + subcat
     }).done(function(html){
-        $("#form, .search, #list, a.new").hide();
-        $("#form").html(html);
-        $("#form, a.cancel").fadeIn();
-        $.getScript("directory.php?mod=2");
-        mo_style();
+        if(html === ""){
+            alert("No es posible crear un producto en la categoria actual");
+        }else{   
+            $("#form, .search, #list, a.new").hide();
+            $("#form").html(html);
+            $("#form, a.cancel").fadeIn();
+            $.getScript("directory.php?mod=2");
+            mo_style();
+        }
     });
 }
 
@@ -152,16 +156,20 @@ function mo_sub_cats(mod, id, val){
     });
 }
 
-function mo_update(mod, e){
+function mo_update(mod, e, subcat){
     $.ajax({
-        data: "mod=" + mod + "&select=" + $('#opt_cat :selected').val() + "&do=1&id=" + e.attr("id")
+        data: "mod=" + mod + "&select=" + $('#opt_cat :selected').val() + "&do=1&id=" + e.attr("id") + "&subcat=" + subcat
     }).done(function(html){
-        $("#form, .search, a.new").hide();
-        $("#list").empty();
-        $("#form").html(html);
-        $("#form, a.cancel").fadeIn();
-        $.getScript("directory.php?mod=2");
-        mo_style();
+        if(html === ""){
+            alert("No es posible crear un producto en la categoria actual");
+        }else{
+            $("#form, .search, a.new").hide();
+            $("#list").empty();
+            $("#form").html(html);
+            $("#form, a.cancel").fadeIn();
+            $.getScript("directory.php?mod=2");
+            mo_style();
+        }
     });
 }
 
@@ -240,7 +248,7 @@ function mo_tinymce(){
         docs_language : 'es', 
         skin_variant : 'silver', 
         editor_selector : "tinymce_mini", 
-        document_base_url: 'http://localhost:8080/movitecnica/', 
+        document_base_url: 'http://www.movitecnica.com.pe/', 
         plugins: 'safari, pagebreak, style, layer, table, save, advhr, advimage, advlink, emotions, iespell, inlinepopups, insertdatetime, preview, media, searchreplace, print, contextmenu, paste, directionality, fullscreen, noneditable, visualchars, nonbreaking, xhtmlxtras, template, wordcount', 
         theme_advanced_buttons1 : 'bold, |, italic, |, underline, |, forecolor, |, link, |, unlink', 
         theme_advanced_buttons2: '', 
@@ -260,7 +268,7 @@ function mo_tinymce(){
         docs_language : 'es', 
         skin_variant : 'silver', 
         editor_selector : "tinymce", 
-        document_base_url: 'http://localhost:8080/movitecnica/', 
+        document_base_url: 'http://www.movitecnica.com.pe/', 
         plugins : 'safari,pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,wordcount', 
         theme_advanced_buttons1 : 'bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,styleselect,formatselect,fontselect,fontsizeselect', 
         theme_advanced_buttons2 : 'cut,copy,paste,pastetext,pasteword,selectall,|,search,replace,|,bullist,numlist,|,outdent,indent,blockquote,|,undo,redo,|,link,unlink,anchor,image,|,insertdate,inserttime', 

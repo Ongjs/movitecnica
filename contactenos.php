@@ -16,8 +16,8 @@ if(isset($_POST["tema"])){
     $mail->Port = 465;
     $mail->SMTPAuth = true;                               // Enable SMTP authenticationa
     $mail->SMTPSecure = 'ssl';
-    $mail->Username = 'andresgarciadev@gmail.com';                            // SMTP username
-    $mail->Password = '';                           // SMTP password
+    $mail->Username = 'masterojitos.test@gmail.com';                            // SMTP username
+    $mail->Password = 'masterojitos';                           // SMTP password
     $mail->From = 'no-reply@movitecnica.com.pe';
     $mail->FromName = 'Movitécnica';
     $mail->AddAddress('gdelgado@movitecnica.com.pe', 'Alberto Delgado');  // Add a recipient
@@ -30,7 +30,7 @@ if(isset($_POST["tema"])){
     $mail->Body = '<table border="0" style="text-align: left; background: rgba(248,248,248,8); border-radius: 3px; line-height: 22px;">
         <tr style="border-top: solid 1px rgba(225,225,225,1)">
             <td><h2>Contactenos</h2></td>
-            <td style="width: 400px; text-align: right"><img src="www.movitecnica.com/images/logo_skin3.png" width="270" height="56"></td>
+            <td style="width: 400px; text-align: right"><img src="http://www.movitecnica.com.pe/images/logo_skin3.png" width="270" height="56"></td>
         </tr>
         <tr >
             <td style="border-top: solid 1px rgba(225,225,225,1)"><strong>Tema:</strong></td>
@@ -69,6 +69,7 @@ if(isset($_POST["tema"])){
 
     $email_send = $mail->Send();
 }
+$email_send = true;
 ?>
 <!DOCTYPE html>
 <html lang="en-US">
@@ -127,7 +128,7 @@ include 'class/Fuctions.php'; ?>
                 <div class="container">
                     <div class="row">
                         <div style="text-align: right; margin-right: 3%; color: #FFF; font-weight: bold; font-size: 10px;">
-                            <span style="margin-left: 15px; margin-right: 15px;"><a href="contactenos.php">Contáctenos</a></span> <span>|</span> <span style="margin-left: 15px; margin-right: 12px;">Síguenos</span> <img class="movirs" src="images/facebook.png">
+                            <span style="margin-left: 15px; margin-right: 15px;"><a href="contactenos.php"><?php echo mo_get_data(1, 31); ?></a></span> <span>|</span> <span style="margin-left: 15px; margin-right: 12px;">Síguenos</span> <img class="movirs" src="images/facebook.png">
                             <img class="movirs" src="images/flickr.png">
                         </div>
                         <div class="twelve columns">
@@ -178,8 +179,8 @@ include 'class/Fuctions.php'; ?>
                                         </li>
                                         <li id="menu-item-1126"  ><a href="media/media.php"><?php echo mo_get_data(1, 28); ?></a>
                                             <ul class="sub-menu">
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="media/media.php?media=noticia"><?php echo mo_get_data(1, 29); ?></a></li>
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="media/media.php?media=nota"><?php echo mo_get_data(1, 30); ?></a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="media/media.php?media=noticias"><?php echo mo_get_data(1, 29); ?></a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="media/media.php?media=identidad-de-marca"><?php echo mo_get_data(1, 30); ?></a></li>
                                             </ul>
                                         </li>
                                         <!--<li id="menu-item-1125" ><a href="single-ele.html">HTML Elements</a></li>-->
@@ -227,49 +228,49 @@ include 'class/Fuctions.php'; ?>
                             <div class="control-group">
                                 <label class="control-label" for="inputTema">Tema</label>
                                 <div class="controls">
-                                    <input type="text" id="textTema" placeholder="Tema" name="tema" class="validate[required]" />
+                                    <input type="text" id="inputTema" placeholder="Tema" name="tema" class="validate[required]" />
                                 </div>
                             </div>
                             <br />
                             <div class="control-group">
                                 <label class="control-label" for="inputMensaje">Mensaje</label>
                                 <div class="controls">
-                                    <textarea rows="3" placeholder="Mensaje" name="mensaje" class="validate[required]"></textarea>
+                                    <textarea id="inputMensaje" rows="3" placeholder="Mensaje" name="mensaje" class="validate[required]"></textarea>
                                 </div>
                             </div>
                             <br />
                             <div class="control-group">
                                 <label class="control-label" for="inputCompania">Compañia</label>
                                 <div class="controls">
-                                    <input type="text" id="textCompania" placeholder="Compañia" name="compania" class="validate[required,custom[onlyLetterSp]]" />
+                                    <input type="text" id="inputCompania" placeholder="Compañia" name="compania" class="validate[required,custom[onlyLetterSp]]" />
                                 </div>
                             </div>
                             <br />
                             <div class="control-group">
                                 <label class="control-label" for="inputNombre">Nombre</label>
                                 <div class="controls">
-                                    <input type="text" id="textNombre" placeholder="Nombre" name="nombre" class="validate[required,custom[onlyLetterSp]]" />
+                                    <input type="text" id="inputNombre" placeholder="Nombre" name="nombre" class="validate[required,custom[onlyLetterSp]]" />
                                 </div>
                             </div>
                             <br />
                             <div class="control-group">
                                 <label class="control-label" for="inputApellido">Apellido</label>
                                 <div class="controls">
-                                    <input type="text" id="textApellido" placeholder="Apellido" name="apellido" class="validate[required,custom[onlyLetterSp]]" />
+                                    <input type="text" id="inputApellido" placeholder="Apellido" name="apellido" class="validate[required,custom[onlyLetterSp]]" />
                                 </div>
                             </div>
                             <br />
                             <div class="control-group">
                                 <label class="control-label" for="inputEmail">Email</label>
                                 <div class="controls">
-                                    <input type="text" id="textEmail" placeholder="Email" name="email" class="validate[required,custom[email]]" />
+                                    <input type="text" id="inputEmail" placeholder="Email" name="email" class="validate[required,custom[email]]" />
                                 </div>
                             </div>
                             <br />
                             <div class="control-group">
                                 <label class="control-label" for="inputTelefono">Teléfono</label>
                                 <div class="controls">
-                                    <input type="text" id="textTelefono" placeholder="Telefono" name="telefono" class="validate[required,custom[phone],minSize[6],maxSize[9]]" />
+                                    <input type="text" id="inputTelefono" placeholder="Telefono" name="telefono" class="validate[required,custom[phone],minSize[6],maxSize[9]]" />
                                 </div>
                             </div>
                             <br />
@@ -347,15 +348,15 @@ include 'class/Fuctions.php'; ?>
                             <article style="width: 140px">
                                 <span style="font-size: 16px;"><b><a href="media/media.php"><?php echo mo_get_data(1, 28); ?></a></b></span><br/>
                                 <span>
-                                    <a href="media/media.php"><?php echo mo_get_data(1, 29); ?></a><br/>
-                                    <a href="media/media.php"><?php echo mo_get_data(1, 30); ?></a><br/>
+                                    <a href="media/media.php?media=noticias"><?php echo mo_get_data(1, 29); ?></a><br/>
+                                    <a href="media/media.php?media=identidad-de-marca"><?php echo mo_get_data(1, 30); ?></a><br/>
                                 </span>
                             </article>
 
                         </section>
                         <section style='margin-top: 15px;'>
                             <div class="footer-op">
-                                <span><img src="images/sitemap.png">Sitemap</span>
+                                <span><img src="images/sitemap.png"><a href="sitemap.php">Sitemap</a></span>
                                 <span><a href="contactenos.php"><img src="images/contactenos.png"><?php echo mo_get_data(1, 31); ?></a></span>
                                 <span><a href="index.php"><img src="images/home.png"><?php echo mo_get_data(1, 1); ?></a></span>
                             </div>

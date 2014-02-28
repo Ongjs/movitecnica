@@ -19,7 +19,7 @@ if (!empty($id)) {
 ?>
 <form id="<?php echo empty($id) ? "save" : "update"; ?>">
     <fieldset>
-        <legend>Ingresar Informacion</legend>
+        <legend>Ingresar Información</legend>
         <table width="100%">
             <tr>
                 <td><label for="name">Nombre</label></td>

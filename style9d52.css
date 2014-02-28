@@ -998,7 +998,6 @@ p.form-allowed-tags {font-size:11px; color:#999; font-style:italic	}
     font-weight: bold;
 }
 .image_carousel {
-    padding-left: 20px;
     width: 100%;
 }
 .image_carousel img 
@@ -1009,12 +1008,11 @@ p.form-allowed-tags {font-size:11px; color:#999; font-style:italic	}
     float: left;
     margin: 7px;
     padding: 9px;
-    width: 270px
+    width: 100px;
 }
 .image_carousel a 
 {
-    display: block;
-    float: left;
+    display: inline-block;
 }
 .clearfix {
     float: none;
@@ -1546,5 +1544,13 @@ blockquote.right{margin-left:20px;text-align:left;	margin-right:0;	width:33%; fl
 .email_response {
     background-color: #F5F5F5;
     margin: -10px 0 10px;
-    width: 300px;
+    padding: 5px;
+    width: 98%;
+}
+
+.que-hacemos-contenedor {
+    margin: 20px 0;
+    max-height: 600px;
+    overflow: auto;
+    overflow-x: hidden;
 }
