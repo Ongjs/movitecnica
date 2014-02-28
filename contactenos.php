@@ -69,7 +69,6 @@ if(isset($_POST["tema"])){
 
     $email_send = $mail->Send();
 }
-$email_send = true;
 ?>
 <!DOCTYPE html>
 <html lang="en-US">
