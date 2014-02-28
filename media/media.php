@@ -109,7 +109,7 @@ include '../class/Fuctions.php'; ?>
                     $filtro = isset($_REQUEST['media']) ? ($_REQUEST['media'] == "noticias" ? 5 : 6) : "5,6";
                     if (is_numeric($filtro)) {
                         $indice = "<a href='media.php'> > $media </a> > ";
-                        $indice .= $filtro == 5 ? mo_get_data(1, 29) : mo_get_data(1, 30);
+                        $indice .= $media = $filtro == 5 ? mo_get_data(1, 29) : mo_get_data(1, 30);
                         $pagfil = $filtro == 5 ? "&media=noticias" : "&media=identidad-de-marca";
                     } else {
                         $pagfil = "";
