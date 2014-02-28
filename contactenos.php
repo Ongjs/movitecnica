@@ -139,7 +139,7 @@ include 'class/Fuctions.php'; ?>
 
                             <div class="header_right">
                                 <div id="top_menu" class="menu-navigation-container"><ul id="mainmenu" class="sf-menu">
-                                        <!--<li id="menu-item-861"  class="current-menu-item"><a href="../index.php">Homepage</a></li>-->
+                                        <!--<li id="menu-item-861"  class="current-menu-item"><a href="index.php">Homepage</a></li>-->
                                         <li id="menu-item-1126"  ><a href="conocenos/conocenos.php"><?php echo mo_get_data(1, 2); ?></a>
                                             <ul class="sub-menu">
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a href="conocenos/mensaje_del_gerente.php"><?php echo mo_get_data(1, 3); ?></a></li>
@@ -443,7 +443,7 @@ include 'class/Fuctions.php'; ?>
         <script src="_switcher/script.js"></script>
 
         <div id="toTop"><a href="#">Subir</a></div>
-        <script src="../js/bootstrap.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
         <script type='text/javascript' src='js/jquery.easing-1.35152.js?ver=1.0'></script>
         <script type='text/javascript' src='js/jquery.masonry.min5152.js?ver=1.0'></script>
         <script type='text/javascript' src='js/jquery.imagesloaded.min5152.js?ver=1.0'></script>
