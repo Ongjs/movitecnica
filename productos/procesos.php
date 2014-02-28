@@ -95,7 +95,7 @@ foreach ($content as $val){
                 <img src="../userfiles/<?php echo $val[2]; ?>">
             </div>
         </div>
-        <div style=""><?php echo $val[1]; ?></div>
+        <div style="float:left;width: 100%;"><?php echo $val[1]; ?></div>
     </div>
     <?php
 }
