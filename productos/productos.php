@@ -170,7 +170,7 @@ include '../class/Fuctions.php';
                                             foreach ($array_cats_parent as $parents) {
                                                 ?>
                                                 <li>
-                                                    <div class="accordion_head accordion_title list_cats" data-id="<?php echo $parents[0]; ?>"><?php echo $parents[1]; ?></div>
+                                                    <div class="accordion_head accordion_title all_cats" data-id="<?php echo $parents[0]; ?>"><?php echo $parents[1]; ?></div>
                                                     <div class="accordion_content">
                                                         <?php
                                                         sub_categorys($array_id_cats, $parents[0]);
@@ -472,7 +472,7 @@ include '../class/Fuctions.php';
             var $list_marc = "",$currentid = "";
             var product_content_html = $j("#normal_content").html();
             $j("#normal_content").remove();
-            $j(".list_cats, .list_cats_mar, .list_marc, .list_all_marcs").on("click",function (){
+            $j(".list_cats, .list_cats_mar, .list_marc, .list_all_marcs, .all_cats").on("click",function (){
                 if($j(this).hasClass("list_all_marcs")){
                     $j("#select_categories").next().find(".active").removeClass("active").next().css("display","none");     
                     $j(this).next().find(".active").removeClass("active").next().css("display","none");     
@@ -568,6 +568,10 @@ include '../class/Fuctions.php';
             });
             
             
+            $j(document).on("click",".all_cats",function(){
+                normal_cats('',$j(this));
+            });
+
             $j(document).on("click",".list_cats,.list_prods",function(){
                 normal_cats($j(this).data("id"),$j(this));
             });
