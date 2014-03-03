@@ -83,15 +83,16 @@ if(isset($_POST["tema"])){
         <link rel="stylesheet" href="css/validationEngine.jquery.css" type="text/css"/>
         <link href='http://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css' />
         <link rel='stylesheet'  href='css/mystyles.css' type='text/css' media='all' />
-        <link rel='stylesheet' id='reset-css'  href='css/reset9d52.css?ver=3.5.1' type='text/css' media='all' />
-        <link rel='stylesheet' id='responsive'  href='css/responsive.css' type='text/css' media='all' />
+        <link rel='stylesheet' id='reset-css' href='css/reset9d52.css?ver=3.5.1' type='text/css' media='all' />
+        <link rel='stylesheet' id='responsive' href='css/responsive.css' type='text/css' media='all' />
         <link rel='stylesheet' id='font-awesome.min-css'  href='css/font-awesome.min9d52.css?ver=3.5.1' type='text/css' media='all' />
-        <link rel='stylesheet' id='flexslider-css'  href='css/flexslider9d52.css?ver=3.5.1' type='text/css' media='all' />
-        <link rel='stylesheet' id='superfish-css'  href='css/superfish9d52.css?ver=3.5.1' type='text/css' media='all' />
-        <link rel='stylesheet' id='mediaelement-css'  href='js/mediaelement/build/mediaelementplayer.min9d52.css?ver=3.5.1' type='text/css' media='all' />
-        <link rel='stylesheet' id='style-css'  href='style9d52.css?ver=3.5.1' type='text/css' media='all' />
-        <link rel='stylesheet' id='fancybox-css'  href='js/fancybox/jquery.fancybox-1.3.49d52.css?ver=3.5.1' type='text/css' media='all' />
-        <link rel='stylesheet' id='skin'  href='css/skin1.css' type='text/css' media='all' />
+        <link rel='stylesheet' id='flexslider-css' href='css/flexslider9d52.css?ver=3.5.1' type='text/css' media='all' />
+        <link rel='stylesheet' id='superfish-css' href='css/superfish9d52.css?ver=3.5.1' type='text/css' media='all' />
+        <link rel='stylesheet' id='mediaelement-css' href='js/mediaelement/build/mediaelementplayer.min9d52.css?ver=3.5.1' type='text/css' media='all' />
+        <link rel='stylesheet' id='style-css' href='style9d52.css?ver=3.5.1' type='text/css' media='all' />
+        <link rel='stylesheet' id='fancybox-css' href='js/fancybox/jquery.fancybox-1.3.49d52.css?ver=3.5.1' type='text/css' media='all' />
+        <link rel='stylesheet' id='skin' href='css/skin1.css' type='text/css' media='all' />
+        <link rel='stylesheet' id='parsley' href='lib/Parsley.js-2.0.0-rc2/src/parsley.css' type='text/css' media='all' />
         <script type='text/javascript' src='js/jquery.js'></script>
         <script type='text/javascript' src='js/custom.js'></script>
         </head>
@@ -223,53 +224,53 @@ include 'class/Fuctions.php'; ?>
                         }
                         ?>
                         <h3>Enviar un Mensaje</h3>
-                        <form id="contact_form" method="post">
+                        <form id="contact_form" method="post" data-parsley-validate>
                             <div class="control-group">
                                 <label class="control-label" for="inputTema">Tema</label>
                                 <div class="controls">
-                                    <input type="text" id="inputTema" placeholder="Tema" name="tema" class="validate[required]" />
+                                    <input type="text" id="inputTema" placeholder="Tema" name="tema" required />
                                 </div>
                             </div>
                             <br />
                             <div class="control-group">
                                 <label class="control-label" for="inputMensaje">Mensaje</label>
                                 <div class="controls">
-                                    <textarea id="inputMensaje" rows="3" placeholder="Mensaje" name="mensaje" class="validate[required]"></textarea>
+                                    <textarea id="inputMensaje" rows="3" placeholder="Mensaje" name="mensaje" required data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-minlength-message = "Necesita ingresar 20 caracteres como mínimo..."></textarea>
                                 </div>
                             </div>
                             <br />
                             <div class="control-group">
                                 <label class="control-label" for="inputCompania">Compañia</label>
                                 <div class="controls">
-                                    <input type="text" id="inputCompania" placeholder="Compañia" name="compania" class="validate[required,custom[onlyLetterSp]]" />
+                                    <input type="text" id="inputCompania" placeholder="Compañia" name="compania" required data-parsley-type="alphanum" />
                                 </div>
                             </div>
                             <br />
                             <div class="control-group">
                                 <label class="control-label" for="inputNombre">Nombre</label>
                                 <div class="controls">
-                                    <input type="text" id="inputNombre" placeholder="Nombre" name="nombre" class="validate[required,custom[onlyLetterSp]]" />
+                                    <input type="text" id="inputNombre" placeholder="Nombre" name="nombre" required data-parsley-type="alphanum" />
                                 </div>
                             </div>
                             <br />
                             <div class="control-group">
                                 <label class="control-label" for="inputApellido">Apellido</label>
                                 <div class="controls">
-                                    <input type="text" id="inputApellido" placeholder="Apellido" name="apellido" class="validate[required,custom[onlyLetterSp]]" />
+                                    <input type="text" id="inputApellido" placeholder="Apellido" name="apellido" required data-parsley-type="alphanum" />
                                 </div>
                             </div>
                             <br />
                             <div class="control-group">
                                 <label class="control-label" for="inputEmail">Email</label>
                                 <div class="controls">
-                                    <input type="text" id="inputEmail" placeholder="Email" name="email" class="validate[required,custom[email]]" />
+                                    <input type="email" id="inputEmail" placeholder="Email" name="email" required data-parsley-type="email" data-parsley-trigger="change" />
                                 </div>
                             </div>
                             <br />
                             <div class="control-group">
                                 <label class="control-label" for="inputTelefono">Teléfono</label>
                                 <div class="controls">
-                                    <input type="text" id="inputTelefono" placeholder="Telefono" name="telefono" class="validate[required,custom[phone],minSize[6],maxSize[9]]" />
+                                    <input type="text" id="inputTelefono" placeholder="Telefono" name="telefono" required data-parsley-type="digits" data-parsley-length="[6, 9]" />
                                 </div>
                             </div>
                             <br />
@@ -456,8 +457,8 @@ include 'class/Fuctions.php'; ?>
         <script type='text/javascript' src='js/jquery.flexslider-min5152.js?ver=1.0'></script>
         <script type='text/javascript' src='js/jquery.placeholder.min5152.js?ver=1.0'></script>
         <script type='text/javascript' src='js/jflickrfeed.min5152.js?ver=1.0'></script>
-        <script type="text/javascript" src="js/jquery.validationEngine-es.js"></script>
-        <script type="text/javascript" src="js/jquery.validationEngine.js"></script>
+        <script type="text/javascript" src="lib/Parsley.js-2.0.0-rc2/src/parsley.min.js"></script>
+        <script type="text/javascript" src="lib/Parsley.js-2.0.0-rc2/src/i18n/es.js"></script>
     </body>
     <script type="text/javascript">
         $j(document).ready(function() {
@@ -482,8 +483,7 @@ include 'class/Fuctions.php'; ?>
                     $j(".footer-menu span b").text("Ocultar Menu");
                     $j(".footer-menu img").attr("src", "images/flecha_abajo.png");
                 }
-            });
-            $j("#contact_form").validationEngine();
+            });            
         });
     </script>
 </html>

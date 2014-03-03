@@ -86,15 +86,16 @@ if(isset($_POST["nombre"])){
         <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
         <link rel="stylesheet" href="../css/validationEngine.jquery.css" type="text/css"/>
         <link rel='stylesheet'  href='../css/mystyles.css' type='text/css' media='all' />
-        <link rel='stylesheet' id='reset-css'  href='../css/reset9d52.css?ver=3.5.1' type='text/css' media='all' />
-        <link rel='stylesheet' id='responsive'  href='../css/responsive.css' type='text/css' media='all' />
-        <link rel='stylesheet' id='font-awesome.min-css'  href='../css/font-awesome.min9d52.css?ver=3.5.1' type='text/css' media='all' />
-        <link rel='stylesheet' id='flexslider-css'  href='../css/flexslider9d52.css?ver=3.5.1' type='text/css' media='all' />
-        <link rel='stylesheet' id='superfish-css'  href='../css/superfish9d52.css?ver=3.5.1' type='text/css' media='all' />
-        <link rel='stylesheet' id='mediaelement-css'  href='../js/mediaelement/build/mediaelementplayer.min9d52.css?ver=3.5.1' type='text/css' media='all' />
-        <link rel='stylesheet' id='style-css'  href='../style9d52.css?ver=3.5.1' type='text/css' media='all' />
-        <link rel='stylesheet' id='fancybox-css'  href='../js/fancybox/jquery.fancybox-1.3.49d52.css?ver=3.5.1' type='text/css' media='all' />
-        <link rel='stylesheet' id='skin'  href='../css/skin3.css' type='text/css' media='all' />
+        <link rel='stylesheet' id='reset-css' href='../css/reset9d52.css?ver=3.5.1' type='text/css' media='all' />
+        <link rel='stylesheet' id='responsive' href='../css/responsive.css' type='text/css' media='all' />
+        <link rel='stylesheet' id='font-awesome.min-css' href='../css/font-awesome.min9d52.css?ver=3.5.1' type='text/css' media='all' />
+        <link rel='stylesheet' id='flexslider-css' href='../css/flexslider9d52.css?ver=3.5.1' type='text/css' media='all' />
+        <link rel='stylesheet' id='superfish-css' href='../css/superfish9d52.css?ver=3.5.1' type='text/css' media='all' />
+        <link rel='stylesheet' id='mediaelement-css' href='../js/mediaelement/build/mediaelementplayer.min9d52.css?ver=3.5.1' type='text/css' media='all' />
+        <link rel='stylesheet' id='style-css' href='../style9d52.css?ver=3.5.1' type='text/css' media='all' />
+        <link rel='stylesheet' id='fancybox-css' href='../js/fancybox/jquery.fancybox-1.3.49d52.css?ver=3.5.1' type='text/css' media='all' />
+        <link rel='stylesheet' id='skin' href='../css/skin3.css' type='text/css' media='all' />
+        <link rel='stylesheet' id='parsley' href='../lib/Parsley.js-2.0.0-rc2/src/parsley.css' type='text/css' media='all' />
         <script type='text/javascript' src='../js/jquery.js'></script>
         <script type='text/javascript' src='../js/custom.js'></script>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
@@ -202,39 +203,39 @@ if(isset($_POST["nombre"])){
                                 }
                                 ?>
                                 <h3>Enviar un Reclamo</h3>
-                                <form id="claim_form" class="form-horizontal" method="post">
+                                <form id="claim_form" class="form-horizontal" method="post" data-parsley-validate>
                                     <div class="control-group">
                                         <label class="control-label" for="inputFirstname">Nombre</label>
                                         <div class="controls">
-                                            <input type="text" id="inputFirstname" placeholder="Nombre" name="nombre" class="validate[required,custom[onlyLetterSp]]" />
+                                            <input type="text" id="inputFirstname" placeholder="Nombre" name="nombre" required data-parsley-type="alphanum" />
                                         </div>
                                     </div>
                                     <br />
                                     <div class="control-group">
                                         <label class="control-label" for="inputLastname">Apellido</label>
                                         <div class="controls">
-                                            <input type="text" id="inputLastname" placeholder="Apellido" name="apellido" class="validate[required,custom[onlyLetterSp]]" />
+                                            <input type="text" id="inputLastname" placeholder="Apellido" name="apellido" required data-parsley-type="alphanum" />
                                         </div>
                                     </div>
                                     <br />
                                     <div class="control-group">
                                         <label class="control-label" for="inputEmail">E-mail</label>
                                         <div class="controls">
-                                            <input type="text" id="inputEmail" placeholder="E-mail" name="email" class="validate[required,custom[email]]" />
+                                            <input type="email" id="inputEmail" placeholder="E-mail" name="email" required data-parsley-type="email" data-parsley-trigger="change" />
                                         </div>
                                     </div>
                                     <br />
                                     <div class="control-group">
                                         <label class="control-label" for="inputCompany">Compañia</label>
                                         <div class="controls">
-                                            <input type="text" id="inputCompany" placeholder="Compañia" name="compania" class="validate[required,custom[onlyLetterSp]]" />
+                                            <input type="text" id="inputCompany" placeholder="Compañia" name="compania" required data-parsley-type="alphanum" />
                                         </div>
                                     </div>
                                     <br />
                                     <div class="control-group">
                                         <label class="control-label" for="inputClaim">Motivo de Reclamo</label>
                                         <div class="controls">
-                                            <textarea id="inputClaim" rows="3" placeholder="Motivo de Reclamo" name="mensaje" class="validate[required]"></textarea>
+                                            <textarea id="inputClaim" rows="3" placeholder="Motivo de Reclamo" name="mensaje" required data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-minlength-message = "Necesita ingresar 20 caracteres como mínimo..."></textarea>
                                         </div>
                                     </div>
                                     <div class="control-group">
@@ -446,8 +447,8 @@ if(isset($_POST["nombre"])){
         <script type='text/javascript' src='../js/jquery.flexslider-min5152.js?ver=1.0'></script>
         <script type='text/javascript' src='../js/jquery.placeholder.min5152.js?ver=1.0'></script>
         <script type='text/javascript' src='../js/jflickrfeed.min5152.js?ver=1.0'></script>
-        <script type="text/javascript" src="../js/jquery.validationEngine-es.js"></script>
-        <script type="text/javascript" src="../js/jquery.validationEngine.js"></script>
+        <script type="text/javascript" src="../lib/Parsley.js-2.0.0-rc2/src/parsley.min.js"></script>
+        <script type="text/javascript" src="../lib/Parsley.js-2.0.0-rc2/src/i18n/es.js"></script>
     </body>
     <script type="text/javascript">
         $j(document).ready(function() {
@@ -473,7 +474,6 @@ if(isset($_POST["nombre"])){
                     $j(".footer-menu img").attr("src", "../images/flecha_abajo.png");
                 }
             });
-            $j("#claim_form").validationEngine();
         });
     </script>
 </html>
