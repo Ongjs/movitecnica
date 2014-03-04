@@ -301,8 +301,7 @@
 
     </body>
     <script type="text/javascript">
-        $j(document).ready(function() {
-
+        $j(window).load(function() {
             $j(window).resize(function() {
                 if ((parseInt($j('#header').width())) < 753) {
                     $j("#foo1").carouFredSel({
@@ -326,7 +325,9 @@
                     $j("#foo1").trigger("play");
                 }
             });
-
+        });
+        
+        $j(document).ready(function() {
             $j("#skin3").trigger("click");
             var menu = true;
             $j(".footer-menu").click(function() {

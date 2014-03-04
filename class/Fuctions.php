@@ -196,7 +196,7 @@ function mo_get_category($id) {
 function mo_get_desc() {
     $cn = Connection::getInstance();
     $result = array();
-    $cn->query("SELECT id,description,updated FROM `image` where category_id = 5 and status = 1  order by (updated) desc limit 0,2");
+    $cn->query("SELECT id,description,updated FROM `image` where category_id = 5 and status = 1  order by (updated) desc limit 0,1");
     while ($row = $cn->fetch())
         $result[] = $row;
     return $result;
