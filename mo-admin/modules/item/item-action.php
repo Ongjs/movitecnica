@@ -7,9 +7,11 @@ switch ($do) {
         $name = mo_scape($_POST['name']);
         $extra1 = mo_scape($_POST['extra1']);
         $thumbnail = mo_scape($_POST["imagec_guid"]);
-        $MO_Image = new MO_Image($image_path . $thumbnail);
-        $MO_Image->thumbnail(100, 100, true, false);
-        $MO_Image->save();
+        if ($thumbnail != "") {
+            $MO_Image = new MO_Image($image_path . $thumbnail);
+            $MO_Image->thumbnail(100, 100, true, false);
+            $MO_Image->save();
+        }
         $image = mo_scape($_POST["imageg_guid"]);
         $desc = mo_scape($_POST['desc']);
         $content = mo_scape($_POST['content']);
@@ -20,9 +22,11 @@ switch ($do) {
         $name = mo_scape($_POST['name']);
         $extra1 = mo_scape($_POST['extra1']);
         $thumbnail = mo_scape($_POST["imagec_guid"]);
-        $MO_Image = new MO_Image($image_path . $thumbnail);
-        $MO_Image->thumbnail(100, 100, true, false);
-        $MO_Image->save();
+        if ($thumbnail != "") {
+            $MO_Image = new MO_Image($image_path . $thumbnail);
+            $MO_Image->thumbnail(100, 100, true, false);
+            $MO_Image->save();
+        }
         $image = mo_scape($_POST["imageg_guid"]);
         $desc = mo_scape($_POST['desc']);
         $content = mo_scape($_POST['content']);
