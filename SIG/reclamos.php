@@ -207,14 +207,14 @@ if(isset($_POST["nombre"])){
                                     <div class="control-group">
                                         <label class="control-label" for="inputFirstname">Nombre</label>
                                         <div class="controls">
-                                            <input type="text" id="inputFirstname" placeholder="Nombre" name="nombre" required data-parsley-type="alphanum" />
+                                            <input type="text" id="inputFirstname" placeholder="Nombre" name="nombre" required />
                                         </div>
                                     </div>
                                     <br />
                                     <div class="control-group">
                                         <label class="control-label" for="inputLastname">Apellido</label>
                                         <div class="controls">
-                                            <input type="text" id="inputLastname" placeholder="Apellido" name="apellido" required data-parsley-type="alphanum" />
+                                            <input type="text" id="inputLastname" placeholder="Apellido" name="apellido" required />
                                         </div>
                                     </div>
                                     <br />
@@ -228,7 +228,7 @@ if(isset($_POST["nombre"])){
                                     <div class="control-group">
                                         <label class="control-label" for="inputCompany">Compañia</label>
                                         <div class="controls">
-                                            <input type="text" id="inputCompany" placeholder="Compañia" name="compania" required data-parsley-type="alphanum" />
+                                            <input type="text" id="inputCompany" placeholder="Compañia" name="compania" required />
                                         </div>
                                     </div>
                                     <br />

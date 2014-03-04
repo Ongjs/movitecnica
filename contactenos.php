@@ -242,21 +242,21 @@ include 'class/Fuctions.php'; ?>
                             <div class="control-group">
                                 <label class="control-label" for="inputCompania">Compañia</label>
                                 <div class="controls">
-                                    <input type="text" id="inputCompania" placeholder="Compañia" name="compania" required data-parsley-type="alphanum" />
+                                    <input type="text" id="inputCompania" placeholder="Compañia" name="compania" required />
                                 </div>
                             </div>
                             <br />
                             <div class="control-group">
                                 <label class="control-label" for="inputNombre">Nombre</label>
                                 <div class="controls">
-                                    <input type="text" id="inputNombre" placeholder="Nombre" name="nombre" required data-parsley-type="alphanum" />
+                                    <input type="text" id="inputNombre" placeholder="Nombre" name="nombre" required />
                                 </div>
                             </div>
                             <br />
                             <div class="control-group">
                                 <label class="control-label" for="inputApellido">Apellido</label>
                                 <div class="controls">
-                                    <input type="text" id="inputApellido" placeholder="Apellido" name="apellido" required data-parsley-type="alphanum" />
+                                    <input type="text" id="inputApellido" placeholder="Apellido" name="apellido" required />
                                 </div>
                             </div>
                             <br />
