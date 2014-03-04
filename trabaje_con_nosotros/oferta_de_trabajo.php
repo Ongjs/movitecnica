@@ -1,3 +1,89 @@
+<?php
+require_once "../conf.php";
+$cn->query("SELECT id, name, description, thumbnail from image WHERE category_id = '12'  ORDER BY id asc");
+$puestos = array();
+while ($row = $cn->fetch()) {
+    $puestos[] = array(
+        "text" => $row['name'],
+        "value" => $row['id'],
+        "selected" => false,
+        "description" => str_replace(chr(13), "", $row['description']),
+        "imageSrc" => '../userfiles/' . $row['thumbnail']
+    );
+}
+if(isset($_POST["inputPuesto"])){
+    
+    require '../lib/PHPMailer/class.phpmailer.php';
+    $mail = new PHPMailer();
+    $mail->IsSMTP();                                      // Set mailer to use SMTP
+    $mail->Host = 'smtp.gmail.com';  // Specify main and backup server
+    $mail->Port = 465;
+    $mail->SMTPAuth = true;                               // Enable SMTP authenticationa
+    $mail->SMTPSecure = 'ssl';
+    $mail->Username = 'masterojitos.test@gmail.com';                            // SMTP username
+    $mail->Password = 'masterojitos';                           // SMTP password
+    $mail->From = 'no-reply@movitecnica.com.pe';
+    $mail->FromName = 'Movitécnica';
+    $mail->AddAddress('gdelgado@movitecnica.com.pe', 'Alberto Delgado');  // Add a recipient
+    $mail->AddBCC('master.ojitos@gmail.com', 'Ricardo Garcia Rodriguez');  // Add a recipient
+    $mail->AddReplyTo($_POST["email"], $_POST["nombre"]." ".$_POST["apellido"]);
+    $mail->WordWrap = 50;                                 // Set word wrap to 50 characters
+    $mail->addAttachment($_FILES['inputCV']['tmp_name'], $_FILES['inputCV']['name']);    // Optional name
+    $mail->IsHTML(true);                                  // Set email format to HTML
+    $mail->CharSet = 'utf-8';
+    $mail->Subject = 'Movitécnica - Trabaje con Nosotros';
+    $puesto = $cn->getField("SELECT name from image WHERE id = '" . $_POST["inputPuesto"] . "'");
+    $mail->Body = '<table border="0" style="text-align: left; background: rgba(248,248,248,8); border-radius: 3px; line-height: 22px;">
+        <tr style="border-top: solid 1px rgba(225,225,225,1)">
+            <td><h2>Solicitud de Postulación</h2></td>
+            <td style="width: 400px; text-align: right"><img src="http://www.movitecnica.com.pe/images/Logotipo_Movitecnica.jpg" width="270" height="56"></td>
+        </tr>
+        <tr>
+            <td style="border-top: solid 1px rgba(225,225,225,1)"><strong>Nombre Completo:</strong></td>
+            <td style="border-top: solid 1px rgba(225,225,225,1)">' . $_POST["nombre"] . ' ' . $_POST["apellido"] . '</td>
+        </tr>
+        <tr>
+            <td style="border-top: solid 1px rgba(225,225,225,1)"><strong>E-mail:</strong></td>
+            <td style="border-top: solid 1px rgba(225,225,225,1)">' . $_POST["email"] . '</td>
+        </tr>
+        <tr>
+            <td style="border-top: solid 1px rgba(225,225,225,1)"><strong>Puesto:</strong></td>
+            <td style="border-top: solid 1px rgba(225,225,225,1)">' . $puesto . '</td>
+        </tr>
+        <td colspan="2" style="border-top: solid 1px rgba(225,225,225,1)"><br />El Curriculum Vitae se encuentra adjunto en el presente correo.</td>
+    </table>';
+    $mail->AltBody = '\t Solicitud de Postulación \n \n
+    \t Puesto: \t ' . $puesto . ' \n\n
+    \t Nombre Completo: \t '.$_POST["nombre"]." ".$_POST["apellido"].' \n
+    \t Email: \t '.$_POST["email"].' \n
+    \t El Curriculum Vitae se encuentra adjunto en el presente correo.\n';
+    $email_send1 = $mail->Send();
+    
+    $mail = new PHPMailer();
+    $mail->IsSMTP();                                      // Set mailer to use SMTP
+    $mail->Host = 'smtp.gmail.com';  // Specify main and backup server
+    $mail->Port = 465;
+    $mail->SMTPAuth = true;                               // Enable SMTP authenticationa
+    $mail->SMTPSecure = 'ssl';
+    $mail->Username = 'masterojitos.test@gmail.com';                            // SMTP username
+    $mail->Password = 'masterojitos';                           // SMTP password
+    $mail->From = 'no-reply@movitecnica.com.pe';
+    $mail->FromName = 'Movitécnica';
+    $mail->AddAddress($_POST["email"], $_POST["nombre"]." ".$_POST["apellido"]);  // Add a recipient
+    $mail->WordWrap = 50;                                 // Set word wrap to 50 characters
+    $mail->IsHTML(true);                                  // Set email format to HTML
+    $mail->CharSet = 'utf-8';
+    $mail->Subject = 'Movitécnica - Solicitud de Postulación';
+    $mail->Body = '<img src="http://www.movitecnica.com.pe/images/Logotipo_Movitecnica.jpg" width="270" height="56" />
+        <br /><br /><strong>' . $_POST["nombre"] . ' ' . $_POST["apellido"] . '</strong><br />
+        Su postulación ha sido recibida satisfactoriamente, en breve nos estaremos comunicando con usted.<br />
+    ';
+    $mail->AltBody = '\t Movitécnica - Solicitud de Postulación \n \n
+    \t ' . $_POST["nombre"] . ' ' . $_POST["apellido"] . ' \n
+    \t Su postulación ha sido recibida satisfactoriamente, en breve nos estaremos comunicando con usted.\n';
+    $email_send2 = $mail->Send();
+}
+?>
 <!DOCTYPE html>
 <html lang="en-US">
     <head>
@@ -19,10 +105,11 @@
         <link rel='stylesheet' id='style-css'  href='../style9d52.css?ver=3.5.1' type='text/css' media='all' />
         <link rel='stylesheet' id='fancybox-css'  href='../js/fancybox/jquery.fancybox-1.3.49d52.css?ver=3.5.1' type='text/css' media='all' />
         <link rel='stylesheet' id='skin'  href='../css/skin3.css' type='text/css' media='all' />
+        <link rel='stylesheet' id='parsley' href='../lib/Parsley.js-2.0.0-rc2/src/parsley.css' type='text/css' media='all' />
         <script type='text/javascript' src='../js/jquery.js'></script>
         <script type='text/javascript' src='../js/custom.js'></script>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
-    <body>  <?php  include '../class/Connection.class.php'; include '../class/Fuctions.php'; ?>
+    <body>
         <div class="top_wrapper">
             <div id="header">
                 <div class="container">
@@ -107,35 +194,60 @@
                     <br />
                     <h1><b><?php echo mo_get_data(1, 19); ?></b></h1>
                     <?php echo mo_get_data(3, 19); ?>
-                    <div style="border-top: 1px solid #D7D7D7; padding-top: 15px;">
-                        <h4>Aplicacion Previa</h4>
-                        <span>Si usted ha solicitado previamente a una posición en nuestro sitio web, introduzca su dirección de correo electrónico y contraseña para iniciar sesión.</span><br /><br />
-                        <form class="form-horizontal">
+                    <?php 
+                    if (isset($email_send1) || isset($email_send2)) {
+                        if ($email_send1 || $email_send2) {
+                    ?>
+                    <p class="email_response">&nbsp;Su postulación ha sido enviada satisfactoriamente, &nbsp;en breve nos estaremos comunicando con usted.</p>
+                    <?php
+                        }else{
+                    ?>
+                    <p class="email_response">&nbsp;Su postulación no ha podido ser enviada. &nbsp;Intente de nuevo por favor.</p>
+                    <?php
+                        }
+                    }
+                    ?>
+                    <div style="padding-top: 15px;">
+                        <form method="post" id="form_oferta_de_trabajo" class="form-horizontal" enctype="multipart/form-data" data-parsley-validate>
                             <div class="control-group">
-                                <label class="control-label" for="inputEmail">Email</label>
+                                <label class="control-label">Puestos disponibles</label>
                                 <div class="controls">
-                                    <input type="text" id="inputEmail" placeholder="Email">
+                                    <div id="inputPuesto_trigger"></div>
+                                    <input type="hidden" name="inputPuesto" id="inputPuesto" required>
                                 </div>
                             </div>
                             <div class="control-group">
-                                <label class="control-label" for="inputPassword">Password</label>
+                                <label class="control-label" for="inputFirstname">Nombre</label>
                                 <div class="controls">
-                                    <input type="password" id="inputPassword" placeholder="Password">
+                                    <input type="text" id="inputFirstname" placeholder="Nombre" name="nombre" required data-parsley-type="alphanum" />
+                                </div>
+                            </div>
+                            <br />
+                            <div class="control-group">
+                                <label class="control-label" for="inputLastname">Apellido</label>
+                                <div class="controls">
+                                    <input type="text" id="inputLastname" placeholder="Apellido" name="apellido" required data-parsley-type="alphanum" />
+                                </div>
+                            </div>
+                            <br />
+                            <div class="control-group">
+                                <label class="control-label" for="inputEmail">E-mail</label>
+                                <div class="controls">
+                                    <input type="email" id="inputEmail" placeholder="E-mail" name="email" required data-parsley-type="email" data-parsley-trigger="change" />
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="inputCV">Curriculum Vitae</label>
+                                <div class="controls">
+                                    <input type="file" id="inputCV" name="inputCV" placeholder="Curriculum Vitae" required>
                                 </div>
                             </div>
                             <div class="control-group">
                                 <div class="controls">
-                                    <label class="checkbox">
-                                        <input type="checkbox"> Remember me
-                                    </label>
-                                    <button type="submit" class="btn">Sign in</button>
+                                    <button type="submit" class="btn">Enviar</button>
                                 </div>
                             </div>
                         </form>
-                    </div>
-                    <div style="border-top: 1px solid #D7D7D7; padding-top: 15px;">
-                        <h4>Sólo quiere enviar su hoja de vida?</h4>
-                        <span>Para llenar un formulario de aplicación general click <a href="#">aqui</a></span><br /><br /><br />
                     </div>
                 </div>
                 <footer class="footer">
@@ -298,7 +410,9 @@
         <script type='text/javascript' src='../js/jquery.flexslider-min5152.js?ver=1.0'></script>
         <script type='text/javascript' src='../js/jquery.placeholder.min5152.js?ver=1.0'></script>
         <script type='text/javascript' src='../js/jflickrfeed.min5152.js?ver=1.0'></script>
-
+        <script type='text/javascript' src='../js/jquery.ddslick.js'></script>
+        <script type="text/javascript" src="../lib/Parsley.js-2.0.0-rc2/src/parsley.min.js"></script>
+        <script type="text/javascript" src="../lib/Parsley.js-2.0.0-rc2/src/i18n/es.js"></script>
     </body>
     <script type="text/javascript">
         $j(document).ready(function() {
@@ -325,6 +439,19 @@
                     $j(".footer-menu span b").text("Ocultar Menu");
                     $j(".footer-menu img").attr("src", "../images/flecha_abajo.png");
                 }
+            });
+            
+            $j('#inputPuesto_trigger').ddslick({
+                data: $j.parseJSON(String('<?php echo json_encode($puestos); ?>').replace(/\n/g, "")),
+                width: 500,
+                height: 300,
+                selectText: 'Seleccione un puesto',
+                truncateDescription: false,
+                imagePosition: 'right',
+                onSelected: function(selectedData){
+                    $j("#inputPuesto").val(selectedData.selectedData.value);
+                    $j('#inputPuesto_trigger').parent().find('ul.parsley-errors-list').remove();
+                }   
             });
         });
     </script>

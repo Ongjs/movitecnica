@@ -18,6 +18,7 @@
                         <option value="9"><?php echo mo_get_data(1, 9); ?></option>
                         <option value="10"><?php echo mo_get_data(1, 11); ?></option>
                         <option value="11"><?php echo mo_get_data(1, 12); ?></option>
+                        <option value="12"><?php echo mo_get_data(1, 19); ?></option>
                     </select></td>
             </tr>
             <a href="#" class="new list">Nuevo</a>
