@@ -213,31 +213,31 @@ include '../class/Fuctions.php';
                     <span style="display: none" id="filtrado"><?php echo isset($_GET['filtro']) ? $_GET['filtro'] : ""; ?></span>
                     <span style="display: none" id="normal_content">
                         <div>
-                            <div style="float: left;"><h1><b>Catálogo de Productos</b></h1></div>
-                            <input type="button" value="►" title="buscar" id="buscar" style=" float: right;"><input type="text" name="buscar_prod" value="" id="prod" size="42" style="display: inline-block; float: right;" placeholder="Introduzca nombre del producto a buscar">
+                            <div style="float: left;"><h1 style="font-size: 28px"><b>Catálogo de Productos</b></h1></div>
+                            <input type="button" value="►" title="buscar" id="buscar" style=" float: right;"><input type="text" name="buscar_prod" value="" id="prod" size="42" style="display: inline-block; float: right;" placeholder="Buscar producto">
                         </div>
                         <br />
                         <br />  <br />  
-                        <div style="margin-top: 10px">
-                            <div id="list_all_categories" class="six columns post_col masonry-brick">
-                                <div class="post-973 post type-post status-publish format-standard hentry category-uncategorized post_item white_box">
-                                    <div class="large_thumb thumb_hover">
+                        <div style="margin-top: 10px;">
+                            <div id="list_all_categories" class="four columns post_col masonry-brick">
+                                <div class="post-973 post type-post status-publish format-standard hentry category-uncategorized post_item">
+                                    <div class="large_thumb">
                                         <!--<a href="../images/_demo/1.jpg" class="thumb_icon productos fancybox" style="-webkit-transition:none; -moz-transition: none; margin-top: 20%;"><span></span></a>-->
                                         <div class="mask post_top_element"></div> 
-                                        <div class="img_wrapper"><a href="#" rel="bookmark" title=""><img src="../images/foto_pro_categoria.png" width="710" height="454" alt="This is a image" class="post_top_element thumb" /></a></div>
+                                        <div class="img_wrapper"><a href="#" rel="bookmark" title=""><img src="../images/1.png" alt="This is a image" class="post_top_element thumb" /></a></div>
                                     </div>
                                 </div>
-                                <div style=" text-align: center; background-color: rgba(50,50,50,8); border-radius: 0px 0px  8px 8px; height: 35px;"><h2><font color="white">Categorías</font></h2></div>
+                                <div style=" text-align: center;"><h2 style="font-size: 25px;">Categorías</h2></div>
                             </div>
-                            <div id="list_all_marks" class="six columns post_col masonry-brick">
-                                <div class="post-973 post type-post status-publish format-standard hentry category-uncategorized post_item white_box">
-                                    <div class="large_thumb thumb_hover" >
+                            <div id="list_all_marks" class="four columns post_col masonry-brick">
+                                <div class="post-973 post type-post status-publish format-standard hentry category-uncategorized post_item">
+                                    <div class="large_thumb" >
                                         <!--<a href="../images/_demo/1.jpg" class="thumb_icon marcas fancybox" style="-webkit-transition:none; -moz-transition: none; margin-top: 28px;"><span></span></a>-->
                                         <div class="mask post_top_element"></div> 
-                                        <div class="img_wrapper"><a href="#" rel="bookmark" title=""><img src="../images/foto_pro_marcas.png" width="710" height="454" alt="This is a image" class="post_top_element thumb" /></a></div>
+                                        <div class="img_wrapper"><a href="#" rel="bookmark" title=""><img src="../images/2.png" alt="This is a image" class="post_top_element thumb" /></a></div>
                                     </div>
                                 </div>
-                                <div style=" text-align: center; background-color: rgba(50,50,50,8); border-radius: 0px 0px  8px 8px; height: 35px;"><h2><font color="white">Marcas</font></h2></div>
+                                <div style=" text-align: center;"><h2 style="font-size: 25px;">Marcas</h2></div>
                             </div>
                         </div>
                         <br />

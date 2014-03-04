@@ -5,8 +5,7 @@ class Connection {
     public $resultSet = NULL;
 
     private function __construct() {
-        $this->Link = @mysql_pconnect("localhost", "root", "root");
-//        $this->Link = @mysql_pconnect("localhost", "root", "w3bm0v1t3cn1c4");
+        $this->Link = @mysql_pconnect("localhost", "root", "1286571");
         if (!$this->Link)
             throw new Exception("Could not connect to server: " . $this->error());
         if (!mysql_select_db("movitecnica", $this->Link))

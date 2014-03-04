@@ -64,10 +64,9 @@ $cn->query("SELECT id, name FROM product WHERE parent_id = '0' AND type = '1' OR
             }else{
                 var $array_subs = string.split(',');
             }
-            if($array_subs.indexOf("")){
-                $array_subs.splice($array_subs.indexOf(""), 1);
-            }
-            console.log("abc", $(this).attr("src") == "../images/active.png");
+//            if($array_subs.indexOf("")){
+//                $array_subs.splice($array_subs.indexOf(""), 1);
+//            }
             if($(this).attr("src") == "../images/active.png"){
                 $array_subs.push(String($(this).data("id")));
                 $(this).attr("src","../images/inactive.png")

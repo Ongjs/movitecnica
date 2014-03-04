@@ -16,12 +16,12 @@ if(isset($_POST["inputPuesto"])){
     require '../lib/PHPMailer/class.phpmailer.php';
     $mail = new PHPMailer();
     $mail->IsSMTP();                                      // Set mailer to use SMTP
-    $mail->Host = 'smtp.gmail.com';  // Specify main and backup server
-    $mail->Port = 465;
+    $mail->Host = 'mail.movitecnica.com.pe';  // Specify main and backup server
+    $mail->Port = 25;
     $mail->SMTPAuth = true;                               // Enable SMTP authenticationa
-    $mail->SMTPSecure = 'ssl';
-    $mail->Username = 'masterojitos.test@gmail.com';                            // SMTP username
-    $mail->Password = 'masterojitos';                           // SMTP password
+    $mail->SMTPSecure = 'tls';
+    $mail->Username = 'ventas@movitecnica.com.pe';                            // SMTP username
+    $mail->Password = 'm@fobosmov';                           // SMTP password
     $mail->From = 'no-reply@movitecnica.com.pe';
     $mail->FromName = 'Movitécnica';
     $mail->AddAddress('gdelgado@movitecnica.com.pe', 'Alberto Delgado');  // Add a recipient
